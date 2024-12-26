@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
 
 	devices = {}; // free up memory
 
-	fgla::Window window = fgla::Window(WIDTH, HEIGHT, "FGLA test application");
+	fgla::Window window = fgla::Window(inst, WIDTH, HEIGHT, "FGLA test application");
 	if (!window.is_ok()) {
 		spdlog::error("main: fgla::Window creation failed!");
 		return -1;

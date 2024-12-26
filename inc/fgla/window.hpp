@@ -1,19 +1,20 @@
 #pragma once
 #include <string>
+#include <fgla/instance.hpp>
 
 namespace fgla {
 
 class Window {
 public:
-	Window(unsigned int width, unsigned int height, const std::string& title);
+	Window(const fgla::Instance& instance, unsigned int width, unsigned int height, const std::string& title);
 
-	unsigned int get_width();
-	unsigned int get_height();
+	unsigned int get_width() const;
+	unsigned int get_height() const;
 
 	void set_width(unsigned int);
 	void set_height(unsigned int);
 
-	bool is_ok();
+	bool is_ok() const;
 
 	void run();
 
