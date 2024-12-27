@@ -13,8 +13,16 @@ int main(int argc, char **argv) {
 		spdlog::error("main: fgla::Instance creation failed!");
 		return -1;
 	}
+	
+	fgla::Device device;
 
-	auto devices = fgla::Device::enumerate(inst);
+	fgla::Window window = fgla::Window(inst, WIDTH, HEIGHT, "FGLA test application");
+	if (!window.is_ok()) {
+		spdlog::error("main: fgla::Window creation failed!");
+		return -1;
+	}
+
+	auto devices = fgla::Device::enumerate(inst, window);
 
 	if (devices.size() == 0) {
 		spdlog::error("main: No devices available!");
@@ -31,19 +39,15 @@ int main(int argc, char **argv) {
 			return a.score() < b.score();
 		});
 
-	fgla::Device device = *best_device;
+	device = *best_device;
 	
-	if (device.score() < 0) {
-		spdlog::error("main: No suitable devices available!");
-		return -1;
-	}
 	spdlog::info("main: Selecting device {}.", device.name());
 
 	devices = {}; // free up memory
 
-	fgla::Window window = fgla::Window(inst, WIDTH, HEIGHT, "FGLA test application");
-	if (!window.is_ok()) {
-		spdlog::error("main: fgla::Window creation failed!");
+	auto res = device.initialize();
+	if (res.has_error()) {
+		spdlog::error("main: fgla::Device failed to initialize!");
 		return -1;
 	}
 
