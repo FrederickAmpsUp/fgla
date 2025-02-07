@@ -1,0 +1,3 @@
+CompileCommandsDir: ./build/
+CompileFlags:
+  Add: [-std=c++20]
