@@ -10,8 +10,16 @@ public:
 		// TODO
 	};
 
+	struct Info {
+		std::string device_name;
+	};
+
+	inline Info get_info() const { return this->impl->get_info(); };
+
 	struct Impl {
-		virtual ~Impl();
+		virtual Info get_info() const = 0;
+
+		virtual ~Impl() = 0;
 	};
 
 	static inline Adapter from_raw(std::unique_ptr<Impl> impl) {

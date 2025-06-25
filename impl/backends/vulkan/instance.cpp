@@ -1,10 +1,15 @@
 #include <fgla/backends/vulkan/instance.hpp>
 #include <fgla/backends/vulkan/backend.hpp>
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 
 namespace fgla::backends::vulkan {
 
 InstanceImpl::InstanceImpl(const Instance::Descriptor& descriptor) {
+	static auto logger = spdlog::stdout_color_mt("fgla::backends::vulkan");
+	logger->set_level(spdlog::level::debug); // TODO: modify this
+
 	VkApplicationInfo app_info = {};
 	app_info.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 
@@ -26,16 +31,19 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor& descriptor) {
 	
 	VkResult res = vkCreateInstance(&instance_info, nullptr, &this->instance);
 	if (res != VK_SUCCESS) {
+		logger->error("Vulkan instance creation failed, error code {:X}", (unsigned int)res);
 		this->instance = VK_NULL_HANDLE;
 		return;
 	}
+
+	logger->info("Vulkan instance created.");
 }
 bool InstanceImpl::is_ok() const {
 	return this->instance != VK_NULL_HANDLE;
 }
 
 tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor& descriptor) {
-	std::unique_ptr<AdapterImpl> impl = std::make_unique<AdapterImpl>(); // may have to change this
+	std::unique_ptr<AdapterImpl> impl = std::make_unique<AdapterImpl>(*this, descriptor); // may have to change this
 	return std::move(Adapter::from_raw(std::move(impl)));
 }
 

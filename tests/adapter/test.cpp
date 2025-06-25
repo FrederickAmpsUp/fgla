@@ -42,7 +42,11 @@ int main(int argc, char **argv) {
 		return -2;
 	}
 
-	std::cout << "Success!" << std::endl;
+	fgla::Adapter adapter = std::move(*adapter_res);
+
+	auto adapter_info = adapter.get_info();
+
+	std::cout << "Acquired adapter \"" << adapter_info.device_name << "\"." << std::endl;
 
 	return 0;
 }
