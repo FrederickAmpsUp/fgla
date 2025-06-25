@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <vector>
 
 namespace fgla {
 struct VersionTriple {
@@ -16,4 +17,12 @@ constexpr uint8_t parse_hex(char c) {
         (c >= 'A' && c <= 'F') ? c - 'A' + 10 :
         throw "Invalid hex digit in UUID";
 }
+
+struct PairHash {
+    template <typename T, typename U>
+    std::size_t operator()(const std::pair<T, U> &p) const {
+        return std::hash<T>()(p.first) ^ (std::hash<U>()(p.second) << 1);
+    }
+};
+
 }

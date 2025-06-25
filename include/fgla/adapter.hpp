@@ -1,6 +1,9 @@
 #pragma once
 
 #include <memory>
+#include <fgla/device.hpp>
+#include <fgla/error.hpp>
+#include <tl/expected.hpp>
 
 namespace fgla {
 
@@ -14,9 +17,14 @@ public:
 		std::string device_name;
 	};
 
+
+	inline tl::expected<Device, Error> create_device(const Device::Descriptor& descriptor, std::initializer_list<std::reference_wrapper<const Queue::Request>> queues) { return this->impl->create_device(descriptor, queues); }
+
 	inline Info get_info() const { return this->impl->get_info(); };
 
 	struct Impl {
+		virtual tl::expected<Device, Error> create_device(const Device::Descriptor&, std::initializer_list<std::reference_wrapper<const Queue::Request>>) = 0;
+
 		virtual Info get_info() const = 0;
 
 		virtual ~Impl() = 0;
