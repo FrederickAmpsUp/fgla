@@ -1,3 +1,4 @@
+#include "tl/expected.hpp"
 #include <fgla/backends/vulkan/instance.hpp>
 #include <fgla/backends/vulkan/backend.hpp>
 #include <fgla/backends/vulkan/adapter.hpp>
@@ -44,6 +45,7 @@ bool InstanceImpl::is_ok() const {
 
 tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor& descriptor) {
 	std::unique_ptr<AdapterImpl> impl = std::make_unique<AdapterImpl>(*this, descriptor); // may have to change this
+	if (!impl->is_ok()) return tl::make_unexpected(Error(ErrorCode::GET_ADAPTER_FAILED));
 	return std::move(Adapter::from_raw(std::move(impl)));
 }
 

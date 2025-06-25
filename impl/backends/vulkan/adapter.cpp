@@ -39,7 +39,6 @@ static int score_physical_device(VkPhysicalDevice device, const Adapter::Descrip
 	score += static_cast<int>(totalVRAM / (4 * 1024 * 1024));
 
 	// need more scoring later
-
 	return score;
 }
 

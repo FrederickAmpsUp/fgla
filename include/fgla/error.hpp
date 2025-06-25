@@ -8,6 +8,7 @@ namespace fgla {
 
 enum class ErrorCode : uint64_t {
 	CREATE_INSTANCE_FAILED,
+	GET_ADAPTER_FAILED,
 	NO_BACKENDS,
 	UNIMPLEMENTED,
 	END
