@@ -26,8 +26,6 @@ function(fgla_force_link_backend target method lib)
         	endif()
         	target_link_libraries(${target} ${method} "-Wl,-force_load,$<TARGET_FILE:${lib}>")
     	else()
-		get_target_property(type ${lib} TYPE)
-		message(STATUS "Linking backend: ${lib} (type = ${type})")
         	# Linux/Clang/GCC: --whole-archive
         	target_link_libraries(${target}
 			${method}

@@ -3,10 +3,7 @@
 #include <cstdint>
 #include <unordered_map>
 #include <fgla/util.hpp>
-
-namespace fgla {
-class Instance;
-}
+#include <fgla/instance.hpp>
 
 namespace fgla::backend {
 
@@ -59,7 +56,7 @@ struct Backend {
 	BackendUUID uuid;
 	const char *name;
 	bool (*is_available)();
-	Instance *(*create_instance)();
+	Instance *(*create_instance)(const Instance::Descriptor *);
 };
 
 inline auto& get_registry() {

@@ -4,6 +4,10 @@
 
 namespace fgla::backends::vulkan {
 
+InstanceImpl::InstanceImpl(const Instance::Descriptor& descriptor) {
+	this->instance = VK_NULL_HANDLE;
+}
+
 tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor& descriptor) {
 	std::unique_ptr<AdapterImpl> impl = std::make_unique<AdapterImpl>(); // may have to change this
 	return std::move(Adapter::from_raw(std::move(impl)));

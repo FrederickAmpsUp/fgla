@@ -5,12 +5,13 @@
 namespace fgla::backends::vulkan {
 
 extern "C" bool fgla_backends_vulkan_is_available() {
-	return false; // Not implemented
+	return true;
 }
 
-extern "C" Instance *fgla_backends_vulkan_create_instance() {
-	std::unique_ptr<Instance::Impl> impl = std::make_unique<InstanceImpl>();
-	return new Instance(std::move(Instance::from_raw(std::move(impl))));
+extern "C" Instance *fgla_backends_vulkan_create_instance(const Instance::Descriptor *descriptor) {
+	std::unique_ptr<Instance::Impl> impl = std::make_unique<InstanceImpl>(*descriptor);
+	auto instance = Instance::from_raw(std::move(impl));
+	return new Instance(std::move(instance));
 }
 
 static const fgla::backend::BackendRegistrar registrar = { fgla::backend::Backend {

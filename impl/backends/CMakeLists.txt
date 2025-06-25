@@ -19,6 +19,3 @@ add_library(fgla_backend_all INTERFACE)
 foreach(backend IN LISTS FGLA_BACKEND_TARGETS)
 	fgla_force_link_backend(fgla_backend_all INTERFACE ${backend})
 endforeach()
-
-get_target_property(linked_libs fgla_backend_all INTERFACE_LINK_LIBRARIES)
-message(STATUS "fgla_backend_all linked libraries: ${linked_libs}")

@@ -1,13 +1,16 @@
 #pragma once
 
 #include <memory>
-#include <fgla/backend.hpp>
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
 #include <tl/expected.hpp>
 #include <optional>
 
 namespace fgla {
+
+namespace backend {
+struct Backend;
+}
 
 class Instance {
 public:

@@ -8,7 +8,7 @@ extern "C" bool fgla_backends_opengl_is_available() {
 	return false; // Not implemented
 }
 
-extern "C" Instance *fgla_backends_opengl_create_instance() {
+extern "C" Instance *fgla_backends_opengl_create_instance(const Instance::Descriptor *) {
 	std::unique_ptr<Instance::Impl> impl = std::make_unique<InstanceImpl>();
 	return new Instance(std::move(Instance::from_raw(std::move(impl))));
 }
