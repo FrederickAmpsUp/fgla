@@ -1,6 +1,6 @@
 #include <fgla/instance.hpp>
 #include <fgla/backend.hpp>
-#include <fmt/core.h>
+#include <fmt/format.h>
 
 namespace fgla {
 

@@ -3,6 +3,7 @@
 #include <memory>
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
+#include <fgla/util.hpp>
 #include <tl/expected.hpp>
 #include <optional>
 
@@ -15,7 +16,9 @@ struct Backend;
 class Instance {
 public:
 	struct Descriptor {
-		const backend::Backend *preferred_backend; // nullable, maybe should change to a UUID
+		const backend::Backend *preferred_backend; // nullable, maybe should change to an optional<UUID>
+		VersionTriple app_version = { 1, 0, 0 };
+		std::string app_name = "";
 	};
 
 	static tl::expected<Instance, Error> create(const Descriptor& descriptor);

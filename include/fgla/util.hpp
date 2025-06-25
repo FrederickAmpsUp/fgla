@@ -2,6 +2,12 @@
 
 #include <cstdint>
 
+namespace fgla {
+struct VersionTriple {
+	int major, minor, patch;
+};
+}
+
 namespace fgla::util {
 constexpr uint8_t parse_hex(char c) {
     return
