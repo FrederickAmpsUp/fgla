@@ -19,7 +19,7 @@ struct AdapterImpl : public fgla::Adapter::Impl {
 	bool is_ok() const;
 
 	virtual Adapter::Info get_info() const override;
-
+	virtual tl::expected<Device, Error> create_device(const Device::Descriptor& descriptor, std::initializer_list<std::reference_wrapper<const Queue::Request>> queue_requests) override;
 	virtual ~AdapterImpl() override = default;
 
 private:

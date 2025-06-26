@@ -8,7 +8,7 @@ namespace fgla {
 class Queue {
 public:
 	enum class Type {
-		Graphics, // TODO: transfer/compute queues
+		Graphics, Transfer
 	};
 
 	struct Request {

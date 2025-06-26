@@ -4,6 +4,7 @@ set(TEST_DIRS
     backend_registry
     instance
     adapter
+    vulkan_queue_allocator
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

@@ -124,6 +124,8 @@ bool AdapterImpl::is_ok() const {
 	return this->physical_device != VK_NULL_HANDLE;
 }
 
+tl::expected<Device, Error> AdapterImpl::create_device(const Device::Descriptor& descriptor, std::initializer_list<std::reference_wrapper<const Queue::Request>> queue_requests) {} // TODO
+
 Adapter::Info AdapterImpl::get_info() const {
 	if (!this->is_ok()) {
 		return Adapter::Info {
