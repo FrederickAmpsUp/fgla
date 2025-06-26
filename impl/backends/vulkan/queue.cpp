@@ -61,7 +61,11 @@ std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> Qu
 			}
 			if (supported) supported_families.push_back(&family);
 		}
-		counts_and_available_families.insert({request.get().type, {request.get().count, supported_families}});
+		if (counts_and_available_families.find(request.get().type) != counts_and_available_families.end()) {
+			counts_and_available_families[request.get().type].first += request.get().count;
+		} else {
+			counts_and_available_families.insert({request.get().type, {request.get().count, supported_families}});
+		}
 	}
 
 	QueueMapping final_mapping;
