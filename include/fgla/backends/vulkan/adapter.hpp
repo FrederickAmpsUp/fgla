@@ -18,8 +18,10 @@ struct AdapterImpl : public fgla::Adapter::Impl {
 	AdapterImpl(const InstanceImpl& instance, const Adapter::Descriptor& descriptor);
 	bool is_ok() const;
 
+	inline VkPhysicalDevice get_physical_device() { return this->physical_device; }
+
 	virtual Adapter::Info get_info() const override;
-	virtual tl::expected<Device, Error> create_device(const Device::Descriptor& descriptor, std::initializer_list<std::reference_wrapper<const Queue::Request>> queue_requests) override;
+	virtual tl::expected<Device, Error> create_device(const Device::Descriptor& descriptor, std::initializer_list<Queue::Request> queue_requests) override;
 	virtual ~AdapterImpl() override = default;
 
 private:

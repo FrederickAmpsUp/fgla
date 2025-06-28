@@ -7,11 +7,11 @@
 using namespace fgla::backends::vulkan;
 
 // Helper to print requests
-void print_requests(const std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>>& requests) {
+void print_requests(const std::initializer_list<fgla::Queue::Request>& requests) {
     std::cout << "Requests:\n";
     int i = 0;
     for (auto& req : requests) {
-	std::cout << "	[" << i++ << "] Type: " << static_cast<int>(req.get().type) << ", Count: " << req.get().count << '\n';
+	std::cout << "	[" << i++ << "] Type: " << static_cast<int>(req.type) << ", Count: " << req.count << '\n';
     }
 }
 
@@ -49,7 +49,7 @@ void test_big_brain_allocator() {
 	{
 		std::cout << "=== Test 1: Single request, single family ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 1};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1};
+		std::initializer_list<fgla::Queue::Request> reqs{r1};
 		std::vector<VkQueueFamilyProperties> fams{{
 		.queueFlags = VK_QUEUE_GRAPHICS_BIT,
 		.queueCount = 8
@@ -63,7 +63,7 @@ void test_big_brain_allocator() {
 		std::cout << "=== Test 2: Multiple requests, multiple families ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 2};
 		fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1, r2};
+		std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
 		std::vector<VkQueueFamilyProperties> fams{
 		{
 		.queueFlags = VK_QUEUE_GRAPHICS_BIT,
@@ -82,7 +82,7 @@ void test_big_brain_allocator() {
 	{
 		std::cout << "=== Test 3: Too many requests ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 3};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1};
+		std::initializer_list<fgla::Queue::Request> reqs{r1};
 		std::vector<VkQueueFamilyProperties> fams{
 		{.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 2}
 		};
@@ -95,7 +95,7 @@ void test_big_brain_allocator() {
 		std::cout << "=== Test 4: Queue reuse ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 1};
 		fgla::Queue::Request r2{fgla::Queue::Type::Graphics, 1};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1, r2};
+		std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
 		std::vector<VkQueueFamilyProperties> fams{
 		{.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 1}
 		};
@@ -108,7 +108,7 @@ void test_big_brain_allocator() {
 		std::cout << "=== Test 5: Mixed family support ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 1};
 		fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1, r2};
+		std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
 		std::vector<VkQueueFamilyProperties> fams{
 		{.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 2},
 		{.queueFlags = VK_QUEUE_TRANSFER_BIT, .queueCount = 1}
@@ -122,7 +122,7 @@ void test_big_brain_allocator() {
 		std::cout << "=== Test 6: Dedicated transfer preferred ===\n";
 		fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 1};
 		fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1, r2};
+		std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
 		std::vector<VkQueueFamilyProperties> fams{
 		{.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 4},
 		{.queueFlags = VK_QUEUE_TRANSFER_BIT, .queueCount = 2}
@@ -135,7 +135,7 @@ void test_big_brain_allocator() {
 	{
 		std::cout << "=== Test 7: Unknown queue type ===\n";
 		fgla::Queue::Request r1{static_cast<fgla::Queue::Type>(999), 1}; // Invalid type
-		std::initializer_list<std::reference_wrapper<const fgla::Queue::Request>> reqs{r1};
+		std::initializer_list<fgla::Queue::Request> reqs{r1};
 		std::vector<VkQueueFamilyProperties> fams{
 		{.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 2}
 		};

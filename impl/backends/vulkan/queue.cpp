@@ -16,7 +16,7 @@ bool operator==(const Queue::Request& lhs, const Queue::Request& rhs) {
 	return lhs.type == rhs.type && lhs.count == rhs.count;
 }
 
-std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<std::reference_wrapper<const Queue::Request>>& requests, std::vector<VkQueueFamilyProperties> families) {
+std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue::Request>& requests, std::vector<VkQueueFamilyProperties> families) {
 	static auto logger = spdlog::get("fgla::backends::vulkan");
 
 	struct FamilyInfo {
@@ -47,7 +47,7 @@ std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> Qu
 		std::vector<FamilyInfo *> supported_families;
 		for (auto& family : family_infos) {
 			bool supported;
-			switch (request.get().type) {
+			switch (request.type) {
 				case Queue::Type::Graphics:
 					supported = family.flags & VK_QUEUE_GRAPHICS_BIT;
 				break;
@@ -61,10 +61,10 @@ std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> Qu
 			}
 			if (supported) supported_families.push_back(&family);
 		}
-		if (counts_and_available_families.find(request.get().type) != counts_and_available_families.end()) {
-			counts_and_available_families[request.get().type].first += request.get().count;
+		if (counts_and_available_families.find(request.type) != counts_and_available_families.end()) {
+			counts_and_available_families[request.type].first += request.count;
 		} else {
-			counts_and_available_families.insert({request.get().type, {request.get().count, supported_families}});
+			counts_and_available_families.insert({request.type, {request.count, supported_families}});
 		}
 	}
 
@@ -135,13 +135,32 @@ std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> Qu
 	return std::make_pair(queue_create_infos, final_mapping);
 }
 
-QueueAllocator::QueueAllocator(const std::initializer_list<std::reference_wrapper<const Queue::Request>>& requests, VkPhysicalDevice physical_device) {
+QueueAllocator::QueueAllocator(const std::initializer_list<Queue::Request>& requests, VkPhysicalDevice physical_device) {
 	uint32_t n_queue_families = 0;
 	vkGetPhysicalDeviceQueueFamilyProperties(physical_device, &n_queue_families, nullptr);
 
 	std::vector<VkQueueFamilyProperties> queue_families(n_queue_families);
 	vkGetPhysicalDeviceQueueFamilyProperties(physical_device, &n_queue_families, queue_families.data());
 
-	// TODO: call the big brain allocator algorithm
+	auto result = big_brain_allocator_algorithm(requests, queue_families);
+
+	this->create_infos = result.first;
+	this->queue_mapping = result.second;
+}
+
+QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
+	Queues queues;
+
+	for (auto [queue_handle, queue] : this->queue_mapping) {
+		VkQueue vk_queue;
+		vkGetDeviceQueue(device, queue.first, queue.second, &vk_queue);
+
+		std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue);
+		Queue fg_queue = Queue::from_raw(std::move(queue_impl));
+
+		queues.insert({queue_handle, std::move(fg_queue)});
+	}
+
+	return queues;
 }
 }

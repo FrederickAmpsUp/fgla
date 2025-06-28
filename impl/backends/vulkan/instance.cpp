@@ -30,9 +30,9 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor& descriptor) {
 	instance_info.enabledLayerCount = 0;
 	instance_info.enabledExtensionCount = 0; // TODO: window system extensions when we get there
 	
-	VkResult res = vkCreateInstance(&instance_info, nullptr, &this->instance);
-	if (res != VK_SUCCESS) {
-		logger->error("Vulkan instance creation failed, error code {:X}", (unsigned int)res);
+	VkResult result = vkCreateInstance(&instance_info, nullptr, &this->instance);
+	if (result != VK_SUCCESS) {
+		logger->error("Vulkan instance creation failed, error code {:X}", (unsigned int)result);
 		this->instance = VK_NULL_HANDLE;
 		return;
 	}

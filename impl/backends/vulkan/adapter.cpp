@@ -1,4 +1,6 @@
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/device.hpp>
+#include <fgla/backends/vulkan/queue.hpp>
 #include <spdlog/spdlog.h>
 #include <vulkan/vulkan_core.h>
 
@@ -124,7 +126,13 @@ bool AdapterImpl::is_ok() const {
 	return this->physical_device != VK_NULL_HANDLE;
 }
 
-tl::expected<Device, Error> AdapterImpl::create_device(const Device::Descriptor& descriptor, std::initializer_list<std::reference_wrapper<const Queue::Request>> queue_requests) {} // TODO
+tl::expected<Device, Error> AdapterImpl::create_device(const Device::Descriptor& descriptor, std::initializer_list<Queue::Request> queue_requests) {
+	QueueAllocator queue_allocator = QueueAllocator(queue_requests, this->physical_device);
+
+	std::unique_ptr<DeviceImpl> impl = std::make_unique<DeviceImpl>(*this, descriptor, queue_allocator);
+	if (!impl->is_ok()) return tl::make_unexpected(Error(ErrorCode::CREATE_DEVICE_FAILED));
+	return std::move(Device::from_raw(std::move(impl)));
+}
 
 Adapter::Info AdapterImpl::get_info() const {
 	if (!this->is_ok()) {

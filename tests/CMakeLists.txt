@@ -5,6 +5,7 @@ set(TEST_DIRS
     instance
     adapter
     vulkan_queue_allocator
+    device_queues
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

@@ -1,26 +1,31 @@
 #pragma once
 
 #include <fgla/queue.hpp>
+#include <istream>
 #include <vulkan/vulkan.h>
 #include <fgla/util.hpp>
 #include <unordered_map>
+#include <span>
 
 namespace fgla::backends::vulkan {
 
 struct QueueAllocator {
 	using QueueMapping = std::unordered_map<std::pair<Queue::Type, uint32_t>, std::pair<uint32_t, uint32_t>, util::PairHash>;
+	using Queues = std::unordered_map<std::pair<Queue::Type, uint32_t>, Queue, util::PairHash>;
 
-	static std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> big_brain_allocator_algorithm(const std::initializer_list<std::reference_wrapper<const Queue::Request>>& requests, std::vector<VkQueueFamilyProperties> families);
+	static std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping> big_brain_allocator_algorithm(const std::initializer_list<Queue::Request>& requests, std::vector<VkQueueFamilyProperties> families);
 
-	QueueAllocator(const std::initializer_list<std::reference_wrapper<const Queue::Request>>& requests, VkPhysicalDevice physical_device);
+	QueueAllocator(const std::initializer_list<Queue::Request>& requests, VkPhysicalDevice physical_device);
 	
-	std::unordered_map<std::pair<Queue::Type, uint32_t>, Queue, util::PairHash> get_queues(VkDevice device);
+	Queues get_queues(VkDevice device);
+	inline std::span<VkDeviceQueueCreateInfo> get_queue_create_infos() { return this->create_infos; }
 private:
 	QueueMapping queue_mapping; 
+	std::vector<VkDeviceQueueCreateInfo> create_infos;
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-	
+	QueueImpl(VkQueue queue) : queue(queue) {}
 private:
 	VkQueue queue;
 };

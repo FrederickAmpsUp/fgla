@@ -19,6 +19,12 @@ public:
 	struct Impl {
 		virtual ~Impl() = 0;
 	};
+
+	static inline Queue from_raw(std::unique_ptr<Impl> impl) {
+		Queue queue;
+		queue.impl = std::move(impl);
+		return queue;
+	}
 private:
 	std::unique_ptr<Impl> impl;
 };
