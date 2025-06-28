@@ -1,11 +1,11 @@
 #pragma once
 
-#include <memory>
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
 #include <fgla/util.hpp>
-#include <tl/expected.hpp>
+#include <memory>
 #include <optional>
+#include <tl/expected.hpp>
 
 namespace fgla {
 
@@ -15,34 +15,36 @@ struct Backend;
 
 class Instance {
 public:
-	struct Descriptor {
-		const backend::Backend *preferred_backend; // nullable, maybe should change to an optional<UUID>
-		VersionTriple app_version = { 1, 0, 0 };
-		std::string app_name = "";
-	};
+  struct Descriptor {
+    const backend::Backend *preferred_backend; // nullable, maybe should change to an optional<UUID>
+    VersionTriple app_version = {1, 0, 0};
+    std::string app_name = "";
+  };
 
-	static tl::expected<Instance, Error> create(const Descriptor& descriptor);
+  static tl::expected<Instance, Error> create(const Descriptor &descriptor);
 
-	inline tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor& descriptor) { return this->impl->get_adapter(descriptor); }
-	inline const backend::Backend& get_backend() { return this->impl->get_backend(); }
+  inline tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &descriptor) {
+    return this->impl->get_adapter(descriptor);
+  }
+  inline const backend::Backend &get_backend() { return this->impl->get_backend(); }
 
-	struct Impl {
-		virtual tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor&) = 0;
-		virtual const backend::Backend& get_backend() = 0;
+  struct Impl {
+    virtual tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &) = 0;
+    virtual const backend::Backend &get_backend() = 0;
 
-		virtual ~Impl() = 0;
-	};
+    virtual ~Impl() = 0;
+  };
 
-	static inline Instance from_raw(std::unique_ptr<Instance::Impl> impl) {
-		Instance inst;
-		inst.impl = std::move(impl);
-		return inst;
-	}
+  static inline Instance from_raw(std::unique_ptr<Instance::Impl> impl) {
+    Instance inst;
+    inst.impl = std::move(impl);
+    return inst;
+  }
 
 private:
-	std::unique_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 inline Instance::Impl::~Impl() = default;
 
-}
+} // namespace fgla

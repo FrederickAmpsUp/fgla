@@ -1,34 +1,32 @@
 #pragma once
 
-#include <memory>
 #include <cstdint>
+#include <memory>
 
 namespace fgla {
 
 class Queue {
 public:
-	enum class Type {
-		Graphics, Transfer
-	};
+  enum class Type { Graphics, Transfer };
 
-	struct Request {
-		Type type;
-		uint32_t count;
-	};
+  struct Request {
+    Type type;
+    uint32_t count;
+  };
 
-	struct Impl {
-		virtual ~Impl() = 0;
-	};
+  struct Impl {
+    virtual ~Impl() = 0;
+  };
 
-	static inline Queue from_raw(std::unique_ptr<Impl> impl) {
-		Queue queue;
-		queue.impl = std::move(impl);
-		return queue;
-	}
+  static inline Queue from_raw(std::unique_ptr<Impl> impl) {
+    Queue queue;
+    queue.impl = std::move(impl);
+    return queue;
+  }
+
 private:
-	std::unique_ptr<Impl> impl;
+  std::unique_ptr<Impl> impl;
 };
 
 inline Queue::Impl::~Impl() = default;
-}
-
+} // namespace fgla
