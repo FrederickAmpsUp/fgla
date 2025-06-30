@@ -5,9 +5,15 @@
 namespace fgla {
 
 tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descriptor) {
-  const backend::Backend *backend = descriptor.preferred_backend;
+  const backend::Backend *backend = nullptr;
 
   const auto &registry = backend::get_registry();
+
+  auto pref_it = registry.find(descriptor.preferred_backend.value_or(backend::BackendUUID()));
+
+  if (pref_it != registry.end()) {
+    backend = &pref_it->second;
+  }
 
   auto it = registry.begin();
 

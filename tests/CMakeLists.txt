@@ -6,6 +6,7 @@ set(TEST_DIRS
     adapter
     vulkan_queue_allocator
     device_queues
+    ext_window
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

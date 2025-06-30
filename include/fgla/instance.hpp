@@ -1,7 +1,9 @@
 #pragma once
 
+#include <any>
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
+#include <fgla/extension.hpp>
 #include <fgla/util.hpp>
 #include <memory>
 #include <optional>
@@ -11,12 +13,14 @@ namespace fgla {
 
 namespace backend {
 struct Backend;
-}
+using BackendUUID = util::UUID<16>;
+} // namespace backend
 
 class Instance {
 public:
   struct Descriptor {
-    const backend::Backend *preferred_backend; // nullable, maybe should change to an optional<UUID>
+    std::optional<backend::BackendUUID> preferred_backend;
+    std::vector<extension::ExtensionUUID> required_extensions;
     VersionTriple app_version = {1, 0, 0};
     std::string app_name = "";
   };
@@ -28,9 +32,20 @@ public:
   }
   inline const backend::Backend &get_backend() { return this->impl->get_backend(); }
 
+  template <typename T> util::OptRef<T> get_extension() {
+    extension::ExtensionUUID uuid = T::UUID;
+    void *ext = this->impl->get_extension(uuid);
+    if (ext) {
+      return *static_cast<T *>(ext);
+    } else {
+      return {};
+    }
+  }
+
   struct Impl {
     virtual tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &) = 0;
     virtual const backend::Backend &get_backend() = 0;
+    virtual void *get_extension(extension::ExtensionUUID) = 0;
 
     virtual ~Impl() = 0;
   };

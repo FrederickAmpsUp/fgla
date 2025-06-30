@@ -19,7 +19,7 @@ void print_backend(const fgla::backend::Backend &backend) {
 int main(int argc, char **argv) {
   std::cout << " -- Test Adapter Acquisition -- \n" << std::endl;
 
-  auto instance_res = fgla::Instance::create({nullptr});
+  auto instance_res = fgla::Instance::create({{}});
 
   if (!instance_res) {
     std::cout << "Failed to create instance!" << std::endl;

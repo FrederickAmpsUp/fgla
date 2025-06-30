@@ -133,7 +133,7 @@ void test_big_brain_allocator() {
 }
 
 int main() {
-  auto instance = fgla::Instance::create({nullptr});
+  auto instance = fgla::Instance::create({{}});
 
   test_big_brain_allocator();
   return 0;

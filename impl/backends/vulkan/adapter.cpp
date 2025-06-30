@@ -2,7 +2,6 @@
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <spdlog/spdlog.h>
-#include <vulkan/vulkan_core.h>
 
 namespace fgla::backends::vulkan {
 

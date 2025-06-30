@@ -7,47 +7,7 @@
 
 namespace fgla::backend {
 
-struct BackendUUID {
-  uint8_t bytes[16];
-
-  constexpr bool operator==(const BackendUUID &other) const {
-    for (int i = 0; i < 16; ++i)
-      if (bytes[i] != other.bytes[i]) return false;
-    return true;
-  }
-
-  constexpr bool operator!=(const BackendUUID &other) const { return !(*this == other); }
-
-  struct Hash {
-    std::size_t operator()(const BackendUUID &id) const {
-      std::size_t h = 0;
-      for (int i = 0; i < 16; ++i)
-        h ^= std::size_t(id.bytes[i]) << ((i % sizeof(std::size_t)) * 8);
-      return h;
-    }
-  };
-};
-
-constexpr BackendUUID parse_backend_uuid(const char *str) {
-  BackendUUID uuid = {};
-  int byte_index = 0;
-
-  for (int i = 0; str[i] && byte_index < 16;) {
-    if (str[i] == '-') {
-      ++i;
-      continue;
-    }
-
-    uint8_t hi = util::parse_hex(str[i]);
-    uint8_t lo = util::parse_hex(str[i + 1]);
-    uuid.bytes[byte_index++] = (hi << 4) | lo;
-    i += 2;
-  }
-
-  if (byte_index != 16) throw "UUID must be exactly 16 bytes";
-
-  return uuid;
-}
+using BackendUUID = util::UUID<16>;
 
 struct Backend {
   BackendUUID uuid;

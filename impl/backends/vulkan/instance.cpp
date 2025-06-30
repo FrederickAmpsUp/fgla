@@ -1,6 +1,6 @@
-#include "tl/expected.hpp"
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/backend.hpp>
+#include <fgla/backends/vulkan/ext/window.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
@@ -51,6 +51,17 @@ tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor
 
 const backend::Backend &InstanceImpl::get_backend() {
   return fgla::backend::get_registry().at(UUID);
+}
+
+void *InstanceImpl::get_extension(extension::ExtensionUUID uuid) {
+#ifdef FGLA_VK_EXT_WINDOWING
+  if (uuid == fgla::ext::windowing::WindowExtension::UUID) {
+    fgla::ext::windowing::WindowExtension &ext = ext::windowing::window_extension_impl;
+    return static_cast<void *>(&ext);
+  }
+#endif
+
+  return nullptr;
 }
 
 InstanceImpl::~InstanceImpl() { vkDestroyInstance(this->instance, nullptr); }

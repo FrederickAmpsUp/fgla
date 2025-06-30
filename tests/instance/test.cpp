@@ -19,7 +19,7 @@ void print_backend(const fgla::backend::Backend &backend) {
 int main(int argc, char **argv) {
   std::cout << " -- Test Instance Creation -- \n" << std::endl;
 
-  auto instance = fgla::Instance::create({nullptr});
+  auto instance = fgla::Instance::create({{}});
 
   if (instance.has_value()) {
     std::cout << "Success, with backend ";
