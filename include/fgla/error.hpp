@@ -32,8 +32,8 @@ struct Error {
 };
 
 template <typename T>
-T unwrap_or_display_and_exit(tl::expected<T, Error> res,
-                             const char *message = "Fatal Error:", int exit_code = -1) {
+T unwrap_with_message(tl::expected<T, Error> res,
+                      const char *message = "Fatal Error:", int exit_code = -1) {
   if (!res) {
     std::cerr << message << ": \"" << res.error().message.value_or("Unknown error") << "\""
               << std::endl;
@@ -44,8 +44,8 @@ T unwrap_or_display_and_exit(tl::expected<T, Error> res,
 }
 
 template <typename T>
-T unwrap_or_display_and_exit(std::optional<T> opt, const char *message = "Fatal Error",
-                             int exit_code = -1) {
+T unwrap_with_message(std::optional<T> opt, const char *message = "Fatal Error",
+                      int exit_code = -1) {
   if (!opt) {
     std::cerr << message << std::endl;
     std::exit(exit_code);
@@ -55,8 +55,8 @@ T unwrap_or_display_and_exit(std::optional<T> opt, const char *message = "Fatal 
 }
 
 template <typename T>
-T &unwrap_or_display_and_exit(util::OptRef<T> opt, const char *message = "Fatal Error",
-                              int exit_code = -1) {
+T &unwrap_with_message(util::OptRef<T> opt, const char *message = "Fatal Error",
+                       int exit_code = -1) {
   if (!opt) {
     std::cerr << message << std::endl;
     std::exit(exit_code);
