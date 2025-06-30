@@ -1,7 +1,7 @@
 message(STATUS "Vulkan backend enabled.")
 
 find_package(Vulkan REQUIRED)
-find_package(glfw3 QUIET)
+find_package(glfw3 3.3 QUIET)
 
 if (NOT glfw3_FOUND)
   message(WARNING "GLFW3 not found, fgla::ext::windowing will not be supported!")

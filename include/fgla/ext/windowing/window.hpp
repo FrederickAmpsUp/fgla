@@ -12,7 +12,13 @@ public:
     const char *name;
   };
 
+  inline void poll_events() { return this->impl->poll_events(); }
+  inline bool is_open() { return this->impl->is_open(); }
+
   struct Impl {
+    virtual void poll_events() = 0;
+    virtual bool is_open() = 0;
+
     virtual ~Impl() = 0;
   };
 
