@@ -7,7 +7,7 @@ tl::expected<fgla::ext::windowing::Window, Error>
 WindowExtensionImpl::create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) {
   std::unique_ptr<WindowImpl> impl = std::make_unique<WindowImpl>(descriptor);
   if (!impl->is_ok()) {
-    return tl::make_unexpected(Error(ErrorCode::UNKNOWN));
+    return tl::make_unexpected(Error(0));
   }
   return fgla::ext::windowing::Window::from_raw(std::move(impl));
 }

@@ -2,6 +2,8 @@
 #include <fgla/instance.hpp>
 #include <fmt/format.h>
 
+// TODO: proper error codes
+
 namespace fgla {
 
 tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descriptor) {
@@ -30,8 +32,7 @@ tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descr
         Instance *raw_instance = backend->create_instance(&descriptor);
 
         if (!raw_instance) // TODO: change this to try other backends
-          return tl::make_unexpected(Error(
-              ErrorCode::CREATE_INSTANCE_FAILED,
+          return tl::make_unexpected(Error(0,
               fmt::format("Failed to create an fgla::Instance after selecting backend \"{}\".",
                           backend_ref.name)));
 
@@ -46,7 +47,7 @@ tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descr
   } while (it != registry.end());
 
   return tl::make_unexpected(
-      Error(ErrorCode::NO_BACKENDS,
+      Error(0,
             "Failed to create an fgla::Instance as there are no available backends."));
 }
 

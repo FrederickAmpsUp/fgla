@@ -137,7 +137,7 @@ AdapterImpl::create_device(const Device::Descriptor &descriptor,
 
   std::unique_ptr<DeviceImpl> impl =
       std::make_unique<DeviceImpl>(*this, descriptor, queue_allocator);
-  if (!impl->is_ok()) return tl::make_unexpected(Error(ErrorCode::CREATE_DEVICE_FAILED));
+  if (!impl->is_ok()) return tl::make_unexpected(Error(0));
   return std::move(Device::from_raw(std::move(impl)));
 }
 

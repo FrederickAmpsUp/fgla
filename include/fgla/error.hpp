@@ -11,6 +11,11 @@ namespace fgla {
 
 /// Represents a failure state from a function call
 struct Error {
+  Error(uint64_t code, std::string message="") {
+    this->code = code;
+    if (message.size() > 0) this->message = message;
+  }
+
   /// A number representing the failure state
   uint64_t code;
   /// Optionally, a message describing the failure

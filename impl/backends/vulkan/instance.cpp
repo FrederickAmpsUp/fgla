@@ -45,7 +45,7 @@ bool InstanceImpl::is_ok() const { return this->instance != VK_NULL_HANDLE; }
 tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor &descriptor) {
   std::unique_ptr<AdapterImpl> impl =
       std::make_unique<AdapterImpl>(*this, descriptor); // may have to change this
-  if (!impl->is_ok()) return tl::make_unexpected(Error(ErrorCode::GET_ADAPTER_FAILED));
+  if (!impl->is_ok()) return tl::make_unexpected(Error(0));
   return std::move(Adapter::from_raw(std::move(impl)));
 }
 

@@ -59,9 +59,9 @@ int main(int argc, char **argv) {
 
   fgla::Device device = std::move(*device_res);
 
-  fgla::Queue *g1 = device.get_queue(fgla::Queue::Type::Graphics, 0);
-  fgla::Queue *g2 = device.get_queue(fgla::Queue::Type::Graphics, 1);
-  fgla::Queue *t1 = device.get_queue(fgla::Queue::Type::Transfer, 0);
+  fgla::Queue &g1 = *device.get_queue(fgla::Queue::Type::Graphics, 0);
+  fgla::Queue &g2 = *device.get_queue(fgla::Queue::Type::Graphics, 1);
+  fgla::Queue &t1 = *device.get_queue(fgla::Queue::Type::Transfer, 0);
 
   return 0;
 }
