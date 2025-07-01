@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['_7eimpl_0',['~Impl',['../structfgla_1_1Adapter_1_1Impl.html#a639344abe472dac7a8f270cb069f24e5',1,'fgla::Adapter::Impl::~Impl()'],['../structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d',1,'fgla::Device::Impl::~Impl()'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Impl.html#a377770d1f21196698c2f49cbbabd0183',1,'fgla::ext::windowing::Window::Impl::~Impl()'],['../structfgla_1_1Instance_1_1Impl.html#a2b44f506d8142e5da210bc88da515a87',1,'fgla::Instance::Impl::~Impl()'],['../structfgla_1_1Queue_1_1Impl.html#a2cd80e5d720ea861ddb2525a9fae30f3',1,'fgla::Queue::Impl::~Impl()']]],
+  ['_7ewindowextension_1',['~WindowExtension',['../classfgla_1_1ext_1_1windowing_1_1WindowExtension.html#add6498c86985e8b2c1ea18749e45120b',1,'fgla::ext::windowing::WindowExtension']]]
+];

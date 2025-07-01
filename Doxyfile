@@ -1,0 +1,36 @@
+# Doxyfile basics
+PROJECT_NAME           = fgla
+OUTPUT_DIRECTORY       = docs
+INPUT                  = include/fgla
+EXCLUDE                = include/fgla/backends
+RECURSIVE              = YES
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+
+HTML_OUTPUT            = .
+HTML_DYNAMIC_SECTIONS  = YES
+
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_EXTRA_STYLESHEET  = extern/doxygen-awesome-css/doxygen-awesome.css
+HTML_COLORSTYLE        = DARK
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+VERBATIM_HEADERS       = YES
+
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_OUTPUT_JAVADOC= NO
+
