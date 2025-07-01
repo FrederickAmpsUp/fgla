@@ -1,0 +1,26 @@
+name: Generate Doxygen docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Generate Doxygen documenation
+      uses: mattnotmitt/doxygen-action@v1
+      with:
+        doxyfile-path: ./Doxyfile
+
+    - name: Deploy to GitHub pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/
