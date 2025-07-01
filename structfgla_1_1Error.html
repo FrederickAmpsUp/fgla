@@ -98,6 +98,7 @@ $(function(){initNavTree('structfgla_1_1Error.html',''); initResizable(true); })
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structfgla_1_1Error-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Error Struct Reference</div></div>
@@ -109,6 +110,11 @@ $(function(){initNavTree('structfgla_1_1Error.html',''); initResizable(true); })
 
 <p><code>#include &lt;<a class="el" href="error_8hpp_source.html">error.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3824fef47c9768c96587c135a2b772da" id="r_a3824fef47c9768c96587c135a2b772da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3824fef47c9768c96587c135a2b772da">Error</a> (uint64_t <a class="el" href="#a9a3b973cd0add3f2bf8b3b699c346b1e">code</a>, std::string <a class="el" href="#af4abaf34620d3a76776921aeb614486a">message</a>=&quot;&quot;)</td></tr>
+<tr class="separator:a3824fef47c9768c96587c135a2b772da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a9a3b973cd0add3f2bf8b3b699c346b1e" id="r_a9a3b973cd0add3f2bf8b3b699c346b1e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a3b973cd0add3f2bf8b3b699c346b1e">code</a></td></tr>
@@ -122,7 +128,45 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Represents a failure state from a function call. </p>
 
 <p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00013">13</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3824fef47c9768c96587c135a2b772da" name="a3824fef47c9768c96587c135a2b772da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3824fef47c9768c96587c135a2b772da">&#9670;&#160;</a></span>Error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fgla::Error::Error </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>message</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00014">14</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                                             {</div>
+<div class="line"><span class="lineno">   15</span>    this-&gt;<a class="code hl_variable" href="#a9a3b973cd0add3f2bf8b3b699c346b1e">code</a> = <a class="code hl_variable" href="#a9a3b973cd0add3f2bf8b3b699c346b1e">code</a>;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#af4abaf34620d3a76776921aeb614486a">message</a>.size() &gt; 0) this-&gt;<a class="code hl_variable" href="#af4abaf34620d3a76776921aeb614486a">message</a> = <a class="code hl_variable" href="#af4abaf34620d3a76776921aeb614486a">message</a>;</div>
+<div class="line"><span class="lineno">   17</span>  }</div>
+<div class="ttc" id="astructfgla_1_1Error_html_a9a3b973cd0add3f2bf8b3b699c346b1e"><div class="ttname"><a href="#a9a3b973cd0add3f2bf8b3b699c346b1e">fgla::Error::code</a></div><div class="ttdeci">uint64_t code</div><div class="ttdoc">A number representing the failure state.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00020">error.hpp:20</a></div></div>
+<div class="ttc" id="astructfgla_1_1Error_html_af4abaf34620d3a76776921aeb614486a"><div class="ttname"><a href="#af4abaf34620d3a76776921aeb614486a">fgla::Error::message</a></div><div class="ttdeci">std::optional&lt; std::string &gt; message</div><div class="ttdoc">Optionally, a message describing the failure.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00022">error.hpp:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a9a3b973cd0add3f2bf8b3b699c346b1e" name="a9a3b973cd0add3f2bf8b3b699c346b1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a3b973cd0add3f2bf8b3b699c346b1e">&#9670;&#160;</a></span>code</h2>
 
@@ -137,7 +181,7 @@ Public Attributes</h2></td></tr>
 
 <p>A number representing the failure state. </p>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00015">15</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00020">20</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
 
 </div>
 </div>
@@ -155,8 +199,8 @@ Public Attributes</h2></td></tr>
 
 <p>Optionally, a message describing the failure. </p>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00017">17</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00022">22</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>

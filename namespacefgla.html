@@ -191,15 +191,15 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00047">47</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>                                          {</div>
-<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">   50</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   51</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   52</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
-<div class="line"><span class="lineno">   54</span>  }</div>
-<div class="line"><span class="lineno">   55</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00052">52</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                          {</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">   55</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   56</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">   57</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,16 +244,16 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00028">28</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                        :<span class="stringliteral">&quot;, int exit_code = -1) {</span></div>
-<div class="line"><span class="lineno">   30</span><span class="stringliteral">  if (!res) {</span></div>
-<div class="line"><span class="lineno">   31</span><span class="stringliteral">    std::cerr &lt;&lt; message &lt;&lt; &quot;</span>: \<span class="stringliteral">&quot;&quot;</span> &lt;&lt; res.error().message.value_or(<span class="stringliteral">&quot;Unknown error&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   32</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   33</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   34</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">   36</span>  }</div>
-<div class="line"><span class="lineno">   37</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00033">33</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                        :<span class="stringliteral">&quot;, int exit_code = -1) {</span></div>
+<div class="line"><span class="lineno">   35</span><span class="stringliteral">  if (!res) {</span></div>
+<div class="line"><span class="lineno">   36</span><span class="stringliteral">    std::cerr &lt;&lt; message &lt;&lt; &quot;</span>: \<span class="stringliteral">&quot;&quot;</span> &lt;&lt; res.error().message.value_or(<span class="stringliteral">&quot;Unknown error&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   37</span>              &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   38</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">   39</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+<div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -298,15 +298,15 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00065">65</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                           {</div>
-<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">   68</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   69</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   70</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> *opt;</div>
-<div class="line"><span class="lineno">   72</span>  }</div>
-<div class="line"><span class="lineno">   73</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00070">70</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                                           {</div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">   73</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   74</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">   75</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> *opt;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
