@@ -37,7 +37,7 @@ public:
   static tl::expected<Instance, Error> create(const Descriptor &descriptor);
 
   /// Acquires an `Adapter`
-  /// @param The `Adapter::Descriptor` with the `Adapter`'s properties
+  /// @param descriptor The `Adapter::Descriptor` with the `Adapter`'s properties
   /// @returns The `Adapter`, or an `Error` with failure information
   inline tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &descriptor) {
     return this->impl->get_adapter(descriptor);
