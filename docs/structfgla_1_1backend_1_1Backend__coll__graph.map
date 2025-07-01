@@ -1,5 +1,0 @@
-<map id="fgla::backend::Backend" name="fgla::backend::Backend">
-<area shape="rect" id="node1" title="Represents a backend, implementing fgla&#39;s constructs and translating them to hardware." alt="" coords="81,95,253,121"/>
-<area shape="rect" id="node2" href="$structfgla_1_1util_1_1UUID.html" title=" " alt="" coords="5,5,169,32"/>
-<area shape="rect" id="node3" href="$classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter" alt="" coords="193,5,304,32"/>
-</map>
