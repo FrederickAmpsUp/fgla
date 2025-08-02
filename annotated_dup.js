@@ -7,9 +7,13 @@ var annotated_dup =
       ] ],
       [ "ext", "namespacefgla_1_1ext.html", [
         [ "windowing", "namespacefgla_1_1ext_1_1windowing.html", [
+          [ "Surface", "classfgla_1_1ext_1_1windowing_1_1Surface.html", "classfgla_1_1ext_1_1windowing_1_1Surface" ],
           [ "Window", "classfgla_1_1ext_1_1windowing_1_1Window.html", "classfgla_1_1ext_1_1windowing_1_1Window" ],
           [ "WindowExtension", "classfgla_1_1ext_1_1windowing_1_1WindowExtension.html", "classfgla_1_1ext_1_1windowing_1_1WindowExtension" ]
         ] ]
+      ] ],
+      [ "internal", "namespacefgla_1_1internal.html", [
+        [ "ImplAccessor", "structfgla_1_1internal_1_1ImplAccessor.html", "structfgla_1_1internal_1_1ImplAccessor" ]
       ] ],
       [ "util", "namespacefgla_1_1util.html", [
         [ "OptRef", "classfgla_1_1util_1_1OptRef.html", "classfgla_1_1util_1_1OptRef" ],

@@ -115,13 +115,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3e8aec3e1bd9ef26623830177c3e15db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0a1819cafa12921bffe7cbffd3d1daa" id="r_ab0a1819cafa12921bffe7cbffd3d1daa"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0a1819cafa12921bffe7cbffd3d1daa">is_open</a> ()=0</td></tr>
 <tr class="separator:ab0a1819cafa12921bffe7cbffd3d1daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ce32286fec783aff075eddd589d357" id="r_ad6ce32286fec783aff075eddd589d357"><td class="memItemLeft" align="right" valign="top">virtual tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6ce32286fec783aff075eddd589d357">create_surface</a> (const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;)=0</td></tr>
+<tr class="separator:ad6ce32286fec783aff075eddd589d357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a377770d1f21196698c2f49cbbabd0183" id="r_a377770d1f21196698c2f49cbbabd0183"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a377770d1f21196698c2f49cbbabd0183">~Impl</a> ()=0</td></tr>
 <tr class="separator:a377770d1f21196698c2f49cbbabd0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Window.html" title="Represents a window, which may be used to draw to and interface with input devices.">Window</a></code>'s functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00029">29</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00032">32</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a377770d1f21196698c2f49cbbabd0183" name="a377770d1f21196698c2f49cbbabd0183"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a377770d1f21196698c2f49cbbabd0183">&#9670;&#160;</a></span>~Impl()</h2>
@@ -149,6 +151,31 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad6ce32286fec783aff075eddd589d357" name="ad6ce32286fec783aff075eddd589d357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ce32286fec783aff075eddd589d357">&#9670;&#160;</a></span>create_surface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; fgla::ext::windowing::Window::Impl::create_surface </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab0a1819cafa12921bffe7cbffd3d1daa" name="ab0a1819cafa12921bffe7cbffd3d1daa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab0a1819cafa12921bffe7cbffd3d1daa">&#9670;&#160;</a></span>is_open()</h2>
 

@@ -128,6 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa28b3728d90edc986ce59b4ed135ebbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10184ea6722b8be261760f5d8dc165a0" id="r_a10184ea6722b8be261760f5d8dc165a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10184ea6722b8be261760f5d8dc165a0">is_open</a> ()</td></tr>
 <tr class="separator:a10184ea6722b8be261760f5d8dc165a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5264138cd329263db77ed72c161d0ec2" id="r_a5264138cd329263db77ed72c161d0ec2"><td class="memItemLeft" align="right" valign="top">tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5264138cd329263db77ed72c161d0ec2">create_surface</a> (const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;instance)</td></tr>
+<tr class="separator:a5264138cd329263db77ed72c161d0ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -142,8 +144,37 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a window, which may be used to draw to and interface with input devices. </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00009">9</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00010">10</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5264138cd329263db77ed72c161d0ec2" name="a5264138cd329263db77ed72c161d0ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5264138cd329263db77ed72c161d0ec2">&#9670;&#160;</a></span>create_surface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; fgla::ext::windowing::Window::create_surface </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>instance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00029">29</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;create_surface(instance); }</div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Window_html_ad664f8fa5f2d0139b7437351003d5388"><div class="ttname"><a href="#ad664f8fa5f2d0139b7437351003d5388">fgla::ext::windowing::Window::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="window_8hpp_source.html#l00050">window.hpp:50</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab38fd12b49d3da4c9fb8ee73e0ea07f5" name="ab38fd12b49d3da4c9fb8ee73e0ea07f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab38fd12b49d3da4c9fb8ee73e0ea07f5">&#9670;&#160;</a></span>from_raw()</h2>
 
@@ -168,13 +199,12 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Window.html" title="Represents a window, which may be used to draw to and interface with input devices.">Window</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00038">38</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                          {</div>
-<div class="line"><span class="lineno">   39</span>    Window window;</div>
-<div class="line"><span class="lineno">   40</span>    window.impl = std::move(<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>);</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> window;</div>
-<div class="line"><span class="lineno">   42</span>  }</div>
-<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Window_html_ad664f8fa5f2d0139b7437351003d5388"><div class="ttname"><a href="#ad664f8fa5f2d0139b7437351003d5388">fgla::ext::windowing::Window::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="window_8hpp_source.html#l00045">window.hpp:45</a></div></div>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00043">43</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                          {</div>
+<div class="line"><span class="lineno">   44</span>    Window window;</div>
+<div class="line"><span class="lineno">   45</span>    window.impl = std::move(<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>);</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> window;</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,8 +232,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Checks if the window has not been closed by the user </p><dl class="section return"><dt>Returns</dt><dd><code>false</code> if the user has closed the window, <code>true</code> otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00026">26</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;is_open(); }</div>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00027">27</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;is_open(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,8 +262,8 @@ Private Attributes</h2></td></tr>
 
 <p>Internally runs the window's event loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00022">22</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;poll_events(); }</div>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00023">23</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;poll_events(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,7 +288,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00045">45</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00050">50</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 
 </div>
 </div>

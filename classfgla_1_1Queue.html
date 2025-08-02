@@ -102,6 +102,7 @@ $(function(){initNavTree('classfgla_1_1Queue.html',''); initResizable(true); });
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1Queue-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Queue Class Reference</div></div>
 </div><!--header-->
@@ -138,11 +139,16 @@ Static Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a30e3bec0a2e84777621d36d7b293a6c1" id="r_a30e3bec0a2e84777621d36d7b293a6c1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structfgla_1_1Queue_1_1Impl.html">Impl</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30e3bec0a2e84777621d36d7b293a6c1">impl</a></td></tr>
 <tr class="separator:a30e3bec0a2e84777621d36d7b293a6c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac06cf072aa647185632537a764206ad1" id="r_ac06cf072aa647185632537a764206ad1"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06cf072aa647185632537a764206ad1">fgla::internal::ImplAccessor</a></td></tr>
+<tr class="separator:ac06cf072aa647185632537a764206ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a logical queue, which is used to submit GPU commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00009">9</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00010">10</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7c5be631d28826cd1465410481d3060d" name="a7c5be631d28826cd1465410481d3060d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c5be631d28826cd1465410481d3060d">&#9670;&#160;</a></span>Type</h2>
@@ -170,8 +176,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e" name="a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e"></a>Transfer&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00012">12</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{ <a class="code hl_enumvalue" href="#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494">Graphics</a>, <a class="code hl_enumvalue" href="#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e">Transfer</a> };</div>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00013">13</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>{ <a class="code hl_enumvalue" href="#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494">Graphics</a>, <a class="code hl_enumvalue" href="#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e">Transfer</a> };</div>
 <div class="ttc" id="aclassfgla_1_1Queue_html_a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e"><div class="ttname"><a href="#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e">fgla::Queue::Type::Transfer</a></div><div class="ttdeci">@ Transfer</div></div>
 <div class="ttc" id="aclassfgla_1_1Queue_html_a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494"><div class="ttname"><a href="#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494">fgla::Queue::Type::Graphics</a></div><div class="ttdeci">@ Graphics</div></div>
 </div><!-- fragment -->
@@ -202,14 +208,39 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code> from a raw implemntation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00029">29</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                         {</div>
-<div class="line"><span class="lineno">   30</span>    Queue queue;</div>
-<div class="line"><span class="lineno">   31</span>    queue.impl = std::move(<a class="code hl_variable" href="#a30e3bec0a2e84777621d36d7b293a6c1">impl</a>);</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> queue;</div>
-<div class="line"><span class="lineno">   33</span>  }</div>
-<div class="ttc" id="aclassfgla_1_1Queue_html_a30e3bec0a2e84777621d36d7b293a6c1"><div class="ttname"><a href="#a30e3bec0a2e84777621d36d7b293a6c1">fgla::Queue::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="queue_8hpp_source.html#l00036">queue.hpp:36</a></div></div>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00030">30</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                         {</div>
+<div class="line"><span class="lineno">   31</span>    Queue queue;</div>
+<div class="line"><span class="lineno">   32</span>    queue.impl = std::move(<a class="code hl_variable" href="#a30e3bec0a2e84777621d36d7b293a6c1">impl</a>);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> queue;</div>
+<div class="line"><span class="lineno">   34</span>  }</div>
+<div class="ttc" id="aclassfgla_1_1Queue_html_a30e3bec0a2e84777621d36d7b293a6c1"><div class="ttname"><a href="#a30e3bec0a2e84777621d36d7b293a6c1">fgla::Queue::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="queue_8hpp_source.html#l00038">queue.hpp:38</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac06cf072aa647185632537a764206ad1" name="ac06cf072aa647185632537a764206ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06cf072aa647185632537a764206ad1">&#9670;&#160;</a></span>fgla::internal::ImplAccessor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct <a class="el" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00037">37</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -233,7 +264,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00036">36</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00038">38</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>

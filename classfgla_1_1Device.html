@@ -102,6 +102,7 @@ $(function(){initNavTree('classfgla_1_1Device.html',''); initResizable(true); })
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1Device-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Device Class Reference</div></div>
 </div><!--header-->
@@ -135,11 +136,16 @@ Static Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a72a9159301892bd09b2c278db82af50d" id="r_a72a9159301892bd09b2c278db82af50d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structfgla_1_1Device_1_1Impl.html">Impl</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72a9159301892bd09b2c278db82af50d">impl</a></td></tr>
 <tr class="separator:a72a9159301892bd09b2c278db82af50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac06cf072aa647185632537a764206ad1" id="r_ac06cf072aa647185632537a764206ad1"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06cf072aa647185632537a764206ad1">fgla::internal::ImplAccessor</a></td></tr>
+<tr class="separator:ac06cf072aa647185632537a764206ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a device, which is used to create rendering objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00010">10</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00011">11</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a09e413eea2460149634511af392b8952" name="a09e413eea2460149634511af392b8952"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e413eea2460149634511af392b8952">&#9670;&#160;</a></span>from_raw()</h2>
@@ -165,13 +171,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00038">38</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                          {</div>
-<div class="line"><span class="lineno">   39</span>    Device device;</div>
-<div class="line"><span class="lineno">   40</span>    device.impl = std::move(<a class="code hl_variable" href="#a72a9159301892bd09b2c278db82af50d">impl</a>);</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> device;</div>
-<div class="line"><span class="lineno">   42</span>  }</div>
-<div class="ttc" id="aclassfgla_1_1Device_html_a72a9159301892bd09b2c278db82af50d"><div class="ttname"><a href="#a72a9159301892bd09b2c278db82af50d">fgla::Device::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00045">device.hpp:45</a></div></div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00039">39</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                          {</div>
+<div class="line"><span class="lineno">   40</span>    Device device;</div>
+<div class="line"><span class="lineno">   41</span>    device.impl = std::move(<a class="code hl_variable" href="#a72a9159301892bd09b2c278db82af50d">impl</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> device;</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="ttc" id="aclassfgla_1_1Device_html_a72a9159301892bd09b2c278db82af50d"><div class="ttname"><a href="#a72a9159301892bd09b2c278db82af50d">fgla::Device::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="device_8hpp_source.html#l00047">device.hpp:47</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,15 +217,40 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified queue, or an empty <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">util::OptRef</a></code> if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00021">21</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                                     {</div>
-<div class="line"><span class="lineno">   22</span>    Queue *q = this-&gt;<a class="code hl_variable" href="#a72a9159301892bd09b2c278db82af50d">impl</a>-&gt;get_queue(type, index);</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (q)</div>
-<div class="line"><span class="lineno">   24</span>      <span class="keywordflow">return</span> *q;</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   27</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00022">22</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                     {</div>
+<div class="line"><span class="lineno">   23</span>    Queue *q = this-&gt;<a class="code hl_variable" href="#a72a9159301892bd09b2c278db82af50d">impl</a>-&gt;get_queue(type, index);</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (q)</div>
+<div class="line"><span class="lineno">   25</span>      <span class="keywordflow">return</span> *q;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   28</span>  }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac06cf072aa647185632537a764206ad1" name="ac06cf072aa647185632537a764206ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06cf072aa647185632537a764206ad1">&#9670;&#160;</a></span>fgla::internal::ImplAccessor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct <a class="el" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00046">46</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -243,7 +274,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00045">45</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00047">47</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

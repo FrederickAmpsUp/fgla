@@ -5,6 +5,7 @@ var namespacefgla =
     [ "extension", "namespacefgla_1_1extension.html", [
       [ "ExtensionUUID", "namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959", null ]
     ] ],
+    [ "internal", "namespacefgla_1_1internal.html", "namespacefgla_1_1internal" ],
     [ "util", "namespacefgla_1_1util.html", "namespacefgla_1_1util" ],
     [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
     [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],

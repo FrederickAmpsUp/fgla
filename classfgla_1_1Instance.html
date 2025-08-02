@@ -102,6 +102,7 @@ $(function(){initNavTree('classfgla_1_1Instance.html',''); initResizable(true); 
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1Instance-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Instance Class Reference</div></div>
 </div><!--header-->
@@ -142,11 +143,16 @@ Static Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a51f968088ecff62223c3acd1bf67e8ec" id="r_a51f968088ecff62223c3acd1bf67e8ec"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="structfgla_1_1Instance_1_1Impl.html">Impl</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a></td></tr>
 <tr class="separator:a51f968088ecff62223c3acd1bf67e8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac06cf072aa647185632537a764206ad1" id="r_ac06cf072aa647185632537a764206ad1"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06cf072aa647185632537a764206ad1">fgla::internal::ImplAccessor</a></td></tr>
+<tr class="separator:ac06cf072aa647185632537a764206ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an instance, which is used to acquire an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00019">19</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00020">20</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad62accd1d0535578caf04d42860aa73f" name="ad62accd1d0535578caf04d42860aa73f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad62accd1d0535578caf04d42860aa73f">&#9670;&#160;</a></span>create()</h2>
@@ -204,13 +210,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates an <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code> from a raw imlementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00073">73</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                                    {</div>
-<div class="line"><span class="lineno">   74</span>    Instance inst;</div>
-<div class="line"><span class="lineno">   75</span>    inst.impl = std::move(<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>);</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> inst;</div>
-<div class="line"><span class="lineno">   77</span>  }</div>
-<div class="ttc" id="aclassfgla_1_1Instance_html_a51f968088ecff62223c3acd1bf67e8ec"><div class="ttname"><a href="#a51f968088ecff62223c3acd1bf67e8ec">fgla::Instance::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="instance_8hpp_source.html#l00080">instance.hpp:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00074">74</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                                    {</div>
+<div class="line"><span class="lineno">   75</span>    Instance inst;</div>
+<div class="line"><span class="lineno">   76</span>    inst.impl = std::move(<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>);</div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">return</span> inst;</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="ttc" id="aclassfgla_1_1Instance_html_a51f968088ecff62223c3acd1bf67e8ec"><div class="ttname"><a href="#a51f968088ecff62223c3acd1bf67e8ec">fgla::Instance::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="instance_8hpp_source.html#l00081">instance.hpp:81</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,10 +250,10 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>, or an <code><a class="el" href="structfgla_1_1Error.html" title="Represents a failure state from a function call.">Error</a></code> with failure information </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00042">42</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                                     {</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_adapter(descriptor);</div>
-<div class="line"><span class="lineno">   44</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00043">43</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_adapter(descriptor);</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -275,8 +281,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the <code>Backend</code> this <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code> is using </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00047">47</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_backend(); }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00048">48</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_backend(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -312,18 +318,43 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The extension, or an empty <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">util::OptRef</a></code> if not supported </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00052">52</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                      {</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_typedef" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a> uuid = T::UUID;</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">void</span> *ext = this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_extension(uuid);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (ext) {</div>
-<div class="line"><span class="lineno">   56</span>      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
-<div class="line"><span class="lineno">   57</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   59</span>    }</div>
-<div class="line"><span class="lineno">   60</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00053">53</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                      {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_typedef" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a> uuid = T::UUID;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">void</span> *ext = this-&gt;<a class="code hl_variable" href="#a51f968088ecff62223c3acd1bf67e8ec">impl</a>-&gt;get_extension(uuid);</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (ext) {</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
+<div class="line"><span class="lineno">   58</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
 <div class="ttc" id="anamespacefgla_1_1extension_html_a01a1696c95d2c9d408cfbb68a4a79959"><div class="ttname"><a href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">fgla::extension::ExtensionUUID</a></div><div class="ttdeci">util::UUID&lt; 16 &gt; ExtensionUUID</div><div class="ttdoc">A Universally Unique Identifier identifying an extension.</div><div class="ttdef"><b>Definition</b> <a href="extension_8hpp_source.html#l00009">extension.hpp:9</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="ac06cf072aa647185632537a764206ad1" name="ac06cf072aa647185632537a764206ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06cf072aa647185632537a764206ad1">&#9670;&#160;</a></span>fgla::internal::ImplAccessor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct <a class="el" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00082">82</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -347,7 +378,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00080">80</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00081">81</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
 
 </div>
 </div>
