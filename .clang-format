@@ -5,3 +5,6 @@ UseTab: Never
 AllowShortIfStatementsOnASingleLine: true
 BreakBeforeBraces: Attach
 ColumnLimit: 100
+
+SortIncludes: true
+IncludeBlocks: Regroup

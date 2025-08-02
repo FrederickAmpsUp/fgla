@@ -2,9 +2,9 @@
 
 #include <fgla/device.hpp>
 #include <fgla/error.hpp>
+#include <fgla/internal.hpp>
 #include <memory>
 #include <tl/expected.hpp>
-#include <fgla/internal.hpp>
 
 namespace fgla {
 

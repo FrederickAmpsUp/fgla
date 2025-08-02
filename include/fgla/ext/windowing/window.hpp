@@ -1,9 +1,9 @@
 #pragma once
 
 #include <cstdint>
-#include <memory>
-#include <fgla/internal.hpp>
 #include <fgla/ext/windowing/surface.hpp>
+#include <fgla/internal.hpp>
+#include <memory>
 
 namespace fgla::ext::windowing {
 
@@ -28,14 +28,16 @@ public:
   /// @returns `false` if the user has closed the window, `true` otherwise
   inline bool is_open() { return this->impl->is_open(); }
 
-  inline tl::expected<Surface, Error> create_surface(const fgla::Instance& instance) { return this->impl->create_surface(instance); }
+  inline tl::expected<Surface, Error> create_surface(const fgla::Instance &instance) {
+    return this->impl->create_surface(instance);
+  }
 
   /// The backend-defined implementation of the `Window`'s functions
   struct Impl {
     virtual void poll_events() = 0;
     virtual bool is_open() = 0;
 
-    virtual tl::expected<Surface, Error> create_surface(const fgla::Instance&) = 0;
+    virtual tl::expected<Surface, Error> create_surface(const fgla::Instance &) = 0;
 
     virtual ~Impl() = 0;
   };

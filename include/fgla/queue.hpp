@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstdint>
-#include <memory>
 #include <fgla/internal.hpp>
+#include <memory>
 
 namespace fgla {
 

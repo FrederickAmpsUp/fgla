@@ -3,11 +3,11 @@
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
 #include <fgla/extension.hpp>
+#include <fgla/internal.hpp>
 #include <fgla/util.hpp>
 #include <memory>
 #include <optional>
 #include <tl/expected.hpp>
-#include <fgla/internal.hpp>
 
 namespace fgla {
 

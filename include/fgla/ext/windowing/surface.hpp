@@ -1,7 +1,7 @@
 #pragma once
 
-#include <fgla/internal.hpp>
 #include <fgla/instance.hpp>
+#include <fgla/internal.hpp>
 #include <memory>
 
 namespace fgla::ext::windowing {
@@ -23,6 +23,7 @@ public:
     surface.impl = std::move(impl);
     return surface;
   }
+
 private:
   friend struct fgla::internal::ImplAccessor;
   std::shared_ptr<Impl> impl;
@@ -30,4 +31,4 @@ private:
 
 inline Surface::Impl::~Impl() = default;
 
-}
+} // namespace fgla::ext::windowing

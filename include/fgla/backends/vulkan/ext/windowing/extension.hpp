@@ -12,4 +12,4 @@ public:
 };
 
 extern WindowExtensionImpl window_extension_impl;
-}
+} // namespace fgla::backends::vulkan::ext::windowing

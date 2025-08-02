@@ -23,8 +23,9 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
       descriptor.app_version.major, descriptor.app_version.minor, descriptor.app_version.patch);
   app_info.pApplicationName = descriptor.app_name.c_str();
 
-  logger->info("Creating FGLA Vulkan instance for app \"{}\" (v{}.{}.{}).",
-               descriptor.app_name, descriptor.app_version.major, descriptor.app_version.minor, descriptor.app_version.patch);
+  logger->info("Creating FGLA Vulkan instance for app \"{}\" (v{}.{}.{}).", descriptor.app_name,
+               descriptor.app_version.major, descriptor.app_version.minor,
+               descriptor.app_version.patch);
 
   app_info.pEngineName = "FGLA";
   app_info.engineVersion = VK_MAKE_VERSION(0, 0, 1);
@@ -41,7 +42,7 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 #if FGLA_VK_EXT_WINDOWING
   uint32_t n_glfw_extensions = 0;
   const char **glfw_extensions;
-  
+
   glfwInit();
   glfw_extensions = glfwGetRequiredInstanceExtensions(&n_glfw_extensions);
 

@@ -1,9 +1,9 @@
 #pragma once
 
+#include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
 #include <memory>
-#include <fgla/internal.hpp>
 
 namespace fgla {
 

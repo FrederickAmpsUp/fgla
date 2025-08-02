@@ -32,9 +32,9 @@ tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descr
         Instance *raw_instance = backend->create_instance(&descriptor);
 
         if (!raw_instance) // TODO: change this to try other backends
-          return tl::make_unexpected(Error(0,
-              fmt::format("Failed to create an fgla::Instance after selecting backend \"{}\".",
-                          backend_ref.name)));
+          return tl::make_unexpected(Error(
+              0, fmt::format("Failed to create an fgla::Instance after selecting backend \"{}\".",
+                             backend_ref.name)));
 
         std::unique_ptr<Instance> instance(raw_instance);
         Instance moved = std::move(*instance);
@@ -47,8 +47,7 @@ tl::expected<Instance, Error> Instance::create(const Instance::Descriptor &descr
   } while (it != registry.end());
 
   return tl::make_unexpected(
-      Error(0,
-            "Failed to create an fgla::Instance as there are no available backends."));
+      Error(0, "Failed to create an fgla::Instance as there are no available backends."));
 }
 
 } // namespace fgla

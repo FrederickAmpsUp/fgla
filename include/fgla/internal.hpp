@@ -10,10 +10,7 @@ struct ImplAccessor {
   /// @tparam T The type of FGLA class to unwrap
   /// @param t The object to unwrap
   /// @returns A pointer to `t`'s polymporphic implementation
-template<typename T>
-  static inline typename T::Impl *get_impl(T &t) {
-    return t.impl.get();
-  }
+  template <typename T> static inline typename T::Impl *get_impl(T &t) { return t.impl.get(); }
 };
 
-}
+} // namespace fgla::internal
