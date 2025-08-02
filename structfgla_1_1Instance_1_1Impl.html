@@ -111,8 +111,10 @@ $(function(){initNavTree('structfgla_1_1Instance_1_1Impl.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa7a20ffafd89f1dd6962fa9686c38f37" id="r_aa7a20ffafd89f1dd6962fa9686c38f37"><td class="memItemLeft" align="right" valign="top">virtual tl::expected&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7a20ffafd89f1dd6962fa9686c38f37">get_adapter</a> (const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;)=0</td></tr>
-<tr class="separator:aa7a20ffafd89f1dd6962fa9686c38f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2038dcd15f4a2de41091c5520d80afc6" id="r_a2038dcd15f4a2de41091c5520d80afc6"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2038dcd15f4a2de41091c5520d80afc6">enumerate_adapters</a> ()=0</td></tr>
+<tr class="separator:a2038dcd15f4a2de41091c5520d80afc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa10d5c4702f1536fd73c1171881b09" id="r_a1aa10d5c4702f1536fd73c1171881b09"><td class="memItemLeft" align="right" valign="top">virtual std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aa10d5c4702f1536fd73c1171881b09">get_adapter_scorer</a> (const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;descriptor)=0</td></tr>
+<tr class="separator:a1aa10d5c4702f1536fd73c1171881b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a302e63450bc99775ba6d3192ae2d7a33" id="r_a302e63450bc99775ba6d3192ae2d7a33"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structfgla_1_1backend_1_1Backend.html">backend::Backend</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a302e63450bc99775ba6d3192ae2d7a33">get_backend</a> ()=0</td></tr>
 <tr class="separator:a302e63450bc99775ba6d3192ae2d7a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d27b3f44927da0ec05e52db45bbf456" id="r_a3d27b3f44927da0ec05e52db45bbf456"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d27b3f44927da0ec05e52db45bbf456">get_extension</a> (<a class="el" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a>)=0</td></tr>
@@ -123,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The backend-defined implementation of the <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code>'s functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00064">64</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00111">111</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2b44f506d8142e5da210bc88da515a87" name="a2b44f506d8142e5da210bc88da515a87"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b44f506d8142e5da210bc88da515a87">&#9670;&#160;</a></span>~Impl()</h2>
@@ -151,8 +153,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa7a20ffafd89f1dd6962fa9686c38f37" name="aa7a20ffafd89f1dd6962fa9686c38f37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7a20ffafd89f1dd6962fa9686c38f37">&#9670;&#160;</a></span>get_adapter()</h2>
+<a id="a2038dcd15f4a2de41091c5520d80afc6" name="a2038dcd15f4a2de41091c5520d80afc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2038dcd15f4a2de41091c5520d80afc6">&#9670;&#160;</a></span>enumerate_adapters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,9 +163,34 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual tl::expected&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; fgla::Instance::Impl::get_adapter </td>
+          <td class="memname">virtual std::vector&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt; fgla::Instance::Impl::enumerate_adapters </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1aa10d5c4702f1536fd73c1171881b09" name="a1aa10d5c4702f1536fd73c1171881b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa10d5c4702f1536fd73c1171881b09">&#9670;&#160;</a></span>get_adapter_scorer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; fgla::Instance::Impl::get_adapter_scorer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>descriptor</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

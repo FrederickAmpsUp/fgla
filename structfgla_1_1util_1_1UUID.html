@@ -141,7 +141,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int size&gt;<br />
 struct fgla::util::UUID&lt; size &gt;</div><p>A Univerally Unique Identifier, with a given size in bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00035">35</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00036">36</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2217deecd224c4add4f2a5b994354c99" name="a2217deecd224c4add4f2a5b994354c99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2217deecd224c4add4f2a5b994354c99">&#9670;&#160;</a></span>operator!=()</h2>
@@ -170,8 +170,8 @@ template&lt;unsigned int size&gt; </div>
 
 <p>Check if 2 <code><a class="el" href="structfgla_1_1util_1_1UUID.html" title="A Univerally Unique Identifier, with a given size in bytes.">UUID</a></code>s are different. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00049">49</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00050">50</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -207,13 +207,13 @@ template&lt;unsigned int size&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>this</code> and <code>other</code> are equal, else false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00042">42</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>                                                           {</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
-<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7c7486ac7223b3712668db75c093a910">bytes</a>[i] != other.bytes[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   46</span>  }</div>
-<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a7c7486ac7223b3712668db75c093a910"><div class="ttname"><a href="#a7c7486ac7223b3712668db75c093a910">fgla::util::UUID::bytes</a></div><div class="ttdeci">uint8_t bytes[size]</div><div class="ttdoc">The UUID's data.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00037">util.hpp:37</a></div></div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00043">43</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                           {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
+<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7c7486ac7223b3712668db75c093a910">bytes</a>[i] != other.bytes[i]) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a7c7486ac7223b3712668db75c093a910"><div class="ttname"><a href="#a7c7486ac7223b3712668db75c093a910">fgla::util::UUID::bytes</a></div><div class="ttdeci">uint8_t bytes[size]</div><div class="ttdoc">The UUID's data.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00038">util.hpp:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,30 +251,30 @@ template&lt;unsigned int size&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The parsed <code><a class="el" href="structfgla_1_1util_1_1UUID.html" title="A Univerally Unique Identifier, with a given size in bytes.">UUID</a></code></dd></dl>
 <p>Note: <code>size</code> must be 16 </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00068">68</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>                                                         {</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keyword">static_assert</span>(size == 16, <span class="stringliteral">&quot;UUID::parse_ctr only implemented for UUID&lt;16&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    UUID&lt;16&gt; uuid = {};</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordtype">int</span> byte_index = 0;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; str[i] &amp;&amp; byte_index &lt; 16;) {</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;-&#39;</span>) {</div>
-<div class="line"><span class="lineno">   76</span>        ++i;</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   78</span>      }</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>      uint8_t hi = <a class="code hl_function" href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">util::parse_hex</a>(str[i]);</div>
-<div class="line"><span class="lineno">   81</span>      uint8_t lo = <a class="code hl_function" href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">util::parse_hex</a>(str[i + 1]);</div>
-<div class="line"><span class="lineno">   82</span>      uuid.bytes[byte_index++] = (hi &lt;&lt; 4) | lo;</div>
-<div class="line"><span class="lineno">   83</span>      i += 2;</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (byte_index != 16) <span class="keywordflow">throw</span> <span class="stringliteral">&quot;UUID must be exactly 16 bytes&quot;</span>;</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> uuid;</div>
-<div class="line"><span class="lineno">   89</span>  }</div>
-<div class="ttc" id="anamespacefgla_1_1util_html_ae7bb416a7d53a9a194f3b72c3e765355"><div class="ttname"><a href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">fgla::util::parse_hex</a></div><div class="ttdeci">constexpr uint8_t parse_hex(char c)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00020">util.hpp:20</a></div></div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00069">69</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                         {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">static_assert</span>(size == 16, <span class="stringliteral">&quot;UUID::parse_ctr only implemented for UUID&lt;16&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    UUID&lt;16&gt; uuid = {};</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">int</span> byte_index = 0;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; str[i] &amp;&amp; byte_index &lt; 16;) {</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;-&#39;</span>) {</div>
+<div class="line"><span class="lineno">   77</span>        ++i;</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   79</span>      }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      uint8_t hi = <a class="code hl_function" href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">util::parse_hex</a>(str[i]);</div>
+<div class="line"><span class="lineno">   82</span>      uint8_t lo = <a class="code hl_function" href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">util::parse_hex</a>(str[i + 1]);</div>
+<div class="line"><span class="lineno">   83</span>      uuid.bytes[byte_index++] = (hi &lt;&lt; 4) | lo;</div>
+<div class="line"><span class="lineno">   84</span>      i += 2;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span> (byte_index != 16) <span class="keywordflow">throw</span> <span class="stringliteral">&quot;UUID must be exactly 16 bytes&quot;</span>;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> uuid;</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
+<div class="ttc" id="anamespacefgla_1_1util_html_ae7bb416a7d53a9a194f3b72c3e765355"><div class="ttname"><a href="namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355">fgla::util::parse_hex</a></div><div class="ttdeci">constexpr uint8_t parse_hex(char c)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00021">util.hpp:21</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -295,7 +295,7 @@ template&lt;unsigned int size&gt; </div>
 
 <p>The <code><a class="el" href="structfgla_1_1util_1_1UUID.html" title="A Univerally Unique Identifier, with a given size in bytes.">UUID</a></code>'s data. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00037">37</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00038">38</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 
 </div>
 </div>

@@ -114,6 +114,8 @@ $(function(){initNavTree('classfgla_1_1ext_1_1windowing_1_1WindowExtension.html'
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a16b1a3ccf52af330315b85aabe38f555" id="r_a16b1a3ccf52af330315b85aabe38f555"><td class="memItemLeft" align="right" valign="top">virtual tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Window.html">Window</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16b1a3ccf52af330315b85aabe38f555">create_window</a> (const <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html">Window::Descriptor</a> &amp;)=0</td></tr>
 <tr class="separator:a16b1a3ccf52af330315b85aabe38f555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ab7cc816f3fdf52d643d7aff476994" id="r_ae7ab7cc816f3fdf52d643d7aff476994"><td class="memItemLeft" align="right" valign="top">virtual std::function&lt; bool(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7ab7cc816f3fdf52d643d7aff476994">surface_support_filter</a> (const <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a> &amp;)=0</td></tr>
+<tr class="separator:ae7ab7cc816f3fdf52d643d7aff476994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add6498c86985e8b2c1ea18749e45120b" id="r_add6498c86985e8b2c1ea18749e45120b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add6498c86985e8b2c1ea18749e45120b">~WindowExtension</a> ()=0</td></tr>
 <tr class="separator:add6498c86985e8b2c1ea18749e45120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -127,7 +129,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>Extension interface for the builtin windowing extension. </p>
 <p>Use <code><a class="el" href="classfgla_1_1Instance.html#a5b764956d804018e18a367a3a584ce78">Instance::get_extension</a>&lt;fgla::ext::windowing::WindowingExtension&gt;()</code> to get a handle to it </p>
 
-<p class="definition">Definition at line <a class="el" href="ext_2windowing_2extension_8hpp_source.html#l00013">13</a> of file <a class="el" href="ext_2windowing_2extension_8hpp_source.html">extension.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ext_2windowing_2extension_8hpp_source.html#l00015">15</a> of file <a class="el" href="ext_2windowing_2extension_8hpp_source.html">extension.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="add6498c86985e8b2c1ea18749e45120b" name="add6498c86985e8b2c1ea18749e45120b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add6498c86985e8b2c1ea18749e45120b">&#9670;&#160;</a></span>~WindowExtension()</h2>
@@ -187,6 +189,40 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae7ab7cc816f3fdf52d643d7aff476994" name="ae7ab7cc816f3fdf52d643d7aff476994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ab7cc816f3fdf52d643d7aff476994">&#9670;&#160;</a></span>surface_support_filter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::function&lt; bool(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; fgla::ext::windowing::WindowExtension::surface_support_filter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> filtering function <br  />
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_</td><td>The <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code> to filter against </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A filter that checks if an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> supports the specified <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code> </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a89c35410e7f7aef645745a3e4abb562a" name="a89c35410e7f7aef645745a3e4abb562a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89c35410e7f7aef645745a3e4abb562a">&#9670;&#160;</a></span>UUID</h2>
@@ -209,11 +245,11 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">      <a class="code hl_function" href="structfgla_1_1util_1_1UUID.html#a0758e24e56c979d0367b29e1b05c8fc5">extension::ExtensionUUID::parse_ctr</a>(<span class="stringliteral">&quot;d8b41889-e4df-4e93-a115-0a828cc832c2&quot;</span>)</div>
-<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a0758e24e56c979d0367b29e1b05c8fc5"><div class="ttname"><a href="structfgla_1_1util_1_1UUID.html#a0758e24e56c979d0367b29e1b05c8fc5">fgla::util::UUID&lt; 16 &gt;::parse_ctr</a></div><div class="ttdeci">static constexpr UUID&lt; size &gt; parse_ctr(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00068">util.hpp:68</a></div></div>
+<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a0758e24e56c979d0367b29e1b05c8fc5"><div class="ttname"><a href="structfgla_1_1util_1_1UUID.html#a0758e24e56c979d0367b29e1b05c8fc5">fgla::util::UUID&lt; 16 &gt;::parse_ctr</a></div><div class="ttdeci">static constexpr UUID&lt; size &gt; parse_ctr(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00069">util.hpp:69</a></div></div>
 </div><!-- fragment -->
 <p>The UUID for the <code>WindowingExtension</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="ext_2windowing_2extension_8hpp_source.html#l00016">16</a> of file <a class="el" href="ext_2windowing_2extension_8hpp_source.html">extension.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ext_2windowing_2extension_8hpp_source.html#l00018">18</a> of file <a class="el" href="ext_2windowing_2extension_8hpp_source.html">extension.hpp</a>.</p>
 
 </div>
 </div>

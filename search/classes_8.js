@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_0',['Queue',['../classfgla_1_1Queue.html',1,'fgla']]]
+  ['pairhash_0',['PairHash',['../structfgla_1_1util_1_1PairHash.html',1,'fgla::util']]]
 ];

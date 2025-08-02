@@ -1,5 +1,6 @@
 var namespacefgla_1_1util =
 [
+    [ "FilterableList", "classfgla_1_1util_1_1FilterableList.html", "classfgla_1_1util_1_1FilterableList" ],
     [ "OptRef", "classfgla_1_1util_1_1OptRef.html", "classfgla_1_1util_1_1OptRef" ],
     [ "PairHash", "structfgla_1_1util_1_1PairHash.html", "structfgla_1_1util_1_1PairHash" ],
     [ "UUID", "structfgla_1_1util_1_1UUID.html", "structfgla_1_1util_1_1UUID" ],

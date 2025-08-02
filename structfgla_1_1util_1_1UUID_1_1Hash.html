@@ -118,7 +118,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;unsigned int size&gt;<br />
 struct fgla::util::UUID&lt; size &gt;::Hash</div><p>A hash for a <code><a class="el" href="structfgla_1_1util_1_1UUID.html" title="A Univerally Unique Identifier, with a given size in bytes.">UUID</a></code>, which may be used in STL containers. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00052">52</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00053">53</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a14e2e53a841cc8b94fb794d9c0eb4d17" name="a14e2e53a841cc8b94fb794d9c0eb4d17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14e2e53a841cc8b94fb794d9c0eb4d17">&#9670;&#160;</a></span>operator()()</h2>
@@ -145,14 +145,14 @@ template&lt;unsigned int size&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00053">53</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                     {</div>
-<div class="line"><span class="lineno">   54</span>      std::size_t h = 0;</div>
-<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
-<div class="line"><span class="lineno">   56</span>        h ^= std::size_t(<span class="keywordtype">id</span>.<a class="code hl_variable" href="structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910">bytes</a>[i]) &lt;&lt; ((i % <span class="keyword">sizeof</span>(std::size_t)) * 8);</div>
-<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">return</span> h;</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
-<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a7c7486ac7223b3712668db75c093a910"><div class="ttname"><a href="structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910">fgla::util::UUID::bytes</a></div><div class="ttdeci">uint8_t bytes[size]</div><div class="ttdoc">The UUID's data.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00037">util.hpp:37</a></div></div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00054">54</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                                     {</div>
+<div class="line"><span class="lineno">   55</span>      std::size_t h = 0;</div>
+<div class="line"><span class="lineno">   56</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
+<div class="line"><span class="lineno">   57</span>        h ^= std::size_t(<span class="keywordtype">id</span>.<a class="code hl_variable" href="structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910">bytes</a>[i]) &lt;&lt; ((i % <span class="keyword">sizeof</span>(std::size_t)) * 8);</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">return</span> h;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="ttc" id="astructfgla_1_1util_1_1UUID_html_a7c7486ac7223b3712668db75c093a910"><div class="ttname"><a href="structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910">fgla::util::UUID::bytes</a></div><div class="ttdeci">uint8_t bytes[size]</div><div class="ttdoc">The UUID's data.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00038">util.hpp:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
