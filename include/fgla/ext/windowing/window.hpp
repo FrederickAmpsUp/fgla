@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <fgla/internal.hpp>
 #include <fgla/ext/windowing/surface.hpp>
 
 namespace fgla::ext::windowing {
@@ -20,6 +21,7 @@ public:
   };
 
   /// Internally runs the window's event loop
+  /// This must be called once per frame
   inline void poll_events() { return this->impl->poll_events(); }
 
   /// Checks if the window has not been closed by the user
@@ -47,6 +49,7 @@ public:
   }
 
 private:
+  friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;
 };
 

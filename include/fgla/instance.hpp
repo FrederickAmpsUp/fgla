@@ -78,8 +78,8 @@ public:
   }
 
 private:
-  std::unique_ptr<Impl> impl;
   friend struct fgla::internal::ImplAccessor;
+  std::unique_ptr<Impl> impl;
 };
 
 inline Instance::Impl::~Impl() = default;
