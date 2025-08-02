@@ -111,6 +111,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a backend, implementing <code>fgla</code>'s constructs and translating them to hardware.  <a href="structfgla_1_1backend_1_1Backend.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1backend_1_1BackendRegistrar.html">BackendRegistrar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a backend to the global registry in its constructor.  <a href="structfgla_1_1backend_1_1BackendRegistrar.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -210,16 +211,16 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified <code><a class="el" href="structfgla_1_1backend_1_1Backend.html" title="Represents a backend, implementing fgla&#39;s constructs and translating them to hardware.">Backend</a></code> is available, else <code>false</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="backend_8hpp_source.html#l00049">49</a> of file <a class="el" href="backend_8hpp_source.html">backend.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                           {</div>
-<div class="line"><span class="lineno">   50</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;registry = <a class="code hl_function" href="#a8401251fdb4337ba781f1071f20e6d81">get_registry</a>();</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>  <span class="keyword">auto</span> it = registry.find(uuid);</div>
-<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">if</span> (it == registry.end() || it-&gt;second.is_available == <span class="keyword">nullptr</span> ||</div>
-<div class="line"><span class="lineno">   54</span>      it-&gt;second.create_instance == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// backend doesn&#39;t exist</span></div>
-<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">return</span> it-&gt;second.is_available();</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<p class="definition">Definition at line <a class="el" href="backend_8hpp_source.html#l00050">50</a> of file <a class="el" href="backend_8hpp_source.html">backend.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                           {</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;registry = <a class="code hl_function" href="#a8401251fdb4337ba781f1071f20e6d81">get_registry</a>();</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>  <span class="keyword">auto</span> it = registry.find(uuid);</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">if</span> (it == registry.end() || it-&gt;second.is_available == <span class="keyword">nullptr</span> ||</div>
+<div class="line"><span class="lineno">   55</span>      it-&gt;second.create_instance == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// backend doesn&#39;t exist</span></div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordflow">return</span> it-&gt;second.is_available();</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 <div class="ttc" id="anamespacefgla_1_1backend_html_a8401251fdb4337ba781f1071f20e6d81"><div class="ttname"><a href="#a8401251fdb4337ba781f1071f20e6d81">fgla::backend::get_registry</a></div><div class="ttdeci">auto &amp; get_registry()</div><div class="ttdef"><b>Definition</b> <a href="backend_8hpp_source.html#l00026">backend.hpp:26</a></div></div>
 </div><!-- fragment -->
 </div>
