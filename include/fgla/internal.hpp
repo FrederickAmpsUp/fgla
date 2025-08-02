@@ -2,8 +2,7 @@
 
 namespace fgla::internal {
 
-/// Allows access to the raw polymorphic implementation of FGLA classes  
-/// This generally shouldn't be used outside of FGLA
+/// Allows access to the raw polymorphic implementation of FGLA classes
 struct ImplAccessor {
 
   /// Get a pointer to an FGLA class' implementation
