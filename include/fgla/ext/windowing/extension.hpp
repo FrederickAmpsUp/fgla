@@ -7,7 +7,8 @@
 
 namespace fgla::ext::windowing {
 
-/// Extension interface for the builtin windowing extension
+/// @brief Extension interface for the builtin windowing extension
+///
 /// Use `Instance::get_extension<fgla::ext::windowing::WindowingExtension>()` to get a handle to it
 class WindowExtension {
 public:

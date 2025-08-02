@@ -34,9 +34,10 @@ inline void register_backend(const Backend &backend) {
   get_registry().insert_or_assign(backend.uuid, backend);
 }
 
-/// Adds a backend to the global registry in its constructor  
+/// @brief Adds a backend to the global registry in its constructor
+///
 /// Allows for registration during dynamic initialization  
-/// Care must be taken to ensure the `BackendRegisrar` isn't optimized out
+/// Care must be taken to ensure the `BackendRegistrar` isn't optimized out
 struct BackendRegistrar {
   /// Registers the `Backend`
   /// @param backend the `Backend` to register
