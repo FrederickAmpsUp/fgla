@@ -1,6 +1,11 @@
+#if FGLA_VK_EXT_WINDOWING
+#define GLFW_INCLUDE_VULKAN
+#include <GLFW/glfw3.h>
+#endif
+
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/backend.hpp>
-#include <fgla/backends/vulkan/ext/window.hpp>
+#include <fgla/backends/vulkan/ext/windowing/extension.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
@@ -18,6 +23,9 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
       descriptor.app_version.major, descriptor.app_version.minor, descriptor.app_version.patch);
   app_info.pApplicationName = descriptor.app_name.c_str();
 
+  logger->info("Creating FGLA Vulkan instance for app \"{}\" (v{}.{}.{}).",
+               descriptor.app_name, descriptor.app_version.major, descriptor.app_version.minor, descriptor.app_version.patch);
+
   app_info.pEngineName = "FGLA";
   app_info.engineVersion = VK_MAKE_VERSION(0, 0, 1);
 
@@ -28,8 +36,22 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 
   instance_info.pApplicationInfo = &app_info;
 
+  std::vector<const char *> extensions;
+
+#if FGLA_VK_EXT_WINDOWING
+  uint32_t n_glfw_extensions = 0;
+  const char **glfw_extensions;
+  
+  glfwInit();
+  glfw_extensions = glfwGetRequiredInstanceExtensions(&n_glfw_extensions);
+
+  extensions.insert(extensions.end(), glfw_extensions, glfw_extensions + n_glfw_extensions);
+#endif
+
+  instance_info.enabledExtensionCount = extensions.size();
+  instance_info.ppEnabledExtensionNames = extensions.data();
+
   instance_info.enabledLayerCount = 0;
-  instance_info.enabledExtensionCount = 0; // TODO: window system extensions when we get there
 
   VkResult result = vkCreateInstance(&instance_info, nullptr, &this->instance);
   if (result != VK_SUCCESS) {

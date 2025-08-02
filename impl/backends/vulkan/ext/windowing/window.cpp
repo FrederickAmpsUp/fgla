@@ -1,5 +1,9 @@
-#include <fgla/backends/vulkan/ext/window.hpp>
+#include "tl/expected.hpp"
+#include <fgla/backends/vulkan/ext/windowing/window.hpp>
+#include <fgla/backends/vulkan/ext/windowing/extension.hpp>
+#include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #include <spdlog/spdlog.h>
+#include <memory>
 
 namespace fgla::backends::vulkan::ext::windowing {
 
@@ -34,6 +38,16 @@ WindowImpl::WindowImpl(const fgla::ext::windowing::Window::Descriptor &descripto
 void WindowImpl::poll_events() { glfwPollEvents(); }
 
 bool WindowImpl::is_open() { return !glfwWindowShouldClose(this->window); }
+
+tl::expected<fgla::ext::windowing::Surface, fgla::Error> WindowImpl::create_surface(const fgla::Instance& instance) {
+  auto surface = std::make_shared<SurfaceImpl>(*this, instance);
+
+  if (!surface->is_ok()) {
+    return tl::make_unexpected(Error(0, "Failed to create Vulkan surface"));
+  }
+
+  return fgla::ext::windowing::Surface::from_raw(surface);
+}
 
 bool WindowImpl::is_ok() const { return this->window != nullptr; }
 

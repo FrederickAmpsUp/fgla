@@ -7,6 +7,7 @@
 #include <memory>
 #include <optional>
 #include <tl/expected.hpp>
+#include <fgla/internal.hpp>
 
 namespace fgla {
 
@@ -78,6 +79,7 @@ public:
 
 private:
   std::unique_ptr<Impl> impl;
+  friend struct fgla::internal::ImplAccessor;
 };
 
 inline Instance::Impl::~Impl() = default;

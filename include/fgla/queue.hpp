@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <fgla/internal.hpp>
 
 namespace fgla {
 
@@ -33,6 +34,7 @@ public:
   }
 
 private:
+  friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;
 };
 

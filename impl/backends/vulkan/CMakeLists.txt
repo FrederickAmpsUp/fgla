@@ -16,6 +16,6 @@ target_link_libraries(fgla_backend_vulkan PRIVATE tl::expected spdlog::spdlog Vu
 if (glfw3_FOUND)
   target_link_libraries(fgla_backend_vulkan PRIVATE glfw)
   target_compile_definitions(fgla_backend_vulkan PRIVATE FGLA_VK_EXT_WINDOWING)
-  target_sources(fgla_backend_vulkan PRIVATE ext/window.cpp)
+  target_sources(fgla_backend_vulkan PRIVATE ext/windowing/window.cpp ext/windowing/surface.cpp)
 endif()
 target_include_directories(fgla_backend_vulkan PRIVATE ${PROJECT_SOURCE_DIR}/include/)

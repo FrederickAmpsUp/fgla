@@ -4,6 +4,7 @@
 #include <fgla/error.hpp>
 #include <memory>
 #include <tl/expected.hpp>
+#include <fgla/internal.hpp>
 
 namespace fgla {
 
@@ -51,6 +52,7 @@ public:
   }
 
 private:
+  friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;
 };
 
