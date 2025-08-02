@@ -9,6 +9,8 @@ namespace fgla::backends::vulkan::ext::windowing {
 struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   SurfaceImpl(WindowImpl &window, const fgla::Instance &instance);
 
+  inline VkSurfaceKHR get_surface() { return this->surface; }
+
   bool is_ok() const;
 
   virtual ~SurfaceImpl() override;

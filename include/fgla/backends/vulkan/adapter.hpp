@@ -15,8 +15,7 @@ struct QueueFamilyIndices {
 };
 
 struct AdapterImpl : public fgla::Adapter::Impl {
-  AdapterImpl(const InstanceImpl &instance, const Adapter::Descriptor &descriptor);
-  bool is_ok() const;
+  AdapterImpl(VkPhysicalDevice physical_device) : physical_device(physical_device) {}
 
   inline VkPhysicalDevice get_physical_device() { return this->physical_device; }
 

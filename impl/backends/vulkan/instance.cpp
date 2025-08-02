@@ -65,11 +65,95 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 }
 bool InstanceImpl::is_ok() const { return this->instance != VK_NULL_HANDLE; }
 
-tl::expected<Adapter, Error> InstanceImpl::get_adapter(const Adapter::Descriptor &descriptor) {
-  std::unique_ptr<AdapterImpl> impl =
-      std::make_unique<AdapterImpl>(*this, descriptor); // may have to change this
-  if (!impl->is_ok()) return tl::make_unexpected(Error(0));
-  return std::move(Adapter::from_raw(std::move(impl)));
+static int score_physical_device(VkPhysicalDevice device, const Adapter::Descriptor &descriptor) {
+  VkPhysicalDeviceProperties props;
+  vkGetPhysicalDeviceProperties(device, &props);
+
+  VkPhysicalDeviceFeatures features;
+  vkGetPhysicalDeviceFeatures(device, &features);
+
+  QueueFamilyIndices indices = QueueFamilyIndices::find(device);
+
+  if (!indices.graphics_family.has_value()) {
+    return 0; // we need a device that can draw stuff, probably
+  }
+
+  int score = 0;
+
+  // Prefer discrete GPUs
+  if (props.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU) {
+    score += 10000;
+  } else if (props.deviceType == VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU) {
+    score += 1000;
+  }
+
+  // Add score based on VRAM (in MB)
+  VkPhysicalDeviceMemoryProperties memProps;
+  vkGetPhysicalDeviceMemoryProperties(device, &memProps);
+
+  VkDeviceSize totalVRAM = 0;
+  for (uint32_t i = 0; i < memProps.memoryHeapCount; i++) {
+    if (memProps.memoryHeaps[i].flags & VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) {
+      totalVRAM += memProps.memoryHeaps[i].size;
+    }
+  }
+  score += static_cast<int>(totalVRAM / (4 * 1024 * 1024));
+
+  // need more scoring later
+  return score;
+}
+
+std::vector<Adapter> InstanceImpl::enumerate_adapters() {
+  std::vector<Adapter> adapters;
+
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+
+  VkInstance instance = this->instance;
+
+  uint32_t n_devices = 0;
+  vkEnumeratePhysicalDevices(instance, &n_devices, nullptr);
+
+  if (n_devices == 0) {
+    return adapters;
+  }
+
+  std::vector<VkPhysicalDevice> devices(n_devices);
+  vkEnumeratePhysicalDevices(instance, &n_devices, devices.data());
+
+  logger->info("{} physical devices available:", n_devices);
+
+  for (VkPhysicalDevice candidate : devices) {
+    VkPhysicalDeviceProperties candidate_props;
+    vkGetPhysicalDeviceProperties(candidate, &candidate_props);
+
+    std::string vendor_name = fmt::format("Unknown, 0x{:4X}", candidate_props.vendorID);
+
+    switch (candidate_props.vendorID) {
+    case 0x10DE:
+      vendor_name = "NVIDIA";
+      break;
+    case 0x1002:
+      vendor_name = "AMD";
+      break;
+    case 0x8086:
+      vendor_name = "Intel";
+      break;
+    }
+
+    logger->info(" - \"{}\", vendor \"{}\"", candidate_props.deviceName, vendor_name);
+
+    auto adapter_impl = std::make_unique<AdapterImpl>(candidate);
+    adapters.push_back(Adapter::from_raw(std::move(adapter_impl)));
+  }
+
+  return adapters;
+}
+
+std::function<int(const Adapter&)> InstanceImpl::get_adapter_scorer(const Adapter::Descriptor &descriptor) {
+  return [&](const Adapter &a) -> int {
+    auto impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
+    return score_physical_device(impl->get_physical_device(), descriptor);
+  };
 }
 
 const backend::Backend &InstanceImpl::get_backend() {

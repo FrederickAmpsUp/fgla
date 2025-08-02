@@ -11,7 +11,9 @@ struct InstanceImpl : public Instance::Impl {
 
   inline VkInstance get_instance() const { return this->instance; }
 
-  virtual tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &descriptor) override;
+  virtual std::vector<Adapter> enumerate_adapters() override;
+  virtual std::function<int(const Adapter&)> get_adapter_scorer(const Adapter::Descriptor &descriptor) override;
+
   virtual const backend::Backend &get_backend() override;
 
   virtual void *get_extension(extension::ExtensionUUID uuid) override;

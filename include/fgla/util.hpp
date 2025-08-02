@@ -144,7 +144,7 @@ public:
   ///
   /// @note `this` is consumed by this function
   template<typename Pred>
-  FilterableList filter_move(Pred &&pred) && {
+  FilterableList filter_move(const Pred &pred) && {
     std::vector<T> out;
     for (auto &item : this->items) {
         if (pred(item)) {
@@ -154,7 +154,7 @@ public:
     return FilterableList(std::move(out));
   }
 
-  const std::vector<T>& data() const { return this->items; }
+  std::vector<T>& data() { return this->items; }
 private:
   std::vector<T> items;
 };
