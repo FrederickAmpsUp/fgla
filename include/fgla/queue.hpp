@@ -18,6 +18,10 @@ public:
     Type type;
     /// The number of `Queue`s of this type to create
     uint32_t count;
+    /// @brief Any arbitrary data to use during queue creation
+    ///
+    /// This may be left null in most cases
+    void *user_data;
   };
 
   /// The backend-defined implementation of the `Queue`'s functions
@@ -25,7 +29,7 @@ public:
     virtual ~Impl() = 0;
   };
 
-  /// Creates a `Queue` from a raw implemntation
+  /// Creates a `Queue` from a raw implementation
   /// This should only be used internally
   static inline Queue from_raw(std::unique_ptr<Impl> impl) {
     Queue queue;

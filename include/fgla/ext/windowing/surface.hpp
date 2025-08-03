@@ -31,4 +31,11 @@ private:
 
 inline Surface::Impl::~Impl() = default;
 
+struct QueueTypeExt {
+  static constexpr Queue::Type Present = Queue::Type(16); // a better way to do this is likely a good idea
+};
+struct PresentQueueOptions {
+  const Surface& surface;
+  const Adapter& adapter;
+};
 } // namespace fgla::ext::windowing
