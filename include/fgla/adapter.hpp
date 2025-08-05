@@ -4,7 +4,6 @@
 #include <fgla/error.hpp>
 #include <fgla/internal.hpp>
 #include <memory>
-#include <tl/expected.hpp>
 
 namespace fgla {
 
@@ -25,8 +24,8 @@ public:
   /// @param descriptor The `Device::Descriptor` with the `Device`'s properties
   /// @param queues A list of `Queue::Requests` to create `Queue`s for
   /// @returns The created `Device`, or an `Error` with failure information
-  inline tl::expected<Device, Error> create_device(const Device::Descriptor &descriptor,
-                                                   std::initializer_list<Queue::Request> queues) {
+  inline Result<Device> create_device(const Device::Descriptor &descriptor,
+                                      std::initializer_list<Queue::Request> queues) {
     return this->impl->create_device(descriptor, queues);
   }
 
@@ -35,8 +34,8 @@ public:
 
   /// The backend-defined implementation of the `Adapter`'s functions
   struct Impl {
-    virtual tl::expected<Device, Error> create_device(const Device::Descriptor &,
-                                                      std::initializer_list<Queue::Request>) = 0;
+    virtual Result<Device> create_device(const Device::Descriptor &,
+                                         std::initializer_list<Queue::Request>) = 0;
 
     virtual Info get_info() const = 0;
 

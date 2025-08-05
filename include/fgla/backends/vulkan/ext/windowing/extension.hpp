@@ -6,7 +6,7 @@ namespace fgla::backends::vulkan::ext::windowing {
 
 class WindowingExtensionImpl : public fgla::ext::windowing::WindowingExtension {
 public:
-  virtual tl::expected<fgla::ext::windowing::Window, Error>
+  virtual Result<fgla::ext::windowing::Window>
   create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) override;
   virtual std::function<bool(const Adapter &)>
   surface_support_filter(const fgla::ext::windowing::Surface &) override;

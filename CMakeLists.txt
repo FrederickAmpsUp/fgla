@@ -11,7 +11,6 @@ set(OPTIONAL_BUILD_TESTS OFF)
 
 set(SPDLOG_BUILD_PIC ON)
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/extern/expected)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/spdlog)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/fmt)
 add_subdirectory(impl)

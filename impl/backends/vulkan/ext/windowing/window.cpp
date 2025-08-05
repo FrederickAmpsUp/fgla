@@ -8,11 +8,11 @@
 
 namespace fgla::backends::vulkan::ext::windowing {
 
-tl::expected<fgla::ext::windowing::Window, Error>
+Result<fgla::ext::windowing::Window>
 WindowingExtensionImpl::create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) {
   std::unique_ptr<WindowImpl> impl = std::make_unique<WindowImpl>(descriptor);
   if (!impl->is_ok()) {
-    return tl::make_unexpected(Error(0));
+    return Error(0);
   }
   return fgla::ext::windowing::Window::from_raw(std::move(impl));
 }
@@ -62,12 +62,11 @@ void WindowImpl::poll_events() { glfwPollEvents(); }
 
 bool WindowImpl::is_open() { return !glfwWindowShouldClose(this->window); }
 
-tl::expected<fgla::ext::windowing::Surface, fgla::Error>
-WindowImpl::create_surface(const fgla::Instance &instance) {
+Result<fgla::ext::windowing::Surface> WindowImpl::create_surface(const fgla::Instance &instance) {
   auto surface = std::make_shared<SurfaceImpl>(*this, instance);
 
   if (!surface->is_ok()) {
-    return tl::make_unexpected(Error(0, "Failed to create Vulkan surface"));
+    return Error(0, "Failed to create Vulkan surface");
   }
 
   return fgla::ext::windowing::Surface::from_raw(surface);

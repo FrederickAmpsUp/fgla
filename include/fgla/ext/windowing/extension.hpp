@@ -5,7 +5,6 @@
 #include <fgla/ext/windowing/surface.hpp>
 #include <fgla/ext/windowing/window.hpp>
 #include <fgla/extension.hpp>
-#include <tl/expected.hpp>
 
 namespace fgla::ext::windowing {
 
@@ -21,7 +20,7 @@ public:
   /// Attempts to create a `Window`
   /// @param _ The `Window::Descriptor` with the window's properties
   /// @returns The created `Window`, or an `Error` with failure information
-  virtual tl::expected<Window, Error> create_window(const Window::Descriptor &) = 0;
+  virtual Result<Window> create_window(const Window::Descriptor &) = 0;
 
   /// Returns an `Adapter` filtering function
   ///

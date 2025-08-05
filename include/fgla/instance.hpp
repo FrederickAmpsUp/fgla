@@ -5,9 +5,9 @@
 #include <fgla/extension.hpp>
 #include <fgla/internal.hpp>
 #include <fgla/util.hpp>
+#include <functional>
 #include <memory>
 #include <optional>
-#include <tl/expected.hpp>
 
 namespace fgla {
 
@@ -35,12 +35,12 @@ public:
   /// Creates an `Instance`
   /// @param descriptor The `Descriptor` with the `Instance` creation settings
   /// @returns The created `Instance`, or an `Error` with failure information
-  static tl::expected<Instance, Error> create(const Descriptor &descriptor);
+  static Result<Instance> create(const Descriptor &descriptor);
 
   /// Acquires an `Adapter`
   /// @param descriptor The `Adapter::Descriptor` with the `Adapter`'s properties
   /// @returns The `Adapter`, or an `Error` with failure information
-  inline tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &descriptor) {
+  inline Result<Adapter> get_adapter(const Adapter::Descriptor &descriptor) {
     return this->select_adapter(this->impl->get_adapter_scorer(descriptor),
                                 this->impl->enumerate_adapters());
   }
@@ -59,9 +59,8 @@ public:
   /// @param adapters The list of adapters to select from
   /// @returns The highest-scoring `Adapter` from `adapters`
   /// @note The returned `Adapter` is removed from (moved out of) `adapters`
-  inline tl::expected<Adapter, Error>
-  select_adapter(const std::function<int(const Adapter &)> &scorer,
-                 std::vector<Adapter> &adapters) {
+  inline Result<Adapter> select_adapter(const std::function<int(const Adapter &)> &scorer,
+                                        std::vector<Adapter> &adapters) {
     size_t best_index;
     int best_score = -1;
 
@@ -76,7 +75,7 @@ public:
     }
 
     if (best_score < 0) {
-      return tl::make_unexpected(Error(0, "No suitable adapters found"));
+      return Error(0, "No suitable adapters found");
     }
 
     Adapter best_adapter = std::move(adapters[best_index]);
@@ -87,9 +86,8 @@ public:
   /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes `adapters` as an
   /// rvalue.
   /// @see `select_adapter(..., std::vector<Adapter> &)`
-  inline tl::expected<Adapter, Error>
-  select_adapter(const std::function<int(const Adapter &)> &scorer,
-                 std::vector<Adapter> &&adapters) {
+  inline Result<Adapter> select_adapter(const std::function<int(const Adapter &)> &scorer,
+                                        std::vector<Adapter> &&adapters) {
     return this->select_adapter(scorer, adapters);
   }
 

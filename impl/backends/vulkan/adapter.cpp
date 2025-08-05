@@ -26,14 +26,13 @@ QueueFamilyIndices QueueFamilyIndices::find(VkPhysicalDevice device) {
   return indices;
 }
 
-tl::expected<Device, Error>
-AdapterImpl::create_device(const Device::Descriptor &descriptor,
-                           std::initializer_list<Queue::Request> queue_requests) {
+Result<Device> AdapterImpl::create_device(const Device::Descriptor &descriptor,
+                                          std::initializer_list<Queue::Request> queue_requests) {
   QueueAllocator queue_allocator = QueueAllocator(queue_requests, this->physical_device);
 
   std::unique_ptr<DeviceImpl> impl =
       std::make_unique<DeviceImpl>(*this, descriptor, queue_allocator);
-  if (!impl->is_ok()) return tl::make_unexpected(Error(0));
+  if (!impl->is_ok()) return Error(0);
   return std::move(Device::from_raw(std::move(impl)));
 }
 

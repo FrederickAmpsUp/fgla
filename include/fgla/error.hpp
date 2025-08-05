@@ -5,7 +5,6 @@
 #include <iostream>
 #include <optional>
 #include <string>
-#include <tl/expected.hpp>
 
 namespace fgla {
 
@@ -22,18 +21,114 @@ struct Error {
   std::optional<std::string> message = {};
 };
 
-/// Returns the value stored in `res`
-/// Displays an error message and exits the program if `res` contains an `Error`
-/// @tparam T the type of object to unwrap (will be inferred from arguments)
-/// @param res The result to unwrap
-/// @param message The error message to display on failure
-/// @param exit_code The exit code to use on faulure
-/// @returns The unwrapped value
-template <typename T>
-T unwrap(tl::expected<T, Error> res, const char *message = "Fatal Error:", int exit_code = -1) {
+template <typename T, typename E = Error> class Result {
+public:
+  inline Result(T &&t) : t(std::move(t)), ok(true) {}
+  inline Result() : e(), ok(false) {}
+  inline Result(E &&e) : e(std::move(e)), ok(false) {}
+
+  inline operator bool() const { return this->ok; }
+  inline bool is_ok() const { return this->ok; }
+  inline bool has_value() const { return this->ok; }
+  inline bool has_error() const { return !this->ok; }
+
+  inline T &operator*() & {
+    assert(this->ok && "Result::operator* called on error");
+    return t;
+  }
+  inline const T &operator*() const & {
+    assert(this->ok && "Result::operator* called on error");
+    return t;
+  }
+  inline T &&operator*() && {
+    assert(this->ok && "Result::operator* called on error");
+    return std::move(t);
+  }
+  inline const T &&operator*() const && {
+    assert(this->ok && "Result::operator* called on error");
+    return std::move(t);
+  }
+
+  inline T *operator->() & {
+    assert(this->ok && "Result::operator-> called on error");
+    return &t;
+  }
+  inline const T *operator->() const & {
+    assert(this->ok && "Result::operator-> called on error");
+    return &t;
+  }
+
+  inline T &value() & {
+    assert(this->ok && "Result::value called on error");
+    return t;
+  }
+  inline const T &value() const & {
+    assert(this->ok && "Result::value called on error");
+    return t;
+  }
+  inline T &&value() && {
+    assert(this->ok && "Result::value called on error");
+    return std::move(t);
+  }
+  inline const T &&value() const && {
+    assert(this->ok && "Result::value called on error");
+    return std::move(t);
+  }
+
+  inline E &error() & {
+    assert(!this->ok && "Result::error called on success");
+    return e;
+  }
+  inline const E &error() const & {
+    assert(!this->ok && "Result::error called on success");
+    return e;
+  }
+  inline E &&error() && {
+    assert(!this->ok && "Result::error called on success");
+    return std::move(e);
+  }
+  inline const E &&error() const && {
+    assert(!this->ok && "Result::error called on success");
+    return std::move(e);
+  }
+
+  inline ~Result() {
+    if (this->ok) {
+      this->t.~T();
+    } else {
+      this->e.~E();
+    }
+  }
+
+private:
+  bool ok;
+  union {
+    T t;
+    E e;
+  };
+};
+
+template <typename T, typename E> T &operator*(const char *msg, Result<T, E> &res) {
+  assert(res.is_ok() && msg);
+  return *res;
+}
+template <typename T, typename E> const T &operator*(const char *msg, const Result<T, E> &res) {
+  assert(res.is_ok() && msg);
+  return *res;
+}
+template <typename T, typename E> T &&operator*(const char *msg, Result<T, E> &&res) {
+  assert(res.is_ok() && msg);
+  return std::move(*res);
+}
+template <typename T, typename E> const T &&operator*(const char *msg, const Result<T, E> &&res) {
+  assert(res.is_ok() && msg);
+  return std::move(*res);
+}
+
+template <typename T, typename E>
+T unwrap(Result<T, E> res, const char *message = "Fatal Error", int exit_code = -1) {
   if (!res) {
-    std::cerr << message << ": \"" << res.error().message.value_or("Unknown error") << "\""
-              << std::endl;
+    std::cerr << message << std::endl;
     std::exit(exit_code);
   } else {
     return std::move(*res);
