@@ -1,11 +1,10 @@
+#include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/ext/windowing/extension.hpp>
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #include <fgla/backends/vulkan/ext/windowing/window.hpp>
-#include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/internal.hpp>
 #include <memory>
 #include <spdlog/spdlog.h>
-
 
 namespace fgla::backends::vulkan::ext::windowing {
 
@@ -18,18 +17,21 @@ WindowExtensionImpl::create_window(const fgla::ext::windowing::Window::Descripto
   return fgla::ext::windowing::Window::from_raw(std::move(impl));
 }
 
-std::function<bool(const Adapter&)> WindowExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface &surface) {
+std::function<bool(const Adapter &)>
+WindowExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface &surface) {
   return [&](const Adapter &a) -> bool {
     auto a_impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
     auto s_impl = dynamic_cast<SurfaceImpl *>(fgla::internal::ImplAccessor::get_impl(surface));
-    
+
     uint32_t n_queue_families = 0;
-    vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(), &n_queue_families, nullptr);
-    
+    vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(), &n_queue_families,
+                                             nullptr);
+
     VkBool32 present_support = false;
     for (int i = 0; n_queue_families; ++i) {
-      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl->get_physical_device(), i, s_impl->get_surface(), &present_support);
-      
+      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl->get_physical_device(), i, s_impl->get_surface(),
+                                           &present_support);
+
       if (present_support) break;
     }
 

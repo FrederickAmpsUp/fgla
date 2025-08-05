@@ -36,7 +36,7 @@ inline void register_backend(const Backend &backend) {
 
 /// @brief Adds a backend to the global registry in its constructor
 ///
-/// Allows for registration during dynamic initialization  
+/// Allows for registration during dynamic initialization
 /// Care must be taken to ensure the `BackendRegistrar` isn't optimized out
 struct BackendRegistrar {
   /// Registers the `Backend`

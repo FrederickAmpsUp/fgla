@@ -1,9 +1,9 @@
 #pragma once
 
+#include <algorithm>
 #include <cassert>
 #include <cstdint>
 #include <vector>
-#include <algorithm>
 
 namespace fgla {
 
@@ -131,8 +131,7 @@ private:
 };
 
 /// A list that may be filtered using functions
-template<typename T>
-class FilterableList {
+template <typename T> class FilterableList {
 public:
   /// Creates a `FilterableList` from a vector of items
   /// @param items The items to move into this `FilterableList`
@@ -143,18 +142,18 @@ public:
   /// @returns A `FilterableList` containing only the elements from `this` which `pred` accepts
   ///
   /// @note `this` is consumed by this function
-  template<typename Pred>
-  FilterableList filter_move(const Pred &pred) && {
+  template <typename Pred> FilterableList filter_move(const Pred &pred) && {
     std::vector<T> out;
     for (auto &item : this->items) {
-        if (pred(item)) {
-            out.push_back(std::move(item));
-        }
+      if (pred(item)) {
+        out.push_back(std::move(item));
+      }
     }
     return FilterableList(std::move(out));
   }
 
-  std::vector<T>& data() { return this->items; }
+  std::vector<T> &data() { return this->items; }
+
 private:
   std::vector<T> items;
 };

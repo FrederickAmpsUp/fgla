@@ -41,19 +41,16 @@ public:
   /// @param descriptor The `Adapter::Descriptor` with the `Adapter`'s properties
   /// @returns The `Adapter`, or an `Error` with failure information
   inline tl::expected<Adapter, Error> get_adapter(const Adapter::Descriptor &descriptor) {
-    return this->select_adapter(
-      this->impl->get_adapter_scorer(descriptor),
-      this->impl->enumerate_adapters()
-    );
+    return this->select_adapter(this->impl->get_adapter_scorer(descriptor),
+                                this->impl->enumerate_adapters());
   }
 
   /// Returns a list of all available `Adapter`s
-  inline std::vector<Adapter> enumerate_adapters() {
-    return this->impl->enumerate_adapters();
-  }
+  inline std::vector<Adapter> enumerate_adapters() { return this->impl->enumerate_adapters(); }
 
   /// Returns a function that scores an `Adapter` based on an `Adapter::Descriptor`
-  inline std::function<int(const Adapter&)> get_adapter_scorer(const Adapter::Descriptor &descriptor) {
+  inline std::function<int(const Adapter &)>
+  get_adapter_scorer(const Adapter::Descriptor &descriptor) {
     return this->impl->get_adapter_scorer(descriptor);
   }
 
@@ -62,10 +59,12 @@ public:
   /// @param adapters The list of adapters to select from
   /// @returns The highest-scoring `Adapter` from `adapters`
   /// @note The returned `Adapter` is removed from (moved out of) `adapters`
-  inline tl::expected<Adapter, Error> select_adapter(const std::function<int(const Adapter&)> &scorer, std::vector<Adapter> &adapters) {
+  inline tl::expected<Adapter, Error>
+  select_adapter(const std::function<int(const Adapter &)> &scorer,
+                 std::vector<Adapter> &adapters) {
     size_t best_index;
     int best_score = -1;
-  
+
     size_t i = 0;
     for (const Adapter &adapter : adapters) {
       int score = scorer(adapter);
@@ -85,9 +84,12 @@ public:
     return best_adapter;
   }
 
-  /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes `adapters` as an rvalue.
+  /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes `adapters` as an
+  /// rvalue.
   /// @see `select_adapter(..., std::vector<Adapter> &)`
-  inline tl::expected<Adapter, Error> select_adapter(const std::function<int(const Adapter&)> &scorer, std::vector<Adapter> &&adapters) {
+  inline tl::expected<Adapter, Error>
+  select_adapter(const std::function<int(const Adapter &)> &scorer,
+                 std::vector<Adapter> &&adapters) {
     return this->select_adapter(scorer, adapters);
   }
 
@@ -110,7 +112,8 @@ public:
   /// The backend-defined implementation of the `Instance`'s functions
   struct Impl {
     virtual std::vector<Adapter> enumerate_adapters() = 0;
-    virtual std::function<int(const Adapter&)> get_adapter_scorer(const Adapter::Descriptor &descriptor) = 0;
+    virtual std::function<int(const Adapter &)>
+    get_adapter_scorer(const Adapter::Descriptor &descriptor) = 0;
     virtual const backend::Backend &get_backend() = 0;
     virtual void *get_extension(extension::ExtensionUUID) = 0;
 

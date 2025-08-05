@@ -12,7 +12,8 @@ struct InstanceImpl : public Instance::Impl {
   inline VkInstance get_instance() const { return this->instance; }
 
   virtual std::vector<Adapter> enumerate_adapters() override;
-  virtual std::function<int(const Adapter&)> get_adapter_scorer(const Adapter::Descriptor &descriptor) override;
+  virtual std::function<int(const Adapter &)>
+  get_adapter_scorer(const Adapter::Descriptor &descriptor) override;
 
   virtual const backend::Backend &get_backend() override;
 

@@ -1,6 +1,6 @@
-#include <fgla/internal.hpp>
-#include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/queue.hpp>
+#include <fgla/internal.hpp>
 #ifdef FGLA_VK_EXT_WINDOWING
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #endif
@@ -60,21 +60,28 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
         break;
 #ifdef FGLA_VK_EXT_WINDOWING
       case fgla::ext::windowing::QueueTypeExt::Present: {
-          auto &present_queue_opts = *reinterpret_cast<fgla::ext::windowing::PresentQueueOptions *>(request.user_data);
-          VkSurfaceKHR vk_surface = dynamic_cast<fgla::backends::vulkan::ext::windowing::SurfaceImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue_opts.surface))->get_surface();
-          VkPhysicalDevice vk_device = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue_opts.adapter))->get_physical_device();
-          
-          uint32_t n_queue_families = 0;
-          vkGetPhysicalDeviceQueueFamilyProperties(vk_device, &n_queue_families, nullptr);
+        auto &present_queue_opts =
+            *reinterpret_cast<fgla::ext::windowing::PresentQueueOptions *>(request.user_data);
+        VkSurfaceKHR vk_surface =
+            dynamic_cast<fgla::backends::vulkan::ext::windowing::SurfaceImpl *>(
+                fgla::internal::ImplAccessor::get_impl(present_queue_opts.surface))
+                ->get_surface();
+        VkPhysicalDevice vk_device =
+            dynamic_cast<AdapterImpl *>(
+                fgla::internal::ImplAccessor::get_impl(present_queue_opts.adapter))
+                ->get_physical_device();
 
-          VkBool32 present_support = false;
-          for (int i = 0; i < n_queue_families; ++i) {
-            vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, i, vk_surface, &present_support);
-            if (present_support) break;
-          }
+        uint32_t n_queue_families = 0;
+        vkGetPhysicalDeviceQueueFamilyProperties(vk_device, &n_queue_families, nullptr);
 
-          supported = present_support;
-        } break;
+        VkBool32 present_support = false;
+        for (int i = 0; i < n_queue_families; ++i) {
+          vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, i, vk_surface, &present_support);
+          if (present_support) break;
+        }
+
+        supported = present_support;
+      } break;
 #endif
       default:
         logger->warn("Unknown logical queue type!");

@@ -149,7 +149,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
   return adapters;
 }
 
-std::function<int(const Adapter&)> InstanceImpl::get_adapter_scorer(const Adapter::Descriptor &descriptor) {
+std::function<int(const Adapter &)>
+InstanceImpl::get_adapter_scorer(const Adapter::Descriptor &descriptor) {
   return [&](const Adapter &a) -> int {
     auto impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
     return score_physical_device(impl->get_physical_device(), descriptor);

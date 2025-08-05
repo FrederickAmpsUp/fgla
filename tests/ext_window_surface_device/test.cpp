@@ -2,15 +2,14 @@
 #include <fgla/instance.hpp>
 
 int main(int argc, char **argv) {
-  auto instance = fgla::unwrap_with_message(fgla::Instance::create({
-      .required_extensions = {
-        fgla::ext::windowing::WindowExtension::UUID
-      },
+  auto instance = fgla::unwrap_with_message(
+      fgla::Instance::create({
+          .required_extensions = {fgla::ext::windowing::WindowExtension::UUID},
 
-      .app_version = {0, 0, 1},
-      .app_name = "Windowing test",
-    }),
-  "Failed to create instance");
+          .app_version = {0, 0, 1},
+          .app_name = "Windowing test",
+      }),
+      "Failed to create instance");
 
   auto &windowing = fgla::unwrap_with_message(
       instance.get_extension<fgla::ext::windowing::WindowExtension>(), "Windowing not available");
@@ -25,17 +24,19 @@ int main(int argc, char **argv) {
   auto adapters = fgla::util::FilterableList(instance.enumerate_adapters());
   adapters = std::move(adapters).filter_move(windowing.surface_support_filter(surface));
 
-  auto adapter = fgla::unwrap_with_message(instance.select_adapter(instance.get_adapter_scorer({}), adapters.data()),
-                                           "Failed to create adapter");
+  auto adapter = fgla::unwrap_with_message(
+      instance.select_adapter(instance.get_adapter_scorer({}), adapters.data()),
+      "Failed to create adapter");
   fgla::ext::windowing::PresentQueueOptions present_queue_opts = {
-    surface, adapter,
+      surface,
+      adapter,
   };
-  auto device = fgla::unwrap_with_message(adapter.create_device({
-  }, {
-    fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
-    fgla::Queue::Request{fgla::Queue::Type::Transfer, 1},
-    fgla::Queue::Request{fgla::ext::windowing::QueueTypeExt::Present, 1, &present_queue_opts}
-  }), "Failed to create device");
+  auto device = fgla::unwrap_with_message(
+      adapter.create_device({}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
+                                 fgla::Queue::Request{fgla::Queue::Type::Transfer, 1},
+                                 fgla::Queue::Request{fgla::ext::windowing::QueueTypeExt::Present,
+                                                      1, &present_queue_opts}}),
+      "Failed to create device");
 
   fgla::Queue &graphics = *device.get_queue(fgla::Queue::Type::Graphics, 0);
   fgla::Queue &transfer = *device.get_queue(fgla::Queue::Type::Transfer, 0);

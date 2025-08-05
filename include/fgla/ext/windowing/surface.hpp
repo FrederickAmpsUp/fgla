@@ -9,7 +9,7 @@ namespace fgla::ext::windowing {
 /// Represents a surface, which is used to render to a window
 class Surface {
 public:
-  // TODO: descriptors (?)
+  struct Configuration {};
 
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
@@ -32,10 +32,11 @@ private:
 inline Surface::Impl::~Impl() = default;
 
 struct QueueTypeExt {
-  static constexpr Queue::Type Present = Queue::Type(16); // a better way to do this is likely a good idea
+  static constexpr Queue::Type Present =
+      Queue::Type(16); // a better way to do this is likely a good idea
 };
 struct PresentQueueOptions {
-  const Surface& surface;
-  const Adapter& adapter;
+  const Surface &surface;
+  const Adapter &adapter;
 };
 } // namespace fgla::ext::windowing
