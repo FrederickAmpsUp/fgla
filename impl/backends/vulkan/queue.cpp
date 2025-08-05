@@ -88,7 +88,7 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
         supported = false;
         break;
       }
-      if (supported) supported_families.push_back(&family);
+      if (supported && family.max_queues > 0) supported_families.push_back(&family);
     }
     if (counts_and_available_families.find(request.type) != counts_and_available_families.end()) {
       counts_and_available_families[request.type].first += request.count;
@@ -103,8 +103,8 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
     auto [count, supported_families] = caf;
     for (int i = 0; i < count; ++i) {
       FamilyInfo *best_family = nullptr;
-      int best_score = -1;
-      int idx_fallback_queue;
+      int best_score = -3;
+      int idx_fallback_queue = 0;
       for (FamilyInfo *family : supported_families) {
         int score = 0;
 

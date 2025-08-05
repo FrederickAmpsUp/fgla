@@ -130,6 +130,18 @@ void test_big_brain_allocator() {
     auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
+  {
+    std::cout << "=== Test 8: Many queues, 1 supported ===\n";
+    fgla::Queue::Request r1{fgla::Queue::Type::Graphics, 2};
+    fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
+    std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
+    std::vector<VkQueueFamilyProperties> fams{
+        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 1}};
+    print_requests(reqs);
+    print_families(fams);
+    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    print_results(createInfos, mapping);
+  }
 }
 
 int main() {
