@@ -1,0 +1,28 @@
+var classfgla_1_1Result =
+[
+    [ "Result", "classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0", null ],
+    [ "Result", "classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520", null ],
+    [ "Result", "classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27", null ],
+    [ "~Result", "classfgla_1_1Result.html#a7d4c320dcd8a6adc1ddd4dbffee5711f", null ],
+    [ "error", "classfgla_1_1Result.html#a54136770feeff015dea308075052507f", null ],
+    [ "error", "classfgla_1_1Result.html#a22e201962f3525ba9409bddbc6ef9ba4", null ],
+    [ "error", "classfgla_1_1Result.html#a47f8a8a8eed4dd7b0dde363434c550b9", null ],
+    [ "error", "classfgla_1_1Result.html#a975d5b0bfb0452da5e8e4045cb44f84a", null ],
+    [ "has_error", "classfgla_1_1Result.html#a30e53ffd476117355b9f77221721671e", null ],
+    [ "has_value", "classfgla_1_1Result.html#aa5becf642be2cbb7faa56021c731af35", null ],
+    [ "is_ok", "classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b", null ],
+    [ "operator bool", "classfgla_1_1Result.html#ac4d646c791f4d470856bed5ad8d47653", null ],
+    [ "operator*", "classfgla_1_1Result.html#ab883082931c3b2578e36b542e859430f", null ],
+    [ "operator*", "classfgla_1_1Result.html#a4a39cc95517ae52a619e3c40651e6c78", null ],
+    [ "operator*", "classfgla_1_1Result.html#a858e4591d24f359d25188958f8c6474b", null ],
+    [ "operator*", "classfgla_1_1Result.html#a672e2c3c9063595853736ee03f0f9ee8", null ],
+    [ "operator->", "classfgla_1_1Result.html#a570f150fc94bdf8bc111af9eaf08662f", null ],
+    [ "operator->", "classfgla_1_1Result.html#a6c1155fe795a918e450437a627383cff", null ],
+    [ "value", "classfgla_1_1Result.html#aa95d199c7ae365280d64597dc40ca13e", null ],
+    [ "value", "classfgla_1_1Result.html#a989c41a5f8e817fc52a1d5197996e4b5", null ],
+    [ "value", "classfgla_1_1Result.html#ad28ad62e7b01bd2817a2d238975312ac", null ],
+    [ "value", "classfgla_1_1Result.html#aa77624ecc76464e649a27a6038e66c20", null ],
+    [ "e", "classfgla_1_1Result.html#acd898ee727730aff2e8c8ab1d7707e92", null ],
+    [ "ok", "classfgla_1_1Result.html#a2bb862808b001325721c239f75b25135", null ],
+    [ "t", "classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4", null ]
+];

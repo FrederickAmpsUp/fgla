@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_0',['type',['../structfgla_1_1Queue_1_1Request.html#ab74fee67f6db0332404873f7ae410779',1,'fgla::Queue::Request']]]
+  ['required_5fextensions_0',['required_extensions',['../structfgla_1_1Instance_1_1Descriptor.html#a13a9b8c1d29c7654ac83902769b6991a',1,'fgla::Instance::Descriptor']]]
 ];

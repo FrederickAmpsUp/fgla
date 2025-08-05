@@ -129,11 +129,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Error.html">Error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a failure state from a function call.  <a href="structfgla_1_1Error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Extent2d.html">Extent2d</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 2d extent, with width and height.  <a href="structfgla_1_1Extent2d.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Instance.html">Instance</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an instance, which is used to acquire an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>  <a href="classfgla_1_1Instance.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Queue.html">Queue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a logical queue, which is used to submit GPU commands.  <a href="classfgla_1_1Queue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Result.html">Result</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1VersionTriple.html">VersionTriple</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A 3-number version identifier.  <a href="structfgla_1_1VersionTriple.html#details">More...</a><br /></td></tr>
@@ -141,19 +146,186 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad65446be60c4000611ce02ee1d32349b" id="r_ad65446be60c4000611ce02ee1d32349b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad65446be60c4000611ce02ee1d32349b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad65446be60c4000611ce02ee1d32349b">unwrap_with_message</a> (tl::expected&lt; T, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; res, const char *message=&quot;Fatal Error:&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:ad65446be60c4000611ce02ee1d32349b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54ded18e368e485f3faed7813120547" id="r_ab54ded18e368e485f3faed7813120547"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab54ded18e368e485f3faed7813120547"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab54ded18e368e485f3faed7813120547">unwrap_with_message</a> (std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:ab54ded18e368e485f3faed7813120547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7380448ebe5be8eefb1fa0c7dad013b7" id="r_a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7380448ebe5be8eefb1fa0c7dad013b7">unwrap_with_message</a> (<a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6f9c9afadf60543ec308d56c87bd5f" id="r_aed6f9c9afadf60543ec308d56c87bd5f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:aed6f9c9afadf60543ec308d56c87bd5f"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aed6f9c9afadf60543ec308d56c87bd5f">operator*</a> (const char *msg, <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;res)</td></tr>
+<tr class="separator:aed6f9c9afadf60543ec308d56c87bd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1cd2ba34a33215b91e8eafd0113d98" id="r_a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7d1cd2ba34a33215b91e8eafd0113d98">operator*</a> (const char *msg, const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;res)</td></tr>
+<tr class="separator:a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a177c9d657f4d3a1192c1ee112fe140" id="r_a5a177c9d657f4d3a1192c1ee112fe140"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a5a177c9d657f4d3a1192c1ee112fe140"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5a177c9d657f4d3a1192c1ee112fe140">operator*</a> (const char *msg, <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;res)</td></tr>
+<tr class="separator:a5a177c9d657f4d3a1192c1ee112fe140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0adb7740f5e04aeb9b1cf557f847bb8" id="r_af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af0adb7740f5e04aeb9b1cf557f847bb8">operator*</a> (const char *msg, const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;res)</td></tr>
+<tr class="separator:af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203732d926f64e0ba6afe8de0f8c001e" id="r_a203732d926f64e0ba6afe8de0f8c001e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a203732d926f64e0ba6afe8de0f8c001e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a> (<a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:a203732d926f64e0ba6afe8de0f8c001e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0102ab7ca6cf9e2fb280594e5ba1815" id="r_aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa0102ab7ca6cf9e2fb280594e5ba1815">unwrap</a> (std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab033b9c9fcc9baa3ddc9048614612e4e" id="r_ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab033b9c9fcc9baa3ddc9048614612e4e">unwrap</a> (<a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab54ded18e368e485f3faed7813120547" name="ab54ded18e368e485f3faed7813120547"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab54ded18e368e485f3faed7813120547">&#9670;&#160;</a></span>unwrap_with_message() <span class="overload">[1/3]</span></h2>
+<a id="af0adb7740f5e04aeb9b1cf557f847bb8" name="af0adb7740f5e04aeb9b1cf557f847bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0adb7740f5e04aeb9b1cf557f847bb8">&#9670;&#160;</a></span>operator*() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp;&amp; fgla::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00123">123</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                                                                 {</div>
+<div class="line"><span class="lineno">  124</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  125</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  126</span>}</div>
+<div class="ttc" id="aclassfgla_1_1Result_html_a6c4897fe63f4f8927d3faa8792ca927b"><div class="ttname"><a href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">fgla::Result::is_ok</a></div><div class="ttdeci">bool is_ok() const</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00031">error.hpp:31</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7d1cd2ba34a33215b91e8eafd0113d98" name="a7d1cd2ba34a33215b91e8eafd0113d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1cd2ba34a33215b91e8eafd0113d98">&#9670;&#160;</a></span>operator*() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; fgla::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00115">115</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                                                               {</div>
+<div class="line"><span class="lineno">  116</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  117</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5a177c9d657f4d3a1192c1ee112fe140" name="a5a177c9d657f4d3a1192c1ee112fe140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a177c9d657f4d3a1192c1ee112fe140">&#9670;&#160;</a></span>operator*() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp;&amp; fgla::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00119">119</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                                                                                     {</div>
+<div class="line"><span class="lineno">  120</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  121</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed6f9c9afadf60543ec308d56c87bd5f" name="aed6f9c9afadf60543ec308d56c87bd5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed6f9c9afadf60543ec308d56c87bd5f">&#9670;&#160;</a></span>operator*() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; fgla::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00111">111</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>                                                                                   {</div>
+<div class="line"><span class="lineno">  112</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  114</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a203732d926f64e0ba6afe8de0f8c001e" name="a203732d926f64e0ba6afe8de0f8c001e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a203732d926f64e0ba6afe8de0f8c001e">&#9670;&#160;</a></span>unwrap() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T fgla::unwrap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Fatal&#160;Error&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exit_code</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00129">129</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                                                                    {</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  131</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  132</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">  133</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa0102ab7ca6cf9e2fb280594e5ba1815" name="aa0102ab7ca6cf9e2fb280594e5ba1815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0102ab7ca6cf9e2fb280594e5ba1815">&#9670;&#160;</a></span>unwrap() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +333,7 @@ Functions</h2></td></tr>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T fgla::unwrap_with_message </td>
+          <td class="memname">T fgla::unwrap </td>
           <td>(</td>
           <td class="paramtype">std::optional&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>opt</em></span>, </td>
         </tr>
@@ -193,20 +365,20 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00052">52</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                          {</div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">   55</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   56</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   57</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
-<div class="line"><span class="lineno">   59</span>  }</div>
-<div class="line"><span class="lineno">   60</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00146">146</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>                                                                                      {</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">  148</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  149</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">  150</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+<div class="line"><span class="lineno">  153</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad65446be60c4000611ce02ee1d32349b" name="ad65446be60c4000611ce02ee1d32349b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad65446be60c4000611ce02ee1d32349b">&#9670;&#160;</a></span>unwrap_with_message() <span class="overload">[2/3]</span></h2>
+<a id="ab033b9c9fcc9baa3ddc9048614612e4e" name="ab033b9c9fcc9baa3ddc9048614612e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab033b9c9fcc9baa3ddc9048614612e4e">&#9670;&#160;</a></span>unwrap() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,61 +386,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T fgla::unwrap_with_message </td>
-          <td>(</td>
-          <td class="paramtype">tl::expected&lt; T, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>res</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;Fatal&#160;Error:&quot;</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exit_code</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns the value stored in <code>res</code> Displays an error message and exits the program if <code>res</code> contains an <code><a class="el" href="structfgla_1_1Error.html" title="Represents a failure state from a function call.">Error</a></code> </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>the type of object to unwrap (will be inferred from arguments) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">res</td><td>The result to unwrap </td></tr>
-    <tr><td class="paramname">message</td><td>The error message to display on failure </td></tr>
-    <tr><td class="paramname">exit_code</td><td>The exit code to use on faulure </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00033">33</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                        :<span class="stringliteral">&quot;, int exit_code = -1) {</span></div>
-<div class="line"><span class="lineno">   35</span><span class="stringliteral">  if (!res) {</span></div>
-<div class="line"><span class="lineno">   36</span><span class="stringliteral">    std::cerr &lt;&lt; message &lt;&lt; &quot;</span>: \<span class="stringliteral">&quot;&quot;</span> &lt;&lt; res.error().message.value_or(<span class="stringliteral">&quot;Unknown error&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   37</span>              &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   38</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   39</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">   41</span>  }</div>
-<div class="line"><span class="lineno">   42</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7380448ebe5be8eefb1fa0c7dad013b7" name="a7380448ebe5be8eefb1fa0c7dad013b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7380448ebe5be8eefb1fa0c7dad013b7">&#9670;&#160;</a></span>unwrap_with_message() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T &amp; fgla::unwrap_with_message </td>
+          <td class="memname">T &amp; fgla::unwrap </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>opt</em></span>, </td>
         </tr>
@@ -300,15 +418,15 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00070">70</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                           {</div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">   73</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   74</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">   75</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span> *opt;</div>
-<div class="line"><span class="lineno">   77</span>  }</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00163">163</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>                                                                                      {</div>
+<div class="line"><span class="lineno">  164</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">  165</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  166</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">  167</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> *opt;</div>
+<div class="line"><span class="lineno">  169</span>  }</div>
+<div class="line"><span class="lineno">  170</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

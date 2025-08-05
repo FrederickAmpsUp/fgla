@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_5fadapter_0',['get_adapter',['../classfgla_1_1Instance.html#ab6ba584c67fd6dd907820eda29a0c4a7',1,'fgla::Instance']]],
+  ['get_5fadapter_0',['get_adapter',['../classfgla_1_1Instance.html#a19b3e9dd4529c719d37457b5e4d0ec5b',1,'fgla::Instance']]],
   ['get_5fadapter_5fscorer_1',['get_adapter_scorer',['../classfgla_1_1Instance.html#a2da4c39d8a55ec9880f0eca9ec9aad8b',1,'fgla::Instance::get_adapter_scorer()'],['../structfgla_1_1Instance_1_1Impl.html#a1aa10d5c4702f1536fd73c1171881b09',1,'fgla::Instance::Impl::get_adapter_scorer()']]],
   ['get_5fbackend_2',['get_backend',['../classfgla_1_1Instance.html#a600e6b12ef043c6cc39623d215d31568',1,'fgla::Instance::get_backend()'],['../structfgla_1_1Instance_1_1Impl.html#a302e63450bc99775ba6d3192ae2d7a33',1,'fgla::Instance::Impl::get_backend()']]],
   ['get_5fextension_3',['get_extension',['../classfgla_1_1Instance.html#a5b764956d804018e18a367a3a584ce78',1,'fgla::Instance::get_extension()'],['../structfgla_1_1Instance_1_1Impl.html#a3d27b3f44927da0ec05e52db45bbf456',1,'fgla::Instance::Impl::get_extension()']]],

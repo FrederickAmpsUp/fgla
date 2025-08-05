@@ -128,8 +128,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa28b3728d90edc986ce59b4ed135ebbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10184ea6722b8be261760f5d8dc165a0" id="r_a10184ea6722b8be261760f5d8dc165a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10184ea6722b8be261760f5d8dc165a0">is_open</a> ()</td></tr>
 <tr class="separator:a10184ea6722b8be261760f5d8dc165a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5264138cd329263db77ed72c161d0ec2" id="r_a5264138cd329263db77ed72c161d0ec2"><td class="memItemLeft" align="right" valign="top">tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5264138cd329263db77ed72c161d0ec2">create_surface</a> (const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;instance)</td></tr>
-<tr class="separator:a5264138cd329263db77ed72c161d0ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a86042cc8a32cd3991a51af61a47eb" id="r_a66a86042cc8a32cd3991a51af61a47eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66a86042cc8a32cd3991a51af61a47eb">create_surface</a> (const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;instance)</td></tr>
+<tr class="separator:a66a86042cc8a32cd3991a51af61a47eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -151,8 +151,8 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00011">11</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5264138cd329263db77ed72c161d0ec2" name="a5264138cd329263db77ed72c161d0ec2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5264138cd329263db77ed72c161d0ec2">&#9670;&#160;</a></span>create_surface()</h2>
+<a id="a66a86042cc8a32cd3991a51af61a47eb" name="a66a86042cc8a32cd3991a51af61a47eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a86042cc8a32cd3991a51af61a47eb">&#9670;&#160;</a></span>create_surface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tl::expected&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a>, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; fgla::ext::windowing::Window::create_surface </td>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a> &gt; fgla::ext::windowing::Window::create_surface </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>instance</em></span></td><td>)</td>
           <td></td>
@@ -175,7 +175,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00031">31</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                                                 {</div>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                                      {</div>
 <div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#ad664f8fa5f2d0139b7437351003d5388">impl</a>-&gt;create_surface(instance);</div>
 <div class="line"><span class="lineno">   33</span>  }</div>
 <div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Window_html_ad664f8fa5f2d0139b7437351003d5388"><div class="ttname"><a href="#ad664f8fa5f2d0139b7437351003d5388">fgla::ext::windowing::Window::impl</a></div><div class="ttdeci">std::unique_ptr&lt; Impl &gt; impl</div><div class="ttdef"><b>Definition</b> <a href="window_8hpp_source.html#l00055">window.hpp:55</a></div></div>

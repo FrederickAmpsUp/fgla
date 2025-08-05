@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['filterablelist_0',['FilterableList',['../classfgla_1_1util_1_1FilterableList.html',1,'fgla::util']]]
+  ['error_0',['Error',['../structfgla_1_1Error.html',1,'fgla']]],
+  ['extent2d_1',['Extent2d',['../structfgla_1_1Extent2d.html',1,'fgla']]]
 ];

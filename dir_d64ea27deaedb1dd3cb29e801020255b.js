@@ -9,5 +9,6 @@ var dir_d64ea27deaedb1dd3cb29e801020255b =
     [ "instance.hpp", "instance_8hpp.html", "instance_8hpp" ],
     [ "internal.hpp", "internal_8hpp.html", "internal_8hpp" ],
     [ "queue.hpp", "queue_8hpp.html", "queue_8hpp" ],
+    [ "types.hpp", "types_8hpp.html", "types_8hpp" ],
     [ "util.hpp", "util_8hpp.html", "util_8hpp" ]
 ];

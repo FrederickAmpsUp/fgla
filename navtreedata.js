@@ -53,7 +53,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adapter_8hpp.html",
-"structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9"
+"structfgla_1_1Adapter_1_1Impl.html#ab315d6524bfbab62cd4c3c3c7a6432a8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

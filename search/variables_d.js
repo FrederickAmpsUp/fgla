@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['width_0',['width',['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html#a492a1e1f184a26e810884840cb3630ea',1,'fgla::ext::windowing::Window::Descriptor']]]
+  ['t_0',['t',['../classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4',1,'fgla::Result']]],
+  ['type_1',['type',['../structfgla_1_1Queue_1_1Request.html#ab74fee67f6db0332404873f7ae410779',1,'fgla::Queue::Request']]]
 ];

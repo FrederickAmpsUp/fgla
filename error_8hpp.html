@@ -109,7 +109,6 @@ $(function(){initNavTree('error_8hpp.html',''); initResizable(true); });
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;tl/expected.hpp&gt;</code><br />
 </div>
 <p><a href="error_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -117,6 +116,8 @@ $(function(){initNavTree('error_8hpp.html',''); initResizable(true); });
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Error.html">fgla::Error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a failure state from a function call.  <a href="structfgla_1_1Error.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Result.html">fgla::Result&lt; T, E &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -126,15 +127,27 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad65446be60c4000611ce02ee1d32349b" id="r_ad65446be60c4000611ce02ee1d32349b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad65446be60c4000611ce02ee1d32349b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#ad65446be60c4000611ce02ee1d32349b">fgla::unwrap_with_message</a> (tl::expected&lt; T, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; res, const char *message=&quot;Fatal Error:&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:ad65446be60c4000611ce02ee1d32349b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab54ded18e368e485f3faed7813120547" id="r_ab54ded18e368e485f3faed7813120547"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab54ded18e368e485f3faed7813120547"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#ab54ded18e368e485f3faed7813120547">fgla::unwrap_with_message</a> (std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:ab54ded18e368e485f3faed7813120547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7380448ebe5be8eefb1fa0c7dad013b7" id="r_a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a7380448ebe5be8eefb1fa0c7dad013b7">fgla::unwrap_with_message</a> (<a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
-<tr class="separator:a7380448ebe5be8eefb1fa0c7dad013b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6f9c9afadf60543ec308d56c87bd5f" id="r_aed6f9c9afadf60543ec308d56c87bd5f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:aed6f9c9afadf60543ec308d56c87bd5f"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">fgla::operator*</a> (const char *msg, <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;res)</td></tr>
+<tr class="separator:aed6f9c9afadf60543ec308d56c87bd5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1cd2ba34a33215b91e8eafd0113d98" id="r_a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98">fgla::operator*</a> (const char *msg, const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;res)</td></tr>
+<tr class="separator:a7d1cd2ba34a33215b91e8eafd0113d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a177c9d657f4d3a1192c1ee112fe140" id="r_a5a177c9d657f4d3a1192c1ee112fe140"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a5a177c9d657f4d3a1192c1ee112fe140"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a5a177c9d657f4d3a1192c1ee112fe140">fgla::operator*</a> (const char *msg, <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;res)</td></tr>
+<tr class="separator:a5a177c9d657f4d3a1192c1ee112fe140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0adb7740f5e04aeb9b1cf557f847bb8" id="r_af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#af0adb7740f5e04aeb9b1cf557f847bb8">fgla::operator*</a> (const char *msg, const <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&amp;res)</td></tr>
+<tr class="separator:af0adb7740f5e04aeb9b1cf557f847bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203732d926f64e0ba6afe8de0f8c001e" id="r_a203732d926f64e0ba6afe8de0f8c001e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename E &gt; </td></tr>
+<tr class="memitem:a203732d926f64e0ba6afe8de0f8c001e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">fgla::unwrap</a> (<a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:a203732d926f64e0ba6afe8de0f8c001e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0102ab7ca6cf9e2fb280594e5ba1815" id="r_aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815">fgla::unwrap</a> (std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:aa0102ab7ca6cf9e2fb280594e5ba1815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab033b9c9fcc9baa3ddc9048614612e4e" id="r_ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e">fgla::unwrap</a> (<a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</td></tr>
+<tr class="separator:ab033b9c9fcc9baa3ddc9048614612e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

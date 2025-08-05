@@ -10,10 +10,16 @@ var namespacefgla =
     [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
     [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],
     [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
+    [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
     [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
     [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
+    [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
     [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ],
-    [ "unwrap_with_message", "namespacefgla.html#ab54ded18e368e485f3faed7813120547", null ],
-    [ "unwrap_with_message", "namespacefgla.html#ad65446be60c4000611ce02ee1d32349b", null ],
-    [ "unwrap_with_message", "namespacefgla.html#a7380448ebe5be8eefb1fa0c7dad013b7", null ]
+    [ "operator*", "namespacefgla.html#af0adb7740f5e04aeb9b1cf557f847bb8", null ],
+    [ "operator*", "namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98", null ],
+    [ "operator*", "namespacefgla.html#a5a177c9d657f4d3a1192c1ee112fe140", null ],
+    [ "operator*", "namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f", null ],
+    [ "unwrap", "namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e", null ],
+    [ "unwrap", "namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ],
+    [ "unwrap", "namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e", null ]
 ];
