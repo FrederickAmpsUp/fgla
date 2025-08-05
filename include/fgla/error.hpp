@@ -30,8 +30,7 @@ struct Error {
 /// @param exit_code The exit code to use on faulure
 /// @returns The unwrapped value
 template <typename T>
-T unwrap_with_message(tl::expected<T, Error> res,
-                      const char *message = "Fatal Error:", int exit_code = -1) {
+T unwrap(tl::expected<T, Error> res, const char *message = "Fatal Error:", int exit_code = -1) {
   if (!res) {
     std::cerr << message << ": \"" << res.error().message.value_or("Unknown error") << "\""
               << std::endl;
@@ -49,8 +48,7 @@ T unwrap_with_message(tl::expected<T, Error> res,
 /// @param exit_code The exit code to use on faulure
 /// @returns The unwrapped value
 template <typename T>
-T unwrap_with_message(std::optional<T> opt, const char *message = "Fatal Error",
-                      int exit_code = -1) {
+T unwrap(std::optional<T> opt, const char *message = "Fatal Error", int exit_code = -1) {
   if (!opt) {
     std::cerr << message << std::endl;
     std::exit(exit_code);
@@ -67,8 +65,7 @@ T unwrap_with_message(std::optional<T> opt, const char *message = "Fatal Error",
 /// @param exit_code The exit code to use on faulure
 /// @returns The unwrapped value
 template <typename T>
-T &unwrap_with_message(util::OptRef<T> opt, const char *message = "Fatal Error",
-                       int exit_code = -1) {
+T &unwrap(util::OptRef<T> opt, const char *message = "Fatal Error", int exit_code = -1) {
   if (!opt) {
     std::cerr << message << std::endl;
     std::exit(exit_code);
