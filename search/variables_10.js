@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structfgla_1_1Extent2d.html#ac25748b0627c27bd10462cc64eaff101',1,'fgla::Extent2d']]]
+  ['y_0',['y',['../structfgla_1_1Extent2d.html#a2a04d23c895550aa660c6a3677a52fab',1,'fgla::Extent2d']]]
 ];

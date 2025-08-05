@@ -99,7 +99,6 @@ $(function(){initNavTree('classfgla_1_1util_1_1FilterableList.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classfgla_1_1util_1_1FilterableList-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::util::FilterableList&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -112,18 +111,13 @@ $(function(){initNavTree('classfgla_1_1util_1_1FilterableList.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5ed7e7665c97f2951595dbee0f94bad" id="r_ad5ed7e7665c97f2951595dbee0f94bad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5ed7e7665c97f2951595dbee0f94bad">FilterableList</a> (std::vector&lt; T &gt; <a class="el" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a>)</td></tr>
+<tr class="memitem:ad5ed7e7665c97f2951595dbee0f94bad" id="r_ad5ed7e7665c97f2951595dbee0f94bad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5ed7e7665c97f2951595dbee0f94bad">FilterableList</a> (std::vector&lt; T &gt; items)</td></tr>
 <tr class="separator:ad5ed7e7665c97f2951595dbee0f94bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a281389030c1cb22238c57cf83c36b476" id="r_a281389030c1cb22238c57cf83c36b476"><td class="memTemplParams" colspan="2">template&lt;typename Pred &gt; </td></tr>
 <tr class="memitem:a281389030c1cb22238c57cf83c36b476"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1util_1_1FilterableList.html">FilterableList</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a281389030c1cb22238c57cf83c36b476">filter_move</a> (const Pred &amp;pred) &amp;&amp;</td></tr>
 <tr class="separator:a281389030c1cb22238c57cf83c36b476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bcdb6503800d7e17b3f82dc0c6cde14" id="r_a3bcdb6503800d7e17b3f82dc0c6cde14"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bcdb6503800d7e17b3f82dc0c6cde14">data</a> ()</td></tr>
 <tr class="separator:a3bcdb6503800d7e17b3f82dc0c6cde14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a8644e65b98ca2e23d390de58af3f38c6" id="r_a8644e65b98ca2e23d390de58af3f38c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a></td></tr>
-<tr class="separator:a8644e65b98ca2e23d390de58af3f38c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -163,8 +157,7 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00138">138</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>: <a class="code hl_variable" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a>(std::move(<a class="code hl_variable" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a>)) {}</div>
-<div class="ttc" id="aclassfgla_1_1util_1_1FilterableList_html_a8644e65b98ca2e23d390de58af3f38c6"><div class="ttname"><a href="#a8644e65b98ca2e23d390de58af3f38c6">fgla::util::FilterableList::items</a></div><div class="ttdeci">std::vector&lt; T &gt; items</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00158">util.hpp:158</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>: items(std::move(items)) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,7 +188,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00155">155</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  155</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a>; }</div>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>{ <span class="keywordflow">return</span> this-&gt;items; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,7 +230,7 @@ template&lt;typename Pred &gt; </div>
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00145">145</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  145</span>                                                                           {</div>
 <div class="line"><span class="lineno">  146</span>    std::vector&lt;T&gt; out;</div>
-<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;item : this-&gt;<a class="code hl_variable" href="#a8644e65b98ca2e23d390de58af3f38c6">items</a>) {</div>
+<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;item : this-&gt;items) {</div>
 <div class="line"><span class="lineno">  148</span>      <span class="keywordflow">if</span> (pred(item)) {</div>
 <div class="line"><span class="lineno">  149</span>        out.push_back(std::move(item));</div>
 <div class="line"><span class="lineno">  150</span>      }</div>
@@ -246,33 +239,6 @@ template&lt;typename Pred &gt; </div>
 <div class="line"><span class="lineno">  153</span>  }</div>
 <div class="ttc" id="aclassfgla_1_1util_1_1FilterableList_html_ad5ed7e7665c97f2951595dbee0f94bad"><div class="ttname"><a href="#ad5ed7e7665c97f2951595dbee0f94bad">fgla::util::FilterableList::FilterableList</a></div><div class="ttdeci">FilterableList(std::vector&lt; T &gt; items)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00138">util.hpp:138</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a8644e65b98ca2e23d390de58af3f38c6" name="a8644e65b98ca2e23d390de58af3f38c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8644e65b98ca2e23d390de58af3f38c6">&#9670;&#160;</a></span>items</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;T&gt; <a class="el" href="classfgla_1_1util_1_1FilterableList.html">fgla::util::FilterableList</a>&lt; T &gt;::items</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00158">158</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

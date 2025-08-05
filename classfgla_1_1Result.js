@@ -23,6 +23,5 @@ var classfgla_1_1Result =
     [ "value", "classfgla_1_1Result.html#ad28ad62e7b01bd2817a2d238975312ac", null ],
     [ "value", "classfgla_1_1Result.html#aa77624ecc76464e649a27a6038e66c20", null ],
     [ "e", "classfgla_1_1Result.html#acd898ee727730aff2e8c8ab1d7707e92", null ],
-    [ "ok", "classfgla_1_1Result.html#a2bb862808b001325721c239f75b25135", null ],
     [ "t", "classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4", null ]
 ];

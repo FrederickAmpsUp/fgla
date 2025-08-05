@@ -99,7 +99,6 @@ $(function(){initNavTree('classfgla_1_1util_1_1OptRef.html',''); initResizable(t
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classfgla_1_1util_1_1OptRef-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::util::OptRef&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -128,11 +127,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aee0784c8bed708a4f3c9300e85bf2ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad01b8e9c3340f2ed545247c64ced904a" id="r_ad01b8e9c3340f2ed545247c64ced904a"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad01b8e9c3340f2ed545247c64ced904a">operator*</a> () const</td></tr>
 <tr class="separator:ad01b8e9c3340f2ed545247c64ced904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:aa67d4122f758b2dd6df57576586fea28" id="r_aa67d4122f758b2dd6df57576586fea28"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a></td></tr>
-<tr class="separator:aa67d4122f758b2dd6df57576586fea28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
@@ -168,8 +162,7 @@ template&lt;typename T &gt; </div>
 <p>Creates an empty <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">OptRef</a></code> </p>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00097">97</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>: <a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a>(<span class="keyword">nullptr</span>) {}</div>
-<div class="ttc" id="aclassfgla_1_1util_1_1OptRef_html_aa67d4122f758b2dd6df57576586fea28"><div class="ttname"><a href="#aa67d4122f758b2dd6df57576586fea28">fgla::util::OptRef::ptr</a></div><div class="ttdeci">T * ptr</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00130">util.hpp:130</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>: ptr(<span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,7 +198,7 @@ template&lt;typename T &gt; </div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00100">100</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>: <a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a>(&amp;ref) {}</div>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>: ptr(&amp;ref) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,7 +230,7 @@ template&lt;typename T &gt; </div>
 <p>Check if this <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">OptRef</a></code> is referencing any value </p><dl class="section return"><dt>Returns</dt><dd><code>true</code> if this <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">OptRef</a></code> contains a reference, else <code>false</code> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00104">104</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  104</span>{ <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a> != <span class="keyword">nullptr</span>; }</div>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{ <span class="keywordflow">return</span> this-&gt;ptr != <span class="keyword">nullptr</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -302,8 +295,8 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00124">124</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  124</span>                       {</div>
-<div class="line"><span class="lineno">  125</span>    assert(this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a> &amp;&amp; <span class="stringliteral">&quot;OptRef::operator* called on empty OptRef&quot;</span>);</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> *this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a>;</div>
+<div class="line"><span class="lineno">  125</span>    assert(this-&gt;ptr &amp;&amp; <span class="stringliteral">&quot;OptRef::operator* called on empty OptRef&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> *this-&gt;ptr;</div>
 <div class="line"><span class="lineno">  127</span>  }</div>
 </div><!-- fragment -->
 </div>
@@ -336,8 +329,8 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00117">117</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  117</span>                        {</div>
-<div class="line"><span class="lineno">  118</span>    assert(this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a> &amp;&amp; <span class="stringliteral">&quot;OptRef::operator-&gt; called on empty OptRef&quot;</span>);</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a>;</div>
+<div class="line"><span class="lineno">  118</span>    assert(this-&gt;ptr &amp;&amp; <span class="stringliteral">&quot;OptRef::operator-&gt; called on empty OptRef&quot;</span>);</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> this-&gt;ptr;</div>
 <div class="line"><span class="lineno">  120</span>  }</div>
 </div><!-- fragment -->
 </div>
@@ -370,37 +363,10 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00110">110</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  110</span>                   {</div>
-<div class="line"><span class="lineno">  111</span>    assert(this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a> &amp;&amp; <span class="stringliteral">&quot;OptRef::value() called on empty OptRef&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> *this-&gt;<a class="code hl_variable" href="#aa67d4122f758b2dd6df57576586fea28">ptr</a>;</div>
+<div class="line"><span class="lineno">  111</span>    assert(this-&gt;ptr &amp;&amp; <span class="stringliteral">&quot;OptRef::value() called on empty OptRef&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> *this-&gt;ptr;</div>
 <div class="line"><span class="lineno">  113</span>  };</div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa67d4122f758b2dd6df57576586fea28" name="aa67d4122f758b2dd6df57576586fea28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa67d4122f758b2dd6df57576586fea28">&#9670;&#160;</a></span>ptr</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T* <a class="el" href="classfgla_1_1util_1_1OptRef.html">fgla::util::OptRef</a>&lt; T &gt;::ptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00130">130</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

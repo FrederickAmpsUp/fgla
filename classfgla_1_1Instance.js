@@ -11,6 +11,5 @@ var classfgla_1_1Instance =
     [ "get_extension", "classfgla_1_1Instance.html#a5b764956d804018e18a367a3a584ce78", null ],
     [ "select_adapter", "classfgla_1_1Instance.html#a08c6ac70293d35088c02fc94ef8a674f", null ],
     [ "select_adapter", "classfgla_1_1Instance.html#ad8f34a69b087f99e60846cb8fd9e70a1", null ],
-    [ "fgla::internal::ImplAccessor", "classfgla_1_1Instance.html#ac06cf072aa647185632537a764206ad1", null ],
-    [ "impl", "classfgla_1_1Instance.html#a51f968088ecff62223c3acd1bf67e8ec", null ]
+    [ "fgla::internal::ImplAccessor", "classfgla_1_1Instance.html#ac06cf072aa647185632537a764206ad1", null ]
 ];
