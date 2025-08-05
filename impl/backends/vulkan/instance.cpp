@@ -1,11 +1,11 @@
 #if FGLA_VK_EXT_WINDOWING
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <fgla/backends/vulkan/ext/windowing/extension.hpp>
 #endif
 
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/backend.hpp>
-#include <fgla/backends/vulkan/ext/windowing/extension.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/spdlog.h>
@@ -163,8 +163,8 @@ const backend::Backend &InstanceImpl::get_backend() {
 
 void *InstanceImpl::get_extension(extension::ExtensionUUID uuid) {
 #ifdef FGLA_VK_EXT_WINDOWING
-  if (uuid == fgla::ext::windowing::WindowExtension::UUID) {
-    fgla::ext::windowing::WindowExtension &ext = ext::windowing::window_extension_impl;
+  if (uuid == fgla::ext::windowing::WindowingExtension::UUID) {
+    fgla::ext::windowing::WindowingExtension &ext = ext::windowing::windowing_extension_impl;
     return static_cast<void *>(&ext);
   }
 #endif

@@ -9,7 +9,7 @@
 namespace fgla::backends::vulkan::ext::windowing {
 
 tl::expected<fgla::ext::windowing::Window, Error>
-WindowExtensionImpl::create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) {
+WindowingExtensionImpl::create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) {
   std::unique_ptr<WindowImpl> impl = std::make_unique<WindowImpl>(descriptor);
   if (!impl->is_ok()) {
     return tl::make_unexpected(Error(0));
@@ -18,7 +18,7 @@ WindowExtensionImpl::create_window(const fgla::ext::windowing::Window::Descripto
 }
 
 std::function<bool(const Adapter &)>
-WindowExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface &surface) {
+WindowingExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface &surface) {
   return [&](const Adapter &a) -> bool {
     auto a_impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
     auto s_impl = dynamic_cast<SurfaceImpl *>(fgla::internal::ImplAccessor::get_impl(surface));
@@ -39,7 +39,7 @@ WindowExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface 
   };
 }
 
-WindowExtensionImpl window_extension_impl = {};
+WindowingExtensionImpl windowing_extension_impl = {};
 
 WindowImpl::WindowImpl(const fgla::ext::windowing::Window::Descriptor &descriptor) {
   static auto logger = spdlog::get("fgla::backends::vulkan");

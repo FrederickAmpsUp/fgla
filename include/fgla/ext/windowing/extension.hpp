@@ -12,7 +12,7 @@ namespace fgla::ext::windowing {
 /// @brief Extension interface for the builtin windowing extension
 ///
 /// Use `Instance::get_extension<fgla::ext::windowing::WindowingExtension>()` to get a handle to it
-class WindowExtension {
+class WindowingExtension {
 public:
   /// The UUID for the `WindowingExtension`
   static constexpr extension::ExtensionUUID UUID =
@@ -29,11 +29,15 @@ public:
   /// @returns A filter that checks if an `Adapter` supports the specified `Surface`
   virtual std::function<bool(const Adapter &)> surface_support_filter(const Surface &) = 0;
 
-  virtual ~WindowExtension() = 0;
+  virtual ~WindowingExtension() = 0;
 
 private:
 };
 
-inline WindowExtension::~WindowExtension() = default;
+inline WindowingExtension::~WindowingExtension() = default;
 
 } // namespace fgla::ext::windowing
+
+namespace fgla::ext {
+using Windowing = windowing::WindowingExtension;
+}
