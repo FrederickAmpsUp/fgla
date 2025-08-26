@@ -42,7 +42,7 @@ public:
   inline bool has_value() const { return this->ok; }
   /// Checks if the result is in an error state
   inline bool has_error() const { return !this->ok; }
-  
+
   /// @brief Retrieves the success object
   /// @note asserts if `this` is in an error state
   inline T &operator*() & {

@@ -1,4 +1,4 @@
-#include <fgla/ext/windowing/extension.hpp>
+#include <fgla/ext/windowing.hpp>
 #include <fgla/instance.hpp>
 
 int main(int argc, char **argv) {

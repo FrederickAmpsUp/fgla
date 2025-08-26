@@ -4,6 +4,7 @@
 #include <fgla/backends/vulkan/ext/windowing/window.hpp>
 #include <fgla/internal.hpp>
 #include <memory>
+#include <set>
 #include <spdlog/spdlog.h>
 
 namespace fgla::backends::vulkan::ext::windowing {
@@ -22,6 +23,21 @@ WindowingExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surfa
   return [&](const Adapter &a) -> bool {
     auto a_impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
     auto s_impl = dynamic_cast<SurfaceImpl *>(fgla::internal::ImplAccessor::get_impl(surface));
+
+    uint32_t n_extensions = 0;
+    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr, &n_extensions,
+                                         nullptr);
+    std::vector<VkExtensionProperties> extensions(n_extensions);
+    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr, &n_extensions,
+                                         extensions.data());
+
+    std::set<std::string> required_extensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+
+    for (const auto &extension : extensions) {
+      required_extensions.erase(extension.extensionName);
+    }
+
+    if (!required_extensions.empty()) return false;
 
     uint32_t n_queue_families = 0;
     vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(), &n_queue_families,

@@ -36,7 +36,3 @@ private:
 inline WindowingExtension::~WindowingExtension() = default;
 
 } // namespace fgla::ext::windowing
-
-namespace fgla::ext {
-using Windowing = windowing::WindowingExtension;
-}

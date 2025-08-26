@@ -13,6 +13,7 @@ set(SPDLOG_BUILD_PIC ON)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/spdlog)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/fmt)
+add_subdirectory(${PROJECT_SOURCE_DIR}/extern/magic_enum)
 add_subdirectory(impl)
 
 option(FGLA_BUILD_TESTS "Build FGLA's test programs" ON)

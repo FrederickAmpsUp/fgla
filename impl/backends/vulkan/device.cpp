@@ -17,6 +17,15 @@ DeviceImpl::DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descripto
 
   create_info.pEnabledFeatures = &device_features;
 
+  std::vector<const char *> extensions;
+
+#ifdef FGLA_VK_EXT_WINDOWING
+  extensions.push_back(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
+#endif
+
+  create_info.enabledExtensionCount = extensions.size();
+  create_info.ppEnabledExtensionNames = extensions.data();
+
   VkResult result =
       vkCreateDevice(adapter.get_physical_device(), &create_info, nullptr, &this->device);
 

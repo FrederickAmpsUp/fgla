@@ -1,5 +1,7 @@
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
+#include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/util.hpp>
 #include <fgla/internal.hpp>
 #include <spdlog/spdlog.h>
 
@@ -18,6 +20,32 @@ SurfaceImpl::SurfaceImpl(WindowImpl &window, const fgla::Instance &instance) {
   } else {
     logger->info("Vulkan surface created.");
   }
+}
+
+void SurfaceImpl::configure(fgla::Device &device,
+                            const fgla::ext::windowing::Surface::Configuration &configuration) {
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+  logger->warn("Unimplemented SurfaceImpl::configure()!");
+}
+
+fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const Adapter &adapter) {
+  VkPhysicalDevice phys_dev = static_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(adapter))->get_physical_device();
+
+  fgla::ext::windowing::Surface::Capabilities caps = {};
+
+  uint32_t n_formats = 0;
+  vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats, nullptr);
+  
+  if (n_formats > 0) {
+    std::vector<VkSurfaceFormatKHR> formats(n_formats);
+    vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats, formats.data());
+
+    for (const auto &format : formats) {
+      fgla::TextureFormat fmt = devulkanize(format.format);
+    }
+  }
+
+  return fgla::ext::windowing::Surface::Capabilities{};
 }
 
 bool SurfaceImpl::is_ok() const { return this->surface != VK_NULL_HANDLE; }

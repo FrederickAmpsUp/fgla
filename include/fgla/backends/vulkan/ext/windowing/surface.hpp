@@ -11,6 +11,11 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
 
   inline VkSurfaceKHR get_surface() { return this->surface; }
 
+  virtual void
+  configure(fgla::Device &device,
+            const fgla::ext::windowing::Surface::Configuration &configuration) override;
+  virtual fgla::ext::windowing::Surface::Capabilities get_capabilities(const Adapter &adapter) override;
+
   bool is_ok() const;
 
   virtual ~SurfaceImpl() override;
