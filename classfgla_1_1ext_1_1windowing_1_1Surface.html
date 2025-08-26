@@ -99,6 +99,8 @@ $(function(){initNavTree('classfgla_1_1ext_1_1windowing_1_1Surface.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1ext_1_1windowing_1_1Surface-members.html">List of all members</a>  </div>
@@ -113,11 +115,33 @@ $(function(){initNavTree('classfgla_1_1ext_1_1windowing_1_1Surface.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">Capabilities</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">Configuration</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html">Impl</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code>'s functions.  <a href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a599bbcd326427932c4aa4a1834a51a8a" id="r_a599bbcd326427932c4aa4a1834a51a8a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599bbcd326427932c4aa4a1834a51a8a">PresentMode</a> { <br />
+&#160;&#160;<a class="el" href="#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f">FIFO</a>
+, <a class="el" href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">MAILBOX</a>
+, <a class="el" href="#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c">IMMEDIATE</a>
+, <a class="el" href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">AUTO_VSYNC</a>
+, <br />
+&#160;&#160;<a class="el" href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">AUTO_NO_VSYNC</a>
+<br />
+ }</td></tr>
+<tr class="separator:a599bbcd326427932c4aa4a1834a51a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:adace98c0a87831ed8cd87e2801f95a5c" id="r_adace98c0a87831ed8cd87e2801f95a5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adace98c0a87831ed8cd87e2801f95a5c">configure</a> (<a class="el" href="classfgla_1_1Device.html">fgla::Device</a> &amp;device, const <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">Configuration</a> &amp;config)</td></tr>
+<tr class="separator:adace98c0a87831ed8cd87e2801f95a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d91d05f7ef0af8016311c42d0e93ef" id="r_a47d91d05f7ef0af8016311c42d0e93ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">Capabilities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47d91d05f7ef0af8016311c42d0e93ef">get_capabilities</a> (const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;adapter)</td></tr>
+<tr class="separator:a47d91d05f7ef0af8016311c42d0e93ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -132,8 +156,80 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a surface, which is used to render to a window. </p>
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00010">10</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00012">12</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a599bbcd326427932c4aa4a1834a51a8a" name="a599bbcd326427932c4aa4a1834a51a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599bbcd326427932c4aa4a1834a51a8a">&#9670;&#160;</a></span>PresentMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a599bbcd326427932c4aa4a1834a51a8a">fgla::ext::windowing::Surface::PresentMode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f" name="a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f"></a>FIFO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028" name="a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028"></a>MAILBOX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c" name="a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c"></a>IMMEDIATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a" name="a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a"></a>AUTO_VSYNC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512" name="a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512"></a>AUTO_NO_VSYNC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00014">14</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>{ <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f">FIFO</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">MAILBOX</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c">IMMEDIATE</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">AUTO_VSYNC</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">AUTO_NO_VSYNC</a> };</div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">fgla::ext::windowing::Surface::PresentMode::MAILBOX</a></div><div class="ttdeci">@ MAILBOX</div></div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">fgla::ext::windowing::Surface::PresentMode::AUTO_NO_VSYNC</a></div><div class="ttdeci">@ AUTO_NO_VSYNC</div></div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">fgla::ext::windowing::Surface::PresentMode::AUTO_VSYNC</a></div><div class="ttdeci">@ AUTO_VSYNC</div></div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f">fgla::ext::windowing::Surface::PresentMode::FIFO</a></div><div class="ttdeci">@ FIFO</div></div>
+<div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c">fgla::ext::windowing::Surface::PresentMode::IMMEDIATE</a></div><div class="ttdeci">@ IMMEDIATE</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="adace98c0a87831ed8cd87e2801f95a5c" name="adace98c0a87831ed8cd87e2801f95a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adace98c0a87831ed8cd87e2801f95a5c">&#9670;&#160;</a></span>configure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fgla::ext::windowing::Surface::configure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Device.html">fgla::Device</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">Configuration</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>config</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00023">23</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                         {</div>
+<div class="line"><span class="lineno">   24</span>    this-&gt;impl-&gt;configure(device, config);</div>
+<div class="line"><span class="lineno">   25</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad96af6802ac182bec1da147d39198f7b" name="ad96af6802ac182bec1da147d39198f7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad96af6802ac182bec1da147d39198f7b">&#9670;&#160;</a></span>from_raw()</h2>
 
@@ -158,12 +254,40 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00021">21</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>                                                           {</div>
-<div class="line"><span class="lineno">   22</span>    Surface surface;</div>
-<div class="line"><span class="lineno">   23</span>    surface.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> surface;</div>
-<div class="line"><span class="lineno">   25</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00037">37</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                           {</div>
+<div class="line"><span class="lineno">   38</span>    Surface surface;</div>
+<div class="line"><span class="lineno">   39</span>    surface.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> surface;</div>
+<div class="line"><span class="lineno">   41</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a47d91d05f7ef0af8016311c42d0e93ef" name="a47d91d05f7ef0af8016311c42d0e93ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d91d05f7ef0af8016311c42d0e93ef">&#9670;&#160;</a></span>get_capabilities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">Capabilities</a> fgla::ext::windowing::Surface::get_capabilities </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>adapter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00026">26</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;get_capabilities(adapter); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -188,7 +312,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00028">28</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00044">44</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
 
 </div>
 </div>

@@ -111,13 +111,17 @@ $(function(){initNavTree('structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a18ba00aa31c24cae6afe360587835610" id="r_a18ba00aa31c24cae6afe360587835610"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ba00aa31c24cae6afe360587835610">configure</a> (<a class="el" href="classfgla_1_1Device.html">fgla::Device</a> &amp;, const <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">Configuration</a> &amp;)=0</td></tr>
+<tr class="separator:a18ba00aa31c24cae6afe360587835610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856076685b34d557447ca00a85321f6d" id="r_a856076685b34d557447ca00a85321f6d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">Capabilities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a856076685b34d557447ca00a85321f6d">get_capabilities</a> (const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)=0</td></tr>
+<tr class="separator:a856076685b34d557447ca00a85321f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd20d050fdc2888fefc6fa8c4c023143" id="r_acd20d050fdc2888fefc6fa8c4c023143"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd20d050fdc2888fefc6fa8c4c023143">~Impl</a> ()=0</td></tr>
 <tr class="separator:acd20d050fdc2888fefc6fa8c4c023143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code>'s functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00015">15</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00029">29</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acd20d050fdc2888fefc6fa8c4c023143" name="acd20d050fdc2888fefc6fa8c4c023143"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd20d050fdc2888fefc6fa8c4c023143">&#9670;&#160;</a></span>~Impl()</h2>
@@ -138,6 +142,61 @@ Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">pure virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a18ba00aa31c24cae6afe360587835610" name="a18ba00aa31c24cae6afe360587835610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ba00aa31c24cae6afe360587835610">&#9670;&#160;</a></span>configure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void fgla::ext::windowing::Surface::Impl::configure </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Device.html">fgla::Device</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">Configuration</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a856076685b34d557447ca00a85321f6d" name="a856076685b34d557447ca00a85321f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856076685b34d557447ca00a85321f6d">&#9670;&#160;</a></span>get_capabilities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">Capabilities</a> fgla::ext::windowing::Surface::Impl::get_capabilities </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

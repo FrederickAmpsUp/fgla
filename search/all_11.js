@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['unwrap_0',['unwrap',['../namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e',1,'fgla::unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815',1,'fgla::unwrap(std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e',1,'fgla::unwrap(util::OptRef&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)']]],
-  ['user_5fdata_1',['user_data',['../structfgla_1_1Queue_1_1Request.html#a17ed53381edbdcb4343faf8dd2889d89',1,'fgla::Queue::Request']]],
-  ['util_2ehpp_2',['util.hpp',['../util_8hpp.html',1,'']]],
-  ['uuid_3',['UUID',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util::UUID&lt; size &gt;'],['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#a53df718d89a5618c337df537643f63e5',1,'fgla::ext::windowing::WindowingExtension::UUID']]],
-  ['uuid_4',['uuid',['../structfgla_1_1backend_1_1Backend.html#ae53b1ea0146599735ed1b0aa725a00f0',1,'fgla::backend::Backend']]],
-  ['uuid_3c_2016_20_3e_5',['UUID&lt; 16 &gt;',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util']]]
+  ['t_0',['t',['../classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4',1,'fgla::Result']]],
+  ['textureformat_1',['TextureFormat',['../namespacefgla.html#a139107c73aa0d0f7fe6181b17805a200',1,'fgla']]],
+  ['textureformatsupportdetails_2',['TextureFormatSupportDetails',['../structfgla_1_1TextureFormatSupportDetails.html',1,'fgla']]],
+  ['transfer_3',['Transfer',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e',1,'fgla::Queue']]],
+  ['type_4',['Type',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d',1,'fgla::Queue']]],
+  ['type_5',['type',['../structfgla_1_1Queue_1_1Request.html#ab74fee67f6db0332404873f7ae410779',1,'fgla::Queue::Request']]],
+  ['types_2ehpp_6',['types.hpp',['../types_8hpp.html',1,'']]]
 ];

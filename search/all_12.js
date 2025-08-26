@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['value_0',['value',['../classfgla_1_1Result.html#aa95d199c7ae365280d64597dc40ca13e',1,'fgla::Result::value() &amp;'],['../classfgla_1_1Result.html#ad28ad62e7b01bd2817a2d238975312ac',1,'fgla::Result::value() const &amp;'],['../classfgla_1_1Result.html#a989c41a5f8e817fc52a1d5197996e4b5',1,'fgla::Result::value() &amp;&amp;'],['../classfgla_1_1Result.html#aa77624ecc76464e649a27a6038e66c20',1,'fgla::Result::value() const &amp;&amp;'],['../classfgla_1_1util_1_1OptRef.html#a113686f44589cf639093efebf7283cf6',1,'fgla::util::OptRef::value()']]],
-  ['versiontriple_1',['VersionTriple',['../structfgla_1_1VersionTriple.html',1,'fgla']]]
+  ['undefined_0',['UNDEFINED',['../namespacefgla.html#a139107c73aa0d0f7fe6181b17805a200a0db45d2a4141101bdfe48e3314cfbca3',1,'fgla']]],
+  ['unwrap_1',['unwrap',['../namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e',1,'fgla::unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815',1,'fgla::unwrap(std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e',1,'fgla::unwrap(util::OptRef&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)']]],
+  ['user_5fdata_2',['user_data',['../structfgla_1_1Queue_1_1Request.html#a17ed53381edbdcb4343faf8dd2889d89',1,'fgla::Queue::Request']]],
+  ['util_2ehpp_3',['util.hpp',['../util_8hpp.html',1,'']]],
+  ['uuid_4',['UUID',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util::UUID&lt; size &gt;'],['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#a53df718d89a5618c337df537643f63e5',1,'fgla::ext::windowing::WindowingExtension::UUID']]],
+  ['uuid_5',['uuid',['../structfgla_1_1backend_1_1Backend.html#ae53b1ea0146599735ed1b0aa725a00f0',1,'fgla::backend::Backend']]],
+  ['uuid_3c_2016_20_3e_6',['UUID&lt; 16 &gt;',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util']]]
 ];

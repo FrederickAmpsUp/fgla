@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5favailable_0',['is_available',['../structfgla_1_1backend_1_1Backend.html#a09218c21f713de2736ba05ea011bbf25',1,'fgla::backend::Backend']]]
+  ['height_0',['height',['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html#aa38a47d42452c23715f070f8c6fe1df7',1,'fgla::ext::windowing::Window::Descriptor::height'],['../structfgla_1_1Extent2d.html#a91615cf714b052806a98624b3b52aa40',1,'fgla::Extent2d::height']]]
 ];
