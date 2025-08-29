@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['value',['../classfgla_1_1Result.html#aa95d199c7ae365280d64597dc40ca13e',1,'fgla::Result::value() &amp;'],['../classfgla_1_1Result.html#ad28ad62e7b01bd2817a2d238975312ac',1,'fgla::Result::value() const &amp;'],['../classfgla_1_1Result.html#a989c41a5f8e817fc52a1d5197996e4b5',1,'fgla::Result::value() &amp;&amp;'],['../classfgla_1_1Result.html#aa77624ecc76464e649a27a6038e66c20',1,'fgla::Result::value() const &amp;&amp;'],['../classfgla_1_1util_1_1OptRef.html#a113686f44589cf639093efebf7283cf6',1,'fgla::util::OptRef::value()']]]
+  ['unwrap_0',['unwrap',['../namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e',1,'fgla::unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815',1,'fgla::unwrap(std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e',1,'fgla::unwrap(util::OptRef&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)']]]
 ];

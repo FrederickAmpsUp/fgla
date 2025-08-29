@@ -117,13 +117,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab0a1819cafa12921bffe7cbffd3d1daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35fa6193e935494d40720c69a8952a85" id="r_a35fa6193e935494d40720c69a8952a85"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">Surface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35fa6193e935494d40720c69a8952a85">create_surface</a> (const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;)=0</td></tr>
 <tr class="separator:a35fa6193e935494d40720c69a8952a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09756e178741dbd76056b254f03c1204" id="r_a09756e178741dbd76056b254f03c1204"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structfgla_1_1Extent2d.html">Extent2d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09756e178741dbd76056b254f03c1204">get_framebuffer_size</a> () const =0</td></tr>
+<tr class="separator:a09756e178741dbd76056b254f03c1204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a377770d1f21196698c2f49cbbabd0183" id="r_a377770d1f21196698c2f49cbbabd0183"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a377770d1f21196698c2f49cbbabd0183">~Impl</a> ()=0</td></tr>
 <tr class="separator:a377770d1f21196698c2f49cbbabd0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Window.html" title="Represents a window, which may be used to draw to and interface with input devices.">Window</a></code>'s functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00036">36</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00042">42</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a377770d1f21196698c2f49cbbabd0183" name="a377770d1f21196698c2f49cbbabd0183"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a377770d1f21196698c2f49cbbabd0183">&#9670;&#160;</a></span>~Impl()</h2>
@@ -165,6 +167,31 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a09756e178741dbd76056b254f03c1204" name="a09756e178741dbd76056b254f03c1204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09756e178741dbd76056b254f03c1204">&#9670;&#160;</a></span>get_framebuffer_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structfgla_1_1Extent2d.html">Extent2d</a> fgla::ext::windowing::Window::Impl::get_framebuffer_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
