@@ -88,6 +88,13 @@ Result<fgla::ext::windowing::Surface> WindowImpl::create_surface(const fgla::Ins
   return fgla::ext::windowing::Surface::from_raw(surface);
 }
 
+Extent2d WindowImpl::get_framebuffer_size() const {
+  int32_t width, height;
+  glfwGetFramebufferSize(this->window, &width, &height);
+
+  return {(uint32_t)width, (uint32_t)height};
+}
+
 bool WindowImpl::is_ok() const { return this->window != nullptr; }
 
 WindowImpl::~WindowImpl() {

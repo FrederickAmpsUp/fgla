@@ -1,5 +1,5 @@
 #include <fgla/ext/windowing.hpp>
-#include <fgla/instance.hpp>
+#include <fgla/fgla.hpp>
 #include <magic_enum/magic_enum.hpp>
 #include <spdlog/spdlog.h>
 
@@ -40,15 +40,33 @@ int main(int argc, char **argv) {
   fgla::Queue &transfer = *device.get_queue(fgla::Queue::Type::Transfer, 0);
   fgla::Queue &present = *device.get_queue(fgla::ext::windowing::QueueTypeExt::Present, 0);
 
-  auto caps = surface.get_capabilities();
+  auto caps = surface.get_capabilities(adapter);
+
+  fgla::TextureFormat surface_format = fgla::TextureFormat::UNDEFINED;
+  auto present_mode = fgla::ext::windowing::Surface::PresentMode::AUTO_VSYNC;
 
   spdlog::info(" ----- Format Support -----");
-  for (auto &[format, support] : caps.formats) {
-    spdlog::info("Supported format: {}", magic_enum::enum_name(format));
-    spdlog::info("  Sample       : {}", support.sampleable);
-    spdlog::info("  Render Target: {}", support.render_target);
-    spdlog::info("  Storage Tex  : {}", support.storage);
-    spdlog::info("  Linear Filter: {}", support.linear_filter);
+  for (const auto format : caps.formats) {
+    spdlog::info("Supported format: {}", format.to_string());
+    if (format == fgla::TextureFormat::B8G8R8A8_SRGB) surface_format = format;
+  }
+
+  if (surface_format == fgla::TextureFormat::UNDEFINED) {
+    surface_format = caps.formats[0];
+  }
+
+  spdlog::info(" ----- Present Support -----");
+  for (const auto present_mode : caps.present_modes) {
+    spdlog::info("Supported present mode: {}", magic_enum::enum_name(present_mode));
+  }
+
+  auto fail =
+      surface.configure(device, {surface_format, present_mode, window.get_framebuffer_size()});
+
+  if (fail.has_value()) {
+    spdlog::error("Surface configuration failed with message: \"{}\"",
+                  (*fail).message.value_or(""));
+    return 1;
   }
 
   while (window.is_open()) {

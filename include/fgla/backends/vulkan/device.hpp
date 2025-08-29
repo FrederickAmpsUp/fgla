@@ -13,10 +13,14 @@ struct DeviceImpl : public Device::Impl {
 
   virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
 
+  VkDevice get_device() const { return this->device; }
+  VkPhysicalDevice get_physical_device() const { return this->physical_device; }
+
   virtual ~DeviceImpl() override;
 
 private:
   VkDevice device;
+  VkPhysicalDevice physical_device;
   QueueAllocator::Queues queues;
 };
 } // namespace fgla::backends::vulkan

@@ -4,7 +4,8 @@
 #include <fgla/internal.hpp>
 #include <fgla/types.hpp>
 #include <memory>
-#include <unordered_map>
+#include <optional>
+#include <vector>
 
 namespace fgla::ext::windowing {
 
@@ -13,21 +14,27 @@ class Surface {
 public:
   enum class PresentMode { FIFO, MAILBOX, IMMEDIATE, AUTO_VSYNC, AUTO_NO_VSYNC };
 
-  struct Configuration {};
+  struct Configuration {
+    TextureFormat format;
+    PresentMode present_mode;
+    fgla::Extent2d size;
+  };
 
   struct Capabilities {
-    std::unordered_map<TextureFormat, TextureFormatSupportDetails> formats;
+    std::vector<TextureFormat> formats;
     std::vector<PresentMode> present_modes;
   };
 
-  inline void configure(fgla::Device &device, const Configuration &config) {
-    this->impl->configure(device, config);
+  inline std::optional<Error> configure(fgla::Device &device, const Configuration &config) {
+    return this->impl->configure(device, config);
   }
-  inline Capabilities get_capabilities(const Adapter& adapter) { return this->impl->get_capabilities(adapter); }
+  inline Capabilities get_capabilities(const Adapter &adapter) {
+    return this->impl->get_capabilities(adapter);
+  }
 
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
-    virtual void configure(fgla::Device &, const Configuration &) = 0;
+    virtual std::optional<Error> configure(fgla::Device &, const Configuration &) = 0;
     virtual Capabilities get_capabilities(const Adapter &) = 0;
     virtual ~Impl() = 0;
   };

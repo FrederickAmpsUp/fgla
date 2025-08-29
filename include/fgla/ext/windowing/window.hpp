@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <fgla/ext/windowing/surface.hpp>
 #include <fgla/internal.hpp>
+#include <fgla/types.hpp>
 #include <memory>
 
 namespace fgla::ext::windowing {
@@ -28,9 +29,14 @@ public:
   /// @returns `false` if the user has closed the window, `true` otherwise
   inline bool is_open() { return this->impl->is_open(); }
 
+  /// Creates a `Surface`, which is used to render to the `Window`
+  /// @param instance the `Instance` to create the `Surface` using
+  /// @returns a `Surface` which may be used to render to this `Window`
   inline Result<Surface> create_surface(const fgla::Instance &instance) {
     return this->impl->create_surface(instance);
   }
+
+  inline Extent2d get_framebuffer_size() const { return this->impl->get_framebuffer_size(); }
 
   /// The backend-defined implementation of the `Window`'s functions
   struct Impl {
@@ -38,6 +44,8 @@ public:
     virtual bool is_open() = 0;
 
     virtual Result<Surface> create_surface(const fgla::Instance &) = 0;
+
+    virtual Extent2d get_framebuffer_size() const = 0;
 
     virtual ~Impl() = 0;
   };

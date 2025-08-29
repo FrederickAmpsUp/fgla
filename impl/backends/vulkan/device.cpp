@@ -35,6 +35,8 @@ DeviceImpl::DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descripto
     return;
   }
 
+  this->physical_device = adapter.get_physical_device();
+
   logger->info("Vulkan device created.");
 
   this->queues = queue_allocator.get_queues(this->device);

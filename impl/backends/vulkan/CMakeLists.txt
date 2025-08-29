@@ -12,7 +12,7 @@ if(NOT Vulkan_FOUND)
 endif()
 
 add_library(fgla_backend_vulkan STATIC instance.cpp adapter.cpp queue.cpp device.cpp backend.cpp)
-target_link_libraries(fgla_backend_vulkan PRIVATE spdlog::spdlog Vulkan::Vulkan)
+target_link_libraries(fgla_backend_vulkan PRIVATE spdlog::spdlog Vulkan::Vulkan magic_enum)
 if (glfw3_FOUND)
   target_link_libraries(fgla_backend_vulkan PRIVATE glfw)
   target_compile_definitions(fgla_backend_vulkan PRIVATE FGLA_VK_EXT_WINDOWING)

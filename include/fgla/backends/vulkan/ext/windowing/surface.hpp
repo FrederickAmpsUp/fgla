@@ -11,10 +11,11 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
 
   inline VkSurfaceKHR get_surface() { return this->surface; }
 
-  virtual void
+  virtual std::optional<Error>
   configure(fgla::Device &device,
             const fgla::ext::windowing::Surface::Configuration &configuration) override;
-  virtual fgla::ext::windowing::Surface::Capabilities get_capabilities(const Adapter &adapter) override;
+  virtual fgla::ext::windowing::Surface::Capabilities
+  get_capabilities(const Adapter &adapter) override;
 
   bool is_ok() const;
 
@@ -22,6 +23,8 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
 
 private:
   VkSurfaceKHR surface;
+  VkSwapchainKHR swapchain;
+  VkDevice device;
   VkInstance instance;
 };
 } // namespace fgla::backends::vulkan::ext::windowing
