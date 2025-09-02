@@ -201,7 +201,7 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
     for (const auto &format : formats) {
       TextureFormat fmt = devulkanize(format.format);
       // only support sRGB for now, due to color space stuff. want to add HDR later.
-      if (fmt != TextureFormat::UNDEFINED || !fmt.is_srgb()) unique_formats.insert(fmt);
+      if (fmt != TextureFormat::UNDEFINED && fmt.is_srgb()) unique_formats.insert(fmt);
     }
     caps.formats = std::vector(unique_formats.begin(), unique_formats.end());
   }
