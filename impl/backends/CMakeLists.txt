@@ -9,7 +9,6 @@ function(add_fgla_backend NAME)
     set(FGLA_BACKEND_TARGETS "${FGLA_BACKEND_TARGETS}" PARENT_SCOPE)
 endfunction()
 
-add_fgla_backend(opengl)
 add_fgla_backend(vulkan)
 
 set(FGLA_BACKEND_TARGETS ${FGLA_BACKEND_TARGETS} PARENT_SCOPE)
