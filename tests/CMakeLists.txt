@@ -13,7 +13,7 @@ set(TEST_DIRS
 foreach(test_name IN LISTS TEST_DIRS)
     set(test_exec test_${test_name})
     add_executable(${test_exec} ${test_name}/test.cpp)
-    target_link_libraries(${test_exec} fgla magic_enum spdlog::spdlog)
+    target_link_libraries(${test_exec} fgla::fgla magic_enum spdlog::spdlog)
     add_test(NAME ${test_exec} COMMAND ${test_exec})
 endforeach()
 

@@ -16,6 +16,8 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/extern/fmt)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/magic_enum)
 add_subdirectory(impl)
 
+add_library(fgla::fgla ALIAS fgla)
+
 option(FGLA_BUILD_TESTS "Build FGLA's test programs" ON)
 if(FGLA_BUILD_TESTS)
 	add_subdirectory(tests)
