@@ -1,6 +1,6 @@
 # `fgla` - Fred's Graphics Library Abstraction
 
-> 🎨 `fgla` is a platform-agnostic graphics API/abstraction layer, inspired by WGPU and based on Vulkan.  
+🎨 `fgla` is a platform-agnostic graphics API/abstraction layer, inspired by WGPU and based on Vulkan.  
 
 > [!IMPORTANT]
 > `fgla` is still in its infancy, expect many breaking changes before working versions are published.
