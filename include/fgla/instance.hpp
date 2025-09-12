@@ -96,8 +96,8 @@ public:
 
   /// Retrieves an extension from its type
   /// @tparam T The extension to retrieve
-  /// @returns The extension, or an empty `util::OptRef` if not supported
-  template <typename T> util::OptRef<T> get_extension() {
+  /// @returns The extension, or `std::nullopt` if not supported
+  template <typename T> std::optional<std::reference_wrapper<T>> get_extension() {
     extension::ExtensionUUID uuid = T::UUID;
     void *ext = this->impl->get_extension(uuid);
     if (ext) {

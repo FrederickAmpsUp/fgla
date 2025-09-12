@@ -234,21 +234,4 @@ T unwrap(std::optional<T> opt, const char *message = "Fatal Error", int exit_cod
     return std::move(*opt);
   }
 }
-
-/// Returns the value stored in `opt`
-/// Displays an error message and exits the program if `opt` contains no value
-/// @tparam T the type of object to unwrap (will be inferred from arguments)
-/// @param opt The `util::OptRef` to unwrap
-/// @param message The error message to display on failure
-/// @param exit_code The exit code to use on faulure
-/// @returns The unwrapped value
-template <typename T>
-T &unwrap(util::OptRef<T> opt, const char *message = "Fatal Error", int exit_code = -1) {
-  if (!opt) {
-    std::cerr << message << std::endl;
-    std::exit(exit_code);
-  } else {
-    return *opt;
-  }
-}
 } // namespace fgla

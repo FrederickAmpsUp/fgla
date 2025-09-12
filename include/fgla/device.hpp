@@ -3,6 +3,7 @@
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
+#include <optional>
 #include <memory>
 
 namespace fgla {
@@ -18,8 +19,8 @@ public:
   /// @param type The type of queue to retrieve (e.g., `Queue::Type::Graphics` or
   /// `Queue::Type::Transfer`)
   /// @param index The index of the queue in the specified type
-  /// @returns The specified queue, or an empty `util::OptRef` if not found
-  inline util::OptRef<Queue> get_queue(Queue::Type type, uint32_t index) {
+  /// @returns The specified queue, or `std::nullopt` if not found
+  inline std::optional<std::reference_wrapper<Queue>> get_queue(Queue::Type type, uint32_t index) {
     Queue *q = this->impl->get_queue(type, index);
     if (q)
       return *q;

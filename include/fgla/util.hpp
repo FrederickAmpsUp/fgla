@@ -90,46 +90,6 @@ template <unsigned int size> struct UUID {
   }
 };
 
-/// An alternative to `std::optional` for references
-template <typename T> class OptRef {
-public:
-  /// Creates an empty `OptRef`
-  OptRef() : ptr(nullptr) {}
-  /// Creates an `OptRef` referencing a value
-  /// @param ref The value to reference
-  OptRef(T &ref) : ptr(&ref) {}
-
-  /// Check if this `OptRef` is referencing any value
-  /// @returns `true` if this `OptRef` contains a reference, else `false`
-  bool has_value() const { return this->ptr != nullptr; }
-  /// Equivalent to `has_value`
-  explicit operator bool() const { return this->has_value(); }
-
-  /// Retrieve the reference from this `OptRef`
-  /// Panics in debug mode if this `OptRef` is empty
-  T &value() const {
-    assert(this->ptr && "OptRef::value() called on empty OptRef");
-    return *this->ptr;
-  };
-
-  /// Retrieve the reference from this `OptRef`
-  /// Panics in debug mode if this `OptRef` is empty
-  T *operator->() const {
-    assert(this->ptr && "OptRef::operator-> called on empty OptRef");
-    return this->ptr;
-  }
-
-  /// Retrieve the reference from this `OptRef`
-  /// Panics in debug mode if this `OptRef` is empty
-  T &operator*() const {
-    assert(this->ptr && "OptRef::operator* called on empty OptRef");
-    return *this->ptr;
-  }
-
-private:
-  T *ptr;
-};
-
 /// A list that may be filtered using functions
 template <typename T> class FilterableList {
 public:
