@@ -5,7 +5,7 @@
 namespace fgla::backends::vulkan::ext::windowing {
 
 struct SwapchainImageImpl : public BaseImageImpl {
-  SwapchainImageImpl(VkImage image) : BaseImageImpl(image) {}
+  SwapchainImageImpl(VkImage image, VkDevice device) : BaseImageImpl(image, device) {}
 
   virtual ~SwapchainImageImpl() override = default;
 };

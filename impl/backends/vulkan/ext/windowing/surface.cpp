@@ -195,7 +195,8 @@ SurfaceImpl::configure(fgla::Device &device,
   vkGetSwapchainImagesKHR(logi_dev, this->swapchain, &n_images, images.data());
 
   for (int i = 0; i < n_images; ++i) {
-    std::unique_ptr<fgla::Image::Impl> image = std::make_unique<SwapchainImageImpl>(images[i]);
+    std::unique_ptr<fgla::Image::Impl> image =
+        std::make_unique<SwapchainImageImpl>(images[i], logi_dev);
     this->swapchain_images[i] = fgla::Image::from_raw(std::move(image));
   }
 
