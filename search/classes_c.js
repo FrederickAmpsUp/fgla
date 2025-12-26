@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['surface_0',['Surface',['../classfgla_1_1ext_1_1windowing_1_1Surface.html',1,'fgla::ext::windowing']]]
+  ['textureformat_0',['TextureFormat',['../classfgla_1_1TextureFormat.html',1,'fgla']]],
+  ['textureformatsupportdetails_1',['TextureFormatSupportDetails',['../structfgla_1_1TextureFormatSupportDetails.html',1,'fgla']]]
 ];

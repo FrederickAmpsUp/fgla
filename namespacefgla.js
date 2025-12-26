@@ -11,6 +11,7 @@ var namespacefgla =
     [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],
     [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
     [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
+    [ "Image", "classfgla_1_1Image.html", "classfgla_1_1Image" ],
     [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
     [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
     [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
@@ -22,6 +23,5 @@ var namespacefgla =
     [ "operator*", "namespacefgla.html#a5a177c9d657f4d3a1192c1ee112fe140", null ],
     [ "operator*", "namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f", null ],
     [ "unwrap", "namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e", null ],
-    [ "unwrap", "namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ],
-    [ "unwrap", "namespacefgla.html#ab033b9c9fcc9baa3ddc9048614612e4e", null ]
+    [ "unwrap", "namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ]
 ];

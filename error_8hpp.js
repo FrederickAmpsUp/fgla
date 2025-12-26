@@ -7,6 +7,5 @@ var error_8hpp =
     [ "operator*", "error_8hpp.html#a5a177c9d657f4d3a1192c1ee112fe140", null ],
     [ "operator*", "error_8hpp.html#aed6f9c9afadf60543ec308d56c87bd5f", null ],
     [ "unwrap", "error_8hpp.html#a203732d926f64e0ba6afe8de0f8c001e", null ],
-    [ "unwrap", "error_8hpp.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ],
-    [ "unwrap", "error_8hpp.html#ab033b9c9fcc9baa3ddc9048614612e4e", null ]
+    [ "unwrap", "error_8hpp.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ]
 ];

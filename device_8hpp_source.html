@@ -105,60 +105,60 @@ $(function(){initNavTree('device_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="internal_8hpp.html">fgla/internal.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="queue_8hpp.html">fgla/queue.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="util_8hpp.html">fgla/util.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1Device.html">Device</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Descriptor.html">   14</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Device_1_1Descriptor.html">Descriptor</a> {};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#a2cf257865f1d4ece89de60af65ee7ed5">   22</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1util_1_1OptRef.html">util::OptRef&lt;Queue&gt;</a> <a class="code hl_function" href="classfgla_1_1Device.html#a2cf257865f1d4ece89de60af65ee7ed5">get_queue</a>(<a class="code hl_enumeration" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a> type, uint32_t index) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="classfgla_1_1Queue.html">Queue</a> *q = this-&gt;impl-&gt;get_queue(type, index);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (q)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">return</span> *q;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1Device.html">Device</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Descriptor.html">   15</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Device_1_1Descriptor.html">Descriptor</a> {};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#ad5589c678ac2aa4ae5f61441bf25ca6f">   23</a></span>  <span class="keyword">inline</span> std::optional&lt;std::reference_wrapper&lt;Queue&gt;&gt; <a class="code hl_function" href="classfgla_1_1Device.html#ad5589c678ac2aa4ae5f61441bf25ca6f">get_queue</a>(<a class="code hl_enumeration" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a> type, uint32_t index) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classfgla_1_1Queue.html">Queue</a> *q = this-&gt;impl-&gt;get_queue(type, index);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (q)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">return</span> *q;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  }</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html">   31</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Device_1_1Impl.html">Impl</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c">   32</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classfgla_1_1Queue.html">Queue</a> *<a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c">get_queue</a>(<a class="code hl_enumeration" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a>, uint32_t) = 0;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">   34</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">~Impl</a>() = 0;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html">   32</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Device_1_1Impl.html">Impl</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c">   33</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classfgla_1_1Queue.html">Queue</a> *<a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c">get_queue</a>(<a class="code hl_enumeration" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a>, uint32_t) = 0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">   35</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">~Impl</a>() = 0;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  };</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">   39</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Device.html">Device</a> <a class="code hl_function" href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_class" href="classfgla_1_1Device.html">Device</a> device;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    device.impl = std::move(impl);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> device;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">   40</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Device.html">Device</a> <a class="code hl_function" href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="classfgla_1_1Device.html">Device</a> device;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    device.impl = std::move(impl);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> device;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
 </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#ac06cf072aa647185632537a764206ad1">   46</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classfgla_1_1Device.html#ac06cf072aa647185632537a764206ad1">   47</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">Device::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>} <span class="comment">// namespace fgla</span></div>
-<div class="ttc" id="aclassfgla_1_1Device_html"><div class="ttname"><a href="classfgla_1_1Device.html">fgla::Device</a></div><div class="ttdoc">Represents a device, which is used to create rendering objects.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">device.hpp:11</a></div></div>
-<div class="ttc" id="aclassfgla_1_1Device_html_a09e413eea2460149634511af392b8952"><div class="ttname"><a href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">fgla::Device::from_raw</a></div><div class="ttdeci">static Device from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00039">device.hpp:39</a></div></div>
-<div class="ttc" id="aclassfgla_1_1Device_html_a2cf257865f1d4ece89de60af65ee7ed5"><div class="ttname"><a href="classfgla_1_1Device.html#a2cf257865f1d4ece89de60af65ee7ed5">fgla::Device::get_queue</a></div><div class="ttdeci">util::OptRef&lt; Queue &gt; get_queue(Queue::Type type, uint32_t index)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">device.hpp:22</a></div></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">Device::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace fgla</span></div>
+<div class="ttc" id="aclassfgla_1_1Device_html"><div class="ttname"><a href="classfgla_1_1Device.html">fgla::Device</a></div><div class="ttdoc">Represents a device, which is used to create rendering objects.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">device.hpp:12</a></div></div>
+<div class="ttc" id="aclassfgla_1_1Device_html_a09e413eea2460149634511af392b8952"><div class="ttname"><a href="classfgla_1_1Device.html#a09e413eea2460149634511af392b8952">fgla::Device::from_raw</a></div><div class="ttdeci">static Device from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00040">device.hpp:40</a></div></div>
+<div class="ttc" id="aclassfgla_1_1Device_html_ad5589c678ac2aa4ae5f61441bf25ca6f"><div class="ttname"><a href="classfgla_1_1Device.html#ad5589c678ac2aa4ae5f61441bf25ca6f">fgla::Device::get_queue</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; Queue &gt; &gt; get_queue(Queue::Type type, uint32_t index)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">device.hpp:23</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Queue_html"><div class="ttname"><a href="classfgla_1_1Queue.html">fgla::Queue</a></div><div class="ttdoc">Represents a logical queue, which is used to submit GPU commands.</div><div class="ttdef"><b>Definition</b> <a href="queue_8hpp_source.html#l00010">queue.hpp:10</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Queue_html_a7c5be631d28826cd1465410481d3060d"><div class="ttname"><a href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">fgla::Queue::Type</a></div><div class="ttdeci">Type</div><div class="ttdoc">Type type of a Queue, indicating what functions it may perform.</div><div class="ttdef"><b>Definition</b> <a href="queue_8hpp_source.html#l00013">queue.hpp:13</a></div></div>
-<div class="ttc" id="aclassfgla_1_1util_1_1OptRef_html"><div class="ttname"><a href="classfgla_1_1util_1_1OptRef.html">fgla::util::OptRef</a></div><div class="ttdoc">An alternative to std::optional for references.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00094">util.hpp:94</a></div></div>
 <div class="ttc" id="ainternal_8hpp_html"><div class="ttname"><a href="internal_8hpp.html">internal.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00008">adapter.hpp:8</a></div></div>
 <div class="ttc" id="aqueue_8hpp_html"><div class="ttname"><a href="queue_8hpp.html">queue.hpp</a></div></div>
-<div class="ttc" id="astructfgla_1_1Device_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1Device_1_1Descriptor.html">fgla::Device::Descriptor</a></div><div class="ttdoc">Represents the settings used to create a Device</div><div class="ttdef"><b>Definition</b> <a href="#l00014">device.hpp:14</a></div></div>
-<div class="ttc" id="astructfgla_1_1Device_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1Device_1_1Impl.html">fgla::Device::Impl</a></div><div class="ttdoc">The backend-defined implementation of the Device's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">device.hpp:31</a></div></div>
+<div class="ttc" id="astructfgla_1_1Device_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1Device_1_1Descriptor.html">fgla::Device::Descriptor</a></div><div class="ttdoc">Represents the settings used to create a Device</div><div class="ttdef"><b>Definition</b> <a href="#l00015">device.hpp:15</a></div></div>
+<div class="ttc" id="astructfgla_1_1Device_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1Device_1_1Impl.html">fgla::Device::Impl</a></div><div class="ttdoc">The backend-defined implementation of the Device's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">device.hpp:32</a></div></div>
 <div class="ttc" id="astructfgla_1_1Device_1_1Impl_html_aa5ab86fd880e54a8e85945376ca5612d"><div class="ttname"><a href="structfgla_1_1Device_1_1Impl.html#aa5ab86fd880e54a8e85945376ca5612d">fgla::Device::Impl::~Impl</a></div><div class="ttdeci">virtual ~Impl()=0</div></div>
 <div class="ttc" id="astructfgla_1_1Device_1_1Impl_html_ad7169be1193df7329eeebce73360845c"><div class="ttname"><a href="structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c">fgla::Device::Impl::get_queue</a></div><div class="ttdeci">virtual Queue * get_queue(Queue::Type, uint32_t)=0</div></div>
 <div class="ttc" id="astructfgla_1_1internal_1_1ImplAccessor_html"><div class="ttname"><a href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></div><div class="ttdoc">Allows access to the raw polymorphic implementation of FGLA classes.</div><div class="ttdef"><b>Definition</b> <a href="internal_8hpp_source.html#l00006">internal.hpp:6</a></div></div>

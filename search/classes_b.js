@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['request_0',['Request',['../structfgla_1_1Queue_1_1Request.html',1,'fgla::Queue']]],
-  ['result_1',['Result',['../classfgla_1_1Result.html',1,'fgla']]]
+  ['surface_0',['Surface',['../classfgla_1_1ext_1_1windowing_1_1Surface.html',1,'fgla::ext::windowing']]]
 ];

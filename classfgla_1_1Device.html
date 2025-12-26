@@ -123,8 +123,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2cf257865f1d4ece89de60af65ee7ed5" id="r_a2cf257865f1d4ece89de60af65ee7ed5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; <a class="el" href="classfgla_1_1Queue.html">Queue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cf257865f1d4ece89de60af65ee7ed5">get_queue</a> (<a class="el" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a> type, uint32_t index)</td></tr>
-<tr class="separator:a2cf257865f1d4ece89de60af65ee7ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5589c678ac2aa4ae5f61441bf25ca6f" id="r_ad5589c678ac2aa4ae5f61441bf25ca6f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; <a class="el" href="classfgla_1_1Queue.html">Queue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5589c678ac2aa4ae5f61441bf25ca6f">get_queue</a> (<a class="el" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a> type, uint32_t index)</td></tr>
+<tr class="separator:ad5589c678ac2aa4ae5f61441bf25ca6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -139,7 +139,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a device, which is used to create rendering objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00011">11</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00012">12</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a09e413eea2460149634511af392b8952" name="a09e413eea2460149634511af392b8952"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e413eea2460149634511af392b8952">&#9670;&#160;</a></span>from_raw()</h2>
@@ -165,17 +165,17 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00039">39</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                          {</div>
-<div class="line"><span class="lineno">   40</span>    Device device;</div>
-<div class="line"><span class="lineno">   41</span>    device.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> device;</div>
-<div class="line"><span class="lineno">   43</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00040">40</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                          {</div>
+<div class="line"><span class="lineno">   41</span>    Device device;</div>
+<div class="line"><span class="lineno">   42</span>    device.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> device;</div>
+<div class="line"><span class="lineno">   44</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2cf257865f1d4ece89de60af65ee7ed5" name="a2cf257865f1d4ece89de60af65ee7ed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cf257865f1d4ece89de60af65ee7ed5">&#9670;&#160;</a></span>get_queue()</h2>
+<a id="ad5589c678ac2aa4ae5f61441bf25ca6f" name="ad5589c678ac2aa4ae5f61441bf25ca6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5589c678ac2aa4ae5f61441bf25ca6f">&#9670;&#160;</a></span>get_queue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +184,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; <a class="el" href="classfgla_1_1Queue.html">Queue</a> &gt; fgla::Device::get_queue </td>
+          <td class="memname">std::optional&lt; std::reference_wrapper&lt; <a class="el" href="classfgla_1_1Queue.html">Queue</a> &gt; &gt; fgla::Device::get_queue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
         </tr>
@@ -208,16 +208,16 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The specified queue, or an empty <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">util::OptRef</a></code> if not found </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The specified queue, or <code>std::nullopt</code> if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00022">22</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>                                                                     {</div>
-<div class="line"><span class="lineno">   23</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (q)</div>
-<div class="line"><span class="lineno">   25</span>      <span class="keywordflow">return</span> *q;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   28</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00023">23</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                                            {</div>
+<div class="line"><span class="lineno">   24</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (q)</div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">return</span> *q;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   29</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,7 +242,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00046">46</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00047">47</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

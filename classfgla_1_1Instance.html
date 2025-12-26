@@ -137,9 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a08c6ac70293d35088c02fc94ef8a674f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a600e6b12ef043c6cc39623d215d31568" id="r_a600e6b12ef043c6cc39623d215d31568"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structfgla_1_1backend_1_1Backend.html">backend::Backend</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a600e6b12ef043c6cc39623d215d31568">get_backend</a> ()</td></tr>
 <tr class="separator:a600e6b12ef043c6cc39623d215d31568"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b764956d804018e18a367a3a584ce78" id="r_a5b764956d804018e18a367a3a584ce78"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5b764956d804018e18a367a3a584ce78"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5b764956d804018e18a367a3a584ce78">get_extension</a> ()</td></tr>
-<tr class="separator:a5b764956d804018e18a367a3a584ce78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316c04a1604eb50606ec26f1dfde0bbd" id="r_a316c04a1604eb50606ec26f1dfde0bbd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a316c04a1604eb50606ec26f1dfde0bbd"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a316c04a1604eb50606ec26f1dfde0bbd">get_extension</a> ()</td></tr>
+<tr class="separator:a316c04a1604eb50606ec26f1dfde0bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -353,8 +353,8 @@ Friends</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5b764956d804018e18a367a3a584ce78" name="a5b764956d804018e18a367a3a584ce78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b764956d804018e18a367a3a584ce78">&#9670;&#160;</a></span>get_extension()</h2>
+<a id="a316c04a1604eb50606ec26f1dfde0bbd" name="a316c04a1604eb50606ec26f1dfde0bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316c04a1604eb50606ec26f1dfde0bbd">&#9670;&#160;</a></span>get_extension()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +365,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfgla_1_1util_1_1OptRef.html">util::OptRef</a>&lt; T &gt; fgla::Instance::get_extension </td>
+          <td class="memname">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt; fgla::Instance::get_extension </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -383,10 +383,10 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The extension, or an empty <code><a class="el" href="classfgla_1_1util_1_1OptRef.html" title="An alternative to std::optional for references.">util::OptRef</a></code> if not supported </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The extension, or <code>std::nullopt</code> if not supported </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00100">100</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                      {</div>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                                             {</div>
 <div class="line"><span class="lineno">  101</span>    <a class="code hl_typedef" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a> uuid = T::UUID;</div>
 <div class="line"><span class="lineno">  102</span>    <span class="keywordtype">void</span> *ext = this-&gt;impl-&gt;get_extension(uuid);</div>
 <div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (ext) {</div>

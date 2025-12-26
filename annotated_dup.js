@@ -19,7 +19,6 @@ var annotated_dup =
       ] ],
       [ "util", "namespacefgla_1_1util.html", [
         [ "FilterableList", "classfgla_1_1util_1_1FilterableList.html", "classfgla_1_1util_1_1FilterableList" ],
-        [ "OptRef", "classfgla_1_1util_1_1OptRef.html", "classfgla_1_1util_1_1OptRef" ],
         [ "PairHash", "structfgla_1_1util_1_1PairHash.html", "structfgla_1_1util_1_1PairHash" ],
         [ "UUID", "structfgla_1_1util_1_1UUID.html", "structfgla_1_1util_1_1UUID" ]
       ] ],
@@ -27,6 +26,7 @@ var annotated_dup =
       [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],
       [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
       [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
+      [ "Image", "classfgla_1_1Image.html", "classfgla_1_1Image" ],
       [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
       [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
       [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],

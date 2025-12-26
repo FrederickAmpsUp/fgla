@@ -8,7 +8,7 @@ var classfgla_1_1Instance =
     [ "get_adapter", "classfgla_1_1Instance.html#a19b3e9dd4529c719d37457b5e4d0ec5b", null ],
     [ "get_adapter_scorer", "classfgla_1_1Instance.html#a2da4c39d8a55ec9880f0eca9ec9aad8b", null ],
     [ "get_backend", "classfgla_1_1Instance.html#a600e6b12ef043c6cc39623d215d31568", null ],
-    [ "get_extension", "classfgla_1_1Instance.html#a5b764956d804018e18a367a3a584ce78", null ],
+    [ "get_extension", "classfgla_1_1Instance.html#a316c04a1604eb50606ec26f1dfde0bbd", null ],
     [ "select_adapter", "classfgla_1_1Instance.html#a08c6ac70293d35088c02fc94ef8a674f", null ],
     [ "select_adapter", "classfgla_1_1Instance.html#ad8f34a69b087f99e60846cb8fd9e70a1", null ],
     [ "fgla::internal::ImplAccessor", "classfgla_1_1Instance.html#ac06cf072aa647185632537a764206ad1", null ]
