@@ -15,6 +15,7 @@ struct DeviceImpl : public Device::Impl {
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }
+  std::vector<VkSemaphore> &get_semaphore_pool() { return this->semaphore_pool; }
 
   virtual ~DeviceImpl() override;
 
@@ -22,5 +23,7 @@ private:
   VkDevice device;
   VkPhysicalDevice physical_device;
   QueueAllocator::Queues queues;
+
+  std::vector<VkSemaphore> semaphore_pool;
 };
 } // namespace fgla::backends::vulkan

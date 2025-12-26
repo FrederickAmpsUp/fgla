@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
                                "Failed to create instance");
 
   auto &windowing =
-      fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(), "Windowing not available");
+      fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(), "Windowing not available").get();
 
   auto window =
       fgla::unwrap(windowing.create_window({.width = 800, .height = 600, .name = "Test Window"}),

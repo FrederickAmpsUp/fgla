@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
                                     });
 
   auto &windowing =
-      fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(), "Windowing not available");
+      fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(), "Windowing not available").get();
 
   auto window = "Window creation failed" *
                 windowing.create_window({.width = 800, .height = 600, .name = "Test Window"});

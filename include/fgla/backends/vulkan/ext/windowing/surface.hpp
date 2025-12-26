@@ -17,6 +17,8 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   virtual fgla::ext::windowing::Surface::Capabilities
   get_capabilities(const Adapter &adapter) override;
 
+  fgla::Result<std::reference_wrapper<fgla::Image>> get_current_image(const fgla::Queue &device) override;
+
   bool is_ok() const;
 
   virtual ~SurfaceImpl() override;
@@ -26,5 +28,6 @@ private:
   VkSwapchainKHR swapchain;
   VkDevice device;
   VkInstance instance;
+  std::vector<fgla::Image> swapchain_images;
 };
 } // namespace fgla::backends::vulkan::ext::windowing

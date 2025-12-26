@@ -2,12 +2,12 @@
 
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
-#include <istream>
-#include <span>
 #include <unordered_map>
 #include <vulkan/vulkan.h>
 
 namespace fgla::backends::vulkan {
+
+struct DeviceImpl;
 
 struct QueueAllocator {
   using QueueMapping = std::unordered_map<std::pair<Queue::Type, uint32_t>,
@@ -21,7 +21,7 @@ struct QueueAllocator {
   QueueAllocator(const std::initializer_list<Queue::Request> &requests,
                  VkPhysicalDevice physical_device);
 
-  Queues get_queues(VkDevice device);
+  Queues get_queues(DeviceImpl &device);
   inline const std::vector<VkDeviceQueueCreateInfo> &get_queue_create_infos() {
     return this->create_infos;
   }
@@ -32,10 +32,12 @@ private:
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-  QueueImpl(VkQueue queue) : queue(queue) {}
+  QueueImpl(VkQueue queue, std::vector<VkSemaphore> &semaphore_pool) : queue(queue), semaphore_pool(semaphore_pool) {}
 
 private:
   VkQueue queue;
+
+  std::vector<VkSemaphore> &semaphore_pool;
 };
 
 } // namespace fgla::backends::vulkan

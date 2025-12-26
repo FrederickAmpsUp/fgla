@@ -1,6 +1,7 @@
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
+#include <fgla/backends/vulkan/ext/windowing/image.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <fgla/backends/vulkan/util.hpp>
 #include <fgla/internal.hpp>
@@ -116,6 +117,9 @@ SurfaceImpl::configure(fgla::Device &device,
   VkPhysicalDevice phys_dev =
       static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
           ->get_physical_device();
+  VkDevice logi_dev = 
+      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
+          ->get_device();
 
   VkFormat fmt = vulkanize(configuration.format); // ez pz
   VkPresentModeKHR pm = pick_present_mode(phys_dev, this->surface, configuration.present_mode);
@@ -166,19 +170,38 @@ SurfaceImpl::configure(fgla::Device &device,
   create_info.clipped = VK_TRUE;
 
   create_info.oldSwapchain = this->swapchain;
+  VkSwapchainKHR old_swapchain = this->swapchain;
 
   VkDevice dev =
       static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))->get_device();
 
   VkResult res = vkCreateSwapchainKHR(dev, &create_info, nullptr, &this->swapchain);
+
+  if (old_swapchain != VK_NULL_HANDLE) {
+    vkDestroySwapchainKHR(logi_dev, old_swapchain, nullptr);
+  }
+
   if (res != VK_SUCCESS) {
     logger->error("Failed to create Vulkan swapchain (error code {}).", (uint64_t)res);
     this->swapchain = VK_NULL_HANDLE;
     return Error(1, "Failed to create Vulkan swapchain");
-  } else {
-    logger->info("Vulkan swapchain created.");
-    this->device = dev;
+  } 
+  logger->info("Vulkan swapchain created.");
+  this->device = dev;
+ 
+
+  n_images = 0;
+  vkGetSwapchainImagesKHR(logi_dev, this->swapchain, &n_images, nullptr);
+  std::vector<VkImage> images(n_images);
+  this->swapchain_images.resize(n_images);
+  vkGetSwapchainImagesKHR(logi_dev, this->swapchain, &n_images, images.data());
+
+  for (int i = 0; i < n_images; ++i) {
+    std::unique_ptr<fgla::Image::Impl> image = std::make_unique<SwapchainImageImpl>(images[i]);
+    this->swapchain_images[i] = fgla::Image::from_raw(std::move(image));
   }
+
+  logger->info("Retrieved {} swapchain images.", n_images);
 
   return {};
 }
@@ -216,7 +239,7 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
                                               present_modes.data());
 
     for (const auto &present_mode : present_modes) {
-      Surface::PresentMode pm = Surface::PresentMode::AUTO_VSYNC; // just used as a flag here
+      Surface::PresentMode pm = Surface::PresentMode::AUTO_VSYNC; // just used as a "not found" flag here
       switch (present_mode) {
       case VK_PRESENT_MODE_FIFO_KHR:
         pm = Surface::PresentMode::FIFO;
@@ -236,6 +259,10 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
   }
 
   return caps;
+}
+
+fgla::Result<std::reference_wrapper<fgla::Image>> SurfaceImpl::get_current_image(const fgla::Queue &device) {
+  return Error(0, "Unimplemented");
 }
 
 bool SurfaceImpl::is_ok() const { return this->surface != VK_NULL_HANDLE; }

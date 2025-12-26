@@ -2,6 +2,7 @@
 
 #include <fgla/instance.hpp>
 #include <fgla/internal.hpp>
+#include <fgla/image.hpp>
 #include <fgla/types.hpp>
 #include <memory>
 #include <optional>
@@ -32,10 +33,15 @@ public:
     return this->impl->get_capabilities(adapter);
   }
 
+  inline fgla::Result<std::reference_wrapper<fgla::Image>> get_current_image(const fgla::Queue &device) {
+    return this->impl->get_current_image(device);
+  }
+
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
     virtual std::optional<Error> configure(fgla::Device &, const Configuration &) = 0;
     virtual Capabilities get_capabilities(const Adapter &) = 0;
+    virtual fgla::Result<std::reference_wrapper<fgla::Image>> get_current_image(const fgla::Queue &) = 0;
     virtual ~Impl() = 0;
   };
 

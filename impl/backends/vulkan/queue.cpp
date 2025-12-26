@@ -173,14 +173,14 @@ QueueAllocator::QueueAllocator(const std::initializer_list<Queue::Request> &requ
   this->queue_mapping = result.second;
 }
 
-QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
+QueueAllocator::Queues QueueAllocator::get_queues(DeviceImpl &device) {
   Queues queues;
 
   for (auto [queue_handle, queue] : this->queue_mapping) {
     VkQueue vk_queue;
-    vkGetDeviceQueue(device, queue.first, queue.second, &vk_queue);
+    vkGetDeviceQueue(device.get_physical_device(), queue.first, queue.second, &vk_queue);
 
-    std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue);
+    std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue, device.get_semaphore_pool());
     Queue fg_queue = Queue::from_raw(std::move(queue_impl));
 
     queues.insert({queue_handle, std::move(fg_queue)});
