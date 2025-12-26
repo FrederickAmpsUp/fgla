@@ -9,4 +9,4 @@ struct SwapchainImageImpl : public BaseImageImpl {
 
   virtual ~SwapchainImageImpl() override = default;
 };
-}
+} // namespace fgla::backends::vulkan::ext::windowing

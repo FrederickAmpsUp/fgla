@@ -3,8 +3,8 @@
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
-#include <optional>
 #include <memory>
+#include <optional>
 
 namespace fgla {
 

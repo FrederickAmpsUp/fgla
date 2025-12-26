@@ -32,7 +32,8 @@ private:
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-  QueueImpl(VkQueue queue, std::vector<VkSemaphore> &semaphore_pool) : queue(queue), semaphore_pool(semaphore_pool) {}
+  QueueImpl(VkQueue queue, std::vector<VkSemaphore> &semaphore_pool)
+      : queue(queue), semaphore_pool(semaphore_pool) {}
 
 private:
   VkQueue queue;

@@ -1,17 +1,16 @@
 #pragma once
 
-#include <memory>
 #include <fgla/internal.hpp>
+#include <memory>
 
 namespace fgla {
 
 /// Represents an image, a multidimensional (up to 3d) block of GPU-resident structured data
 class Image {
 public:
-  
   /// The backend-defined implementation of the `Image`'s functions
   struct Impl {
-  
+
     virtual ~Impl() = 0;
   };
 
@@ -22,6 +21,7 @@ public:
     image.impl = std::move(impl);
     return image;
   }
+
 private:
   friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;

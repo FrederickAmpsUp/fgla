@@ -9,9 +9,10 @@ struct BaseImageImpl : public Image::Impl {
   inline VkImage get_image() { return this->image; }
 
   virtual ~BaseImageImpl() = 0;
+
 protected:
   BaseImageImpl(VkImage image) : image(image) {}
-  
+
   VkImage image;
 };
 
