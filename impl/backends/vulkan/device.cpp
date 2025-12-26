@@ -17,6 +17,9 @@ DeviceImpl::DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descripto
 
   create_info.pEnabledFeatures = &device_features;
 
+  create_info.queueCreateInfoCount = queue_create_infos.size();
+  create_info.pQueueCreateInfos = queue_create_infos.data();
+
   std::vector<const char *> extensions;
 
 #ifdef FGLA_VK_EXT_WINDOWING
@@ -39,7 +42,7 @@ DeviceImpl::DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descripto
 
   logger->info("Vulkan device created.");
 
-  this->queues = queue_allocator.get_queues(this->device);
+  this->queues = queue_allocator.get_queues(*this);
 }
 bool DeviceImpl::is_ok() const { return this->device != VK_NULL_HANDLE; }
 

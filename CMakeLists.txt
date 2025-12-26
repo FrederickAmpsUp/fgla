@@ -10,6 +10,7 @@ set(EXPECTED_BUILD_TESTS OFF)
 set(OPTIONAL_BUILD_TESTS OFF)
 
 set(SPDLOG_BUILD_PIC ON)
+set(SPDLOG_HEADER_ONLY OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/spdlog)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/fmt)

@@ -52,7 +52,13 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
   instance_info.enabledExtensionCount = extensions.size();
   instance_info.ppEnabledExtensionNames = extensions.data();
 
-  instance_info.enabledLayerCount = 0;
+  std::vector<const char *> layers;
+#ifndef NDEBUG
+  layers.push_back("VK_LAYER_KHRONOS_validation"); // should query if it's actually available
+#endif
+
+  instance_info.enabledLayerCount = layers.size();
+  instance_info.ppEnabledLayerNames = layers.data();
 
   VkResult result = vkCreateInstance(&instance_info, nullptr, &this->instance);
   if (result != VK_SUCCESS) {

@@ -1,5 +1,6 @@
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
+#include <fgla/backends/vulkan/device.hpp>
 #include <fgla/internal.hpp>
 #ifdef FGLA_VK_EXT_WINDOWING
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
@@ -149,8 +150,9 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
     queue_create_info.queueFamilyIndex = family.index;
     queue_create_info.queueCount = family.used_queues.size();
 
-    std::vector<float> priorities(queue_create_info.queueCount, 1.0);
-    queue_create_info.pQueuePriorities = priorities.data();
+    static float PRIORITIES[16] = { 1.0f };
+
+    queue_create_info.pQueuePriorities = PRIORITIES;
 
     queue_create_infos.push_back(queue_create_info);
   }
@@ -178,7 +180,7 @@ QueueAllocator::Queues QueueAllocator::get_queues(DeviceImpl &device) {
 
   for (auto [queue_handle, queue] : this->queue_mapping) {
     VkQueue vk_queue;
-    vkGetDeviceQueue(device.get_physical_device(), queue.first, queue.second, &vk_queue);
+    vkGetDeviceQueue(device.get_device(), queue.first, queue.second, &vk_queue);
 
     std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue, device.get_semaphore_pool());
     Queue fg_queue = Queue::from_raw(std::move(queue_impl));
