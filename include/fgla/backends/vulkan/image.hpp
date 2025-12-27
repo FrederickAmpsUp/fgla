@@ -22,7 +22,7 @@ protected:
 inline BaseImageImpl::~BaseImageImpl() = default;
 
 struct InternalImageImpl : public BaseImageImpl {
-  InternalImageImpl(VkImage image) : BaseImageImpl(image) {}
+  InternalImageImpl(VkImage image, VkDevice device) : BaseImageImpl(image, device) {}
 
   virtual ~InternalImageImpl() override;
 };

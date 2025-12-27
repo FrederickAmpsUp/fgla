@@ -8,6 +8,7 @@ set(TEST_DIRS
     device_queues
     ext_window_surface
     ext_window_surface_device
+    ext_window_surface_device_image_view
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

@@ -1,6 +1,8 @@
 #pragma once
 
+#include <fgla/image_view.hpp>
 #include <fgla/types.hpp>
+#include <spdlog/spdlog.h>
 #include <vulkan/vulkan.h>
 
 namespace fgla::backends::vulkan {
@@ -64,6 +66,15 @@ namespace fgla::backends::vulkan {
   CASE(D32_FLOAT, VK_FORMAT_D32_SFLOAT)                                                            \
   CASE(D32_FLOAT_S8_UINT, VK_FORMAT_D32_SFLOAT_S8_UINT)
 
+#define VK_IMAGE_VIEW_TYPE_MAPPING                                                                 \
+  CASE(D1, VK_IMAGE_VIEW_TYPE_1D)                                                                  \
+  CASE(D2, VK_IMAGE_VIEW_TYPE_2D)                                                                  \
+  CASE(D3, VK_IMAGE_VIEW_TYPE_3D)                                                                  \
+  CASE(D1_ARRAY, VK_IMAGE_VIEW_TYPE_1D_ARRAY)                                                      \
+  CASE(D2_ARRAY, VK_IMAGE_VIEW_TYPE_2D_ARRAY)                                                      \
+  CASE(CUBE, VK_IMAGE_VIEW_TYPE_CUBE)                                                              \
+  CASE(CUBE_ARRAY, VK_IMAGE_VIEW_TYPE_CUBE_ARRAY)
+
 constexpr VkFormat vulkanize(TextureFormat fmt) {
 #define CASE(name, vk)                                                                             \
   case TextureFormat::name:                                                                        \
@@ -85,6 +96,20 @@ constexpr TextureFormat devulkanize(VkFormat fmt) {
 #undef CASE
   default:
     return TextureFormat::UNDEFINED;
+  }
+}
+
+inline VkImageViewType vulkanize(ImageView::Mode mode) {
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+#define CASE(name, vk)                                                                             \
+  case ImageView::Mode::name:                                                                      \
+    return vk;
+  switch (mode) {
+    VK_IMAGE_VIEW_TYPE_MAPPING
+#undef CASE
+  default:
+    logger->warn("Unsupported ImageView::Mode, defaulting to 2D.");
+    return VK_IMAGE_VIEW_TYPE_2D;
   }
 }
 } // namespace fgla::backends::vulkan

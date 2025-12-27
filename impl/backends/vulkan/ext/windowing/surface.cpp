@@ -263,7 +263,11 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
 
 fgla::Result<std::reference_wrapper<fgla::Image>>
 SurfaceImpl::get_current_image(const fgla::Queue &device) {
-  return Error(0, "Unimplemented");
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+
+  logger->warn("SurfaceImpl::get_current_image unimplemnted, returning image 0.");
+
+  return std::reference_wrapper(this->swapchain_images[0]);
 }
 
 bool SurfaceImpl::is_ok() const { return this->surface != VK_NULL_HANDLE; }
