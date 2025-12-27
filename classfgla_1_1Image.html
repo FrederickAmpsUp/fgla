@@ -99,6 +99,7 @@ $(function(){initNavTree('classfgla_1_1Image.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1Image-members.html">List of all members</a>  </div>
@@ -117,6 +118,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1Image.html" title="Represents an image, a multidimensional (up to 3d) block of GPU-resident structured data.">Image</a></code>'s functions.  <a href="structfgla_1_1Image_1_1Impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9b26584fba5de01c4a526ff88cc27768" id="r_a9b26584fba5de01c4a526ff88cc27768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ImageView.html">ImageView</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b26584fba5de01c4a526ff88cc27768">create_view</a> (const <a class="el" href="structfgla_1_1ImageView_1_1Descriptor.html">ImageView::Descriptor</a> &amp;descriptor)</td></tr>
+<tr class="separator:a9b26584fba5de01c4a526ff88cc27768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a85631c0c3f158287a662929dbf76e718" id="r_a85631c0c3f158287a662929dbf76e718"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfgla_1_1Image.html">Image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85631c0c3f158287a662929dbf76e718">from_raw</a> (std::unique_ptr&lt; <a class="el" href="structfgla_1_1Image_1_1Impl.html">Image::Impl</a> &gt; impl)</td></tr>
@@ -130,8 +136,38 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an image, a multidimensional (up to 3d) block of GPU-resident structured data. </p>
 
-<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00009">9</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00011">11</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9b26584fba5de01c4a526ff88cc27768" name="a9b26584fba5de01c4a526ff88cc27768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b26584fba5de01c4a526ff88cc27768">&#9670;&#160;</a></span>create_view()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ImageView.html">ImageView</a> &gt; fgla::Image::create_view </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1ImageView_1_1Descriptor.html">ImageView::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>descriptor</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00013">13</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                                                              {</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;create_view(descriptor);</div>
+<div class="line"><span class="lineno">   15</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a85631c0c3f158287a662929dbf76e718" name="a85631c0c3f158287a662929dbf76e718"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85631c0c3f158287a662929dbf76e718">&#9670;&#160;</a></span>from_raw()</h2>
 
@@ -156,12 +192,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates an <code><a class="el" href="classfgla_1_1Image.html" title="Represents an image, a multidimensional (up to 3d) block of GPU-resident structured data.">Image</a></code> from a raw implentation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00019">19</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                              {</div>
-<div class="line"><span class="lineno">   20</span>    Image image;</div>
-<div class="line"><span class="lineno">   21</span>    image.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> image;</div>
-<div class="line"><span class="lineno">   23</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00026">26</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                              {</div>
+<div class="line"><span class="lineno">   27</span>    Image image;</div>
+<div class="line"><span class="lineno">   28</span>    image.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> image;</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -186,7 +222,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00026">26</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="image_8hpp_source.html#l00033">33</a> of file <a class="el" href="image_8hpp_source.html">image.hpp</a>.</p>
 
 </div>
 </div>

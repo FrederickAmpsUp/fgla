@@ -6,5 +6,7 @@ var searchData=
   ['backend_2ehpp_3',['backend.hpp',['../backend_8hpp.html',1,'']]],
   ['backendregistrar_4',['BackendRegistrar',['../structfgla_1_1backend_1_1BackendRegistrar.html',1,'fgla::backend::BackendRegistrar'],['../structfgla_1_1backend_1_1BackendRegistrar.html#a4c39c593de7657ac36157dfa86e64f13',1,'fgla::backend::BackendRegistrar::BackendRegistrar()']]],
   ['backenduuid_5',['BackendUUID',['../namespacefgla_1_1backend.html#af6c6ff6d1acb88818a8dd6f0f3e8c891',1,'fgla::backend']]],
-  ['bytes_6',['bytes',['../structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910',1,'fgla::util::UUID']]]
+  ['base_5farray_5flayer_6',['base_array_layer',['../structfgla_1_1ImageView_1_1Descriptor.html#a394b968f8019b3e8233899b31ee23044',1,'fgla::ImageView::Descriptor']]],
+  ['base_5fmip_5flevel_7',['base_mip_level',['../structfgla_1_1ImageView_1_1Descriptor.html#a7b7a5fafcd838ffbab682d7c5f628a6e',1,'fgla::ImageView::Descriptor']]],
+  ['bytes_8',['bytes',['../structfgla_1_1util_1_1UUID.html#a7c7486ac7223b3712668db75c093a910',1,'fgla::util::UUID']]]
 ];

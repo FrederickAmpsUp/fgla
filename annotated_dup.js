@@ -27,6 +27,7 @@ var annotated_dup =
       [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
       [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
       [ "Image", "classfgla_1_1Image.html", "classfgla_1_1Image" ],
+      [ "ImageView", "classfgla_1_1ImageView.html", "classfgla_1_1ImageView" ],
       [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
       [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
       [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['d16_5funorm_0',['D16_UNORM',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5af5acdba8e3bbd7c134633790658d10b0',1,'fgla::TextureFormat']]],
-  ['d24_5funorm_5fs8_5fuint_1',['D24_UNORM_S8_UINT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ae1017c19d3bd8e461eeaabbf23714ad4',1,'fgla::TextureFormat']]],
-  ['d32_5ffloat_2',['D32_FLOAT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ad51c319a9452add19520d49783f468ef',1,'fgla::TextureFormat']]],
-  ['d32_5ffloat_5fs8_5fuint_3',['D32_FLOAT_S8_UINT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5a9a0ab9bc673b9e29d4632b834bd9f050',1,'fgla::TextureFormat']]]
+  ['cube_0',['CUBE',['../classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5afbfd6568f88d940b586c9ddf8f68236d',1,'fgla::ImageView']]],
+  ['cube_5farray_1',['CUBE_ARRAY',['../classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5aec688f804cbc7e61dbac1e99d654fec1',1,'fgla::ImageView']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['immediate_0',['IMMEDIATE',['../classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c',1,'fgla::ext::windowing::Surface']]]
+  ['graphics_0',['Graphics',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494',1,'fgla::Queue']]]
 ];

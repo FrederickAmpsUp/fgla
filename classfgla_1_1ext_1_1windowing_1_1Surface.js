@@ -13,6 +13,6 @@ var classfgla_1_1ext_1_1windowing_1_1Surface =
     [ "configure", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad1580134684993bf270b6fd33c531ae0", null ],
     [ "from_raw", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad96af6802ac182bec1da147d39198f7b", null ],
     [ "get_capabilities", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a47d91d05f7ef0af8016311c42d0e93ef", null ],
-    [ "get_current_image", "classfgla_1_1ext_1_1windowing_1_1Surface.html#aadea80a032cbb26ce015681126950bd5", null ],
+    [ "get_current_image", "classfgla_1_1ext_1_1windowing_1_1Surface.html#aece959e6db31b1fa4108e21b4d1a0de0", null ],
     [ "fgla::internal::ImplAccessor", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1", null ]
 ];

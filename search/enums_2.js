@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_0',['Value',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5',1,'fgla::TextureFormat']]]
+  ['type_0',['Type',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d',1,'fgla::Queue']]]
 ];
