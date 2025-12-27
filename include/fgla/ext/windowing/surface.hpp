@@ -34,8 +34,8 @@ public:
   }
 
   inline fgla::Result<std::reference_wrapper<fgla::Image>>
-  get_current_image(const fgla::Queue &device) {
-    return this->impl->get_current_image(device);
+  get_current_image(const fgla::Queue &queue) {
+    return this->impl->get_current_image(queue);
   }
 
   /// The backend-defined implementation of the `Surface`'s functions
