@@ -71,7 +71,14 @@ int main(int argc, char **argv) {
 
   while (window.is_open()) {
     auto &image = ("Failed to retrieve swapchain image" * surface.get_current_image(present)).get();
-    auto image_view = image.create_view({surface_format, fgla::ImageView::Mode::D2, 0, 1, 0, 1});
+    auto image_view = image.create_view({
+        .format = surface_format,
+        .mode = fgla::ImageView::Mode::D2,
+        .base_mip_level = 0,
+        .num_mip_levels = 1,
+        .base_array_layer = 0,
+        .num_array_layers = 1,
+    });
 
     // do stuff with it?
     window.poll_events();
