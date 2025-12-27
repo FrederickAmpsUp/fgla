@@ -3,6 +3,7 @@
 
 namespace fgla::backends::vulkan {
 
+// TODO: move this into AdapterImpl
 DeviceImpl::DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descriptor,
                        QueueAllocator &queue_allocator) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
