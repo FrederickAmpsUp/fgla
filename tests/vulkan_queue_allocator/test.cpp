@@ -1,4 +1,6 @@
 #include <bitset>
+#include <cassert>
+#include <fgla/backends/vulkan/backend.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/instance.hpp>
 #include <iostream>
@@ -145,7 +147,9 @@ void test_big_brain_allocator() {
 }
 
 int main() {
-  auto instance = fgla::Instance::create({{}});
+  auto instance = fgla::Instance::create({.preferred_backend = fgla::backends::vulkan::UUID});
+
+  assert(instance->get_backend().uuid == fgla::backends::vulkan::UUID);
 
   test_big_brain_allocator();
   return 0;
