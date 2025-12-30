@@ -74,6 +74,7 @@ int main(int argc, char **argv) {
     auto image_view = image.create_view({
         .format = surface_format,
         .mode = fgla::ImageView::Mode::D2,
+        .aspect_flags = fgla::ImageView::AspectBits::COLOR,
         .base_mip_level = 0,
         .num_mip_levels = 1,
         .base_array_layer = 0,

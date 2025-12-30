@@ -12,11 +12,15 @@ class ImageView {
 public:
   /// Determines the interpreted shape of the image data.
   enum class Mode { D1, D2, D3, D1_ARRAY, D2_ARRAY, CUBE, CUBE_ARRAY };
+  struct AspectBits {
+    enum Value : uint8_t { COLOR = 1 << 0, DEPTH = 1 << 1, STENCIL = 1 << 2 };
+  };
+  using AspectFlags = uint8_t;
 
   struct Descriptor {
     TextureFormat format;
     ImageView::Mode mode;
-    // TODO: aspects (color/depth/stencil)
+    ImageView::AspectFlags aspect_flags;
     uint32_t base_mip_level, num_mip_levels;
     uint32_t base_array_layer, num_array_layers;
   };
