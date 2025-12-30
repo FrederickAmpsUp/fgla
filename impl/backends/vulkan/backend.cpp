@@ -1,7 +1,6 @@
 #include <fgla/backends/vulkan/backend.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <fgla/util.hpp>
-#include <iostream>
 #include <spdlog/spdlog.h>
 
 namespace fgla::backends::vulkan {

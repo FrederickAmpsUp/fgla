@@ -21,7 +21,7 @@ struct QueueAllocator {
   QueueAllocator(const std::initializer_list<Queue::Request> &requests,
                  VkPhysicalDevice physical_device);
 
-  Queues get_queues(DeviceImpl &device);
+  Queues get_queues(VkDevice device);
   inline const std::vector<VkDeviceQueueCreateInfo> &get_queue_create_infos() {
     return this->create_infos;
   }
@@ -32,13 +32,17 @@ private:
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-  QueueImpl(VkQueue queue, std::vector<VkSemaphore> &semaphore_pool)
-      : queue(queue), semaphore_pool(semaphore_pool) {}
+  QueueImpl(VkQueue queue) : queue(queue) {}
+
+  // just called once by DeviceImpl right after initialization
+  inline void set_semaphore_pool(std::vector<VkSemaphore> *semaphore_pool) {
+    this->semaphore_pool = semaphore_pool;
+  }
 
 private:
   VkQueue queue;
 
-  std::vector<VkSemaphore> &semaphore_pool;
+  std::vector<VkSemaphore> *semaphore_pool = nullptr;
 };
 
 } // namespace fgla::backends::vulkan

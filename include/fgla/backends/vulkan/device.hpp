@@ -3,13 +3,12 @@
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/device.hpp>
+#include <fgla/internal.hpp>
 
 namespace fgla::backends::vulkan {
 
 struct DeviceImpl : public Device::Impl {
-  DeviceImpl(AdapterImpl &adapter, const Device::Descriptor &descriptor,
-             QueueAllocator &queue_allocator);
-  bool is_ok() const;
+  DeviceImpl(VkDevice device, VkPhysicalDevice physical_device, QueueAllocator::Queues queues);
 
   virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
 
