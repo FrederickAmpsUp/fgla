@@ -10,8 +10,9 @@ var searchData=
   ['d32_5ffloat_7',['D32_FLOAT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ad51c319a9452add19520d49783f468ef',1,'fgla::TextureFormat']]],
   ['d32_5ffloat_5fs8_5fuint_8',['D32_FLOAT_S8_UINT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5a9a0ab9bc673b9e29d4632b834bd9f050',1,'fgla::TextureFormat']]],
   ['data_9',['data',['../classfgla_1_1util_1_1FilterableList.html#a3bcdb6503800d7e17b3f82dc0c6cde14',1,'fgla::util::FilterableList']]],
-  ['descriptor_10',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Device_1_1Descriptor.html',1,'fgla::Device::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html',1,'fgla::ext::windowing::Window::Descriptor'],['../structfgla_1_1ImageView_1_1Descriptor.html',1,'fgla::ImageView::Descriptor'],['../structfgla_1_1Instance_1_1Descriptor.html',1,'fgla::Instance::Descriptor']]],
-  ['device_11',['Device',['../classfgla_1_1Device.html',1,'fgla']]],
-  ['device_2ehpp_12',['device.hpp',['../device_8hpp.html',1,'']]],
-  ['device_5fname_13',['device_name',['../structfgla_1_1Adapter_1_1Info.html#a154b5481d343d3841682ab4b60cba4d2',1,'fgla::Adapter::Info']]]
+  ['depth_10',['DEPTH',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa2850c4d80bc8d11f235997204e3f8ec9',1,'fgla::ImageView::AspectBits']]],
+  ['descriptor_11',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Device_1_1Descriptor.html',1,'fgla::Device::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html',1,'fgla::ext::windowing::Window::Descriptor'],['../structfgla_1_1ImageView_1_1Descriptor.html',1,'fgla::ImageView::Descriptor'],['../structfgla_1_1Instance_1_1Descriptor.html',1,'fgla::Instance::Descriptor']]],
+  ['device_12',['Device',['../classfgla_1_1Device.html',1,'fgla']]],
+  ['device_2ehpp_13',['device.hpp',['../device_8hpp.html',1,'']]],
+  ['device_5fname_14',['device_name',['../structfgla_1_1Adapter_1_1Info.html#a154b5481d343d3841682ab4b60cba4d2',1,'fgla::Adapter::Info']]]
 ];

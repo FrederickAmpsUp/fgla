@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windowing_0',['Windowing',['../namespacefgla_1_1ext.html#a8d9bc0a18c158c947d05c9cdb9e17330',1,'fgla::ext']]]
+  ['extensionuuid_0',['ExtensionUUID',['../namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959',1,'fgla::extension']]]
 ];

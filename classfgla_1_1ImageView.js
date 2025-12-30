@@ -1,7 +1,9 @@
 var classfgla_1_1ImageView =
 [
+    [ "AspectBits", "structfgla_1_1ImageView_1_1AspectBits.html", "structfgla_1_1ImageView_1_1AspectBits" ],
     [ "Descriptor", "structfgla_1_1ImageView_1_1Descriptor.html", "structfgla_1_1ImageView_1_1Descriptor" ],
     [ "Impl", "structfgla_1_1ImageView_1_1Impl.html", "structfgla_1_1ImageView_1_1Impl" ],
+    [ "AspectFlags", "classfgla_1_1ImageView.html#aae7075f8fa0915fdc8fccbaff4f9437a", null ],
     [ "Mode", "classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5", [
       [ "D1", "classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5a4a4079e06eb2f7ba7a12821c7c58a3f6", null ],
       [ "D2", "classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5ac4d62b6dcca08e5caf06c01889282859", null ],

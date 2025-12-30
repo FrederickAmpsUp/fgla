@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['transfer_0',['Transfer',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e',1,'fgla::Queue']]]
+  ['stencil_0',['STENCIL',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa4f56b91f794efea23e7859e604135a0c',1,'fgla::ImageView::AspectBits']]]
 ];
