@@ -14,7 +14,7 @@ struct CommandBufferImpl : public fgla::CommandBuffer::Impl {
   inline VkCommandBuffer get_command_buffer() const { return this->command_buffer; }
   inline VkFence get_fence() const { return this->fence; }
 
-  inline void end_recording() { this->is_recording = false; }
+  void end_recording();
 
   virtual ~CommandBufferImpl() override;
 

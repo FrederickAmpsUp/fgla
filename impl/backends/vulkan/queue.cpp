@@ -3,6 +3,7 @@
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/internal.hpp>
+#include <vulkan/vulkan_core.h>
 #ifdef FGLA_VK_EXT_WINDOWING
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #endif
@@ -250,6 +251,33 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   this->command_buffer_pool.insert({command_buffer, fence});
 
   return this->init_cb(command_buffer, fence);
+}
+
+void QueueImpl::submit(CommandBuffer &&cb) {
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+
+  CommandBufferImpl &command_buffer =
+      *dynamic_cast<CommandBufferImpl *>(fgla::internal::ImplAccessor::get_impl(cb));
+
+  command_buffer.end_recording();
+
+  VkSubmitInfo submit_info = {};
+  submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+
+  submit_info.waitSemaphoreCount = 0;
+
+  VkCommandBuffer vk_cb = command_buffer.get_command_buffer();
+  submit_info.commandBufferCount = 1;
+  submit_info.pCommandBuffers = &vk_cb;
+
+  submit_info.signalSemaphoreCount = 0;
+
+  VkResult res = vkQueueSubmit(this->queue, 1, &submit_info, command_buffer.get_fence());
+
+  logger->info("Submitted Vulkan command buffer.");
+
+  VkFence fence = command_buffer.get_fence(); // TODO: REMOVE ME
+  vkWaitForFences(this->device, 1, &fence, VK_TRUE, UINT64_MAX);
 }
 
 QueueImpl::~QueueImpl() {

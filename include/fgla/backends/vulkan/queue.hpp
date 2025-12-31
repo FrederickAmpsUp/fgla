@@ -36,6 +36,7 @@ struct QueueImpl : public fgla::Queue::Impl {
   QueueImpl(VkQueue queue, uint32_t family_index) : queue(queue), family_index(family_index) {}
 
   virtual Result<CommandBuffer> begin_recording() override;
+  virtual void submit(CommandBuffer &&cb) override;
 
   inline uint32_t get_family_index() const { return this->family_index; }
 

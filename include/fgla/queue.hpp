@@ -27,10 +27,12 @@ public:
   };
 
   inline Result<CommandBuffer> begin_recording() { return this->impl->begin_recording(); }
+  inline void submit(CommandBuffer &&cb) { return this->impl->submit(std::move(cb)); }
 
   /// The backend-defined implementation of the `Queue`'s functions
   struct Impl {
     virtual Result<CommandBuffer> begin_recording() = 0;
+    virtual void submit(CommandBuffer &&cb) = 0;
     virtual ~Impl() = 0;
   };
 

@@ -64,5 +64,7 @@ int main(int argc, char **argv) {
   fgla::Queue &t1 = *device.get_queue(fgla::Queue::Type::Transfer, 0);
 
   fgla::CommandBuffer cb = "Failed to create command buffer!" * g1.begin_recording();
+
+  g1.submit(std::move(cb));
   return 0;
 }
