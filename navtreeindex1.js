@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ac8e977c288130dc7d0a964de04a2488b":[0,0,0,15,0,41],
+"classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ac8e977c288130dc7d0a964de04a2488b":[1,0,0,14,0,41],
 "classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ad51c319a9452add19520d49783f468ef":[0,0,0,15,0,44],
 "classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ad51c319a9452add19520d49783f468ef":[1,0,0,14,0,44],
 "classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ada066667632a04b2c877525531140f13":[0,0,0,15,0,37],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "structfgla_1_1Image_1_1Impl.html#ad0fe9ff42cfba8db142879ae2fabb865":[1,0,0,9,0,1],
 "structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f":[0,0,0,10,0,0],
 "structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f":[1,0,0,9,0,0],
-"structfgla_1_1Instance_1_1Descriptor.html":[0,0,0,12,0],
-"structfgla_1_1Instance_1_1Descriptor.html":[1,0,0,11,0],
-"structfgla_1_1Instance_1_1Descriptor.html#a13a9b8c1d29c7654ac83902769b6991a":[0,0,0,12,0,3]
+"structfgla_1_1Instance_1_1Descriptor.html":[0,0,0,12,0]
 };
