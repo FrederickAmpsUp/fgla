@@ -50,5 +50,11 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
   return pool;
 }
 
-DeviceImpl::~DeviceImpl() { vkDestroyDevice(this->device, nullptr); }
+DeviceImpl::~DeviceImpl() {
+  for (auto [family_index, command_pool] : this->command_pools) {
+    vkDestroyCommandPool(this->device, command_pool, nullptr);
+  }
+  vkDestroyDevice(this->device, nullptr);
+}
+
 } // namespace fgla::backends::vulkan
