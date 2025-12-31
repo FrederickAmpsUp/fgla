@@ -10,6 +10,7 @@
 
 namespace fgla::ext::windowing {
 
+// TODO: document this
 /// Represents a surface, which is used to render to a window
 class Surface {
 public:
@@ -38,12 +39,18 @@ public:
     return this->impl->get_current_image(queue);
   }
 
+  inline std::optional<Error> present(fgla::Queue &present_queue, fgla::Image &&image) {
+    return this->impl->present(present_queue, std::move(image));
+  }
+
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
     virtual std::optional<Error> configure(fgla::Device &, const Configuration &) = 0;
     virtual Capabilities get_capabilities(const Adapter &) = 0;
     virtual fgla::Result<std::reference_wrapper<fgla::Image>>
     get_current_image(const fgla::Queue &) = 0;
+    virtual std::optional<Error> present(fgla::Queue &, fgla::Image &&) = 0;
+
     virtual ~Impl() = 0;
   };
 

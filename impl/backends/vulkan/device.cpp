@@ -53,6 +53,7 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
 }
 
 DeviceImpl::~DeviceImpl() {
+  vkDeviceWaitIdle(this->device);
   this->queues.clear();
   for (auto [family_index, command_pool] : this->command_pools) {
     vkDestroyCommandPool(this->device, command_pool, nullptr);

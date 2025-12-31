@@ -17,8 +17,10 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   virtual fgla::ext::windowing::Surface::Capabilities
   get_capabilities(const Adapter &adapter) override;
 
-  fgla::Result<std::reference_wrapper<fgla::Image>>
+  virtual fgla::Result<std::reference_wrapper<fgla::Image>>
   get_current_image(const fgla::Queue &device) override;
+
+  virtual std::optional<Error> present(fgla::Queue &present_queue, fgla::Image &&image) override;
 
   bool is_ok() const;
 
@@ -27,6 +29,7 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
 private:
   VkSurfaceKHR surface;
   VkSwapchainKHR swapchain;
+  VkFence available_fence = VK_NULL_HANDLE;
   VkDevice device;
   VkInstance instance;
   std::vector<fgla::Image> swapchain_images;

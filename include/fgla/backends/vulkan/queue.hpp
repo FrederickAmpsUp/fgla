@@ -48,6 +48,8 @@ struct QueueImpl : public fgla::Queue::Impl {
     this->command_pool = command_pool;
   }
 
+  inline VkQueue get_queue() const { return this->queue; }
+
   virtual ~QueueImpl() override;
 
 private:

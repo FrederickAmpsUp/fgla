@@ -202,6 +202,19 @@ SurfaceImpl::configure(fgla::Device &device,
 
   logger->info("Retrieved {} swapchain images.", n_images);
 
+  if (this->available_fence == VK_NULL_HANDLE) {
+    VkFenceCreateInfo fence_info = {};
+    fence_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+    fence_info.flags = 0;
+    fence_info.pNext = nullptr;
+
+    res = vkCreateFence(this->device, &fence_info, nullptr, &this->available_fence);
+    if (res != VK_SUCCESS) {
+      return Error(2, "Failed to create Vulkan fence");
+    }
+    logger->info("Vulkan fence created.");
+  }
+
   return {};
 }
 
@@ -265,9 +278,58 @@ fgla::Result<std::reference_wrapper<fgla::Image>>
 SurfaceImpl::get_current_image(const fgla::Queue &device) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
-  logger->warn("SurfaceImpl::get_current_image unimplemnted, returning image 0.");
+  uint32_t image_index;
+  vkAcquireNextImageKHR(this->device, this->swapchain, UINT64_MAX, VK_NULL_HANDLE,
+                        this->available_fence, &image_index);
 
-  return std::reference_wrapper(this->swapchain_images[0]);
+  vkWaitForFences(this->device, 1, &this->available_fence, VK_TRUE, UINT64_MAX);
+  vkResetFences(this->device, 1,
+                &this->available_fence); // TODO: resource state tracking to avoid this
+
+  return std::reference_wrapper(this->swapchain_images[image_index]);
+}
+
+VkImage get_image(fgla::Image &im) {
+  return dynamic_cast<BaseImageImpl *>(fgla::internal::ImplAccessor::get_impl(im))->get_image();
+}
+
+std::optional<Error> SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image) {
+  VkPresentInfoKHR present_info = {};
+  present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+
+  present_info.waitSemaphoreCount = 0;
+
+  present_info.swapchainCount = 1;
+  present_info.pSwapchains = &this->swapchain;
+
+  // simple linear search to find the image we want
+  VkImage image_to_present = get_image(image);
+  int32_t image_index = -1;
+  int32_t i = 0;
+  for (auto &im : this->swapchain_images) {
+    VkImage candidate = get_image(im);
+    if (candidate == image_to_present) {
+      image_index = i;
+      break;
+    }
+    ++i;
+  }
+
+  if (image_index < 0) {
+    return Error(1, "Presented image was not acquired from this surface");
+  }
+
+  uint32_t ind = image_index;
+  present_info.pImageIndices = &ind;
+
+  VkQueue queue =
+      dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue))->get_queue();
+
+  VkResult res = vkQueuePresentKHR(queue, &present_info);
+
+  if (res != VK_SUCCESS) return Error(2, "Failed to present");
+  // TODO: check for specific errors like out of date
+  return {};
 }
 
 bool SurfaceImpl::is_ok() const { return this->surface != VK_NULL_HANDLE; }
