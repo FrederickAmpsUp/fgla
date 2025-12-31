@@ -182,7 +182,7 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
     VkQueue vk_queue;
     vkGetDeviceQueue(device, queue.first, queue.second, &vk_queue);
 
-    std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue);
+    std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue, queue.first);
     Queue fg_queue = Queue::from_raw(std::move(queue_impl));
 
     queues.insert({queue_handle, std::move(fg_queue)});
@@ -190,4 +190,5 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
 
   return queues;
 }
+
 } // namespace fgla::backends::vulkan

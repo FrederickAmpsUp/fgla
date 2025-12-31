@@ -32,17 +32,22 @@ private:
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-  QueueImpl(VkQueue queue) : queue(queue) {}
+  QueueImpl(VkQueue queue, uint32_t family_index) : queue(queue), family_index(family_index) {}
+
+  inline uint32_t get_family_index() const { return this->family_index; }
 
   // just called once by DeviceImpl right after initialization
-  inline void set_semaphore_pool(std::vector<VkSemaphore> *semaphore_pool) {
+  inline void init(std::vector<VkSemaphore> *semaphore_pool, VkCommandPool command_pool) {
     this->semaphore_pool = semaphore_pool;
+    this->command_pool = command_pool;
   }
 
 private:
   VkQueue queue;
+  uint32_t family_index;
 
   std::vector<VkSemaphore> *semaphore_pool = nullptr;
+  VkCommandPool command_pool = VK_NULL_HANDLE;
 };
 
 } // namespace fgla::backends::vulkan
