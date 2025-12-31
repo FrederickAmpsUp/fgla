@@ -11,7 +11,7 @@ if(NOT Vulkan_FOUND)
 	message(FATAL_ERROR "Vulkan SDK not found, make sure it's installed and configured!")
 endif()
 
-add_library(fgla_backend_vulkan STATIC instance.cpp adapter.cpp queue.cpp device.cpp backend.cpp image.cpp)
+add_library(fgla_backend_vulkan STATIC instance.cpp adapter.cpp queue.cpp device.cpp backend.cpp image.cpp command_buffer.cpp)
 target_link_libraries(fgla_backend_vulkan PRIVATE spdlog::spdlog fmt::fmt Vulkan::Vulkan magic_enum)
 if (glfw3_FOUND)
   target_link_libraries(fgla_backend_vulkan PRIVATE glfw)

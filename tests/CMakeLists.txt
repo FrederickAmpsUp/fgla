@@ -9,6 +9,7 @@ set(TEST_DIRS
     ext_window_surface
     ext_window_surface_device
     ext_window_surface_device_image_view
+    command_buffer
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

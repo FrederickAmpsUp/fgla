@@ -1,4 +1,5 @@
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/command_buffer.hpp>
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/internal.hpp>
@@ -189,6 +190,73 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
   }
 
   return queues;
+}
+
+Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer, VkFence fence) {
+  vkResetCommandBuffer(command_buffer, 0);
+  vkResetFences(this->device, 1, &fence);
+
+  VkCommandBufferBeginInfo begin_info = {};
+  begin_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+
+  if (vkBeginCommandBuffer(command_buffer, &begin_info) != VK_SUCCESS) {
+    return Error(2, "Failed to begin Vulkan command buffer");
+  }
+
+  return CommandBuffer::from_raw(std::make_unique<CommandBufferImpl>(command_buffer, fence));
+}
+
+Result<CommandBuffer> QueueImpl::begin_recording() {
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+
+  for (auto &[command_buffer, fence] : this->command_buffer_pool) {
+    VkResult state = vkGetFenceStatus(this->device, fence);
+    if (state == VK_SUCCESS) { // the command buffer has finished and we can reset and use it
+      return this->init_cb(command_buffer, fence);
+    }
+  }
+
+  if (this->command_pool == VK_NULL_HANDLE) {
+    return Error(1, "Failed to allocate Vulkan command buffer - no command pool found");
+  }
+
+  VkCommandBufferAllocateInfo alloc_info = {};
+  alloc_info.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+  alloc_info.commandPool = this->command_pool;
+  alloc_info.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+  alloc_info.commandBufferCount = 1;
+
+  VkCommandBuffer command_buffer;
+  VkResult res = vkAllocateCommandBuffers(this->device, &alloc_info, &command_buffer);
+  if (res != VK_SUCCESS) {
+    return Error(-1, "Failed to allocate Vulkan command buffer");
+  }
+
+  logger->info("Allocated Vulkan command buffer.");
+
+  VkFenceCreateInfo create_info = {};
+  create_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
+  create_info.pNext = nullptr;
+  create_info.flags = 0;
+
+  VkFence fence;
+  res = vkCreateFence(this->device, &create_info, nullptr, &fence);
+  if (res != VK_SUCCESS) {
+    return Error(-2, "Failed to create Vulkan fence");
+  }
+
+  logger->info("Created Vulkan fence.");
+
+  this->command_buffer_pool.insert({command_buffer, fence});
+
+  return this->init_cb(command_buffer, fence);
+}
+
+QueueImpl::~QueueImpl() {
+  for (auto &[command_buffer, fence] : this->command_buffer_pool) {
+    vkFreeCommandBuffers(this->device, this->command_pool, 1, &command_buffer);
+    vkDestroyFence(this->device, fence, nullptr);
+  }
 }
 
 } // namespace fgla::backends::vulkan

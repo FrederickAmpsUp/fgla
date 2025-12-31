@@ -1,6 +1,8 @@
 #pragma once
 
 #include <cstdint>
+#include <fgla/command_buffer.hpp>
+#include <fgla/error.hpp>
 #include <fgla/internal.hpp>
 #include <memory>
 
@@ -21,11 +23,14 @@ public:
     /// @brief Any arbitrary data to use during queue creation
     ///
     /// This may be left null in most cases
-    void *user_data;
+    void *user_data = nullptr;
   };
+
+  inline Result<CommandBuffer> begin_recording() { return this->impl->begin_recording(); }
 
   /// The backend-defined implementation of the `Queue`'s functions
   struct Impl {
+    virtual Result<CommandBuffer> begin_recording() = 0;
     virtual ~Impl() = 0;
   };
 

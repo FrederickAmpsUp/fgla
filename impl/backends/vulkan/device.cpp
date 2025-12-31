@@ -10,7 +10,7 @@ DeviceImpl::DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
   for (auto &[_, queue] : this->queues) {
     QueueImpl *qi = dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
 
-    qi->init(&this->semaphore_pool, this->get_command_pool(qi->get_family_index()));
+    qi->init(this->device, &this->semaphore_pool, this->get_command_pool(qi->get_family_index()));
   }
 }
 
@@ -53,6 +53,7 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
 }
 
 DeviceImpl::~DeviceImpl() {
+  this->queues.clear();
   for (auto [family_index, command_pool] : this->command_pools) {
     vkDestroyCommandPool(this->device, command_pool, nullptr);
   }
