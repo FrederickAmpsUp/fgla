@@ -41,9 +41,11 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
   VkCommandPool pool;
   VkResult res = vkCreateCommandPool(this->device, &create_info, nullptr, &pool);
   if (res != VK_SUCCESS) {
-    spdlog::error("Failed to create Vulkan command pool.");
+    logger->error("Failed to create Vulkan command pool.");
     return VK_NULL_HANDLE;
   }
+
+  logger->info("Created Vulkan command pool.");
 
   this->command_pools.insert({queue_family_index, pool});
 
