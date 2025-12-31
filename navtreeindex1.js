@@ -38,12 +38,14 @@ var NAVTREEINDEX1 =
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f":[1,0,0,1,0,2,3,0],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c":[0,0,0,1,0,2,3,2],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c":[1,0,0,1,0,2,3,2],
-"classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1":[0,0,0,1,0,2,8],
-"classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1":[1,0,0,1,0,2,8],
+"classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1":[0,0,0,1,0,2,9],
+"classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1":[1,0,0,1,0,2,9],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad1580134684993bf270b6fd33c531ae0":[0,0,0,1,0,2,4],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad1580134684993bf270b6fd33c531ae0":[1,0,0,1,0,2,4],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad96af6802ac182bec1da147d39198f7b":[0,0,0,1,0,2,5],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad96af6802ac182bec1da147d39198f7b":[1,0,0,1,0,2,5],
+"classfgla_1_1ext_1_1windowing_1_1Surface.html#ae3348f31914a35f9fca791481c9bb060":[0,0,0,1,0,2,8],
+"classfgla_1_1ext_1_1windowing_1_1Surface.html#ae3348f31914a35f9fca791481c9bb060":[1,0,0,1,0,2,8],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#aece959e6db31b1fa4108e21b4d1a0de0":[0,0,0,1,0,2,7],
 "classfgla_1_1ext_1_1windowing_1_1Surface.html#aece959e6db31b1fa4108e21b4d1a0de0":[1,0,0,1,0,2,7],
 "classfgla_1_1ext_1_1windowing_1_1Window.html":[0,0,0,1,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "structfgla_1_1Image_1_1Impl.html":[1,0,0,9,0],
 "structfgla_1_1Image_1_1Impl.html#ad0fe9ff42cfba8db142879ae2fabb865":[0,0,0,10,0,1],
 "structfgla_1_1Image_1_1Impl.html#ad0fe9ff42cfba8db142879ae2fabb865":[1,0,0,9,0,1],
-"structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f":[0,0,0,10,0,0],
-"structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f":[1,0,0,9,0,0],
-"structfgla_1_1Instance_1_1Descriptor.html":[0,0,0,12,0]
+"structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f":[0,0,0,10,0,0]
 };

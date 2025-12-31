@@ -56,7 +56,7 @@ var NAVTREEINDEX =
 [
 "adapter_8hpp.html",
 "classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ac8e977c288130dc7d0a964de04a2488b",
-"structfgla_1_1Instance_1_1Descriptor.html"
+"structfgla_1_1Image_1_1Impl.html#afe7d499af58eb79f7aa713d3cbeefb4f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

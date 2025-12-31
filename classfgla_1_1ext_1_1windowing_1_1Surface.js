@@ -14,5 +14,6 @@ var classfgla_1_1ext_1_1windowing_1_1Surface =
     [ "from_raw", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad96af6802ac182bec1da147d39198f7b", null ],
     [ "get_capabilities", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a47d91d05f7ef0af8016311c42d0e93ef", null ],
     [ "get_current_image", "classfgla_1_1ext_1_1windowing_1_1Surface.html#aece959e6db31b1fa4108e21b4d1a0de0", null ],
+    [ "present", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ae3348f31914a35f9fca791481c9bb060", null ],
     [ "fgla::internal::ImplAccessor", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1", null ]
 ];
