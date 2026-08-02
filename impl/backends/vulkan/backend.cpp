@@ -16,8 +16,10 @@ extern "C" bool fgla_backends_vulkan_is_available() {
   VkInstance instance;
   VkResult result = vkCreateInstance(&instance_info, nullptr, &instance);
   if (result != VK_SUCCESS) {
-    spdlog::warn("fgla::backends::vulkan::is_available(): failed to create Vulkan instance!");
-    return false; // if we can't create the instance, we definitely can't use Vulkan
+    spdlog::warn("fgla::backends::vulkan::is_available(): failed to create "
+                 "Vulkan instance!");
+    return false; // if we can't create the instance, we definitely can't use
+                  // Vulkan
   }
 
   uint32_t physical_device_count = 0;

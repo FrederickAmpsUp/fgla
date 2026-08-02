@@ -8,7 +8,8 @@
 
 namespace fgla::ext::windowing {
 
-/// Represents a window, which may be used to draw to and interface with input devices
+/// Represents a window, which may be used to draw to and interface with input
+/// devices
 class Window {
 public:
   /// Represents the settings used to create a `Window`

@@ -38,7 +38,8 @@ public:
   static Result<Instance> create(const Descriptor &descriptor);
 
   /// Acquires an `Adapter`
-  /// @param descriptor The `Adapter::Descriptor` with the `Adapter`'s properties
+  /// @param descriptor The `Adapter::Descriptor` with the `Adapter`'s
+  /// properties
   /// @returns The `Adapter`, or an `Error` with failure information
   inline Result<Adapter> get_adapter(const Adapter::Descriptor &descriptor) {
     return this->select_adapter(this->impl->get_adapter_scorer(descriptor),
@@ -48,7 +49,8 @@ public:
   /// Returns a list of all available `Adapter`s
   inline std::vector<Adapter> enumerate_adapters() { return this->impl->enumerate_adapters(); }
 
-  /// Returns a function that scores an `Adapter` based on an `Adapter::Descriptor`
+  /// Returns a function that scores an `Adapter` based on an
+  /// `Adapter::Descriptor`
   inline std::function<int(const Adapter &)>
   get_adapter_scorer(const Adapter::Descriptor &descriptor) {
     return this->impl->get_adapter_scorer(descriptor);
@@ -83,8 +85,8 @@ public:
     return best_adapter;
   }
 
-  /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes `adapters` as an
-  /// rvalue.
+  /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes
+  /// `adapters` as an rvalue.
   /// @see `select_adapter(..., std::vector<Adapter> &)`
   inline Result<Adapter> select_adapter(const std::function<int(const Adapter &)> &scorer,
                                         std::vector<Adapter> &&adapters) {

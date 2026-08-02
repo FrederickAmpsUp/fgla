@@ -5,7 +5,8 @@
 
 namespace fgla {
 
-/// Represents a command buffer, which is used to record commands before submitting to the GPU
+/// Represents a command buffer, which is used to record commands before
+/// submitting to the GPU
 class CommandBuffer {
 public:
   /// The backend-defined implementation of the `CommandBuffer`'s functions

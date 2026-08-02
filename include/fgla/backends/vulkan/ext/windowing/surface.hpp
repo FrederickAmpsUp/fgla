@@ -18,20 +18,27 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   get_capabilities(const Adapter &adapter) override;
 
   virtual fgla::Result<std::reference_wrapper<fgla::Image>>
-  get_current_image(const fgla::Queue &device) override;
+  get_current_image(const fgla::Queue &queue) override;
 
-  virtual std::optional<Error> present(fgla::Queue &present_queue, fgla::Image &&image) override;
+  virtual std::optional<Error>
+  present(fgla::Queue &present_queue, fgla::Image &&image,
+          std::initializer_list<fgla::Completion> wait_completions) override;
+
+  virtual void cleanup() override;
 
   bool is_ok() const;
 
   virtual ~SurfaceImpl() override;
 
 private:
+  VkSemaphore get_semaphore();
+
   VkSurfaceKHR surface;
   VkSwapchainKHR swapchain;
-  VkFence available_fence = VK_NULL_HANDLE;
   VkDevice device;
   VkInstance instance;
+  uint32_t semaphore_index = 0;
+  std::vector<VkSemaphore> semaphore_pool;
   std::vector<fgla::Image> swapchain_images;
 };
 } // namespace fgla::backends::vulkan::ext::windowing

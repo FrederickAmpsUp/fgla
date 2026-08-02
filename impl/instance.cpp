@@ -32,9 +32,9 @@ Result<Instance> Instance::create(const Instance::Descriptor &descriptor) {
         Instance *raw_instance = backend->create_instance(&descriptor);
 
         if (!raw_instance) // TODO: change this to try other backends
-          return Error(
-              0, fmt::format("Failed to create an fgla::Instance after selecting backend \"{}\".",
-                             backend_ref.name));
+          return Error(0, fmt::format("Failed to create an fgla::Instance "
+                                      "after selecting backend \"{}\".",
+                                      backend_ref.name));
 
         std::unique_ptr<Instance> instance(raw_instance);
         Instance moved = std::move(*instance);

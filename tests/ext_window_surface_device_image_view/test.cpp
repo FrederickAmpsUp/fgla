@@ -81,8 +81,10 @@ int main(int argc, char **argv) {
         .num_array_layers = 1,
     });
 
-    surface.present(present, std::move(image));
+    surface.present(present, std::move(image), {image.get_completion()});
 
     window.poll_events();
   }
+
+  surface.cleanup();
 }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/completion.hpp>
 #include <fgla/error.hpp>
 #include <fgla/image_view.hpp>
 #include <fgla/internal.hpp>
@@ -7,16 +8,20 @@
 
 namespace fgla {
 
-/// Represents an image, a multidimensional (up to 3d) block of GPU-resident structured data
+/// Represents an image, a multidimensional (up to 3d) block of GPU-resident
+/// structured data
 class Image {
 public:
   inline Result<ImageView> create_view(const ImageView::Descriptor &descriptor) {
     return this->impl->create_view(descriptor);
   }
 
+  inline Completion &get_completion() { return this->impl->get_completion(); }
+
   /// The backend-defined implementation of the `Image`'s functions
   struct Impl {
     virtual Result<ImageView> create_view(const ImageView::Descriptor &) = 0;
+    virtual Completion &get_completion() = 0;
 
     virtual ~Impl() = 0;
   };

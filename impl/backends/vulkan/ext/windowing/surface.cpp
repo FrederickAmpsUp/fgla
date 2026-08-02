@@ -1,4 +1,5 @@
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/completion.hpp>
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/ext/windowing/image.hpp>
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
@@ -9,10 +10,17 @@
 #include <spdlog/spdlog.h>
 #include <unordered_map>
 #include <unordered_set>
+#include <vulkan/vulkan_core.h>
 
 using namespace fgla::ext::windowing;
 
 namespace fgla::backends::vulkan::ext::windowing {
+
+VkSemaphore SurfaceImpl::get_semaphore() {
+  VkSemaphore semaphore = this->semaphore_pool[this->semaphore_index];
+  this->semaphore_index = (this->semaphore_index + 1) % this->semaphore_pool.size();
+  return semaphore; // TODO: find one that's actually available
+}
 
 // returns the best available VkPresentModeKHR for the Surface::PresentMode, or
 // VK_PRESENT_MODE_MAX_ENUM_KHR if none are supported
@@ -151,12 +159,13 @@ SurfaceImpl::configure(fgla::Device &device,
   create_info.imageArrayLayers = 1;
   create_info.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
-  // might improve this in the future, for now just assume any graphics or present-capable family
-  // can access the swapchain images
+  // might improve this in the future, for now just assume any graphics or
+  // present-capable family can access the swapchain images
   std::vector<uint32_t> queue_families = find_graphics_present_families(phys_dev, this->surface);
 
-  // if the images might be accessed in multiple families, we have to use concurrent mode, otherwise
-  // exclusive mode is used for 1% better frame times :)
+  // if the images might be accessed in multiple families, we have to use
+  // concurrent mode, otherwise exclusive mode is used for 1% better frame times
+  // :)
   create_info.imageSharingMode =
       (queue_families.size() > 1) ? VK_SHARING_MODE_CONCURRENT : VK_SHARING_MODE_EXCLUSIVE;
   create_info.queueFamilyIndexCount = static_cast<uint32_t>(queue_families.size());
@@ -202,17 +211,23 @@ SurfaceImpl::configure(fgla::Device &device,
 
   logger->info("Retrieved {} swapchain images.", n_images);
 
-  if (this->available_fence == VK_NULL_HANDLE) {
-    VkFenceCreateInfo fence_info = {};
-    fence_info.sType = VK_STRUCTURE_TYPE_FENCE_CREATE_INFO;
-    fence_info.flags = 0;
-    fence_info.pNext = nullptr;
+  // 2 for every frame, probably overkill but one can be used in acquisition
+  // and one in presentation
+  for (int i = this->semaphore_pool.size(); i < this->swapchain_images.size() * 2; ++i) {
+    VkSemaphoreCreateInfo create_info = {};
+    create_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+    create_info.flags = 0; // binary semaphore
 
-    res = vkCreateFence(this->device, &fence_info, nullptr, &this->available_fence);
+    VkSemaphore semaphore;
+    VkResult res = vkCreateSemaphore(this->device, &create_info, nullptr, &semaphore);
+
     if (res != VK_SUCCESS) {
-      return Error(2, "Failed to create Vulkan fence");
+      return Error(2, "Failed to create Vulkan semaphore");
     }
-    logger->info("Vulkan fence created.");
+
+    logger->info("Vulkan semaphore created.");
+
+    this->semaphore_pool.push_back(semaphore);
   }
 
   return {};
@@ -235,7 +250,8 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
 
     for (const auto &format : formats) {
       TextureFormat fmt = devulkanize(format.format);
-      // only support sRGB for now, due to color space stuff. want to add HDR later.
+      // only support sRGB for now, due to color space stuff. want to add HDR
+      // later.
       if (fmt != TextureFormat::UNDEFINED && fmt.is_srgb()) unique_formats.insert(fmt);
     }
     caps.formats = std::vector(unique_formats.begin(), unique_formats.end());
@@ -251,8 +267,8 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
                                               present_modes.data());
 
     for (const auto &present_mode : present_modes) {
-      Surface::PresentMode pm =
-          Surface::PresentMode::AUTO_VSYNC; // just used as a "not found" flag here
+      Surface::PresentMode pm = Surface::PresentMode::AUTO_VSYNC; // just used as a "not found" flag
+                                                                  // here
       switch (present_mode) {
       case VK_PRESENT_MODE_FIFO_KHR:
         pm = Surface::PresentMode::FIFO;
@@ -275,34 +291,78 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
 }
 
 fgla::Result<std::reference_wrapper<fgla::Image>>
-SurfaceImpl::get_current_image(const fgla::Queue &device) {
+SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
+  VkSemaphore available_semaphore = this->get_semaphore();
+
   uint32_t image_index;
-  vkAcquireNextImageKHR(this->device, this->swapchain, UINT64_MAX, VK_NULL_HANDLE,
-                        this->available_fence, &image_index);
+  VkResult res = vkAcquireNextImageKHR(this->device, this->swapchain, UINT64_MAX,
+                                       available_semaphore, VK_NULL_HANDLE, &image_index);
 
-  vkWaitForFences(this->device, 1, &this->available_fence, VK_TRUE, UINT64_MAX);
-  vkResetFences(this->device, 1,
-                &this->available_fence); // TODO: resource state tracking to avoid this
+  if (res != VK_SUCCESS && res != VK_SUBOPTIMAL_KHR) {
+    return Error(1, "Failed to acquire Vulkan image.");
+  }
 
-  return std::reference_wrapper(this->swapchain_images[image_index]);
+  if (res == VK_SUBOPTIMAL_KHR) // TODO: report this to the user
+    logger->warn("Swapchain suboptimal.");
+
+  QueueImpl &queue_impl = *dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
+  VkQueue vk_queue = queue_impl.get_queue();
+
+  Image &image = this->swapchain_images[image_index];
+
+  // since vkAcquireNextImageKHR can't signal a timeline semaphore
+  // we do this, it's just an empty submission that signals
+  signal_timeline_from_binary(this->device, vk_queue, available_semaphore,
+                              queue_impl.get_timeline(), ++queue_impl.get_timeline_value());
+
+  auto completion = Completion::from_raw(
+      std::make_unique<CompletionImpl>(queue_impl.get_timeline(), queue_impl.get_timeline_value()));
+
+  image.get_completion() = std::move(completion);
+
+  return std::reference_wrapper(image);
 }
 
 VkImage get_image(fgla::Image &im) {
   return dynamic_cast<BaseImageImpl *>(fgla::internal::ImplAccessor::get_impl(im))->get_image();
 }
 
-std::optional<Error> SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image) {
+std::optional<Error>
+SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
+                     std::initializer_list<fgla::Completion> wait_completions) {
   VkPresentInfoKHR present_info = {};
   present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 
-  present_info.waitSemaphoreCount = 0;
+  VkQueue queue =
+      dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue))->get_queue();
+
+  VkSemaphore wait_semaphore = this->get_semaphore();
+
+  std::vector<VkSemaphore> timeline_semaphores;
+  std::vector<uint64_t> timeline_values;
+  timeline_semaphores.reserve(wait_completions.size());
+  timeline_values.reserve(wait_completions.size());
+
+  for (const auto &completion : wait_completions) {
+    CompletionImpl &impl =
+        *dynamic_cast<CompletionImpl *>(fgla::internal::ImplAccessor::get_impl(completion));
+    timeline_semaphores.push_back(impl.get_semaphore());
+    timeline_values.push_back(impl.get_value());
+  }
+
+  signal_binary_from_timelines(this->device, queue, timeline_semaphores, timeline_values,
+                               wait_semaphore);
+
+  present_info.waitSemaphoreCount = 1;
+  present_info.pWaitSemaphores = &wait_semaphore;
 
   present_info.swapchainCount = 1;
   present_info.pSwapchains = &this->swapchain;
 
   // simple linear search to find the image we want
+  // since Vulkan requires an index instead of the image handle
   VkImage image_to_present = get_image(image);
   int32_t image_index = -1;
   int32_t i = 0;
@@ -322,9 +382,6 @@ std::optional<Error> SurfaceImpl::present(fgla::Queue &present_queue, fgla::Imag
   uint32_t ind = image_index;
   present_info.pImageIndices = &ind;
 
-  VkQueue queue =
-      dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue))->get_queue();
-
   VkResult res = vkQueuePresentKHR(queue, &present_info);
 
   if (res != VK_SUCCESS) return Error(2, "Failed to present");
@@ -334,9 +391,18 @@ std::optional<Error> SurfaceImpl::present(fgla::Queue &present_queue, fgla::Imag
 
 bool SurfaceImpl::is_ok() const { return this->surface != VK_NULL_HANDLE; }
 
-SurfaceImpl::~SurfaceImpl() {
-  if (this->device && this->swapchain)
+void SurfaceImpl::cleanup() {
+  if (this->device && this->swapchain) {
+    vkDeviceWaitIdle(this->device);
+    for (auto semaphore : this->semaphore_pool)
+      vkDestroySemaphore(this->device, semaphore, nullptr);
+    this->semaphore_pool.clear();
     vkDestroySwapchainKHR(this->device, this->swapchain, nullptr);
+    this->swapchain = VK_NULL_HANDLE;
+  }
+}
+
+SurfaceImpl::~SurfaceImpl() {
   if (this->instance && this->surface) vkDestroySurfaceKHR(this->instance, this->surface, nullptr);
 }
 } // namespace fgla::backends::vulkan::ext::windowing

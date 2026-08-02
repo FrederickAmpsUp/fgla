@@ -143,7 +143,8 @@ private:
   };
 };
 
-/// @brief Retrieves the success object from a `Result`, printing a custom message on failure
+/// @brief Retrieves the success object from a `Result`, printing a custom
+/// message on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
@@ -151,13 +152,15 @@ private:
 /// @note asserts if `res` is in an error state
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance" *fgla::Instance::create({});
+/// fgla::Instance instance = "Failed to create instance"
+/// *fgla::Instance::create({});
 /// @endcode
 template <typename T, typename E> T &operator*(const char *msg, Result<T, E> &res) {
   assert(res.is_ok() && msg);
   return *res;
 }
-/// @brief Retrieves the success object from a `Result`, printing a custom message on failure
+/// @brief Retrieves the success object from a `Result`, printing a custom
+/// message on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
@@ -165,13 +168,15 @@ template <typename T, typename E> T &operator*(const char *msg, Result<T, E> &re
 /// @note asserts if `res` is in an error state
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance" *fgla::Instance::create({});
+/// fgla::Instance instance = "Failed to create instance"
+/// *fgla::Instance::create({});
 /// @endcode
 template <typename T, typename E> const T &operator*(const char *msg, const Result<T, E> &res) {
   assert(res.is_ok() && msg);
   return *res;
 }
-/// @brief Retrieves the success object from a `Result`, printing a custom message on failure
+/// @brief Retrieves the success object from a `Result`, printing a custom
+/// message on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
@@ -179,13 +184,15 @@ template <typename T, typename E> const T &operator*(const char *msg, const Resu
 /// @note asserts if `res` is in an error state
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance" *fgla::Instance::create({});
+/// fgla::Instance instance = "Failed to create instance"
+/// *fgla::Instance::create({});
 /// @endcode
 template <typename T, typename E> T &&operator*(const char *msg, Result<T, E> &&res) {
   assert(res.is_ok() && msg);
   return std::move(*res);
 }
-/// @brief Retrieves the success object from a `Result`, printing a custom message on failure
+/// @brief Retrieves the success object from a `Result`, printing a custom
+/// message on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
@@ -193,7 +200,8 @@ template <typename T, typename E> T &&operator*(const char *msg, Result<T, E> &&
 /// @note asserts if `res` is in an error state
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance" *fgla::Instance::create({});
+/// fgla::Instance instance = "Failed to create instance"
+/// *fgla::Instance::create({});
 /// @endcode
 template <typename T, typename E> const T &&operator*(const char *msg, const Result<T, E> &&res) {
   assert(res.is_ok() && msg);

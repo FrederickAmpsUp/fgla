@@ -193,6 +193,30 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
   return queues;
 }
 
+void QueueImpl::init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool,
+                     VkCommandPool command_pool) {
+  static auto logger = spdlog::get("fgla::backends::vulkan");
+  this->device = device;
+  this->semaphore_pool = semaphore_pool;
+  this->command_pool = command_pool;
+
+  VkSemaphoreCreateInfo semaphore_info = {};
+  semaphore_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
+
+  VkSemaphoreTypeCreateInfo semaphore_type_info = {};
+  semaphore_type_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO;
+  semaphore_type_info.semaphoreType = VK_SEMAPHORE_TYPE_TIMELINE;
+  semaphore_type_info.initialValue = this->timeline_value;
+
+  semaphore_info.pNext = &semaphore_type_info;
+
+  if (vkCreateSemaphore(this->device, &semaphore_info, nullptr, &this->timeline) != VK_SUCCESS) {
+    logger->error("Failed to initialize queue!");
+  }
+
+  logger->info("Initialized queue.");
+}
+
 Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer, VkFence fence) {
   vkResetCommandBuffer(command_buffer, 0);
   vkResetFences(this->device, 1, &fence);
@@ -212,7 +236,8 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
 
   for (auto &[command_buffer, fence] : this->command_buffer_pool) {
     VkResult state = vkGetFenceStatus(this->device, fence);
-    if (state == VK_SUCCESS) { // the command buffer has finished and we can reset and use it
+    if (state == VK_SUCCESS) { // the command buffer has finished and we can
+                               // reset and use it
       return this->init_cb(command_buffer, fence);
     }
   }
@@ -275,13 +300,15 @@ void QueueImpl::submit(CommandBuffer &&cb) {
   VkResult res = vkQueueSubmit(this->queue, 1, &submit_info, command_buffer.get_fence());
 
   logger->info("Submitted Vulkan command buffer.");
-
-  VkFence fence = command_buffer.get_fence(); // TODO: REMOVE ME
-  vkWaitForFences(this->device, 1, &fence, VK_TRUE, UINT64_MAX);
 }
 
 QueueImpl::~QueueImpl() {
+  if (!this->device) return;
+
+  vkDestroySemaphore(this->device, this->timeline, nullptr);
+
   for (auto &[command_buffer, fence] : this->command_buffer_pool) {
+    if (!this->command_pool) return;
     vkFreeCommandBuffers(this->device, this->command_pool, 1, &command_buffer);
     vkDestroyFence(this->device, fence, nullptr);
   }

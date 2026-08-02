@@ -16,8 +16,8 @@ public:
 
   /// Retrieve a `Queue` of the given type and index
   ///
-  /// @param type The type of queue to retrieve (e.g., `Queue::Type::Graphics` or
-  /// `Queue::Type::Transfer`)
+  /// @param type The type of queue to retrieve (e.g., `Queue::Type::Graphics`
+  /// or `Queue::Type::Transfer`)
   /// @param index The index of the queue in the specified type
   /// @returns The specified queue, or `std::nullopt` if not found
   inline std::optional<std::reference_wrapper<Queue>> get_queue(Queue::Type type, uint32_t index) {

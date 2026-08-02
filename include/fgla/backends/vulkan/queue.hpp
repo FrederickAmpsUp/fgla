@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fgla/backends/vulkan/command_buffer.hpp>
+#include <fgla/completion.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
 #include <unordered_map>
@@ -41,14 +42,11 @@ struct QueueImpl : public fgla::Queue::Impl {
   inline uint32_t get_family_index() const { return this->family_index; }
 
   // just called once by DeviceImpl right after initialization
-  inline void init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool,
-                   VkCommandPool command_pool) {
-    this->device = device;
-    this->semaphore_pool = semaphore_pool;
-    this->command_pool = command_pool;
-  }
+  void init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool, VkCommandPool command_pool);
 
   inline VkQueue get_queue() const { return this->queue; }
+  inline VkSemaphore get_timeline() const { return this->timeline; }
+  inline uint64_t &get_timeline_value() { return this->timeline_value; }
 
   virtual ~QueueImpl() override;
 
@@ -57,6 +55,9 @@ private:
 
   VkQueue queue;
   uint32_t family_index;
+
+  VkSemaphore timeline = VK_NULL_HANDLE;
+  uint64_t timeline_value = 0;
 
   VkDevice device;
   std::vector<VkSemaphore> *semaphore_pool = nullptr;

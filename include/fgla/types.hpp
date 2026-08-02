@@ -5,7 +5,8 @@
 
 namespace fgla {
 
-/// Represents a texture "format", the mapping of the texture's raw data to colors
+/// Represents a texture "format", the mapping of the texture's raw data to
+/// colors
 class TextureFormat {
 public:
   enum Value {

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/completion.hpp>
 #include <fgla/image.hpp>
 #include <fgla/instance.hpp>
 #include <fgla/internal.hpp>
@@ -39,9 +40,13 @@ public:
     return this->impl->get_current_image(queue);
   }
 
-  inline std::optional<Error> present(fgla::Queue &present_queue, fgla::Image &&image) {
-    return this->impl->present(present_queue, std::move(image));
+  inline std::optional<Error>
+  present(fgla::Queue &present_queue, fgla::Image &&image,
+          std::initializer_list<fgla::Completion> wait_completions = {}) {
+    return this->impl->present(present_queue, std::move(image), wait_completions);
   }
+
+  inline void cleanup() { return this->impl->cleanup(); }
 
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
@@ -49,7 +54,9 @@ public:
     virtual Capabilities get_capabilities(const Adapter &) = 0;
     virtual fgla::Result<std::reference_wrapper<fgla::Image>>
     get_current_image(const fgla::Queue &) = 0;
-    virtual std::optional<Error> present(fgla::Queue &, fgla::Image &&) = 0;
+    virtual std::optional<Error> present(fgla::Queue &, fgla::Image &&,
+                                         std::initializer_list<fgla::Completion>) = 0;
+    virtual void cleanup() = 0;
 
     virtual ~Impl() = 0;
   };

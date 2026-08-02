@@ -10,7 +10,8 @@ namespace fgla::backend {
 /// A Universally Unique Identifier identifying a `Backend`
 using BackendUUID = util::UUID<16>;
 
-/// Represents a backend, implementing `fgla`'s constructs and translating them to hardware
+/// Represents a backend, implementing `fgla`'s constructs and translating them
+/// to hardware
 struct Backend {
   /// A unique identifier for the `Backend`
   BackendUUID uuid;

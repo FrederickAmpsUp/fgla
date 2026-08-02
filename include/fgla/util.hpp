@@ -99,7 +99,8 @@ public:
 
   /// Applies a filter to the `FilterableList`
   /// @param pred The predicate function to filter by
-  /// @returns A `FilterableList` containing only the elements from `this` which `pred` accepts
+  /// @returns A `FilterableList` containing only the elements from `this` which
+  /// `pred` accepts
   ///
   /// @note `this` is consumed by this function
   template <typename Pred> FilterableList filter_move(const Pred &pred) && {

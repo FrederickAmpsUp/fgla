@@ -10,7 +10,8 @@ namespace fgla::ext::windowing {
 
 /// @brief Extension interface for the builtin windowing extension
 ///
-/// Use `Instance::get_extension<fgla::ext::windowing::WindowingExtension>()` to get a handle to it
+/// Use `Instance::get_extension<fgla::ext::windowing::WindowingExtension>()` to
+/// get a handle to it
 class WindowingExtension {
 public:
   /// The UUID for the `WindowingExtension`
@@ -25,7 +26,8 @@ public:
   /// Returns an `Adapter` filtering function
   ///
   /// @param _ The `Surface` to filter against
-  /// @returns A filter that checks if an `Adapter` supports the specified `Surface`
+  /// @returns A filter that checks if an `Adapter` supports the specified
+  /// `Surface`
   virtual std::function<bool(const Adapter &)> surface_support_filter(const Surface &) = 0;
 
   virtual ~WindowingExtension() = 0;

@@ -6,14 +6,18 @@
 namespace fgla::backends::vulkan {
 
 struct BaseImageImpl : public Image::Impl {
-  inline VkImage get_image() { return this->image; }
+  inline VkImage get_image() const { return this->image; }
 
   virtual Result<ImageView> create_view(const ImageView::Descriptor &desc) override;
+
+  virtual inline Completion &get_completion() override { return this->completion; }
 
   virtual ~BaseImageImpl() = 0;
 
 protected:
   BaseImageImpl(VkImage image, VkDevice device) : image(image), device(device) {}
+
+  Completion completion;
 
   VkImage image;
   VkDevice device;
