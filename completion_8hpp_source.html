@@ -110,55 +110,58 @@ $(function(){initNavTree('completion_8hpp_source.html',''); initResizable(true);
 <div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ab49564ebbf4b89942b3ed2af4873dc5e">   12</a></span>  <a class="code hl_function" href="classfgla_1_1Completion.html#ab49564ebbf4b89942b3ed2af4873dc5e">Completion</a>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;other) : impl(other.impl ? other.impl-&gt;clone() : nullptr) {}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">   14</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;<a class="code hl_function" href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;other) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>      impl = other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ab49564ebbf4b89942b3ed2af4873dc5e">   12</a></span>  <a class="code hl_function" href="classfgla_1_1Completion.html#ab49564ebbf4b89942b3ed2af4873dc5e">Completion</a>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;other)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      : impl(other.impl ? other.impl-&gt;clone() : nullptr) {}</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a375167e95773e321190879f15c8c2e63">   21</a></span>  <a class="code hl_function" href="classfgla_1_1Completion.html#a375167e95773e321190879f15c8c2e63">Completion</a>(<a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a2036e61e340c71685cffc3b19faf48fa">   22</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;operator=(<a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;&amp;) noexcept = default;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a6d5c2630b1907a069040761b55422ed7">   24</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a>() = default;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html">   27</a></span>  struct <a class="code hl_struct" href="structfgla_1_1Completion_1_1Impl.html">Impl</a> {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217">   28</a></span>    <span class="keyword">virtual</span> std::unique_ptr&lt;Impl&gt; <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217">clone</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">   30</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">~Impl</a>() = 0;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  };</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">   15</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;<a class="code hl_function" href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;other) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      impl = other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  }</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">   35</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> <a class="code hl_function" href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> completion;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    completion.impl = std::move(impl);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> completion;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a375167e95773e321190879f15c8c2e63">   22</a></span>  <a class="code hl_function" href="classfgla_1_1Completion.html#a375167e95773e321190879f15c8c2e63">Completion</a>(<a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;&amp;) noexcept = default;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a2036e61e340c71685cffc3b19faf48fa">   23</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;operator=(<a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> &amp;&amp;) noexcept = default;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a6d5c2630b1907a069040761b55422ed7">   25</a></span>  <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a>() = default;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html">   28</a></span>  struct <a class="code hl_struct" href="structfgla_1_1Completion_1_1Impl.html">Impl</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217">   29</a></span>    <span class="keyword">virtual</span> std::unique_ptr&lt;Impl&gt; <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217">clone</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">   31</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">~Impl</a>() = 0;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  };</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ac06cf072aa647185632537a764206ad1">   42</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">   36</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> <a class="code hl_function" href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classfgla_1_1Completion.html">Completion</a> completion;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    completion.impl = std::move(impl);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> completion;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">Completion::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <span class="comment">// namespace fgla</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classfgla_1_1Completion.html#ac06cf072aa647185632537a764206ad1">   43</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">Completion::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace fgla</span></div>
 <div class="ttc" id="aclassfgla_1_1Completion_html"><div class="ttname"><a href="classfgla_1_1Completion.html">fgla::Completion</a></div><div class="ttdef"><b>Definition</b> <a href="#l00010">completion.hpp:10</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Completion_html_a375167e95773e321190879f15c8c2e63"><div class="ttname"><a href="classfgla_1_1Completion.html#a375167e95773e321190879f15c8c2e63">fgla::Completion::Completion</a></div><div class="ttdeci">Completion(Completion &amp;&amp;) noexcept=default</div></div>
-<div class="ttc" id="aclassfgla_1_1Completion_html_a4a3d850c0d624d8843bb075982dca985"><div class="ttname"><a href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">fgla::Completion::from_raw</a></div><div class="ttdeci">static Completion from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00035">completion.hpp:35</a></div></div>
+<div class="ttc" id="aclassfgla_1_1Completion_html_a4a3d850c0d624d8843bb075982dca985"><div class="ttname"><a href="classfgla_1_1Completion.html#a4a3d850c0d624d8843bb075982dca985">fgla::Completion::from_raw</a></div><div class="ttdeci">static Completion from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00036">completion.hpp:36</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Completion_html_ab49564ebbf4b89942b3ed2af4873dc5e"><div class="ttname"><a href="classfgla_1_1Completion.html#ab49564ebbf4b89942b3ed2af4873dc5e">fgla::Completion::Completion</a></div><div class="ttdeci">Completion(const Completion &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">completion.hpp:12</a></div></div>
-<div class="ttc" id="aclassfgla_1_1Completion_html_ae7af1cc8198bc79428975f12660a93d1"><div class="ttname"><a href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">fgla::Completion::operator=</a></div><div class="ttdeci">Completion &amp; operator=(const Completion &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="#l00014">completion.hpp:14</a></div></div>
+<div class="ttc" id="aclassfgla_1_1Completion_html_ae7af1cc8198bc79428975f12660a93d1"><div class="ttname"><a href="classfgla_1_1Completion.html#ae7af1cc8198bc79428975f12660a93d1">fgla::Completion::operator=</a></div><div class="ttdeci">Completion &amp; operator=(const Completion &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">completion.hpp:15</a></div></div>
 <div class="ttc" id="ainternal_8hpp_html"><div class="ttname"><a href="internal_8hpp.html">internal.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00008">adapter.hpp:8</a></div></div>
-<div class="ttc" id="astructfgla_1_1Completion_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1Completion_1_1Impl.html">fgla::Completion::Impl</a></div><div class="ttdoc">The backend-defined implementation of the Completion's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">completion.hpp:27</a></div></div>
+<div class="ttc" id="astructfgla_1_1Completion_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1Completion_1_1Impl.html">fgla::Completion::Impl</a></div><div class="ttdoc">The backend-defined implementation of the Completion's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">completion.hpp:28</a></div></div>
 <div class="ttc" id="astructfgla_1_1Completion_1_1Impl_html_a496cb62a50b1a63c0883d890987c0e79"><div class="ttname"><a href="structfgla_1_1Completion_1_1Impl.html#a496cb62a50b1a63c0883d890987c0e79">fgla::Completion::Impl::~Impl</a></div><div class="ttdeci">virtual ~Impl()=0</div></div>
 <div class="ttc" id="astructfgla_1_1Completion_1_1Impl_html_ab0fe84a527c5bd9449300fd295125217"><div class="ttname"><a href="structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217">fgla::Completion::Impl::clone</a></div><div class="ttdeci">virtual std::unique_ptr&lt; Impl &gt; clone() const =0</div></div>
 <div class="ttc" id="astructfgla_1_1internal_1_1ImplAccessor_html"><div class="ttname"><a href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></div><div class="ttdoc">Allows access to the raw polymorphic implementation of FGLA classes.</div><div class="ttdef"><b>Definition</b> <a href="internal_8hpp_source.html#l00006">internal.hpp:6</a></div></div>

@@ -192,7 +192,13 @@ Friends</h2></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00018">18</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>{ <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f">FIFO</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">MAILBOX</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c">IMMEDIATE</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">AUTO_VSYNC</a>, <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">AUTO_NO_VSYNC</a> };</div>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                         {</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aac589858dbe1d06c46544266ae4cd2c6f">FIFO</a>,</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">MAILBOX</a>,</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aae35884a2445bc4ae2df52f188763273c">IMMEDIATE</a>,</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">AUTO_VSYNC</a>,</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_enumvalue" href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">AUTO_NO_VSYNC</a></div>
+<div class="line"><span class="lineno">   24</span>  };</div>
 <div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa30e70859a464559e8e70bcf467f34028">fgla::ext::windowing::Surface::PresentMode::MAILBOX</a></div><div class="ttdeci">@ MAILBOX</div></div>
 <div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512">fgla::ext::windowing::Surface::PresentMode::AUTO_NO_VSYNC</a></div><div class="ttdeci">@ AUTO_NO_VSYNC</div></div>
 <div class="ttc" id="aclassfgla_1_1ext_1_1windowing_1_1Surface_html_a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a"><div class="ttname"><a href="#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a">fgla::ext::windowing::Surface::PresentMode::AUTO_VSYNC</a></div><div class="ttdeci">@ AUTO_VSYNC</div></div>
@@ -225,8 +231,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00049">49</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;cleanup(); }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00057">57</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;cleanup(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -257,10 +263,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00031">31</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>                                                                                       {</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;configure(device, config);</div>
-<div class="line"><span class="lineno">   33</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00037">37</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                                     {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;configure(device, config);</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,12 +294,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00066">66</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                           {</div>
-<div class="line"><span class="lineno">   67</span>    Surface surface;</div>
-<div class="line"><span class="lineno">   68</span>    surface.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> surface;</div>
-<div class="line"><span class="lineno">   70</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00076">76</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                                                           {</div>
+<div class="line"><span class="lineno">   77</span>    Surface surface;</div>
+<div class="line"><span class="lineno">   78</span>    surface.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> surface;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,10 +326,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00034">34</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                               {</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_capabilities(adapter);</div>
-<div class="line"><span class="lineno">   36</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00041">41</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                               {</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_capabilities(adapter);</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -350,10 +356,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00039">39</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                            {</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_current_image(queue);</div>
-<div class="line"><span class="lineno">   41</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00046">46</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                            {</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_current_image(queue);</div>
+<div class="line"><span class="lineno">   48</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -389,10 +395,11 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00044">44</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                 {}) {</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;present(present_queue, std::move(image), wait_completions);</div>
-<div class="line"><span class="lineno">   47</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00051">51</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                                                                 {}) {</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;present(present_queue, std::move(image),</div>
+<div class="line"><span class="lineno">   54</span>                               wait_completions);</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -417,7 +424,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00073">73</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00083">83</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
 
 </div>
 </div>

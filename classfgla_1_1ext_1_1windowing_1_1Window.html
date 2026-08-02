@@ -205,12 +205,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Window.html">Window</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00056">56</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                          {</div>
-<div class="line"><span class="lineno">   57</span>    Window window;</div>
-<div class="line"><span class="lineno">   58</span>    window.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> window;</div>
-<div class="line"><span class="lineno">   60</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00058">58</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                          {</div>
+<div class="line"><span class="lineno">   59</span>    Window window;</div>
+<div class="line"><span class="lineno">   60</span>    window.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> window;</div>
+<div class="line"><span class="lineno">   62</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -238,7 +238,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00040">40</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;get_framebuffer_size(); }</div>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                               {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_framebuffer_size();</div>
+<div class="line"><span class="lineno">   42</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,7 +323,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00063">63</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="window_8hpp_source.html#l00065">65</a> of file <a class="el" href="window_8hpp_source.html">window.hpp</a>.</p>
 
 </div>
 </div>

@@ -159,7 +159,9 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to <code>t</code>'s polymporphic implementation </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="internal_8hpp_source.html#l00012">12</a> of file <a class="el" href="internal_8hpp_source.html">internal.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{ <span class="keywordflow">return</span> t.impl.get(); }</div>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>                                                                     {</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">return</span> t.impl.get();</div>
+<div class="line"><span class="lineno">   14</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

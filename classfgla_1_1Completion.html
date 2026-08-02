@@ -167,7 +167,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00012">12</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>: impl(other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>) {}</div>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>      : impl(other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,12 +246,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Completion.html">Completion</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00035">35</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                              {</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="#a6d5c2630b1907a069040761b55422ed7">Completion</a> completion;</div>
-<div class="line"><span class="lineno">   37</span>    completion.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> completion;</div>
-<div class="line"><span class="lineno">   39</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00036">36</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                              {</div>
+<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="#a6d5c2630b1907a069040761b55422ed7">Completion</a> completion;</div>
+<div class="line"><span class="lineno">   38</span>    completion.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> completion;</div>
+<div class="line"><span class="lineno">   40</span>  }</div>
 <div class="ttc" id="aclassfgla_1_1Completion_html_a6d5c2630b1907a069040761b55422ed7"><div class="ttname"><a href="#a6d5c2630b1907a069040761b55422ed7">fgla::Completion::Completion</a></div><div class="ttdeci">Completion()=default</div></div>
 </div><!-- fragment -->
 </div>
@@ -304,13 +304,13 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00014">14</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                                                 {</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
-<div class="line"><span class="lineno">   16</span>      impl = other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   19</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00015">15</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                 {</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
+<div class="line"><span class="lineno">   17</span>      impl = other.impl ? other.impl-&gt;clone() : <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   20</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,7 +335,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00042">42</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="completion_8hpp_source.html#l00043">43</a> of file <a class="el" href="completion_8hpp_source.html">completion.hpp</a>.</p>
 
 </div>
 </div>

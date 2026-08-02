@@ -219,11 +219,11 @@ template&lt;typename T , typename E &gt; </div>
 <div class="ttc" id="aclassfgla_1_1Instance_html"><div class="ttname"><a href="classfgla_1_1Instance.html">fgla::Instance</a></div><div class="ttdoc">Represents an instance, which is used to acquire an Adapter</div><div class="ttdef"><b>Definition</b> <a href="instance_8hpp_source.html#l00020">instance.hpp:20</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Instance_html_a407b3c3885d8908437cd42f9be9e8940"><div class="ttname"><a href="classfgla_1_1Instance.html#a407b3c3885d8908437cd42f9be9e8940">fgla::Instance::create</a></div><div class="ttdeci">static Result&lt; Instance &gt; create(const Descriptor &amp;descriptor)</div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00206">206</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  206</span>                                                                                                 {</div>
-<div class="line"><span class="lineno">  207</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><span class="lineno">  208</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  209</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00210">210</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  210</span>                                                               {</div>
+<div class="line"><span class="lineno">  211</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  212</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  213</span>}</div>
 <div class="ttc" id="aclassfgla_1_1Result_html_a6c4897fe63f4f8927d3faa8792ca927b"><div class="ttname"><a href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">fgla::Result::is_ok</a></div><div class="ttdeci">bool is_ok() const</div><div class="ttdoc">Checks if the result is in a success state.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00040">error.hpp:40</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -261,11 +261,11 @@ template&lt;typename T , typename E &gt; </div>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classfgla_1_1Instance.html">fgla::Instance</a> instance = <span class="stringliteral">&quot;Failed to create instance&quot;</span></div>
 <div class="line">*<a class="code hl_function" href="classfgla_1_1Instance.html#a407b3c3885d8908437cd42f9be9e8940">fgla::Instance::create</a>({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00174">174</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>                                                                                               {</div>
-<div class="line"><span class="lineno">  175</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><span class="lineno">  176</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  177</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00176">176</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>                                                             {</div>
+<div class="line"><span class="lineno">  177</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  178</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  179</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -302,11 +302,11 @@ template&lt;typename T , typename E &gt; </div>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classfgla_1_1Instance.html">fgla::Instance</a> instance = <span class="stringliteral">&quot;Failed to create instance&quot;</span></div>
 <div class="line">*<a class="code hl_function" href="classfgla_1_1Instance.html#a407b3c3885d8908437cd42f9be9e8940">fgla::Instance::create</a>({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00190">190</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  190</span>                                                                                     {</div>
-<div class="line"><span class="lineno">  191</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><span class="lineno">  192</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  193</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00193">193</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>                                                   {</div>
+<div class="line"><span class="lineno">  194</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  196</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -343,11 +343,11 @@ template&lt;typename T , typename E &gt; </div>
 <div class="fragment"><div class="line"><a class="code hl_class" href="classfgla_1_1Instance.html">fgla::Instance</a> instance = <span class="stringliteral">&quot;Failed to create instance&quot;</span></div>
 <div class="line">*<a class="code hl_function" href="classfgla_1_1Instance.html#a407b3c3885d8908437cd42f9be9e8940">fgla::Instance::create</a>({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00158">158</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  158</span>                                                                                   {</div>
-<div class="line"><span class="lineno">  159</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  161</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00159">159</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>                                                 {</div>
+<div class="line"><span class="lineno">  160</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  162</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,15 +393,15 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00220">220</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>                                                                                    {</div>
-<div class="line"><span class="lineno">  221</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  222</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  223</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">  224</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  226</span>  }</div>
-<div class="line"><span class="lineno">  227</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00224">224</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>                             {</div>
+<div class="line"><span class="lineno">  226</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  227</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  228</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">  229</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  230</span>    <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  231</span>  }</div>
+<div class="line"><span class="lineno">  232</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -446,15 +446,15 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00237">237</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  237</span>                                                                                      {</div>
-<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">  239</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  240</span>    std::exit(exit_code);</div>
-<div class="line"><span class="lineno">  241</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
-<div class="line"><span class="lineno">  243</span>  }</div>
-<div class="line"><span class="lineno">  244</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00242">242</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  243</span>                             {</div>
+<div class="line"><span class="lineno">  244</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">  245</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  246</span>    std::exit(exit_code);</div>
+<div class="line"><span class="lineno">  247</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
+<div class="line"><span class="lineno">  249</span>  }</div>
+<div class="line"><span class="lineno">  250</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

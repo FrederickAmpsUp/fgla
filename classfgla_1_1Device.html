@@ -165,12 +165,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00040">40</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                          {</div>
-<div class="line"><span class="lineno">   41</span>    Device device;</div>
-<div class="line"><span class="lineno">   42</span>    device.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> device;</div>
-<div class="line"><span class="lineno">   44</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00041">41</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                          {</div>
+<div class="line"><span class="lineno">   42</span>    Device device;</div>
+<div class="line"><span class="lineno">   43</span>    device.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> device;</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,14 +210,14 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified queue, or <code>std::nullopt</code> if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00023">23</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                                            {</div>
-<div class="line"><span class="lineno">   24</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (q)</div>
-<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">return</span> *q;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   29</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00024">24</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                                            {</div>
+<div class="line"><span class="lineno">   25</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (q)</div>
+<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span> *q;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   29</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   30</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,7 +242,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00047">47</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00048">48</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

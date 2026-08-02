@@ -454,16 +454,16 @@ Public Member Functions</h2></td></tr>
 
 <p>Checks if the <code><a class="el" href="classfgla_1_1TextureFormat.html">TextureFormat</a></code> uses sRGB encoding. </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00086">86</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>                       { <span class="comment">// maintain me!</span></div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">switch</span> (this-&gt;v) {</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#af2e10b1c9d0e1e8ef07147d0647efeb5a823ecb7fe7c819780f7f5de0c6ebd082">R8G8B8A8_SRGB</a>:</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#af2e10b1c9d0e1e8ef07147d0647efeb5aa27cf5d844e9c13a6e0998154d43c3b7">B8G8R8A8_SRGB</a>:</div>
-<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00090">90</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>                       { <span class="comment">// maintain me!</span></div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">switch</span> (this-&gt;v) {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#af2e10b1c9d0e1e8ef07147d0647efeb5a823ecb7fe7c819780f7f5de0c6ebd082">R8G8B8A8_SRGB</a>:</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#af2e10b1c9d0e1e8ef07147d0647efeb5aa27cf5d844e9c13a6e0998154d43c3b7">B8G8R8A8_SRGB</a>:</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
+<div class="line"><span class="lineno">   98</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -543,8 +543,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00082">82</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{ <span class="keywordflow">return</span> this-&gt;v != other.v; }</div>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00084">84</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                       {</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> this-&gt;v != other.v;</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -571,8 +573,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00083">83</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> this-&gt;v != other; }</div>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00087">87</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>{ <span class="keywordflow">return</span> this-&gt;v != other; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -600,7 +602,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00080">80</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{ <span class="keywordflow">return</span> this-&gt;v == other.v; }</div>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                       {</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> this-&gt;v == other.v;</div>
+<div class="line"><span class="lineno">   82</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -627,8 +631,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00081">81</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> this-&gt;v == other; }</div>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00083">83</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{ <span class="keywordflow">return</span> this-&gt;v == other; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -655,8 +659,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00096">96</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{ <span class="keywordflow">return</span> std::string(magic_enum::enum_name(this-&gt;v)); }</div>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00100">100</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                              {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> std::string(magic_enum::enum_name(this-&gt;v));</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
