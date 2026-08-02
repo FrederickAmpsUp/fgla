@@ -7,9 +7,11 @@
 namespace fgla::backends::vulkan {
 
 struct CompletionImpl : public fgla::Completion::Impl {
-  CompletionImpl(VkSemaphore semaphore, uint64_t value) : semaphore(semaphore), value(value) {}
+  CompletionImpl(VkSemaphore semaphore, uint64_t value)
+      : semaphore(semaphore), value(value) {}
 
-  virtual inline std::unique_ptr<fgla::Completion::Impl> clone() const override {
+  virtual inline std::unique_ptr<fgla::Completion::Impl>
+  clone() const override {
     return std::make_unique<CompletionImpl>(this->semaphore, this->value);
   }
 

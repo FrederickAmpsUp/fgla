@@ -27,7 +27,8 @@ constexpr uint8_t parse_hex(char c) {
 
 /// A hash for a `std::pair`, which may be used in STL containers
 struct PairHash {
-  template <typename T, typename U> std::size_t operator()(const std::pair<T, U> &p) const {
+  template <typename T, typename U>
+  std::size_t operator()(const std::pair<T, U> &p) const {
     return std::hash<T>()(p.first) ^ (std::hash<U>()(p.second) << 1);
   }
 };
@@ -47,7 +48,9 @@ template <unsigned int size> struct UUID {
   }
 
   /// Check if 2 `UUID`s are different
-  constexpr bool operator!=(const UUID<size> &other) const { return !(*this == other); }
+  constexpr bool operator!=(const UUID<size> &other) const {
+    return !(*this == other);
+  }
 
   /// A hash for a `UUID`, which may be used in STL containers
   struct Hash {

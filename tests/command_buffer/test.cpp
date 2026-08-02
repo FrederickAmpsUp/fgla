@@ -5,7 +5,8 @@
 
 void print_uuid(const fgla::backend::BackendUUID &uuid) {
   for (int i = 0; i < 16; ++i) {
-    std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(uuid.bytes[i]);
+    std::cout << std::hex << std::setw(2) << std::setfill('0')
+              << static_cast<int>(uuid.bytes[i]);
     if (i == 3 || i == 5 || i == 7 || i == 9) std::cout << '-';
   }
   std::cout << std::dec; // reset to decimal
@@ -24,7 +25,8 @@ int main(int argc, char **argv) {
   if (!instance_res) {
     std::cerr << "Failed to create instance!" << std::endl;
     if (instance_res.error().message) {
-      std::cerr << "Message: " << instance_res.error().message.value() << std::endl;
+      std::cerr << "Message: " << instance_res.error().message.value()
+                << std::endl;
     }
     return -1;
   }
@@ -35,7 +37,8 @@ int main(int argc, char **argv) {
   if (!adapter_res) {
     std::cerr << "Failed to get adapter!" << std::endl;
     if (adapter_res.error().message) {
-      std::cerr << "Message: " << adapter_res.error().message.value() << std::endl;
+      std::cerr << "Message: " << adapter_res.error().message.value()
+                << std::endl;
     }
     return -2;
   }
@@ -44,16 +47,18 @@ int main(int argc, char **argv) {
 
   auto adapter_info = adapter.get_info();
 
-  std::cout << "Acquired adapter \"" << adapter_info.device_name << "\"." << std::endl;
+  std::cout << "Acquired adapter \"" << adapter_info.device_name << "\"."
+            << std::endl;
 
-  auto device_res =
-      adapter.create_device({}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 2},
-                                 fgla::Queue::Request{fgla::Queue::Type::Transfer, 1}});
+  auto device_res = adapter.create_device(
+      {}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 2},
+           fgla::Queue::Request{fgla::Queue::Type::Transfer, 1}});
 
   if (!device_res) {
     std::cerr << "Failed to create device!" << std::endl;
     if (adapter_res.error().message) {
-      std::cerr << "Message: " << adapter_res.error().message.value() << std::endl;
+      std::cerr << "Message: " << adapter_res.error().message.value()
+                << std::endl;
     }
   }
 
@@ -63,7 +68,8 @@ int main(int argc, char **argv) {
   fgla::Queue &g2 = *device.get_queue(fgla::Queue::Type::Graphics, 1);
   fgla::Queue &t1 = *device.get_queue(fgla::Queue::Type::Transfer, 0);
 
-  fgla::CommandBuffer cb = "Failed to create command buffer!" * g1.begin_recording();
+  fgla::CommandBuffer cb =
+      "Failed to create command buffer!" * g1.begin_recording();
 
   g1.submit(std::move(cb));
   return 0;

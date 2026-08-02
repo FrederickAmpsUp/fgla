@@ -12,13 +12,17 @@ namespace fgla::backends::vulkan {
 struct DeviceImpl;
 
 struct QueueAllocator {
-  using QueueMapping = std::unordered_map<std::pair<Queue::Type, uint32_t>,
-                                          std::pair<uint32_t, uint32_t>, util::PairHash>;
-  using Queues = std::unordered_map<std::pair<Queue::Type, uint32_t>, Queue, util::PairHash>;
+  using QueueMapping =
+      std::unordered_map<std::pair<Queue::Type, uint32_t>,
+                         std::pair<uint32_t, uint32_t>, util::PairHash>;
+  using Queues = std::unordered_map<std::pair<Queue::Type, uint32_t>, Queue,
+                                    util::PairHash>;
 
-  static std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping>
-  big_brain_allocator_algorithm(const std::initializer_list<Queue::Request> &requests,
-                                std::vector<VkQueueFamilyProperties> families);
+  static std::pair<std::vector<VkDeviceQueueCreateInfo>,
+                   QueueAllocator::QueueMapping>
+  big_brain_allocator_algorithm(
+      const std::initializer_list<Queue::Request> &requests,
+      std::vector<VkQueueFamilyProperties> families);
 
   QueueAllocator(const std::initializer_list<Queue::Request> &requests,
                  VkPhysicalDevice physical_device);
@@ -34,7 +38,8 @@ private:
 };
 
 struct QueueImpl : public fgla::Queue::Impl {
-  QueueImpl(VkQueue queue, uint32_t family_index) : queue(queue), family_index(family_index) {}
+  QueueImpl(VkQueue queue, uint32_t family_index)
+      : queue(queue), family_index(family_index) {}
 
   virtual Result<CommandBuffer> begin_recording() override;
   virtual void submit(CommandBuffer &&cb) override;
@@ -42,7 +47,8 @@ struct QueueImpl : public fgla::Queue::Impl {
   inline uint32_t get_family_index() const { return this->family_index; }
 
   // just called once by DeviceImpl right after initialization
-  void init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool, VkCommandPool command_pool);
+  void init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool,
+            VkCommandPool command_pool);
 
   inline VkQueue get_queue() const { return this->queue; }
   inline VkSemaphore get_timeline() const { return this->timeline; }

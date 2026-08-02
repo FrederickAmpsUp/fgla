@@ -9,7 +9,8 @@ extern "C" bool fgla_backends_vulkan_is_available() {
   VkInstanceCreateInfo instance_info = {};
   instance_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 
-  instance_info.enabledExtensionCount = 0; // TODO: GLFW extensions if we need the windowing feature
+  instance_info.enabledExtensionCount =
+      0; // TODO: GLFW extensions if we need the windowing feature
   instance_info.enabledLayerCount = 0;
 
   // allegedly i'll have to update this for MacOS support
@@ -27,7 +28,8 @@ extern "C" bool fgla_backends_vulkan_is_available() {
 
   if (physical_device_count == 0) {
     vkDestroyInstance(instance, nullptr);
-    spdlog::warn("fgla::backends::vulkan::is_available(): no adapters available!");
+    spdlog::warn(
+        "fgla::backends::vulkan::is_available(): no adapters available!");
     return false;
   }
 
@@ -37,8 +39,10 @@ extern "C" bool fgla_backends_vulkan_is_available() {
   return true;
 }
 
-extern "C" Instance *fgla_backends_vulkan_create_instance(const Instance::Descriptor *descriptor) {
-  std::unique_ptr<InstanceImpl> impl = std::make_unique<InstanceImpl>(*descriptor);
+extern "C" Instance *
+fgla_backends_vulkan_create_instance(const Instance::Descriptor *descriptor) {
+  std::unique_ptr<InstanceImpl> impl =
+      std::make_unique<InstanceImpl>(*descriptor);
   if (!impl->is_ok()) return nullptr;
   auto instance = Instance::from_raw(std::move(impl));
   return new Instance(std::move(instance));
@@ -48,6 +52,7 @@ static const fgla::backend::BackendRegistrar registrar = {
     fgla::backend::Backend{.uuid = UUID,
                            .name = "Vulkan",
                            .is_available = &fgla_backends_vulkan_is_available,
-                           .create_instance = &fgla_backends_vulkan_create_instance}};
+                           .create_instance =
+                               &fgla_backends_vulkan_create_instance}};
 
 } // namespace fgla::backends::vulkan

@@ -13,7 +13,8 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
 
   virtual std::optional<Error>
   configure(fgla::Device &device,
-            const fgla::ext::windowing::Surface::Configuration &configuration) override;
+            const fgla::ext::windowing::Surface::Configuration &configuration)
+      override;
   virtual fgla::ext::windowing::Surface::Capabilities
   get_capabilities(const Adapter &adapter) override;
 

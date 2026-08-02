@@ -15,7 +15,13 @@ namespace fgla::ext::windowing {
 /// Represents a surface, which is used to render to a window
 class Surface {
 public:
-  enum class PresentMode { FIFO, MAILBOX, IMMEDIATE, AUTO_VSYNC, AUTO_NO_VSYNC };
+  enum class PresentMode {
+    FIFO,
+    MAILBOX,
+    IMMEDIATE,
+    AUTO_VSYNC,
+    AUTO_NO_VSYNC
+  };
 
   struct Configuration {
     TextureFormat format;
@@ -28,7 +34,8 @@ public:
     std::vector<PresentMode> present_modes;
   };
 
-  inline std::optional<Error> configure(fgla::Device &device, const Configuration &config) {
+  inline std::optional<Error> configure(fgla::Device &device,
+                                        const Configuration &config) {
     return this->impl->configure(device, config);
   }
   inline Capabilities get_capabilities(const Adapter &adapter) {
@@ -43,19 +50,22 @@ public:
   inline std::optional<Error>
   present(fgla::Queue &present_queue, fgla::Image &&image,
           std::initializer_list<fgla::Completion> wait_completions = {}) {
-    return this->impl->present(present_queue, std::move(image), wait_completions);
+    return this->impl->present(present_queue, std::move(image),
+                               wait_completions);
   }
 
   inline void cleanup() { return this->impl->cleanup(); }
 
   /// The backend-defined implementation of the `Surface`'s functions
   struct Impl {
-    virtual std::optional<Error> configure(fgla::Device &, const Configuration &) = 0;
+    virtual std::optional<Error> configure(fgla::Device &,
+                                           const Configuration &) = 0;
     virtual Capabilities get_capabilities(const Adapter &) = 0;
     virtual fgla::Result<std::reference_wrapper<fgla::Image>>
     get_current_image(const fgla::Queue &) = 0;
-    virtual std::optional<Error> present(fgla::Queue &, fgla::Image &&,
-                                         std::initializer_list<fgla::Completion>) = 0;
+    virtual std::optional<Error>
+    present(fgla::Queue &, fgla::Image &&,
+            std::initializer_list<fgla::Completion>) = 0;
     virtual void cleanup() = 0;
 
     virtual ~Impl() = 0;

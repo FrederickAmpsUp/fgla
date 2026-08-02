@@ -11,7 +11,8 @@ Result<Instance> Instance::create(const Instance::Descriptor &descriptor) {
 
   const auto &registry = backend::get_registry();
 
-  auto pref_it = registry.find(descriptor.preferred_backend.value_or(backend::BackendUUID()));
+  auto pref_it = registry.find(
+      descriptor.preferred_backend.value_or(backend::BackendUUID()));
 
   if (pref_it != registry.end()) {
     backend = &pref_it->second;
@@ -46,7 +47,9 @@ Result<Instance> Instance::create(const Instance::Descriptor &descriptor) {
     }
   } while (it != registry.end());
 
-  return Error(0, "Failed to create an fgla::Instance as there are no available backends.");
+  return Error(
+      0,
+      "Failed to create an fgla::Instance as there are no available backends.");
 }
 
 } // namespace fgla

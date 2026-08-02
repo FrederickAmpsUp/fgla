@@ -155,7 +155,8 @@ private:
 /// fgla::Instance instance = "Failed to create instance"
 /// *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E> T &operator*(const char *msg, Result<T, E> &res) {
+template <typename T, typename E>
+T &operator*(const char *msg, Result<T, E> &res) {
   assert(res.is_ok() && msg);
   return *res;
 }
@@ -171,7 +172,8 @@ template <typename T, typename E> T &operator*(const char *msg, Result<T, E> &re
 /// fgla::Instance instance = "Failed to create instance"
 /// *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E> const T &operator*(const char *msg, const Result<T, E> &res) {
+template <typename T, typename E>
+const T &operator*(const char *msg, const Result<T, E> &res) {
   assert(res.is_ok() && msg);
   return *res;
 }
@@ -187,7 +189,8 @@ template <typename T, typename E> const T &operator*(const char *msg, const Resu
 /// fgla::Instance instance = "Failed to create instance"
 /// *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E> T &&operator*(const char *msg, Result<T, E> &&res) {
+template <typename T, typename E>
+T &&operator*(const char *msg, Result<T, E> &&res) {
   assert(res.is_ok() && msg);
   return std::move(*res);
 }
@@ -203,7 +206,8 @@ template <typename T, typename E> T &&operator*(const char *msg, Result<T, E> &&
 /// fgla::Instance instance = "Failed to create instance"
 /// *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E> const T &&operator*(const char *msg, const Result<T, E> &&res) {
+template <typename T, typename E>
+const T &&operator*(const char *msg, const Result<T, E> &&res) {
   assert(res.is_ok() && msg);
   return std::move(*res);
 }
@@ -217,7 +221,8 @@ template <typename T, typename E> const T &&operator*(const char *msg, const Res
 /// @param exit_code The exit code to use on failure
 /// @returns The unwrapped value
 template <typename T, typename E>
-T unwrap(Result<T, E> res, const char *message = "Fatal Error", int exit_code = -1) {
+T unwrap(Result<T, E> res, const char *message = "Fatal Error",
+         int exit_code = -1) {
   if (!res) {
     std::cerr << message << std::endl;
     std::exit(exit_code);
@@ -234,7 +239,8 @@ T unwrap(Result<T, E> res, const char *message = "Fatal Error", int exit_code = 
 /// @param exit_code The exit code to use on faulure
 /// @returns The unwrapped value
 template <typename T>
-T unwrap(std::optional<T> opt, const char *message = "Fatal Error", int exit_code = -1) {
+T unwrap(std::optional<T> opt, const char *message = "Fatal Error",
+         int exit_code = -1) {
   if (!opt) {
     std::cerr << message << std::endl;
     std::exit(exit_code);

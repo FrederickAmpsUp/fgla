@@ -19,13 +19,14 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
   VkApplicationInfo app_info = {};
   app_info.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
 
-  app_info.applicationVersion = VK_MAKE_VERSION(
-      descriptor.app_version.major, descriptor.app_version.minor, descriptor.app_version.patch);
+  app_info.applicationVersion = VK_MAKE_VERSION(descriptor.app_version.major,
+                                                descriptor.app_version.minor,
+                                                descriptor.app_version.patch);
   app_info.pApplicationName = descriptor.app_name.c_str();
 
-  logger->info("Creating FGLA Vulkan instance for app \"{}\" (v{}.{}.{}).", descriptor.app_name,
-               descriptor.app_version.major, descriptor.app_version.minor,
-               descriptor.app_version.patch);
+  logger->info("Creating FGLA Vulkan instance for app \"{}\" (v{}.{}.{}).",
+               descriptor.app_name, descriptor.app_version.major,
+               descriptor.app_version.minor, descriptor.app_version.patch);
 
   app_info.pEngineName = "FGLA";
   app_info.engineVersion = VK_MAKE_VERSION(0, 0, 1);
@@ -46,7 +47,8 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
   glfwInit();
   glfw_extensions = glfwGetRequiredInstanceExtensions(&n_glfw_extensions);
 
-  extensions.insert(extensions.end(), glfw_extensions, glfw_extensions + n_glfw_extensions);
+  extensions.insert(extensions.end(), glfw_extensions,
+                    glfw_extensions + n_glfw_extensions);
 #endif
 
   instance_info.enabledExtensionCount = extensions.size();
@@ -54,7 +56,8 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 
   std::vector<const char *> layers;
 #ifndef NDEBUG
-  layers.push_back("VK_LAYER_KHRONOS_validation"); // should query if it's actually available
+  layers.push_back(
+      "VK_LAYER_KHRONOS_validation"); // should query if it's actually available
 #endif
 
   instance_info.enabledLayerCount = layers.size();
@@ -62,7 +65,8 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 
   VkResult result = vkCreateInstance(&instance_info, nullptr, &this->instance);
   if (result != VK_SUCCESS) {
-    logger->error("Vulkan instance creation failed, error code {:X}", (unsigned int)result);
+    logger->error("Vulkan instance creation failed, error code {:X}",
+                  (unsigned int)result);
     this->instance = VK_NULL_HANDLE;
     return;
   }
@@ -71,7 +75,8 @@ InstanceImpl::InstanceImpl(const Instance::Descriptor &descriptor) {
 }
 bool InstanceImpl::is_ok() const { return this->instance != VK_NULL_HANDLE; }
 
-static int score_physical_device(VkPhysicalDevice device, const Adapter::Descriptor &descriptor) {
+static int score_physical_device(VkPhysicalDevice device,
+                                 const Adapter::Descriptor &descriptor) {
   VkPhysicalDeviceProperties props;
   vkGetPhysicalDeviceProperties(device, &props);
 
@@ -132,7 +137,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
     VkPhysicalDeviceProperties candidate_props;
     vkGetPhysicalDeviceProperties(candidate, &candidate_props);
 
-    std::string vendor_name = fmt::format("Unknown, 0x{:4X}", candidate_props.vendorID);
+    std::string vendor_name =
+        fmt::format("Unknown, 0x{:4X}", candidate_props.vendorID);
 
     switch (candidate_props.vendorID) {
     case 0x10DE:
@@ -146,7 +152,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
       break;
     }
 
-    logger->info(" - \"{}\", vendor \"{}\"", candidate_props.deviceName, vendor_name);
+    logger->info(" - \"{}\", vendor \"{}\"", candidate_props.deviceName,
+                 vendor_name);
 
     auto adapter_impl = std::make_unique<AdapterImpl>(candidate);
     adapters.push_back(Adapter::from_raw(std::move(adapter_impl)));
@@ -158,7 +165,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
 std::function<int(const Adapter &)>
 InstanceImpl::get_adapter_scorer(const Adapter::Descriptor &descriptor) {
   return [&](const Adapter &a) -> int {
-    auto impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
+    auto impl =
+        dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
     return score_physical_device(impl->get_physical_device(), descriptor);
   };
 }
@@ -170,7 +178,8 @@ const backend::Backend &InstanceImpl::get_backend() {
 void *InstanceImpl::get_extension(extension::ExtensionUUID uuid) {
 #ifdef FGLA_VK_EXT_WINDOWING
   if (uuid == fgla::ext::windowing::WindowingExtension::UUID) {
-    fgla::ext::windowing::WindowingExtension &ext = ext::windowing::windowing_extension_impl;
+    fgla::ext::windowing::WindowingExtension &ext =
+        ext::windowing::windowing_extension_impl;
     return static_cast<void *>(&ext);
   }
 #endif

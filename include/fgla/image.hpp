@@ -12,7 +12,8 @@ namespace fgla {
 /// structured data
 class Image {
 public:
-  inline Result<ImageView> create_view(const ImageView::Descriptor &descriptor) {
+  inline Result<ImageView>
+  create_view(const ImageView::Descriptor &descriptor) {
     return this->impl->create_view(descriptor);
   }
 

@@ -9,7 +9,8 @@
 using namespace fgla::backends::vulkan;
 
 // Helper to print requests
-void print_requests(const std::initializer_list<fgla::Queue::Request> &requests) {
+void print_requests(
+    const std::initializer_list<fgla::Queue::Request> &requests) {
   std::cout << "Requests:\n";
   int i = 0;
   for (auto &req : requests) {
@@ -23,7 +24,8 @@ void print_families(const std::vector<VkQueueFamilyProperties> &families) {
   std::cout << "Families:\n";
   int i = 0;
   for (const auto &fam : families) {
-    std::cout << "	Index: " << i++ << ", QueueFlags: " << std::bitset<8>(fam.queueFlags)
+    std::cout << "	Index: " << i++
+              << ", QueueFlags: " << std::bitset<8>(fam.queueFlags)
               << ", QueueCount: " << fam.queueCount << '\n';
   }
 }
@@ -34,14 +36,15 @@ void print_results(const std::vector<VkDeviceQueueCreateInfo> &createInfos,
   std::cout << "Output:\n";
   std::cout << "  QueueCreateInfos count: " << createInfos.size() << '\n';
   for (const auto &info : createInfos) {
-    std::cout << "	  FamilyIndex: " << info.queueFamilyIndex << ", QueueCount: " << info.queueCount
-              << '\n';
+    std::cout << "	  FamilyIndex: " << info.queueFamilyIndex
+              << ", QueueCount: " << info.queueCount << '\n';
   }
 
   std::cout << "  QueueMapping entries: " << mapping.size() << '\n';
   for (const auto &[key, value] : mapping) {
     std::cout << "	  RequestType: " << static_cast<int>(key.first)
-              << ", RequestIndex: " << key.second << " -> FamilyIndex: " << value.first
+              << ", RequestIndex: " << key.second
+              << " -> FamilyIndex: " << value.first
               << ", QueueIndex: " << value.second << '\n';
   }
 }
@@ -56,7 +59,8 @@ void test_big_brain_allocator() {
         {.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 8}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -69,7 +73,8 @@ void test_big_brain_allocator() {
         {.queueFlags = VK_QUEUE_TRANSFER_BIT, .queueCount = 1}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -80,7 +85,8 @@ void test_big_brain_allocator() {
         {.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 2}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -92,7 +98,8 @@ void test_big_brain_allocator() {
         {.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 1}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -101,11 +108,13 @@ void test_big_brain_allocator() {
     fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
     std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
     std::vector<VkQueueFamilyProperties> fams{
-        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 2},
+        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT,
+         .queueCount = 2},
         {.queueFlags = VK_QUEUE_TRANSFER_BIT, .queueCount = 1}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -114,22 +123,26 @@ void test_big_brain_allocator() {
     fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
     std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
     std::vector<VkQueueFamilyProperties> fams{
-        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 4},
+        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT,
+         .queueCount = 4},
         {.queueFlags = VK_QUEUE_TRANSFER_BIT, .queueCount = 2}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
     std::cout << "=== Test 7: Unknown queue type ===\n";
-    fgla::Queue::Request r1{static_cast<fgla::Queue::Type>(999), 1}; // Invalid type
+    fgla::Queue::Request r1{static_cast<fgla::Queue::Type>(999),
+                            1}; // Invalid type
     std::initializer_list<fgla::Queue::Request> reqs{r1};
     std::vector<VkQueueFamilyProperties> fams{
         {.queueFlags = VK_QUEUE_GRAPHICS_BIT, .queueCount = 2}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
   {
@@ -138,16 +151,19 @@ void test_big_brain_allocator() {
     fgla::Queue::Request r2{fgla::Queue::Type::Transfer, 1};
     std::initializer_list<fgla::Queue::Request> reqs{r1, r2};
     std::vector<VkQueueFamilyProperties> fams{
-        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT, .queueCount = 1}};
+        {.queueFlags = VK_QUEUE_GRAPHICS_BIT | VK_QUEUE_TRANSFER_BIT,
+         .queueCount = 1}};
     print_requests(reqs);
     print_families(fams);
-    auto [createInfos, mapping] = QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
+    auto [createInfos, mapping] =
+        QueueAllocator::big_brain_allocator_algorithm(reqs, fams);
     print_results(createInfos, mapping);
   }
 }
 
 int main() {
-  auto instance = fgla::Instance::create({.preferred_backend = fgla::backends::vulkan::UUID});
+  auto instance = fgla::Instance::create(
+      {.preferred_backend = fgla::backends::vulkan::UUID});
 
   assert(instance->get_backend().uuid == fgla::backends::vulkan::UUID);
 

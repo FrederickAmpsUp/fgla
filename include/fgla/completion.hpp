@@ -9,7 +9,8 @@ namespace fgla {
 /// waited on or used to synchronize subsequent operations
 class Completion {
 public:
-  Completion(const Completion &other) : impl(other.impl ? other.impl->clone() : nullptr) {}
+  Completion(const Completion &other)
+      : impl(other.impl ? other.impl->clone() : nullptr) {}
 
   Completion &operator=(const Completion &other) {
     if (this != &other) {

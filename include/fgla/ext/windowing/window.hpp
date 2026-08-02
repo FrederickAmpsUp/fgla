@@ -37,7 +37,9 @@ public:
     return this->impl->create_surface(instance);
   }
 
-  inline Extent2d get_framebuffer_size() const { return this->impl->get_framebuffer_size(); }
+  inline Extent2d get_framebuffer_size() const {
+    return this->impl->get_framebuffer_size();
+  }
 
   /// The backend-defined implementation of the `Window`'s functions
   struct Impl {

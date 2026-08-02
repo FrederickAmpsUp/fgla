@@ -18,29 +18,32 @@ namespace fgla::backends::vulkan::ext::windowing {
 
 VkSemaphore SurfaceImpl::get_semaphore() {
   VkSemaphore semaphore = this->semaphore_pool[this->semaphore_index];
-  this->semaphore_index = (this->semaphore_index + 1) % this->semaphore_pool.size();
+  this->semaphore_index =
+      (this->semaphore_index + 1) % this->semaphore_pool.size();
   return semaphore; // TODO: find one that's actually available
 }
 
 // returns the best available VkPresentModeKHR for the Surface::PresentMode, or
 // VK_PRESENT_MODE_MAX_ENUM_KHR if none are supported
-static VkPresentModeKHR pick_present_mode(VkPhysicalDevice phys_dev, VkSurfaceKHR surface,
+static VkPresentModeKHR pick_present_mode(VkPhysicalDevice phys_dev,
+                                          VkSurfaceKHR surface,
                                           Surface::PresentMode present_mode) {
   VkPresentModeKHR pm = VK_PRESENT_MODE_MAX_ENUM_KHR;
 
   uint32_t n_present_modes = 0;
-  vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, surface, &n_present_modes, nullptr);
+  vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, surface, &n_present_modes,
+                                            nullptr);
 
   std::vector<VkPresentModeKHR> present_modes(n_present_modes);
   vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, surface, &n_present_modes,
                                             present_modes.data());
 
-  std::unordered_set<VkPresentModeKHR> unique_present_modes(present_modes.begin(),
-                                                            present_modes.end());
+  std::unordered_set<VkPresentModeKHR> unique_present_modes(
+      present_modes.begin(), present_modes.end());
 
   // fine, mom, i'll clean my code...
-  std::unordered_map<Surface::PresentMode, std::vector<VkPresentModeKHR>> present_mode_selections =
-      {
+  std::unordered_map<Surface::PresentMode, std::vector<VkPresentModeKHR>>
+      present_mode_selections = {
           {Surface::PresentMode::FIFO, {VK_PRESENT_MODE_FIFO_KHR}},
           {Surface::PresentMode::MAILBOX, {VK_PRESENT_MODE_MAILBOX_KHR}},
           {Surface::PresentMode::IMMEDIATE, {VK_PRESENT_MODE_IMMEDIATE_KHR}},
@@ -51,7 +54,8 @@ static VkPresentModeKHR pick_present_mode(VkPhysicalDevice phys_dev, VkSurfaceKH
             VK_PRESENT_MODE_FIFO_KHR}},
       };
 
-  if (present_mode_selections.find(present_mode) != present_mode_selections.end())
+  if (present_mode_selections.find(present_mode) !=
+      present_mode_selections.end())
     for (auto mode : present_mode_selections[present_mode]) {
       if (unique_present_modes.find(mode) != unique_present_modes.end()) {
         pm = mode;
@@ -67,9 +71,10 @@ VkExtent2D pick_swap_extent(VkSurfaceCapabilitiesKHR caps, Extent2d fb_size) {
   if (caps.currentExtent.width != UINT32_MAX) {
     extent = caps.currentExtent;
   } else {
-    extent.width = std::clamp(fb_size.width, caps.minImageExtent.width, caps.maxImageExtent.width);
-    extent.height =
-        std::clamp(fb_size.height, caps.minImageExtent.height, caps.maxImageExtent.height);
+    extent.width = std::clamp(fb_size.width, caps.minImageExtent.width,
+                              caps.maxImageExtent.width);
+    extent.height = std::clamp(fb_size.height, caps.minImageExtent.height,
+                               caps.maxImageExtent.height);
   }
 
   return extent;
@@ -78,9 +83,11 @@ VkExtent2D pick_swap_extent(VkSurfaceCapabilitiesKHR caps, Extent2d fb_size) {
 std::vector<uint32_t> find_graphics_present_families(VkPhysicalDevice phys_dev,
                                                      VkSurfaceKHR surface) {
   uint32_t n_queue_families = 0;
-  vkGetPhysicalDeviceQueueFamilyProperties(phys_dev, &n_queue_families, nullptr);
+  vkGetPhysicalDeviceQueueFamilyProperties(phys_dev, &n_queue_families,
+                                           nullptr);
   std::vector<VkQueueFamilyProperties> queue_family_props(n_queue_families);
-  vkGetPhysicalDeviceQueueFamilyProperties(phys_dev, &n_queue_families, queue_family_props.data());
+  vkGetPhysicalDeviceQueueFamilyProperties(phys_dev, &n_queue_families,
+                                           queue_family_props.data());
 
   std::vector<uint32_t> queue_families;
   for (uint32_t i = 0; i < n_queue_families; i++) {
@@ -96,10 +103,11 @@ std::vector<uint32_t> find_graphics_present_families(VkPhysicalDevice phys_dev,
 
 SurfaceImpl::SurfaceImpl(WindowImpl &window, const fgla::Instance &instance) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
-  this->instance = dynamic_cast<InstanceImpl *>(fgla::internal::ImplAccessor::get_impl(instance))
+  this->instance = dynamic_cast<InstanceImpl *>(
+                       fgla::internal::ImplAccessor::get_impl(instance))
                        ->get_instance();
-  VkResult res =
-      glfwCreateWindowSurface(this->instance, window.get_window(), nullptr, &this->surface);
+  VkResult res = glfwCreateWindowSurface(this->instance, window.get_window(),
+                                         nullptr, &this->surface);
 
   this->swapchain = VK_NULL_HANDLE;
   this->device = VK_NULL_HANDLE;
@@ -112,24 +120,28 @@ SurfaceImpl::SurfaceImpl(WindowImpl &window, const fgla::Instance &instance) {
 }
 
 // TODO: custom error enum here
-std::optional<Error>
-SurfaceImpl::configure(fgla::Device &device,
-                       const fgla::ext::windowing::Surface::Configuration &configuration) {
+std::optional<Error> SurfaceImpl::configure(
+    fgla::Device &device,
+    const fgla::ext::windowing::Surface::Configuration &configuration) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
   logger->info("Configuring surface:");
   logger->info(" - Format: \"{}\"", configuration.format.to_string());
-  logger->info(" - Present Mode: \"{}\"", magic_enum::enum_name(configuration.present_mode));
-  logger->info(" - Size: {}x{}", configuration.size.width, configuration.size.height);
+  logger->info(" - Present Mode: \"{}\"",
+               magic_enum::enum_name(configuration.present_mode));
+  logger->info(" - Size: {}x{}", configuration.size.width,
+               configuration.size.height);
 
   VkPhysicalDevice phys_dev =
       static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
           ->get_physical_device();
   VkDevice logi_dev =
-      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))->get_device();
+      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
+          ->get_device();
 
   VkFormat fmt = vulkanize(configuration.format); // ez pz
-  VkPresentModeKHR pm = pick_present_mode(phys_dev, this->surface, configuration.present_mode);
+  VkPresentModeKHR pm =
+      pick_present_mode(phys_dev, this->surface, configuration.present_mode);
 
   if (pm == VK_PRESENT_MODE_MAX_ENUM_KHR) {
     auto name = magic_enum::enum_name(configuration.present_mode);
@@ -161,14 +173,17 @@ SurfaceImpl::configure(fgla::Device &device,
 
   // might improve this in the future, for now just assume any graphics or
   // present-capable family can access the swapchain images
-  std::vector<uint32_t> queue_families = find_graphics_present_families(phys_dev, this->surface);
+  std::vector<uint32_t> queue_families =
+      find_graphics_present_families(phys_dev, this->surface);
 
   // if the images might be accessed in multiple families, we have to use
   // concurrent mode, otherwise exclusive mode is used for 1% better frame times
   // :)
-  create_info.imageSharingMode =
-      (queue_families.size() > 1) ? VK_SHARING_MODE_CONCURRENT : VK_SHARING_MODE_EXCLUSIVE;
-  create_info.queueFamilyIndexCount = static_cast<uint32_t>(queue_families.size());
+  create_info.imageSharingMode = (queue_families.size() > 1)
+                                     ? VK_SHARING_MODE_CONCURRENT
+                                     : VK_SHARING_MODE_EXCLUSIVE;
+  create_info.queueFamilyIndexCount =
+      static_cast<uint32_t>(queue_families.size());
   create_info.pQueueFamilyIndices = queue_families.data();
 
   create_info.preTransform = caps.currentTransform;
@@ -181,16 +196,19 @@ SurfaceImpl::configure(fgla::Device &device,
   VkSwapchainKHR old_swapchain = this->swapchain;
 
   VkDevice dev =
-      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))->get_device();
+      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
+          ->get_device();
 
-  VkResult res = vkCreateSwapchainKHR(dev, &create_info, nullptr, &this->swapchain);
+  VkResult res =
+      vkCreateSwapchainKHR(dev, &create_info, nullptr, &this->swapchain);
 
   if (old_swapchain != VK_NULL_HANDLE) {
     vkDestroySwapchainKHR(logi_dev, old_swapchain, nullptr);
   }
 
   if (res != VK_SUCCESS) {
-    logger->error("Failed to create Vulkan swapchain (error code {}).", (uint64_t)res);
+    logger->error("Failed to create Vulkan swapchain (error code {}).",
+                  (uint64_t)res);
     this->swapchain = VK_NULL_HANDLE;
     return Error(1, "Failed to create Vulkan swapchain");
   }
@@ -213,13 +231,15 @@ SurfaceImpl::configure(fgla::Device &device,
 
   // 2 for every frame, probably overkill but one can be used in acquisition
   // and one in presentation
-  for (int i = this->semaphore_pool.size(); i < this->swapchain_images.size() * 2; ++i) {
+  for (int i = this->semaphore_pool.size();
+       i < this->swapchain_images.size() * 2; ++i) {
     VkSemaphoreCreateInfo create_info = {};
     create_info.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
     create_info.flags = 0; // binary semaphore
 
     VkSemaphore semaphore;
-    VkResult res = vkCreateSemaphore(this->device, &create_info, nullptr, &semaphore);
+    VkResult res =
+        vkCreateSemaphore(this->device, &create_info, nullptr, &semaphore);
 
     if (res != VK_SUCCESS) {
       return Error(2, "Failed to create Vulkan semaphore");
@@ -233,42 +253,49 @@ SurfaceImpl::configure(fgla::Device &device,
   return {};
 }
 
-fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const Adapter &adapter) {
+fgla::ext::windowing::Surface::Capabilities
+SurfaceImpl::get_capabilities(const Adapter &adapter) {
   VkPhysicalDevice phys_dev =
-      static_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(adapter))
+      static_cast<AdapterImpl *>(
+          fgla::internal::ImplAccessor::get_impl(adapter))
           ->get_physical_device();
 
   fgla::ext::windowing::Surface::Capabilities caps = {};
 
   uint32_t n_formats = 0;
-  vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats, nullptr);
+  vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats,
+                                       nullptr);
 
   if (n_formats > 0) {
     std::unordered_set<TextureFormat> unique_formats;
     std::vector<VkSurfaceFormatKHR> formats(n_formats);
-    vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats, formats.data());
+    vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats,
+                                         formats.data());
 
     for (const auto &format : formats) {
       TextureFormat fmt = devulkanize(format.format);
       // only support sRGB for now, due to color space stuff. want to add HDR
       // later.
-      if (fmt != TextureFormat::UNDEFINED && fmt.is_srgb()) unique_formats.insert(fmt);
+      if (fmt != TextureFormat::UNDEFINED && fmt.is_srgb())
+        unique_formats.insert(fmt);
     }
     caps.formats = std::vector(unique_formats.begin(), unique_formats.end());
   }
 
   uint32_t n_present_modes = 0;
-  vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, this->surface, &n_present_modes, nullptr);
+  vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, this->surface,
+                                            &n_present_modes, nullptr);
 
   if (n_present_modes > 0) {
     std::unordered_set<Surface::PresentMode> unique_present_modes;
     std::vector<VkPresentModeKHR> present_modes(n_present_modes);
-    vkGetPhysicalDeviceSurfacePresentModesKHR(phys_dev, this->surface, &n_present_modes,
-                                              present_modes.data());
+    vkGetPhysicalDeviceSurfacePresentModesKHR(
+        phys_dev, this->surface, &n_present_modes, present_modes.data());
 
     for (const auto &present_mode : present_modes) {
-      Surface::PresentMode pm = Surface::PresentMode::AUTO_VSYNC; // just used as a "not found" flag
-                                                                  // here
+      Surface::PresentMode pm =
+          Surface::PresentMode::AUTO_VSYNC; // just used as a "not found" flag
+                                            // here
       switch (present_mode) {
       case VK_PRESENT_MODE_FIFO_KHR:
         pm = Surface::PresentMode::FIFO;
@@ -282,9 +309,11 @@ fgla::ext::windowing::Surface::Capabilities SurfaceImpl::get_capabilities(const 
       default:
         break;
       }
-      if (pm != Surface::PresentMode::AUTO_VSYNC) unique_present_modes.insert(pm);
+      if (pm != Surface::PresentMode::AUTO_VSYNC)
+        unique_present_modes.insert(pm);
     }
-    caps.present_modes = std::vector(unique_present_modes.begin(), unique_present_modes.end());
+    caps.present_modes =
+        std::vector(unique_present_modes.begin(), unique_present_modes.end());
   }
 
   return caps;
@@ -297,8 +326,9 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   VkSemaphore available_semaphore = this->get_semaphore();
 
   uint32_t image_index;
-  VkResult res = vkAcquireNextImageKHR(this->device, this->swapchain, UINT64_MAX,
-                                       available_semaphore, VK_NULL_HANDLE, &image_index);
+  VkResult res =
+      vkAcquireNextImageKHR(this->device, this->swapchain, UINT64_MAX,
+                            available_semaphore, VK_NULL_HANDLE, &image_index);
 
   if (res != VK_SUCCESS && res != VK_SUBOPTIMAL_KHR) {
     return Error(1, "Failed to acquire Vulkan image.");
@@ -307,7 +337,8 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   if (res == VK_SUBOPTIMAL_KHR) // TODO: report this to the user
     logger->warn("Swapchain suboptimal.");
 
-  QueueImpl &queue_impl = *dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
+  QueueImpl &queue_impl =
+      *dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
   VkQueue vk_queue = queue_impl.get_queue();
 
   Image &image = this->swapchain_images[image_index];
@@ -315,10 +346,11 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   // since vkAcquireNextImageKHR can't signal a timeline semaphore
   // we do this, it's just an empty submission that signals
   signal_timeline_from_binary(this->device, vk_queue, available_semaphore,
-                              queue_impl.get_timeline(), ++queue_impl.get_timeline_value());
+                              queue_impl.get_timeline(),
+                              ++queue_impl.get_timeline_value());
 
-  auto completion = Completion::from_raw(
-      std::make_unique<CompletionImpl>(queue_impl.get_timeline(), queue_impl.get_timeline_value()));
+  auto completion = Completion::from_raw(std::make_unique<CompletionImpl>(
+      queue_impl.get_timeline(), queue_impl.get_timeline_value()));
 
   image.get_completion() = std::move(completion);
 
@@ -326,7 +358,9 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
 }
 
 VkImage get_image(fgla::Image &im) {
-  return dynamic_cast<BaseImageImpl *>(fgla::internal::ImplAccessor::get_impl(im))->get_image();
+  return dynamic_cast<BaseImageImpl *>(
+             fgla::internal::ImplAccessor::get_impl(im))
+      ->get_image();
 }
 
 std::optional<Error>
@@ -335,8 +369,9 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
   VkPresentInfoKHR present_info = {};
   present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 
-  VkQueue queue =
-      dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(present_queue))->get_queue();
+  VkQueue queue = dynamic_cast<QueueImpl *>(
+                      fgla::internal::ImplAccessor::get_impl(present_queue))
+                      ->get_queue();
 
   VkSemaphore wait_semaphore = this->get_semaphore();
 
@@ -346,14 +381,14 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
   timeline_values.reserve(wait_completions.size());
 
   for (const auto &completion : wait_completions) {
-    CompletionImpl &impl =
-        *dynamic_cast<CompletionImpl *>(fgla::internal::ImplAccessor::get_impl(completion));
+    CompletionImpl &impl = *dynamic_cast<CompletionImpl *>(
+        fgla::internal::ImplAccessor::get_impl(completion));
     timeline_semaphores.push_back(impl.get_semaphore());
     timeline_values.push_back(impl.get_value());
   }
 
-  signal_binary_from_timelines(this->device, queue, timeline_semaphores, timeline_values,
-                               wait_semaphore);
+  signal_binary_from_timelines(this->device, queue, timeline_semaphores,
+                               timeline_values, wait_semaphore);
 
   present_info.waitSemaphoreCount = 1;
   present_info.pWaitSemaphores = &wait_semaphore;
@@ -403,6 +438,7 @@ void SurfaceImpl::cleanup() {
 }
 
 SurfaceImpl::~SurfaceImpl() {
-  if (this->instance && this->surface) vkDestroySurfaceKHR(this->instance, this->surface, nullptr);
+  if (this->instance && this->surface)
+    vkDestroySurfaceKHR(this->instance, this->surface, nullptr);
 }
 } // namespace fgla::backends::vulkan::ext::windowing

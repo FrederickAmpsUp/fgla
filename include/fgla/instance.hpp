@@ -47,7 +47,9 @@ public:
   }
 
   /// Returns a list of all available `Adapter`s
-  inline std::vector<Adapter> enumerate_adapters() { return this->impl->enumerate_adapters(); }
+  inline std::vector<Adapter> enumerate_adapters() {
+    return this->impl->enumerate_adapters();
+  }
 
   /// Returns a function that scores an `Adapter` based on an
   /// `Adapter::Descriptor`
@@ -61,8 +63,9 @@ public:
   /// @param adapters The list of adapters to select from
   /// @returns The highest-scoring `Adapter` from `adapters`
   /// @note The returned `Adapter` is removed from (moved out of) `adapters`
-  inline Result<Adapter> select_adapter(const std::function<int(const Adapter &)> &scorer,
-                                        std::vector<Adapter> &adapters) {
+  inline Result<Adapter>
+  select_adapter(const std::function<int(const Adapter &)> &scorer,
+                 std::vector<Adapter> &adapters) {
     size_t best_index;
     int best_score = -1;
 
@@ -88,18 +91,22 @@ public:
   /// Alternative to `select_adapter(..., std::vector<Adapter> &)` that takes
   /// `adapters` as an rvalue.
   /// @see `select_adapter(..., std::vector<Adapter> &)`
-  inline Result<Adapter> select_adapter(const std::function<int(const Adapter &)> &scorer,
-                                        std::vector<Adapter> &&adapters) {
+  inline Result<Adapter>
+  select_adapter(const std::function<int(const Adapter &)> &scorer,
+                 std::vector<Adapter> &&adapters) {
     return this->select_adapter(scorer, adapters);
   }
 
   /// @returns the `Backend` this `Instance` is using
-  inline const backend::Backend &get_backend() { return this->impl->get_backend(); }
+  inline const backend::Backend &get_backend() {
+    return this->impl->get_backend();
+  }
 
   /// Retrieves an extension from its type
   /// @tparam T The extension to retrieve
   /// @returns The extension, or `std::nullopt` if not supported
-  template <typename T> std::optional<std::reference_wrapper<T>> get_extension() {
+  template <typename T>
+  std::optional<std::reference_wrapper<T>> get_extension() {
     extension::ExtensionUUID uuid = T::UUID;
     void *ext = this->impl->get_extension(uuid);
     if (ext) {

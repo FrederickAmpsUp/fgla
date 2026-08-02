@@ -77,9 +77,13 @@ public:
   constexpr operator Value() const { return v; }
   explicit operator bool() const = delete;
 
-  constexpr bool operator==(TextureFormat other) const { return this->v == other.v; }
+  constexpr bool operator==(TextureFormat other) const {
+    return this->v == other.v;
+  }
   constexpr bool operator==(Value other) const { return this->v == other; }
-  constexpr bool operator!=(TextureFormat other) const { return this->v != other.v; }
+  constexpr bool operator!=(TextureFormat other) const {
+    return this->v != other.v;
+  }
   constexpr bool operator!=(Value other) const { return this->v != other; }
 
   /// @brief Checks if the `TextureFormat` uses sRGB encoding
@@ -93,7 +97,9 @@ public:
     }
   }
 
-  std::string to_string() const { return std::string(magic_enum::enum_name(this->v)); }
+  std::string to_string() const {
+    return std::string(magic_enum::enum_name(this->v));
+  }
 
 private:
   Value v;

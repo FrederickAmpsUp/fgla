@@ -8,14 +8,17 @@ int main(int argc, char **argv) {
                                }),
                                "Failed to create instance");
 
-  auto &windowing =
-      fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(), "Windowing not available").get();
+  auto &windowing = fgla::unwrap(instance.get_extension<fgla::ext::Windowing>(),
+                                 "Windowing not available")
+                        .get();
 
   auto window =
-      fgla::unwrap(windowing.create_window({.width = 800, .height = 600, .name = "Test Window"}),
+      fgla::unwrap(windowing.create_window(
+                       {.width = 800, .height = 600, .name = "Test Window"}),
                    "Window creation failed");
 
-  auto surface = fgla::unwrap(window.create_surface(instance), "Failed to create surface");
+  auto surface =
+      fgla::unwrap(window.create_surface(instance), "Failed to create surface");
 
   while (window.is_open()) {
     window.poll_events();

@@ -15,9 +15,12 @@ struct QueueFamilyIndices {
 };
 
 struct AdapterImpl : public fgla::Adapter::Impl {
-  AdapterImpl(VkPhysicalDevice physical_device) : physical_device(physical_device) {}
+  AdapterImpl(VkPhysicalDevice physical_device)
+      : physical_device(physical_device) {}
 
-  inline VkPhysicalDevice get_physical_device() { return this->physical_device; }
+  inline VkPhysicalDevice get_physical_device() {
+    return this->physical_device;
+  }
 
   virtual Adapter::Info get_info() const override;
   virtual Result<Device>

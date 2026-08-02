@@ -11,7 +11,8 @@ QueueFamilyIndices QueueFamilyIndices::find(VkPhysicalDevice device) {
   vkGetPhysicalDeviceQueueFamilyProperties(device, &n_queue_families, nullptr);
 
   std::vector<VkQueueFamilyProperties> queue_families(n_queue_families);
-  vkGetPhysicalDeviceQueueFamilyProperties(device, &n_queue_families, queue_families.data());
+  vkGetPhysicalDeviceQueueFamilyProperties(device, &n_queue_families,
+                                           queue_families.data());
 
   QueueFamilyIndices indices;
 
@@ -27,11 +28,13 @@ QueueFamilyIndices QueueFamilyIndices::find(VkPhysicalDevice device) {
   return indices;
 }
 
-Result<Device> AdapterImpl::create_device(const Device::Descriptor &descriptor,
-                                          std::initializer_list<Queue::Request> queue_requests) {
+Result<Device> AdapterImpl::create_device(
+    const Device::Descriptor &descriptor,
+    std::initializer_list<Queue::Request> queue_requests) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
-  QueueAllocator queue_allocator = QueueAllocator(queue_requests, this->physical_device);
+  QueueAllocator queue_allocator =
+      QueueAllocator(queue_requests, this->physical_device);
 
   const std::vector<VkDeviceQueueCreateInfo> &queue_create_infos =
       queue_allocator.get_queue_create_infos();
@@ -57,7 +60,8 @@ Result<Device> AdapterImpl::create_device(const Device::Descriptor &descriptor,
 
   VkDevice device;
 
-  VkResult result = vkCreateDevice(this->physical_device, &create_info, nullptr, &device);
+  VkResult result =
+      vkCreateDevice(this->physical_device, &create_info, nullptr, &device);
 
   if (result != VK_SUCCESS) {
     return Error(1, "Failed to create Vulkan device");
@@ -67,8 +71,8 @@ Result<Device> AdapterImpl::create_device(const Device::Descriptor &descriptor,
 
   QueueAllocator::Queues queues = queue_allocator.get_queues(device);
 
-  return Device::from_raw(
-      std::make_unique<DeviceImpl>(device, this->physical_device, std::move(queues)));
+  return Device::from_raw(std::make_unique<DeviceImpl>(
+      device, this->physical_device, std::move(queues)));
 }
 
 Adapter::Info AdapterImpl::get_info() const {

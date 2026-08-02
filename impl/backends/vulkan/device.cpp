@@ -6,11 +6,14 @@ namespace fgla::backends::vulkan {
 
 DeviceImpl::DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
                        QueueAllocator::Queues queues)
-    : device(device), physical_device(physical_device), queues(std::move(queues)) {
+    : device(device), physical_device(physical_device),
+      queues(std::move(queues)) {
   for (auto &[_, queue] : this->queues) {
-    QueueImpl *qi = dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
+    QueueImpl *qi = dynamic_cast<QueueImpl *>(
+        fgla::internal::ImplAccessor::get_impl(queue));
 
-    qi->init(this->device, &this->semaphore_pool, this->get_command_pool(qi->get_family_index()));
+    qi->init(this->device, &this->semaphore_pool,
+             this->get_command_pool(qi->get_family_index()));
   }
 }
 
@@ -33,13 +36,14 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
 
   VkCommandPoolCreateInfo create_info = {};
   create_info.sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO;
-  create_info.flags =
-      VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT | VK_COMMAND_POOL_CREATE_TRANSIENT_BIT;
+  create_info.flags = VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT |
+                      VK_COMMAND_POOL_CREATE_TRANSIENT_BIT;
 
   create_info.queueFamilyIndex = queue_family_index;
 
   VkCommandPool pool;
-  VkResult res = vkCreateCommandPool(this->device, &create_info, nullptr, &pool);
+  VkResult res =
+      vkCreateCommandPool(this->device, &create_info, nullptr, &pool);
   if (res != VK_SUCCESS) {
     logger->error("Failed to create Vulkan command pool.");
     return VK_NULL_HANDLE;

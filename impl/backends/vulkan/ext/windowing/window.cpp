@@ -9,8 +9,8 @@
 
 namespace fgla::backends::vulkan::ext::windowing {
 
-Result<fgla::ext::windowing::Window>
-WindowingExtensionImpl::create_window(const fgla::ext::windowing::Window::Descriptor &descriptor) {
+Result<fgla::ext::windowing::Window> WindowingExtensionImpl::create_window(
+    const fgla::ext::windowing::Window::Descriptor &descriptor) {
   std::unique_ptr<WindowImpl> impl = std::make_unique<WindowImpl>(descriptor);
   if (!impl->is_ok()) {
     return Error(0);
@@ -19,19 +19,23 @@ WindowingExtensionImpl::create_window(const fgla::ext::windowing::Window::Descri
 }
 
 std::function<bool(const Adapter &)>
-WindowingExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surface &surface) {
+WindowingExtensionImpl::surface_support_filter(
+    const fgla::ext::windowing::Surface &surface) {
   return [&](const Adapter &a) -> bool {
-    auto a_impl = dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
-    auto s_impl = dynamic_cast<SurfaceImpl *>(fgla::internal::ImplAccessor::get_impl(surface));
+    auto a_impl =
+        dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
+    auto s_impl = dynamic_cast<SurfaceImpl *>(
+        fgla::internal::ImplAccessor::get_impl(surface));
 
     uint32_t n_extensions = 0;
-    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr, &n_extensions,
-                                         nullptr);
+    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr,
+                                         &n_extensions, nullptr);
     std::vector<VkExtensionProperties> extensions(n_extensions);
-    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr, &n_extensions,
-                                         extensions.data());
+    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr,
+                                         &n_extensions, extensions.data());
 
-    std::set<std::string> required_extensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+    std::set<std::string> required_extensions = {
+        VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
     for (const auto &extension : extensions) {
       required_extensions.erase(extension.extensionName);
@@ -40,12 +44,13 @@ WindowingExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surfa
     if (!required_extensions.empty()) return false;
 
     uint32_t n_queue_families = 0;
-    vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(), &n_queue_families,
-                                             nullptr);
+    vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(),
+                                             &n_queue_families, nullptr);
 
     VkBool32 present_support = false;
     for (int i = 0; n_queue_families; ++i) {
-      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl->get_physical_device(), i, s_impl->get_surface(),
+      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl->get_physical_device(), i,
+                                           s_impl->get_surface(),
                                            &present_support);
 
       if (present_support) break;
@@ -57,7 +62,8 @@ WindowingExtensionImpl::surface_support_filter(const fgla::ext::windowing::Surfa
 
 WindowingExtensionImpl windowing_extension_impl = {};
 
-WindowImpl::WindowImpl(const fgla::ext::windowing::Window::Descriptor &descriptor) {
+WindowImpl::WindowImpl(
+    const fgla::ext::windowing::Window::Descriptor &descriptor) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
   if (!add_window()) {
     this->window = nullptr;
@@ -67,18 +73,19 @@ WindowImpl::WindowImpl(const fgla::ext::windowing::Window::Descriptor &descripto
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-  this->window =
-      glfwCreateWindow(descriptor.width, descriptor.height, descriptor.name, nullptr, nullptr);
+  this->window = glfwCreateWindow(descriptor.width, descriptor.height,
+                                  descriptor.name, nullptr, nullptr);
 
-  logger->info("GLFW window created ({}x{}, \"{}\").", descriptor.width, descriptor.height,
-               descriptor.name);
+  logger->info("GLFW window created ({}x{}, \"{}\").", descriptor.width,
+               descriptor.height, descriptor.name);
 }
 
 void WindowImpl::poll_events() { glfwPollEvents(); }
 
 bool WindowImpl::is_open() { return !glfwWindowShouldClose(this->window); }
 
-Result<fgla::ext::windowing::Surface> WindowImpl::create_surface(const fgla::Instance &instance) {
+Result<fgla::ext::windowing::Surface>
+WindowImpl::create_surface(const fgla::Instance &instance) {
   auto surface = std::make_shared<SurfaceImpl>(*this, instance);
 
   if (!surface->is_ok()) {

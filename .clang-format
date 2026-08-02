@@ -4,7 +4,7 @@ TabWidth: 2
 UseTab: Never
 AllowShortIfStatementsOnASingleLine: true
 BreakBeforeBraces: Attach
-ColumnLimit: 100
+ColumnLimit: 80
 
 SortIncludes: true
 IncludeBlocks: Regroup

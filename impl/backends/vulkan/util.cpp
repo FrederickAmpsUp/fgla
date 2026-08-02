@@ -2,8 +2,10 @@
 
 namespace fgla::backends::vulkan {
 
-void signal_timeline_from_binary(VkDevice device, VkQueue queue, VkSemaphore binary_semaphore,
-                                 VkSemaphore timeline_semaphore, uint64_t timeline_value) {
+void signal_timeline_from_binary(VkDevice device, VkQueue queue,
+                                 VkSemaphore binary_semaphore,
+                                 VkSemaphore timeline_semaphore,
+                                 uint64_t timeline_value) {
   VkTimelineSemaphoreSubmitInfo timeline_info = {};
   timeline_info.sType = VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO;
   timeline_info.waitSemaphoreValueCount = 0;
@@ -23,10 +25,11 @@ void signal_timeline_from_binary(VkDevice device, VkQueue queue, VkSemaphore bin
   vkQueueSubmit(queue, 1, &submit, VK_NULL_HANDLE);
 }
 
-void signal_binary_from_timelines(VkDevice device, VkQueue queue,
-                                  const std::vector<VkSemaphore> &timeline_semaphores,
-                                  const std::vector<uint64_t> &semaphore_values,
-                                  VkSemaphore binary_semaphore) {
+void signal_binary_from_timelines(
+    VkDevice device, VkQueue queue,
+    const std::vector<VkSemaphore> &timeline_semaphores,
+    const std::vector<uint64_t> &semaphore_values,
+    VkSemaphore binary_semaphore) {
   VkTimelineSemaphoreSubmitInfo timeline_info = {};
   timeline_info.sType = VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO;
 

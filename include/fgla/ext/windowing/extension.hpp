@@ -16,7 +16,8 @@ class WindowingExtension {
 public:
   /// The UUID for the `WindowingExtension`
   static constexpr extension::ExtensionUUID UUID =
-      extension::ExtensionUUID::parse_ctr("d8b41889-e4df-4e93-a115-0a828cc832c2");
+      extension::ExtensionUUID::parse_ctr(
+          "d8b41889-e4df-4e93-a115-0a828cc832c2");
 
   /// Attempts to create a `Window`
   /// @param _ The `Window::Descriptor` with the window's properties
@@ -28,7 +29,8 @@ public:
   /// @param _ The `Surface` to filter against
   /// @returns A filter that checks if an `Adapter` supports the specified
   /// `Surface`
-  virtual std::function<bool(const Adapter &)> surface_support_filter(const Surface &) = 0;
+  virtual std::function<bool(const Adapter &)>
+  surface_support_filter(const Surface &) = 0;
 
   virtual ~WindowingExtension() = 0;
 

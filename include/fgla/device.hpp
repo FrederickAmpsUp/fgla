@@ -20,7 +20,8 @@ public:
   /// or `Queue::Type::Transfer`)
   /// @param index The index of the queue in the specified type
   /// @returns The specified queue, or `std::nullopt` if not found
-  inline std::optional<std::reference_wrapper<Queue>> get_queue(Queue::Type type, uint32_t index) {
+  inline std::optional<std::reference_wrapper<Queue>>
+  get_queue(Queue::Type type, uint32_t index) {
     Queue *q = this->impl->get_queue(type, index);
     if (q)
       return *q;

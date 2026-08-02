@@ -10,13 +10,16 @@
 namespace fgla::backends::vulkan {
 
 struct DeviceImpl : public Device::Impl {
-  DeviceImpl(VkDevice device, VkPhysicalDevice physical_device, QueueAllocator::Queues queues);
+  DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
+             QueueAllocator::Queues queues);
 
   virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }
-  std::vector<VkSemaphore> &get_semaphore_pool() { return this->semaphore_pool; }
+  std::vector<VkSemaphore> &get_semaphore_pool() {
+    return this->semaphore_pool;
+  }
 
   // lazy-creates command pools
   VkCommandPool get_command_pool(uint32_t queue_family_index);

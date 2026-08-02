@@ -12,7 +12,8 @@
 namespace std {
 template <> struct hash<fgla::Queue::Request> {
   std::size_t operator()(const fgla::Queue::Request &req) const noexcept {
-    return (std::hash<int>()(static_cast<int>(req.type)) << 1) ^ std::hash<uint32_t>()(req.count);
+    return (std::hash<int>()(static_cast<int>(req.type)) << 1) ^
+           std::hash<uint32_t>()(req.count);
   }
 };
 } // namespace std
@@ -24,8 +25,9 @@ bool operator==(const Queue::Request &lhs, const Queue::Request &rhs) {
 }
 
 std::pair<std::vector<VkDeviceQueueCreateInfo>, QueueAllocator::QueueMapping>
-QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue::Request> &requests,
-                                              std::vector<VkQueueFamilyProperties> families) {
+QueueAllocator::big_brain_allocator_algorithm(
+    const std::initializer_list<Queue::Request> &requests,
+    std::vector<VkQueueFamilyProperties> families) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
   struct FamilyInfo {
@@ -40,14 +42,16 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
   uint32_t i = 0;
   for (auto family : families) {
     if (family.queueFlags != 0) {
-      family_infos.push_back(
-          {.index = i, .flags = family.queueFlags, .max_queues = family.queueCount});
+      family_infos.push_back({.index = i,
+                              .flags = family.queueFlags,
+                              .max_queues = family.queueCount});
     }
 
     ++i;
   }
 
-  std::unordered_map<Queue::Type, std::pair<uint32_t, std::vector<FamilyInfo *>>>
+  std::unordered_map<Queue::Type,
+                     std::pair<uint32_t, std::vector<FamilyInfo *>>>
       counts_and_available_families;
 
   for (auto request : requests) {
@@ -64,22 +68,26 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
 #ifdef FGLA_VK_EXT_WINDOWING
       case fgla::ext::windowing::QueueTypeExt::Present: {
         auto &present_queue_opts =
-            *reinterpret_cast<fgla::ext::windowing::PresentQueueOptions *>(request.user_data);
+            *reinterpret_cast<fgla::ext::windowing::PresentQueueOptions *>(
+                request.user_data);
         VkSurfaceKHR vk_surface =
             dynamic_cast<fgla::backends::vulkan::ext::windowing::SurfaceImpl *>(
-                fgla::internal::ImplAccessor::get_impl(present_queue_opts.surface))
+                fgla::internal::ImplAccessor::get_impl(
+                    present_queue_opts.surface))
                 ->get_surface();
         VkPhysicalDevice vk_device =
-            dynamic_cast<AdapterImpl *>(
-                fgla::internal::ImplAccessor::get_impl(present_queue_opts.adapter))
+            dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(
+                                            present_queue_opts.adapter))
                 ->get_physical_device();
 
         uint32_t n_queue_families = 0;
-        vkGetPhysicalDeviceQueueFamilyProperties(vk_device, &n_queue_families, nullptr);
+        vkGetPhysicalDeviceQueueFamilyProperties(vk_device, &n_queue_families,
+                                                 nullptr);
 
         VkBool32 present_support = false;
         for (int i = 0; i < n_queue_families; ++i) {
-          vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, i, vk_surface, &present_support);
+          vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, i, vk_surface,
+                                               &present_support);
           if (present_support) break;
         }
 
@@ -91,12 +99,15 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
         supported = false;
         break;
       }
-      if (supported && family.max_queues > 0) supported_families.push_back(&family);
+      if (supported && family.max_queues > 0)
+        supported_families.push_back(&family);
     }
-    if (counts_and_available_families.find(request.type) != counts_and_available_families.end()) {
+    if (counts_and_available_families.find(request.type) !=
+        counts_and_available_families.end()) {
       counts_and_available_families[request.type].first += request.count;
     } else {
-      counts_and_available_families.insert({request.type, {request.count, supported_families}});
+      counts_and_available_families.insert(
+          {request.type, {request.count, supported_families}});
     }
   }
 
@@ -132,10 +143,12 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
         }
       }
       if (best_score >= 0 && best_family) {
-        final_mapping.insert({{type, i}, {best_family->index, best_family->used_queues.size()}});
+        final_mapping.insert(
+            {{type, i}, {best_family->index, best_family->used_queues.size()}});
         best_family->used_queues.push_back(type);
       } else if (best_family) {
-        final_mapping.insert({{type, i}, {best_family->index, idx_fallback_queue}});
+        final_mapping.insert(
+            {{type, i}, {best_family->index, idx_fallback_queue}});
       } else {
         logger->error("Unsupported requested queue, ignoring!");
       }
@@ -162,10 +175,12 @@ QueueAllocator::big_brain_allocator_algorithm(const std::initializer_list<Queue:
   return std::make_pair(queue_create_infos, final_mapping);
 }
 
-QueueAllocator::QueueAllocator(const std::initializer_list<Queue::Request> &requests,
-                               VkPhysicalDevice physical_device) {
+QueueAllocator::QueueAllocator(
+    const std::initializer_list<Queue::Request> &requests,
+    VkPhysicalDevice physical_device) {
   uint32_t n_queue_families = 0;
-  vkGetPhysicalDeviceQueueFamilyProperties(physical_device, &n_queue_families, nullptr);
+  vkGetPhysicalDeviceQueueFamilyProperties(physical_device, &n_queue_families,
+                                           nullptr);
 
   std::vector<VkQueueFamilyProperties> queue_families(n_queue_families);
   vkGetPhysicalDeviceQueueFamilyProperties(physical_device, &n_queue_families,
@@ -184,7 +199,8 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
     VkQueue vk_queue;
     vkGetDeviceQueue(device, queue.first, queue.second, &vk_queue);
 
-    std::unique_ptr<QueueImpl> queue_impl = std::make_unique<QueueImpl>(vk_queue, queue.first);
+    std::unique_ptr<QueueImpl> queue_impl =
+        std::make_unique<QueueImpl>(vk_queue, queue.first);
     Queue fg_queue = Queue::from_raw(std::move(queue_impl));
 
     queues.insert({queue_handle, std::move(fg_queue)});
@@ -210,14 +226,16 @@ void QueueImpl::init(VkDevice device, std::vector<VkSemaphore> *semaphore_pool,
 
   semaphore_info.pNext = &semaphore_type_info;
 
-  if (vkCreateSemaphore(this->device, &semaphore_info, nullptr, &this->timeline) != VK_SUCCESS) {
+  if (vkCreateSemaphore(this->device, &semaphore_info, nullptr,
+                        &this->timeline) != VK_SUCCESS) {
     logger->error("Failed to initialize queue!");
   }
 
   logger->info("Initialized queue.");
 }
 
-Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer, VkFence fence) {
+Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer,
+                                         VkFence fence) {
   vkResetCommandBuffer(command_buffer, 0);
   vkResetFences(this->device, 1, &fence);
 
@@ -228,7 +246,8 @@ Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer, VkFence
     return Error(2, "Failed to begin Vulkan command buffer");
   }
 
-  return CommandBuffer::from_raw(std::make_unique<CommandBufferImpl>(command_buffer, fence));
+  return CommandBuffer::from_raw(
+      std::make_unique<CommandBufferImpl>(command_buffer, fence));
 }
 
 Result<CommandBuffer> QueueImpl::begin_recording() {
@@ -243,7 +262,8 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   }
 
   if (this->command_pool == VK_NULL_HANDLE) {
-    return Error(1, "Failed to allocate Vulkan command buffer - no command pool found");
+    return Error(
+        1, "Failed to allocate Vulkan command buffer - no command pool found");
   }
 
   VkCommandBufferAllocateInfo alloc_info = {};
@@ -253,7 +273,8 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   alloc_info.commandBufferCount = 1;
 
   VkCommandBuffer command_buffer;
-  VkResult res = vkAllocateCommandBuffers(this->device, &alloc_info, &command_buffer);
+  VkResult res =
+      vkAllocateCommandBuffers(this->device, &alloc_info, &command_buffer);
   if (res != VK_SUCCESS) {
     return Error(-1, "Failed to allocate Vulkan command buffer");
   }
@@ -281,8 +302,8 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
 void QueueImpl::submit(CommandBuffer &&cb) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
-  CommandBufferImpl &command_buffer =
-      *dynamic_cast<CommandBufferImpl *>(fgla::internal::ImplAccessor::get_impl(cb));
+  CommandBufferImpl &command_buffer = *dynamic_cast<CommandBufferImpl *>(
+      fgla::internal::ImplAccessor::get_impl(cb));
 
   command_buffer.end_recording();
 
@@ -297,7 +318,8 @@ void QueueImpl::submit(CommandBuffer &&cb) {
 
   submit_info.signalSemaphoreCount = 0;
 
-  VkResult res = vkQueueSubmit(this->queue, 1, &submit_info, command_buffer.get_fence());
+  VkResult res =
+      vkQueueSubmit(this->queue, 1, &submit_info, command_buffer.get_fence());
 
   logger->info("Submitted Vulkan command buffer.");
 }

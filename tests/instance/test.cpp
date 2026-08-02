@@ -5,7 +5,8 @@
 
 void print_uuid(const fgla::backend::BackendUUID &uuid) {
   for (int i = 0; i < 16; ++i) {
-    std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(uuid.bytes[i]);
+    std::cout << std::hex << std::setw(2) << std::setfill('0')
+              << static_cast<int>(uuid.bytes[i]);
     if (i == 3 || i == 5 || i == 7 || i == 9) std::cout << '-';
   }
   std::cout << std::dec; // reset to decimal
