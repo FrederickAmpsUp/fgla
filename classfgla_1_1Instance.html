@@ -129,7 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a482f17efbecb5dc2de481bc208f09a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of all available <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>s.  <br /></td></tr>
 <tr class="separator:a482f17efbecb5dc2de481bc208f09a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2da4c39d8a55ec9880f0eca9ec9aad8b" id="r_a2da4c39d8a55ec9880f0eca9ec9aad8b"><td class="memItemLeft" align="right" valign="top">std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2da4c39d8a55ec9880f0eca9ec9aad8b">get_adapter_scorer</a> (const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;descriptor)</td></tr>
-<tr class="memdesc:a2da4c39d8a55ec9880f0eca9ec9aad8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a function that scores an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> based on an <code><a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html" title="Represents the settings used to create an Adapter">Adapter::Descriptor</a></code>  <br /></td></tr>
 <tr class="separator:a2da4c39d8a55ec9880f0eca9ec9aad8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8f34a69b087f99e60846cb8fd9e70a1" id="r_ad8f34a69b087f99e60846cb8fd9e70a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a> (const std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer, std::vector&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt; &amp;adapters)</td></tr>
 <tr class="separator:ad8f34a69b087f99e60846cb8fd9e70a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,8 +214,8 @@ Friends</h2></td></tr>
 
 <p>Returns a list of all available <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>s. </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00049">49</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;enumerate_adapters(); }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00050">50</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;enumerate_adapters(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,12 +243,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates an <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code> from a raw imlementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00123">123</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                                    {</div>
-<div class="line"><span class="lineno">  124</span>    Instance inst;</div>
-<div class="line"><span class="lineno">  125</span>    inst.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> inst;</div>
-<div class="line"><span class="lineno">  127</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00125">125</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>                                                                    {</div>
+<div class="line"><span class="lineno">  126</span>    Instance inst;</div>
+<div class="line"><span class="lineno">  127</span>    inst.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> inst;</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -283,12 +282,12 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>, or an <code><a class="el" href="structfgla_1_1Error.html" title="Represents a failure state from a function call.">Error</a></code> with failure information </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00043">43</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                          {</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a>(this-&gt;impl-&gt;get_adapter_scorer(descriptor),</div>
-<div class="line"><span class="lineno">   45</span>                                this-&gt;impl-&gt;enumerate_adapters());</div>
-<div class="line"><span class="lineno">   46</span>  }</div>
-<div class="ttc" id="aclassfgla_1_1Instance_html_ad8f34a69b087f99e60846cb8fd9e70a1"><div class="ttname"><a href="#ad8f34a69b087f99e60846cb8fd9e70a1">fgla::Instance::select_adapter</a></div><div class="ttdeci">Result&lt; Adapter &gt; select_adapter(const std::function&lt; int(const Adapter &amp;)&gt; &amp;scorer, std::vector&lt; Adapter &gt; &amp;adapters)</div><div class="ttdef"><b>Definition</b> <a href="instance_8hpp_source.html#l00062">instance.hpp:62</a></div></div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00044">44</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                                          {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a>(this-&gt;impl-&gt;get_adapter_scorer(descriptor),</div>
+<div class="line"><span class="lineno">   46</span>                                this-&gt;impl-&gt;enumerate_adapters());</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="ttc" id="aclassfgla_1_1Instance_html_ad8f34a69b087f99e60846cb8fd9e70a1"><div class="ttname"><a href="#ad8f34a69b087f99e60846cb8fd9e70a1">fgla::Instance::select_adapter</a></div><div class="ttdeci">Result&lt; Adapter &gt; select_adapter(const std::function&lt; int(const Adapter &amp;)&gt; &amp;scorer, std::vector&lt; Adapter &gt; &amp;adapters)</div><div class="ttdef"><b>Definition</b> <a href="instance_8hpp_source.html#l00064">instance.hpp:64</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -314,13 +313,12 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Returns a function that scores an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> based on an <code><a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html" title="Represents the settings used to create an Adapter">Adapter::Descriptor</a></code> </p>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00053">53</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                          {</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_adapter_scorer(descriptor);</div>
-<div class="line"><span class="lineno">   55</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00055">55</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                                          {</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;get_adapter_scorer(descriptor);</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -348,8 +346,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>the <code>Backend</code> this <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code> is using </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00095">95</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;get_backend(); }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00097">97</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;get_backend(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -385,16 +383,16 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The extension, or <code>std::nullopt</code> if not supported </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00100">100</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                                             {</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_typedef" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a> uuid = T::UUID;</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">void</span> *ext = this-&gt;impl-&gt;get_extension(uuid);</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (ext) {</div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
-<div class="line"><span class="lineno">  105</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">  107</span>    }</div>
-<div class="line"><span class="lineno">  108</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00102">102</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                                             {</div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_typedef" href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">extension::ExtensionUUID</a> uuid = T::UUID;</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">void</span> *ext = this-&gt;impl-&gt;get_extension(uuid);</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (ext) {</div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
+<div class="line"><span class="lineno">  107</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+<div class="line"><span class="lineno">  110</span>  }</div>
 <div class="ttc" id="anamespacefgla_1_1extension_html_a01a1696c95d2c9d408cfbb68a4a79959"><div class="ttname"><a href="namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959">fgla::extension::ExtensionUUID</a></div><div class="ttdeci">util::UUID&lt; 16 &gt; ExtensionUUID</div><div class="ttdoc">A Universally Unique Identifier identifying an extension.</div><div class="ttdef"><b>Definition</b> <a href="extension_8hpp_source.html#l00009">extension.hpp:9</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -427,10 +425,10 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Alternative to <code>select_adapter(..., std::vector&lt;<a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a>&gt; &amp;)</code> that takes <code>adapters</code> as an rvalue. </p><dl class="section see"><dt>See also</dt><dd><code><a class="el" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a>(..., std::vector&lt;<a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a>&gt; &amp;)</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00089">89</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>                                                                       {</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a>(scorer, adapters);</div>
-<div class="line"><span class="lineno">   92</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00091">91</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                                                       {</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="#ad8f34a69b087f99e60846cb8fd9e70a1">select_adapter</a>(scorer, adapters);</div>
+<div class="line"><span class="lineno">   94</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -470,29 +468,29 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The highest-scoring <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> from <code>adapters</code> </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The returned <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> is removed from (moved out of) <code>adapters</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00062">62</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                                                      {</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">size_t</span> best_index;</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">int</span> best_score = -1;</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> Adapter &amp;adapter : adapters) {</div>
-<div class="line"><span class="lineno">   69</span>      <span class="keywordtype">int</span> score = scorer(adapter);</div>
-<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">if</span> (score &gt; best_score) {</div>
-<div class="line"><span class="lineno">   71</span>        best_score = score;</div>
-<div class="line"><span class="lineno">   72</span>        best_index = i;</div>
-<div class="line"><span class="lineno">   73</span>      }</div>
-<div class="line"><span class="lineno">   74</span>      ++i;</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span> (best_score &lt; 0) {</div>
-<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">return</span> Error(0, <span class="stringliteral">&quot;No suitable adapters found&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>    Adapter best_adapter = std::move(adapters[best_index]);</div>
-<div class="line"><span class="lineno">   82</span>    adapters.erase(adapters.begin() + best_index);</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> best_adapter;</div>
-<div class="line"><span class="lineno">   84</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00064">64</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>                                                                      {</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">size_t</span> best_index;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> best_score = -1;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> Adapter &amp;adapter : adapters) {</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordtype">int</span> score = scorer(adapter);</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordflow">if</span> (score &gt; best_score) {</div>
+<div class="line"><span class="lineno">   73</span>        best_score = score;</div>
+<div class="line"><span class="lineno">   74</span>        best_index = i;</div>
+<div class="line"><span class="lineno">   75</span>      }</div>
+<div class="line"><span class="lineno">   76</span>      ++i;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (best_score &lt; 0) {</div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span> Error(0, <span class="stringliteral">&quot;No suitable adapters found&quot;</span>);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    Adapter best_adapter = std::move(adapters[best_index]);</div>
+<div class="line"><span class="lineno">   84</span>    adapters.erase(adapters.begin() + best_index);</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> best_adapter;</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -517,7 +515,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00130">130</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00132">132</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
 
 </div>
 </div>

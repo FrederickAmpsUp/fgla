@@ -4,6 +4,7 @@ var dir_d64ea27deaedb1dd3cb29e801020255b =
     [ "adapter.hpp", "adapter_8hpp.html", "adapter_8hpp" ],
     [ "backend.hpp", "backend_8hpp.html", "backend_8hpp" ],
     [ "command_buffer.hpp", "command__buffer_8hpp.html", "command__buffer_8hpp" ],
+    [ "completion.hpp", "completion_8hpp.html", "completion_8hpp" ],
     [ "device.hpp", "device_8hpp.html", "device_8hpp" ],
     [ "error.hpp", "error_8hpp.html", "error_8hpp" ],
     [ "extension.hpp", "extension_8hpp.html", "extension_8hpp" ],

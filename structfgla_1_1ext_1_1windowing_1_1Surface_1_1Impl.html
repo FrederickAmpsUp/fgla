@@ -117,15 +117,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a856076685b34d557447ca00a85321f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae613b4166e8b2f5095c1da86b4ab9187" id="r_ae613b4166e8b2f5095c1da86b4ab9187"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classfgla_1_1Result.html">fgla::Result</a>&lt; std::reference_wrapper&lt; <a class="el" href="classfgla_1_1Image.html">fgla::Image</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae613b4166e8b2f5095c1da86b4ab9187">get_current_image</a> (const <a class="el" href="classfgla_1_1Queue.html">fgla::Queue</a> &amp;)=0</td></tr>
 <tr class="separator:ae613b4166e8b2f5095c1da86b4ab9187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f1929ba05957614f05739270c06aed" id="r_a94f1929ba05957614f05739270c06aed"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94f1929ba05957614f05739270c06aed">present</a> (<a class="el" href="classfgla_1_1Queue.html">fgla::Queue</a> &amp;, <a class="el" href="classfgla_1_1Image.html">fgla::Image</a> &amp;&amp;)=0</td></tr>
-<tr class="separator:a94f1929ba05957614f05739270c06aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0514a6e56047e9255cbd7c18a308fd61" id="r_a0514a6e56047e9255cbd7c18a308fd61"><td class="memItemLeft" align="right" valign="top">virtual std::optional&lt; <a class="el" href="structfgla_1_1Error.html">Error</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0514a6e56047e9255cbd7c18a308fd61">present</a> (<a class="el" href="classfgla_1_1Queue.html">fgla::Queue</a> &amp;, <a class="el" href="classfgla_1_1Image.html">fgla::Image</a> &amp;&amp;, std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">fgla::Completion</a> &gt;)=0</td></tr>
+<tr class="separator:a0514a6e56047e9255cbd7c18a308fd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e51bb097ab2d649d604d88cf0c7801f" id="r_a2e51bb097ab2d649d604d88cf0c7801f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e51bb097ab2d649d604d88cf0c7801f">cleanup</a> ()=0</td></tr>
+<tr class="separator:a2e51bb097ab2d649d604d88cf0c7801f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd20d050fdc2888fefc6fa8c4c023143" id="r_acd20d050fdc2888fefc6fa8c4c023143"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd20d050fdc2888fefc6fa8c4c023143">~Impl</a> ()=0</td></tr>
 <tr class="separator:acd20d050fdc2888fefc6fa8c4c023143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code>'s functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00047">47</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00052">52</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acd20d050fdc2888fefc6fa8c4c023143" name="acd20d050fdc2888fefc6fa8c4c023143"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd20d050fdc2888fefc6fa8c4c023143">&#9670;&#160;</a></span>~Impl()</h2>
@@ -153,6 +155,31 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2e51bb097ab2d649d604d88cf0c7801f" name="a2e51bb097ab2d649d604d88cf0c7801f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e51bb097ab2d649d604d88cf0c7801f">&#9670;&#160;</a></span>cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void fgla::ext::windowing::Surface::Impl::cleanup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7b715286ce29209c9a245303828115be" name="a7b715286ce29209c9a245303828115be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b715286ce29209c9a245303828115be">&#9670;&#160;</a></span>configure()</h2>
 
@@ -232,8 +259,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a94f1929ba05957614f05739270c06aed" name="a94f1929ba05957614f05739270c06aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94f1929ba05957614f05739270c06aed">&#9670;&#160;</a></span>present()</h2>
+<a id="a0514a6e56047e9255cbd7c18a308fd61" name="a0514a6e56047e9255cbd7c18a308fd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0514a6e56047e9255cbd7c18a308fd61">&#9670;&#160;</a></span>present()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +276,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classfgla_1_1Image.html">fgla::Image</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Image.html">fgla::Image</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">fgla::Completion</a> &gt;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
   </td>

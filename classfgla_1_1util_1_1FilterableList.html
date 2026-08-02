@@ -187,8 +187,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00115">115</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>{ <span class="keywordflow">return</span> this-&gt;items; }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00116">116</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{ <span class="keywordflow">return</span> this-&gt;items; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,16 +227,16 @@ template&lt;typename Pred &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A <code><a class="el" href="classfgla_1_1util_1_1FilterableList.html" title="A list that may be filtered using functions.">FilterableList</a></code> containing only the elements from <code>this</code> which <code>pred</code> accepts</dd></dl>
 <dl class="section note"><dt>Note</dt><dd><code>this</code> is consumed by this function </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00105">105</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>                                                                           {</div>
-<div class="line"><span class="lineno">  106</span>    std::vector&lt;T&gt; out;</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;item : this-&gt;items) {</div>
-<div class="line"><span class="lineno">  108</span>      <span class="keywordflow">if</span> (pred(item)) {</div>
-<div class="line"><span class="lineno">  109</span>        out.push_back(std::move(item));</div>
-<div class="line"><span class="lineno">  110</span>      }</div>
-<div class="line"><span class="lineno">  111</span>    }</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#ad5ed7e7665c97f2951595dbee0f94bad">FilterableList</a>(std::move(out));</div>
-<div class="line"><span class="lineno">  113</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00106">106</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>                                                                           {</div>
+<div class="line"><span class="lineno">  107</span>    std::vector&lt;T&gt; out;</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;item : this-&gt;items) {</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keywordflow">if</span> (pred(item)) {</div>
+<div class="line"><span class="lineno">  110</span>        out.push_back(std::move(item));</div>
+<div class="line"><span class="lineno">  111</span>      }</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#ad5ed7e7665c97f2951595dbee0f94bad">FilterableList</a>(std::move(out));</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
 <div class="ttc" id="aclassfgla_1_1util_1_1FilterableList_html_ad5ed7e7665c97f2951595dbee0f94bad"><div class="ttname"><a href="#ad5ed7e7665c97f2951595dbee0f94bad">fgla::util::FilterableList::FilterableList</a></div><div class="ttdeci">FilterableList(std::vector&lt; T &gt; items)</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00098">util.hpp:98</a></div></div>
 </div><!-- fragment -->
 </div>

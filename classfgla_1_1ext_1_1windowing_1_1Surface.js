@@ -10,10 +10,11 @@ var classfgla_1_1ext_1_1windowing_1_1Surface =
       [ "AUTO_VSYNC", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aa3a701c2147aba28015bd3ee5463f521a", null ],
       [ "AUTO_NO_VSYNC", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8aa37c4d49c1c48e055c84810f78dacf512", null ]
     ] ],
+    [ "cleanup", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a2bc2cf051d1a13707519bf16183081e5", null ],
     [ "configure", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad1580134684993bf270b6fd33c531ae0", null ],
     [ "from_raw", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ad96af6802ac182bec1da147d39198f7b", null ],
     [ "get_capabilities", "classfgla_1_1ext_1_1windowing_1_1Surface.html#a47d91d05f7ef0af8016311c42d0e93ef", null ],
     [ "get_current_image", "classfgla_1_1ext_1_1windowing_1_1Surface.html#aece959e6db31b1fa4108e21b4d1a0de0", null ],
-    [ "present", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ae3348f31914a35f9fca791481c9bb060", null ],
+    [ "present", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ada06ede00af04e137305d8a9758ce342", null ],
     [ "fgla::internal::ImplAccessor", "classfgla_1_1ext_1_1windowing_1_1Surface.html#ac06cf072aa647185632537a764206ad1", null ]
 ];
