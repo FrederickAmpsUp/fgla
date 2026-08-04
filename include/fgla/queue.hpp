@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <fgla/command_buffer.hpp>
+#include <fgla/completion.hpp>
 #include <fgla/error.hpp>
 #include <fgla/internal.hpp>
 #include <memory>
@@ -29,14 +30,16 @@ public:
   inline Result<CommandBuffer> begin_recording() {
     return this->impl->begin_recording();
   }
-  inline void submit(CommandBuffer &&cb) {
-    return this->impl->submit(std::move(cb));
+  inline void submit(CommandBuffer &&cb,
+                     std::initializer_list<Completion> wait_completions = {}) {
+    return this->impl->submit(std::move(cb), wait_completions);
   }
 
   /// The backend-defined implementation of the `Queue`'s functions
   struct Impl {
     virtual Result<CommandBuffer> begin_recording() = 0;
-    virtual void submit(CommandBuffer &&cb) = 0;
+    virtual void submit(CommandBuffer &&cb,
+                        std::initializer_list<Completion> wait_completions) = 0;
     virtual ~Impl() = 0;
   };
 

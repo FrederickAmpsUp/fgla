@@ -40,10 +40,17 @@ Result<Device> AdapterImpl::create_device(
       queue_allocator.get_queue_create_infos();
 
   VkPhysicalDeviceFeatures device_features = {}; // TODO
+
+  VkPhysicalDeviceVulkan13Features device_features_13 = {};
+  device_features_13.sType =
+      VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES;
+  device_features_13.synchronization2 = VK_TRUE;
+
   VkPhysicalDeviceVulkan12Features device_features_12 = {};
   device_features_12.sType =
       VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES;
   device_features_12.timelineSemaphore = VK_TRUE;
+  device_features_12.pNext = &device_features_13;
 
   VkDeviceCreateInfo create_info = {};
   create_info.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;

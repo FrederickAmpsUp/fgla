@@ -375,20 +375,97 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
 
   VkSemaphore wait_semaphore = this->get_semaphore();
 
-  std::vector<VkSemaphore> timeline_semaphores;
-  std::vector<uint64_t> timeline_values;
-  timeline_semaphores.reserve(wait_completions.size());
-  timeline_values.reserve(wait_completions.size());
+  auto cb_res = present_queue.begin_recording();
+  if (cb_res.has_error()) return cb_res.error();
 
-  for (const auto &completion : wait_completions) {
-    CompletionImpl &impl = *dynamic_cast<CompletionImpl *>(
-        fgla::internal::ImplAccessor::get_impl(completion));
-    timeline_semaphores.push_back(impl.get_semaphore());
-    timeline_values.push_back(impl.get_value());
+  auto &cb_impl = *dynamic_cast<CommandBufferImpl *>(
+      fgla::internal::ImplAccessor::get_impl(cb_res.value()));
+  auto cb = cb_impl.get_command_buffer();
+
+  VkImageLayout &img_layout = dynamic_cast<BaseImageImpl *>(
+                                  fgla::internal::ImplAccessor::get_impl(image))
+                                  ->get_layout();
+
+  if (img_layout != VK_IMAGE_LAYOUT_PRESENT_SRC_KHR) {
+    VkImageMemoryBarrier2 barrier = {};
+    barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2;
+
+    barrier.srcStageMask = VK_PIPELINE_STAGE_2_NONE;
+    barrier.srcAccessMask = VK_ACCESS_2_NONE;
+
+    barrier.dstStageMask = VK_PIPELINE_STAGE_2_NONE;
+    barrier.dstAccessMask = VK_ACCESS_2_NONE;
+
+    barrier.oldLayout = img_layout;
+    barrier.newLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+
+    barrier.image = get_image(image);
+    barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+    barrier.subresourceRange.baseMipLevel = 0;
+    barrier.subresourceRange.levelCount = 1;
+    barrier.subresourceRange.baseArrayLayer = 0;
+    barrier.subresourceRange.layerCount = 1;
+
+    VkDependencyInfo dependency = {};
+    dependency.sType = VK_STRUCTURE_TYPE_DEPENDENCY_INFO;
+
+    dependency.imageMemoryBarrierCount = 1;
+    dependency.pImageMemoryBarriers = &barrier;
+
+    // insert the pipeline barrier to transition to PRESENT_SRC
+    vkCmdPipelineBarrier2(cb, &dependency);
+
+    img_layout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
   }
 
-  signal_binary_from_timelines(this->device, queue, timeline_semaphores,
-                               timeline_values, wait_semaphore);
+  // --- SUBMIT THE COMMAND BUFFFER ---
+  cb_impl.end_recording();
+
+  VkSubmitInfo2 submit_info = {};
+  submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO_2;
+
+  std::vector<VkSemaphoreSubmitInfo> wait_semaphores;
+  wait_semaphores.reserve(wait_completions.size());
+
+  for (const auto &completion : wait_completions) {
+    auto &completion_impl = *dynamic_cast<CompletionImpl *>(
+        fgla::internal::ImplAccessor::get_impl(completion));
+
+    VkSemaphoreSubmitInfo wait_semaphore = {};
+    wait_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;
+    wait_semaphore.semaphore = completion_impl.get_semaphore();
+    wait_semaphore.value = completion_impl.get_value();
+    wait_semaphore.stageMask = VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT;
+    wait_semaphore.deviceIndex = 0;
+
+    wait_semaphores.push_back(wait_semaphore);
+  }
+
+  VkSemaphoreSubmitInfo signal_semaphore = {};
+  signal_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;
+  signal_semaphore.semaphore = wait_semaphore;
+  signal_semaphore.value = 0;
+  signal_semaphore.stageMask = VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT;
+  signal_semaphore.deviceIndex = 0;
+
+  VkCommandBufferSubmitInfo cmd = {};
+  cmd.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO;
+  cmd.commandBuffer = cb;
+
+  submit_info.commandBufferInfoCount = 1;
+  submit_info.pCommandBufferInfos = &cmd;
+
+  submit_info.waitSemaphoreInfoCount = wait_semaphores.size();
+  submit_info.pWaitSemaphoreInfos = wait_semaphores.data();
+
+  submit_info.signalSemaphoreInfoCount = 1;
+  submit_info.pSignalSemaphoreInfos = &signal_semaphore;
+
+  VkResult res = vkQueueSubmit2(queue, 1, &submit_info, cb_impl.get_fence());
+
+  if (res != VK_SUCCESS) {
+    return Error(1, "Failed to submit command buffer");
+  }
 
   present_info.waitSemaphoreCount = 1;
   present_info.pWaitSemaphores = &wait_semaphore;
@@ -417,7 +494,7 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
   uint32_t ind = image_index;
   present_info.pImageIndices = &ind;
 
-  VkResult res = vkQueuePresentKHR(queue, &present_info);
+  res = vkQueuePresentKHR(queue, &present_info);
 
   if (res != VK_SUCCESS) return Error(2, "Failed to present");
   // TODO: check for specific errors like out of date

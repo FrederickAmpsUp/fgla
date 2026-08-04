@@ -7,6 +7,7 @@
 #ifdef FGLA_VK_EXT_WINDOWING
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #endif
+#include <fgla/backends/vulkan/completion.hpp>
 #include <spdlog/spdlog.h>
 
 namespace std {
@@ -289,6 +290,7 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   VkFence fence;
   res = vkCreateFence(this->device, &create_info, nullptr, &fence);
   if (res != VK_SUCCESS) {
+    // destroy command buffer please
     return Error(-2, "Failed to create Vulkan fence");
   }
 
@@ -299,7 +301,9 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   return this->init_cb(command_buffer, fence);
 }
 
-void QueueImpl::submit(CommandBuffer &&cb) {
+void QueueImpl::submit(
+    CommandBuffer &&cb,
+    std::initializer_list<fgla::Completion> wait_completions) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
   CommandBufferImpl &command_buffer = *dynamic_cast<CommandBufferImpl *>(
@@ -307,19 +311,40 @@ void QueueImpl::submit(CommandBuffer &&cb) {
 
   command_buffer.end_recording();
 
-  VkSubmitInfo submit_info = {};
-  submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+  VkSubmitInfo2 submit_info = {};
+  submit_info.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO_2;
 
-  submit_info.waitSemaphoreCount = 0;
+  std::vector<VkSemaphoreSubmitInfo> wait_semaphores;
+  wait_semaphores.reserve(wait_completions.size());
 
-  VkCommandBuffer vk_cb = command_buffer.get_command_buffer();
-  submit_info.commandBufferCount = 1;
-  submit_info.pCommandBuffers = &vk_cb;
+  for (const auto &completion : wait_completions) {
+    auto &completion_impl = *dynamic_cast<CompletionImpl *>(
+        fgla::internal::ImplAccessor::get_impl(completion));
 
-  submit_info.signalSemaphoreCount = 0;
+    VkSemaphoreSubmitInfo wait_semaphore = {};
+    wait_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;
+    wait_semaphore.semaphore = completion_impl.get_semaphore();
+    wait_semaphore.value = completion_impl.get_value();
+    wait_semaphore.stageMask = VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT;
+    wait_semaphore.deviceIndex = 0;
+
+    wait_semaphores.push_back(wait_semaphore);
+  }
+
+  VkCommandBufferSubmitInfo cmd = {};
+  cmd.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO;
+  cmd.commandBuffer = command_buffer.get_command_buffer();
+
+  submit_info.commandBufferInfoCount = 1;
+  submit_info.pCommandBufferInfos = &cmd;
+
+  submit_info.waitSemaphoreInfoCount = wait_semaphores.size();
+  submit_info.pWaitSemaphoreInfos = wait_semaphores.data();
 
   VkResult res =
-      vkQueueSubmit(this->queue, 1, &submit_info, command_buffer.get_fence());
+      vkQueueSubmit2(this->queue, 1, &submit_info, command_buffer.get_fence());
+
+  // wtf check me
 
   logger->info("Submitted Vulkan command buffer.");
 }

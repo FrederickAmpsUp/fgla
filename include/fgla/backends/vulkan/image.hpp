@@ -15,6 +15,8 @@ struct BaseImageImpl : public Image::Impl {
     return this->completion;
   }
 
+  inline VkImageLayout &get_layout() { return this->layout; }
+
   virtual ~BaseImageImpl() = 0;
 
 protected:
@@ -25,6 +27,8 @@ protected:
 
   VkImage image;
   VkDevice device;
+
+  VkImageLayout layout = VK_IMAGE_LAYOUT_UNDEFINED;
 };
 
 inline BaseImageImpl::~BaseImageImpl() = default;
