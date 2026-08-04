@@ -8,6 +8,7 @@ var namespacefgla =
     [ "internal", "namespacefgla_1_1internal.html", "namespacefgla_1_1internal" ],
     [ "util", "namespacefgla_1_1util.html", "namespacefgla_1_1util" ],
     [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
+    [ "Color", "structfgla_1_1Color.html", "structfgla_1_1Color" ],
     [ "CommandBuffer", "classfgla_1_1CommandBuffer.html", "classfgla_1_1CommandBuffer" ],
     [ "Completion", "classfgla_1_1Completion.html", "classfgla_1_1Completion" ],
     [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['name_0',['name',['../structfgla_1_1backend_1_1Backend.html#a7e43b3d17e40bd3b30b644fefb9bb616',1,'fgla::backend::Backend::name'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html#ab4fbcceb638367e2485589f0913c9113',1,'fgla::ext::windowing::Window::Descriptor::name']]],
-  ['num_5farray_5flayers_1',['num_array_layers',['../structfgla_1_1ImageView_1_1Descriptor.html#a452cd76f5e4f4b0bac63baadcbbc8426',1,'fgla::ImageView::Descriptor']]],
-  ['num_5fmip_5flevels_2',['num_mip_levels',['../structfgla_1_1ImageView_1_1Descriptor.html#a5d4c8630bb37562fd1deedd106bced4f',1,'fgla::ImageView::Descriptor']]]
+  ['major_0',['major',['../structfgla_1_1VersionTriple.html#a602ee67fe0844d3fe305e410922b2ce2',1,'fgla::VersionTriple']]],
+  ['message_1',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
+  ['minor_2',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
+  ['mode_3',['mode',['../structfgla_1_1ImageView_1_1Descriptor.html#af5a7ec98a2e0f6b3d41acb8369f031ef',1,'fgla::ImageView::Descriptor']]]
 ];

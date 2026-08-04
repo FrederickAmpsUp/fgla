@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linear_5ffilter_0',['linear_filter',['../structfgla_1_1TextureFormatSupportDetails.html#a8a03881e2830a83c004ecbce3158cae9',1,'fgla::TextureFormatSupportDetails']]]
+  ['is_5favailable_0',['is_available',['../structfgla_1_1backend_1_1Backend.html#a09218c21f713de2736ba05ea011bbf25',1,'fgla::backend::Backend']]]
 ];

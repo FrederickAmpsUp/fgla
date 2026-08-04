@@ -23,6 +23,7 @@ var annotated_dup =
         [ "UUID", "structfgla_1_1util_1_1UUID.html", "structfgla_1_1util_1_1UUID" ]
       ] ],
       [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
+      [ "Color", "structfgla_1_1Color.html", "structfgla_1_1Color" ],
       [ "CommandBuffer", "classfgla_1_1CommandBuffer.html", "classfgla_1_1CommandBuffer" ],
       [ "Completion", "classfgla_1_1Completion.html", "classfgla_1_1Completion" ],
       [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],

@@ -3,6 +3,7 @@ var dir_d64ea27deaedb1dd3cb29e801020255b =
     [ "ext", "dir_018b20d072b37638c552c2cebdc98d41.html", "dir_018b20d072b37638c552c2cebdc98d41" ],
     [ "adapter.hpp", "adapter_8hpp.html", "adapter_8hpp" ],
     [ "backend.hpp", "backend_8hpp.html", "backend_8hpp" ],
+    [ "color.hpp", "color_8hpp.html", "color_8hpp" ],
     [ "command_buffer.hpp", "command__buffer_8hpp.html", "command__buffer_8hpp" ],
     [ "completion.hpp", "completion_8hpp.html", "completion_8hpp" ],
     [ "device.hpp", "device_8hpp.html", "device_8hpp" ],

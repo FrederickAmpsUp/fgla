@@ -6,7 +6,7 @@ var searchData=
   ['std_3',['std',['../namespacestd.html',1,'']]],
   ['stencil_4',['STENCIL',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa4f56b91f794efea23e7859e604135a0c',1,'fgla::ImageView::AspectBits']]],
   ['storage_5',['storage',['../structfgla_1_1TextureFormatSupportDetails.html#ae58e28a92635303b707c2be468c7e57b',1,'fgla::TextureFormatSupportDetails']]],
-  ['submit_6',['submit',['../classfgla_1_1Queue.html#ae0288c166e6ba8f58ae39fd6245504d1',1,'fgla::Queue::submit()'],['../structfgla_1_1Queue_1_1Impl.html#a41545a607e5b7fa848f37d41536beb68',1,'fgla::Queue::Impl::submit()']]],
+  ['submit_6',['submit',['../classfgla_1_1Queue.html#a08d01183094ae684d850579349d4256a',1,'fgla::Queue::submit()'],['../structfgla_1_1Queue_1_1Impl.html#a45515e75e00876609d5d922d88e06591',1,'fgla::Queue::Impl::submit()']]],
   ['surface_7',['Surface',['../classfgla_1_1ext_1_1windowing_1_1Surface.html',1,'fgla::ext::windowing']]],
   ['surface_8',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]],
   ['surface_2ehpp_9',['surface.hpp',['../surface_8hpp.html',1,'']]],

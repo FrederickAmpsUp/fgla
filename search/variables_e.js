@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['t_0',['t',['../classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4',1,'fgla::Result']]],
-  ['type_1',['type',['../structfgla_1_1Queue_1_1Request.html#ab74fee67f6db0332404873f7ae410779',1,'fgla::Queue::Request']]]
+  ['sampleable_0',['sampleable',['../structfgla_1_1TextureFormatSupportDetails.html#ae0e27c5cfef3a8b9511fe4ffae1b576d',1,'fgla::TextureFormatSupportDetails']]],
+  ['size_1',['size',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html#a0cfd08617d264525e776a25f997211a6',1,'fgla::ext::windowing::Surface::Configuration']]],
+  ['storage_2',['storage',['../structfgla_1_1TextureFormatSupportDetails.html#ae58e28a92635303b707c2be468c7e57b',1,'fgla::TextureFormatSupportDetails']]],
+  ['surface_3',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]]
 ];
