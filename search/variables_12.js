@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structfgla_1_1Extent2d.html#ac25748b0627c27bd10462cc64eaff101',1,'fgla::Extent2d']]]
+  ['view_0',['view',['../structfgla_1_1RenderPass_1_1ColorAttachmentDescriptor.html#a37f5c73a29945bfd3b3b1ee6107ac973',1,'fgla::RenderPass::ColorAttachmentDescriptor']]]
 ];

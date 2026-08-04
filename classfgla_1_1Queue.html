@@ -134,8 +134,8 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5083df600828d9b5a36e9c9a000414fe" id="r_a5083df600828d9b5a36e9c9a000414fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5083df600828d9b5a36e9c9a000414fe">begin_recording</a> ()</td></tr>
 <tr class="separator:a5083df600828d9b5a36e9c9a000414fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08d01183094ae684d850579349d4256a" id="r_a08d01183094ae684d850579349d4256a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08d01183094ae684d850579349d4256a">submit</a> (<a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &amp;&amp;cb, std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt; wait_completions={})</td></tr>
-<tr class="separator:a08d01183094ae684d850579349d4256a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1f2f7d7ab1458c3b657de3a5d9b151" id="r_aaf1f2f7d7ab1458c3b657de3a5d9b151"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf1f2f7d7ab1458c3b657de3a5d9b151">submit</a> (<a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &amp;&amp;cb, std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt; wait_completions={})</td></tr>
+<tr class="separator:aaf1f2f7d7ab1458c3b657de3a5d9b151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -240,17 +240,17 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00048">48</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                         {</div>
-<div class="line"><span class="lineno">   49</span>    Queue queue;</div>
-<div class="line"><span class="lineno">   50</span>    queue.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> queue;</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00050">50</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                         {</div>
+<div class="line"><span class="lineno">   51</span>    Queue queue;</div>
+<div class="line"><span class="lineno">   52</span>    queue.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> queue;</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a08d01183094ae684d850579349d4256a" name="a08d01183094ae684d850579349d4256a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08d01183094ae684d850579349d4256a">&#9670;&#160;</a></span>submit()</h2>
+<a id="aaf1f2f7d7ab1458c3b657de3a5d9b151" name="aaf1f2f7d7ab1458c3b657de3a5d9b151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1f2f7d7ab1458c3b657de3a5d9b151">&#9670;&#160;</a></span>submit()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +259,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void fgla::Queue::submit </td>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt; fgla::Queue::submit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>cb</em></span>, </td>
         </tr>
@@ -276,10 +276,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00033">33</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                                                                        {}) {</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;submit(std::move(cb), wait_completions);</div>
-<div class="line"><span class="lineno">   36</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00034">34</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                            {}) {</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;submit(std::move(cb), wait_completions);</div>
+<div class="line"><span class="lineno">   37</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,7 +304,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00055">55</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00057">57</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
 
 </div>
 </div>

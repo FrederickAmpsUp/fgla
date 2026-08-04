@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['undefined_0',['UNDEFINED',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5afae21688e92a1c240898f27a3e8ca531',1,'fgla::TextureFormat']]]
+  ['transfer_0',['Transfer',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060da6950810f0d2bba97a6f710c7b965b84e',1,'fgla::Queue']]]
 ];

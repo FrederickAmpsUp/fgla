@@ -99,6 +99,7 @@ $(function(){initNavTree('classfgla_1_1CommandBuffer.html',''); initResizable(tr
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1CommandBuffer-members.html">List of all members</a>  </div>
@@ -114,6 +115,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a></code>'s functions.  <a href="structfgla_1_1CommandBuffer_1_1Impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a254967a72a3fa2af543c672d181d11a3" id="r_a254967a72a3fa2af543c672d181d11a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1RenderPass.html">RenderPass</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a254967a72a3fa2af543c672d181d11a3">begin_render_pass</a> (const <a class="el" href="structfgla_1_1RenderPass_1_1Descriptor.html">RenderPass::Descriptor</a> &amp;desc)</td></tr>
+<tr class="separator:a254967a72a3fa2af543c672d181d11a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa616435d1e7d9bb134095c36538b67b3" id="r_aa616435d1e7d9bb134095c36538b67b3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa616435d1e7d9bb134095c36538b67b3">from_raw</a> (std::unique_ptr&lt; <a class="el" href="structfgla_1_1CommandBuffer_1_1Impl.html">Impl</a> &gt; impl)</td></tr>
@@ -127,8 +133,38 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a command buffer, which is used to record commands before submitting to the GPU </p>
 
-<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00010">10</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00012">12</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a254967a72a3fa2af543c672d181d11a3" name="a254967a72a3fa2af543c672d181d11a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a254967a72a3fa2af543c672d181d11a3">&#9670;&#160;</a></span>begin_render_pass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1RenderPass.html">RenderPass</a> &gt; fgla::CommandBuffer::begin_render_pass </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1RenderPass_1_1Descriptor.html">RenderPass::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>desc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00015">15</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                      {</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;begin_render_pass(desc);</div>
+<div class="line"><span class="lineno">   17</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aa616435d1e7d9bb134095c36538b67b3" name="aa616435d1e7d9bb134095c36538b67b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa616435d1e7d9bb134095c36538b67b3">&#9670;&#160;</a></span>from_raw()</h2>
 
@@ -153,12 +189,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00019">19</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                 {</div>
-<div class="line"><span class="lineno">   20</span>    CommandBuffer command_buffer;</div>
-<div class="line"><span class="lineno">   21</span>    command_buffer.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">return</span> command_buffer;</div>
-<div class="line"><span class="lineno">   23</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00029">29</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                                 {</div>
+<div class="line"><span class="lineno">   30</span>    CommandBuffer command_buffer;</div>
+<div class="line"><span class="lineno">   31</span>    command_buffer.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> command_buffer;</div>
+<div class="line"><span class="lineno">   33</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -183,7 +219,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00026">26</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00036">36</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
 
 </div>
 </div>

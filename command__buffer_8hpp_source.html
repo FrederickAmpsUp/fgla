@@ -102,42 +102,60 @@ $(function(){initNavTree('command__buffer_8hpp_source.html',''); initResizable(t
 <div class="contents">
 <a href="command__buffer_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="internal_8hpp.html">fgla/internal.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="error_8hpp.html">fgla/error.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="internal_8hpp.html">fgla/internal.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="render__pass_8hpp.html">fgla/render_pass.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structfgla_1_1CommandBuffer_1_1Impl.html">   13</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1CommandBuffer_1_1Impl.html">Impl</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">   14</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">~Impl</a>() = 0;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  };</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;RenderPass&gt;</a></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html#a254967a72a3fa2af543c672d181d11a3">   15</a></span>  <a class="code hl_function" href="classfgla_1_1CommandBuffer.html#a254967a72a3fa2af543c672d181d11a3">begin_render_pass</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1RenderPass_1_1Descriptor.html">RenderPass::Descriptor</a> &amp;desc) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;begin_render_pass(desc);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  }</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">   19</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> <a class="code hl_function" href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> command_buffer;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    command_buffer.impl = std::move(impl);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> command_buffer;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structfgla_1_1CommandBuffer_1_1Impl.html">   20</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1CommandBuffer_1_1Impl.html">Impl</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;RenderPass&gt;</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structfgla_1_1CommandBuffer_1_1Impl.html#a240e7165ffa60287cf72508b7293f613">   22</a></span>    <a class="code hl_function" href="structfgla_1_1CommandBuffer_1_1Impl.html#a240e7165ffa60287cf72508b7293f613">begin_render_pass</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1RenderPass_1_1Descriptor.html">RenderPass::Descriptor</a> &amp;desc) = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">   24</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">~Impl</a>() = 0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  };</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html#ac06cf072aa647185632537a764206ad1">   26</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">   29</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> <a class="code hl_function" href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_class" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> command_buffer;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    command_buffer.impl = std::move(impl);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> command_buffer;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">CommandBuffer::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <span class="comment">// namespace fgla</span></div>
-<div class="ttc" id="aclassfgla_1_1CommandBuffer_html"><div class="ttname"><a href="classfgla_1_1CommandBuffer.html">fgla::CommandBuffer</a></div><div class="ttdef"><b>Definition</b> <a href="#l00010">command_buffer.hpp:10</a></div></div>
-<div class="ttc" id="aclassfgla_1_1CommandBuffer_html_aa616435d1e7d9bb134095c36538b67b3"><div class="ttname"><a href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">fgla::CommandBuffer::from_raw</a></div><div class="ttdeci">static CommandBuffer from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">command_buffer.hpp:19</a></div></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classfgla_1_1CommandBuffer.html#ac06cf072aa647185632537a764206ad1">   36</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">CommandBuffer::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace fgla</span></div>
+<div class="ttc" id="aclassfgla_1_1CommandBuffer_html"><div class="ttname"><a href="classfgla_1_1CommandBuffer.html">fgla::CommandBuffer</a></div><div class="ttdef"><b>Definition</b> <a href="#l00012">command_buffer.hpp:12</a></div></div>
+<div class="ttc" id="aclassfgla_1_1CommandBuffer_html_a254967a72a3fa2af543c672d181d11a3"><div class="ttname"><a href="classfgla_1_1CommandBuffer.html#a254967a72a3fa2af543c672d181d11a3">fgla::CommandBuffer::begin_render_pass</a></div><div class="ttdeci">Result&lt; RenderPass &gt; begin_render_pass(const RenderPass::Descriptor &amp;desc)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">command_buffer.hpp:15</a></div></div>
+<div class="ttc" id="aclassfgla_1_1CommandBuffer_html_aa616435d1e7d9bb134095c36538b67b3"><div class="ttname"><a href="classfgla_1_1CommandBuffer.html#aa616435d1e7d9bb134095c36538b67b3">fgla::CommandBuffer::from_raw</a></div><div class="ttdeci">static CommandBuffer from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">command_buffer.hpp:29</a></div></div>
+<div class="ttc" id="aclassfgla_1_1Result_html"><div class="ttname"><a href="classfgla_1_1Result.html">fgla::Result</a></div><div class="ttdoc">Represents a potential success or failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00027">error.hpp:27</a></div></div>
+<div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div></div>
 <div class="ttc" id="ainternal_8hpp_html"><div class="ttname"><a href="internal_8hpp.html">internal.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00008">adapter.hpp:8</a></div></div>
-<div class="ttc" id="astructfgla_1_1CommandBuffer_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1CommandBuffer_1_1Impl.html">fgla::CommandBuffer::Impl</a></div><div class="ttdoc">The backend-defined implementation of the CommandBuffer's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">command_buffer.hpp:13</a></div></div>
+<div class="ttc" id="arender__pass_8hpp_html"><div class="ttname"><a href="render__pass_8hpp.html">render_pass.hpp</a></div></div>
+<div class="ttc" id="astructfgla_1_1CommandBuffer_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1CommandBuffer_1_1Impl.html">fgla::CommandBuffer::Impl</a></div><div class="ttdoc">The backend-defined implementation of the CommandBuffer's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">command_buffer.hpp:20</a></div></div>
+<div class="ttc" id="astructfgla_1_1CommandBuffer_1_1Impl_html_a240e7165ffa60287cf72508b7293f613"><div class="ttname"><a href="structfgla_1_1CommandBuffer_1_1Impl.html#a240e7165ffa60287cf72508b7293f613">fgla::CommandBuffer::Impl::begin_render_pass</a></div><div class="ttdeci">virtual Result&lt; RenderPass &gt; begin_render_pass(const RenderPass::Descriptor &amp;desc)=0</div></div>
 <div class="ttc" id="astructfgla_1_1CommandBuffer_1_1Impl_html_ad01b176442e447957eb7b966cf784aa0"><div class="ttname"><a href="structfgla_1_1CommandBuffer_1_1Impl.html#ad01b176442e447957eb7b966cf784aa0">fgla::CommandBuffer::Impl::~Impl</a></div><div class="ttdeci">virtual ~Impl()=0</div></div>
+<div class="ttc" id="astructfgla_1_1RenderPass_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1RenderPass_1_1Descriptor.html">fgla::RenderPass::Descriptor</a></div><div class="ttdoc">Represents the settings used to create a RenderPass</div><div class="ttdef"><b>Definition</b> <a href="render__pass_8hpp_source.html#l00039">render_pass.hpp:39</a></div></div>
 <div class="ttc" id="astructfgla_1_1internal_1_1ImplAccessor_html"><div class="ttname"><a href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></div><div class="ttdoc">Allows access to the raw polymorphic implementation of FGLA classes.</div><div class="ttdef"><b>Definition</b> <a href="internal_8hpp_source.html#l00006">internal.hpp:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -8,6 +8,6 @@ var classfgla_1_1Queue =
     ] ],
     [ "begin_recording", "classfgla_1_1Queue.html#a5083df600828d9b5a36e9c9a000414fe", null ],
     [ "from_raw", "classfgla_1_1Queue.html#a1798da529cc5700d9cb55916b56d2ea3", null ],
-    [ "submit", "classfgla_1_1Queue.html#a08d01183094ae684d850579349d4256a", null ],
+    [ "submit", "classfgla_1_1Queue.html#aaf1f2f7d7ab1458c3b657de3a5d9b151", null ],
     [ "fgla::internal::ImplAccessor", "classfgla_1_1Queue.html#ac06cf072aa647185632537a764206ad1", null ]
 ];

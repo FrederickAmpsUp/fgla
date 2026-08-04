@@ -6,9 +6,12 @@ var searchData=
   ['std_3',['std',['../namespacestd.html',1,'']]],
   ['stencil_4',['STENCIL',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa4f56b91f794efea23e7859e604135a0c',1,'fgla::ImageView::AspectBits']]],
   ['storage_5',['storage',['../structfgla_1_1TextureFormatSupportDetails.html#ae58e28a92635303b707c2be468c7e57b',1,'fgla::TextureFormatSupportDetails']]],
-  ['submit_6',['submit',['../classfgla_1_1Queue.html#a08d01183094ae684d850579349d4256a',1,'fgla::Queue::submit()'],['../structfgla_1_1Queue_1_1Impl.html#a45515e75e00876609d5d922d88e06591',1,'fgla::Queue::Impl::submit()']]],
-  ['surface_7',['Surface',['../classfgla_1_1ext_1_1windowing_1_1Surface.html',1,'fgla::ext::windowing']]],
-  ['surface_8',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]],
-  ['surface_2ehpp_9',['surface.hpp',['../surface_8hpp.html',1,'']]],
-  ['surface_5fsupport_5ffilter_10',['surface_support_filter',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#ad4bd0b44c99e31f283adb63645fa8558',1,'fgla::ext::windowing::WindowingExtension']]]
+  ['store_6',['STORE',['../structfgla_1_1RenderPass_1_1StoreOp.html#a4f4aba5e2d7291e138331461736258f6',1,'fgla::RenderPass::StoreOp::STORE'],['../structfgla_1_1RenderPass_1_1StoreOp.html#a19d694ca5bed06125508b97cc4f0448ba3cfba54f6873dfd55b0b09d32910b20e',1,'fgla::RenderPass::StoreOp::STORE']]],
+  ['store_5fop_7',['store_op',['../structfgla_1_1RenderPass_1_1ColorAttachmentDescriptor.html#a09c20b50a93751ee0af3ebce9b42e168',1,'fgla::RenderPass::ColorAttachmentDescriptor']]],
+  ['storeop_8',['StoreOp',['../structfgla_1_1RenderPass_1_1StoreOp.html',1,'fgla::RenderPass']]],
+  ['submit_9',['submit',['../classfgla_1_1Queue.html#aaf1f2f7d7ab1458c3b657de3a5d9b151',1,'fgla::Queue::submit()'],['../structfgla_1_1Queue_1_1Impl.html#aea61c8e16112ad14058dcf5b5cbb1f73',1,'fgla::Queue::Impl::submit()']]],
+  ['surface_10',['Surface',['../classfgla_1_1ext_1_1windowing_1_1Surface.html',1,'fgla::ext::windowing']]],
+  ['surface_11',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]],
+  ['surface_2ehpp_12',['surface.hpp',['../surface_8hpp.html',1,'']]],
+  ['surface_5fsupport_5ffilter_13',['surface_support_filter',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#ad4bd0b44c99e31f283adb63645fa8558',1,'fgla::ext::windowing::WindowingExtension']]]
 ];

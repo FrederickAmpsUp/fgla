@@ -18,6 +18,7 @@ var namespacefgla =
     [ "ImageView", "classfgla_1_1ImageView.html", "classfgla_1_1ImageView" ],
     [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
     [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
+    [ "RenderPass", "classfgla_1_1RenderPass.html", "classfgla_1_1RenderPass" ],
     [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
     [ "TextureFormat", "classfgla_1_1TextureFormat.html", "classfgla_1_1TextureFormat" ],
     [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],

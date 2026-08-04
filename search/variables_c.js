@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['patch_0',['patch',['../structfgla_1_1VersionTriple.html#a5e6597de5d1c644a243e52ab799a638b',1,'fgla::VersionTriple']]],
-  ['preferred_5fbackend_1',['preferred_backend',['../structfgla_1_1Instance_1_1Descriptor.html#aa45ffbeb03bbc9f4da04e6c67250b9dc',1,'fgla::Instance::Descriptor']]],
-  ['present_2',['Present',['../structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html#aac9d379ce07dd84857906ab34f532b19',1,'fgla::ext::windowing::QueueTypeExt']]],
-  ['present_5fmode_3',['present_mode',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html#a7e3d488568efd9b33c02558551e6c42a',1,'fgla::ext::windowing::Surface::Configuration']]],
-  ['present_5fmodes_4',['present_modes',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html#ad02f3a9d85682290d655bd06da661bd9',1,'fgla::ext::windowing::Surface::Capabilities']]]
+  ['op_0',['op',['../structfgla_1_1RenderPass_1_1LoadOp.html#a657f5fb49dc658ea3d8d1af2e34cb557',1,'fgla::RenderPass::LoadOp::op'],['../structfgla_1_1RenderPass_1_1StoreOp.html#a0bd43f3817e22a152781ae1deb610bc6',1,'fgla::RenderPass::StoreOp::op']]]
 ];

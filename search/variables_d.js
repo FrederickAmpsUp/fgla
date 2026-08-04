@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['r_0',['r',['../structfgla_1_1Color.html#a99d971fd2e8a2b146f74325bc0009b44',1,'fgla::Color']]],
-  ['render_5ftarget_1',['render_target',['../structfgla_1_1TextureFormatSupportDetails.html#a9769ca3f489765eab1e15f8eff417eeb',1,'fgla::TextureFormatSupportDetails']]],
-  ['required_5fextensions_2',['required_extensions',['../structfgla_1_1Instance_1_1Descriptor.html#a13a9b8c1d29c7654ac83902769b6991a',1,'fgla::Instance::Descriptor']]]
+  ['patch_0',['patch',['../structfgla_1_1VersionTriple.html#a5e6597de5d1c644a243e52ab799a638b',1,'fgla::VersionTriple']]],
+  ['preferred_5fbackend_1',['preferred_backend',['../structfgla_1_1Instance_1_1Descriptor.html#aa45ffbeb03bbc9f4da04e6c67250b9dc',1,'fgla::Instance::Descriptor']]],
+  ['present_2',['Present',['../structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html#aac9d379ce07dd84857906ab34f532b19',1,'fgla::ext::windowing::QueueTypeExt']]],
+  ['present_5fmode_3',['present_mode',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html#a7e3d488568efd9b33c02558551e6c42a',1,'fgla::ext::windowing::Surface::Configuration']]],
+  ['present_5fmodes_4',['present_modes',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html#ad02f3a9d85682290d655bd06da661bd9',1,'fgla::ext::windowing::Surface::Capabilities']]]
 ];

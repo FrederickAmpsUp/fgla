@@ -9,5 +9,6 @@ var searchData=
   ['d3_6',['D3',['../classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5aa3deb6e481689f1d3303caecb8a6c401',1,'fgla::ImageView']]],
   ['d32_5ffloat_7',['D32_FLOAT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5ad51c319a9452add19520d49783f468ef',1,'fgla::TextureFormat']]],
   ['d32_5ffloat_5fs8_5fuint_8',['D32_FLOAT_S8_UINT',['../classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5a9a0ab9bc673b9e29d4632b834bd9f050',1,'fgla::TextureFormat']]],
-  ['depth_9',['DEPTH',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa2850c4d80bc8d11f235997204e3f8ec9',1,'fgla::ImageView::AspectBits']]]
+  ['depth_9',['DEPTH',['../structfgla_1_1ImageView_1_1AspectBits.html#a28aa856ef8b4065114d8a971e450180fa2850c4d80bc8d11f235997204e3f8ec9',1,'fgla::ImageView::AspectBits']]],
+  ['dont_5fcare_10',['DONT_CARE',['../structfgla_1_1RenderPass_1_1LoadOp.html#a1425b042caf790ec60ef52ea4f536dcfa3d241dc381afd54422199a5e6864275a',1,'fgla::RenderPass::LoadOp::DONT_CARE'],['../structfgla_1_1RenderPass_1_1StoreOp.html#a19d694ca5bed06125508b97cc4f0448ba3d241dc381afd54422199a5e6864275a',1,'fgla::RenderPass::StoreOp::DONT_CARE']]]
 ];
