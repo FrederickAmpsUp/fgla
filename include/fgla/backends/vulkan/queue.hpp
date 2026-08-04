@@ -42,7 +42,7 @@ struct QueueImpl : public fgla::Queue::Impl {
       : queue(queue), family_index(family_index) {}
 
   virtual Result<CommandBuffer> begin_recording() override;
-  virtual void
+  virtual Result<Completion>
   submit(CommandBuffer &&cb,
          std::initializer_list<fgla::Completion> wait_completions) override;
 

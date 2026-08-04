@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fgla/image_view.hpp>
+#include <fgla/render_pass.hpp>
 #include <fgla/types.hpp>
 #include <spdlog/spdlog.h>
 #include <vulkan/vulkan.h>
@@ -110,6 +111,54 @@ inline VkImageViewType vulkanize(ImageView::Mode mode) {
   default:
     logger->warn("Unsupported ImageView::Mode, defaulting to 2D.");
     return VK_IMAGE_VIEW_TYPE_2D;
+  }
+}
+
+constexpr VkAttachmentLoadOp vulkanize(fgla::RenderPass::LoadOp::Op op) {
+  switch (op) {
+  case fgla::RenderPass::LoadOp::Op::LOAD:
+    return VK_ATTACHMENT_LOAD_OP_LOAD;
+  case fgla::RenderPass::LoadOp::Op::CLEAR:
+    return VK_ATTACHMENT_LOAD_OP_CLEAR;
+  case fgla::RenderPass::LoadOp::Op::DONT_CARE:
+    return VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+  default:
+    return VK_ATTACHMENT_LOAD_OP_DONT_CARE;
+  }
+}
+
+constexpr fgla::RenderPass::LoadOp::Op devulkanize(VkAttachmentLoadOp op) {
+  switch (op) {
+  case VK_ATTACHMENT_LOAD_OP_LOAD:
+    return fgla::RenderPass::LoadOp::Op::LOAD;
+  case VK_ATTACHMENT_LOAD_OP_CLEAR:
+    return fgla::RenderPass::LoadOp::Op::CLEAR;
+  case VK_ATTACHMENT_LOAD_OP_DONT_CARE:
+    return fgla::RenderPass::LoadOp::Op::DONT_CARE;
+  default:
+    return fgla::RenderPass::LoadOp::Op::DONT_CARE;
+  }
+}
+
+constexpr VkAttachmentStoreOp vulkanize(fgla::RenderPass::StoreOp::Op op) {
+  switch (op) {
+  case fgla::RenderPass::StoreOp::Op::STORE:
+    return VK_ATTACHMENT_STORE_OP_STORE;
+  case fgla::RenderPass::StoreOp::Op::DONT_CARE:
+    return VK_ATTACHMENT_STORE_OP_DONT_CARE;
+  default:
+    return VK_ATTACHMENT_STORE_OP_DONT_CARE;
+  }
+}
+
+constexpr fgla::RenderPass::StoreOp::Op devulkanize(VkAttachmentStoreOp op) {
+  switch (op) {
+  case VK_ATTACHMENT_STORE_OP_STORE:
+    return fgla::RenderPass::StoreOp::Op::STORE;
+  case VK_ATTACHMENT_STORE_OP_DONT_CARE:
+    return fgla::RenderPass::StoreOp::Op::DONT_CARE;
+  default:
+    return fgla::RenderPass::StoreOp::Op::DONT_CARE;
   }
 }
 

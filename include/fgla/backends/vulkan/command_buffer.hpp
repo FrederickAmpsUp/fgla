@@ -11,9 +11,14 @@ struct CommandBufferImpl : public fgla::CommandBuffer::Impl {
 
   CommandBufferImpl(VkCommandBuffer command_buffer, VkFence fence)
       : command_buffer(command_buffer), fence(fence) {}
+
+  virtual Result<fgla::RenderPass>
+  begin_render_pass(const fgla::RenderPass::Descriptor &desc) override;
+
   inline VkCommandBuffer get_command_buffer() const {
     return this->command_buffer;
   }
+
   inline VkFence get_fence() const { return this->fence; }
 
   void end_recording();

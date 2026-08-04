@@ -41,6 +41,6 @@ BaseImageImpl::create_view(const ImageView::Descriptor &desc) {
   logger->info("Vulkan image view created.");
 
   return ImageView::from_raw(
-      std::make_unique<ImageViewImpl>(view, this->device));
+      std::make_unique<ImageViewImpl>(*this, view, this->device));
 }
 } // namespace fgla::backends::vulkan

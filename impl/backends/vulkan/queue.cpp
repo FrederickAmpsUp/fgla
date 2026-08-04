@@ -301,9 +301,9 @@ Result<CommandBuffer> QueueImpl::begin_recording() {
   return this->init_cb(command_buffer, fence);
 }
 
-void QueueImpl::submit(
-    CommandBuffer &&cb,
-    std::initializer_list<fgla::Completion> wait_completions) {
+Result<Completion>
+QueueImpl::submit(CommandBuffer &&cb,
+                  std::initializer_list<fgla::Completion> wait_completions) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
   CommandBufferImpl &command_buffer = *dynamic_cast<CommandBufferImpl *>(
@@ -331,6 +331,13 @@ void QueueImpl::submit(
     wait_semaphores.push_back(wait_semaphore);
   }
 
+  VkSemaphoreSubmitInfo signal_semaphore = {};
+  signal_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;
+  signal_semaphore.semaphore = this->timeline;
+  signal_semaphore.value = ++this->timeline_value;
+  signal_semaphore.stageMask = VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT;
+  signal_semaphore.deviceIndex = 0;
+
   VkCommandBufferSubmitInfo cmd = {};
   cmd.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO;
   cmd.commandBuffer = command_buffer.get_command_buffer();
@@ -341,12 +348,20 @@ void QueueImpl::submit(
   submit_info.waitSemaphoreInfoCount = wait_semaphores.size();
   submit_info.pWaitSemaphoreInfos = wait_semaphores.data();
 
+  submit_info.signalSemaphoreInfoCount = 1;
+  submit_info.pSignalSemaphoreInfos = &signal_semaphore;
+
   VkResult res =
       vkQueueSubmit2(this->queue, 1, &submit_info, command_buffer.get_fence());
 
-  // wtf check me
+  if (res != VK_SUCCESS) {
+    return Error(1, "vkQueueSubmit2 failed");
+  }
 
   logger->info("Submitted Vulkan command buffer.");
+
+  return Completion::from_raw(
+      std::make_unique<CompletionImpl>(this->timeline, this->timeline_value));
 }
 
 QueueImpl::~QueueImpl() {

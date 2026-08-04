@@ -1,6 +1,8 @@
 #pragma once
 
+#include <fgla/error.hpp>
 #include <fgla/internal.hpp>
+#include <fgla/render_pass.hpp>
 #include <memory>
 
 namespace fgla {
@@ -9,8 +11,16 @@ namespace fgla {
 /// submitting to the GPU
 class CommandBuffer {
 public:
+  inline Result<RenderPass>
+  begin_render_pass(const RenderPass::Descriptor &desc) {
+    return this->impl->begin_render_pass(desc);
+  }
+
   /// The backend-defined implementation of the `CommandBuffer`'s functions
   struct Impl {
+    virtual Result<RenderPass>
+    begin_render_pass(const RenderPass::Descriptor &desc) = 0;
+
     virtual ~Impl() = 0;
   };
 
