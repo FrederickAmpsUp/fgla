@@ -26,4 +26,16 @@
         ];
       };
     };
+
+  shellHook = ''
+    cat > .clangd <<EOF
+    CompileFlags:
+      CompilationDatabase: build
+      Add:
+        - "-isystem"
+        - "${pkgs.gcc}/include/c++/${pkgs.gcc.version}"
+        - "-isystem"
+        - "${pkgs.gcc}/include/c++/${pkgs.gcc.version}/x86_64-unknown-linux-gnu"
+    EOF
+  '';
 }
