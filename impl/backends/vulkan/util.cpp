@@ -13,11 +13,15 @@ void signal_timeline_from_binary(VkDevice device, VkQueue queue,
   timeline_info.signalSemaphoreValueCount = 1;
   timeline_info.pSignalSemaphoreValues = &timeline_value;
 
+  VkPipelineStageFlags stage_mask =
+    VK_PIPELINE_STAGE_ALL_COMMANDS_BIT;
+
   VkSubmitInfo submit{};
   submit.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
   submit.pNext = &timeline_info;
   submit.waitSemaphoreCount = 1;
   submit.pWaitSemaphores = &binary_semaphore;
+  submit.pWaitDstStageMask = &stage_mask;
   submit.signalSemaphoreCount = 1;
   submit.pSignalSemaphores = &timeline_semaphore;
   submit.commandBufferCount = 0;
