@@ -12,9 +12,9 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
-          gcc
-          clang
           clang-tools
+          clang
+          gcc
           cmake
           ninja
 
