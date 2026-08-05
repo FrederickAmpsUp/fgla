@@ -2,4 +2,3 @@ build/
 docs/
 .cache
 .clangd
-flake.lock
