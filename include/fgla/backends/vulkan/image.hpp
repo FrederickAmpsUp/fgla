@@ -28,11 +28,14 @@ protected:
   VkImage image;
   VkDevice device;
 
+  VkExtent3D extent = { 0, 0, 0 };
+
   VkImageLayout layout = VK_IMAGE_LAYOUT_UNDEFINED;
 };
 
 inline BaseImageImpl::~BaseImageImpl() = default;
 
+// not really sure why this is here
 struct InternalImageImpl : public BaseImageImpl {
   InternalImageImpl(VkImage image, VkDevice device)
       : BaseImageImpl(image, device) {}

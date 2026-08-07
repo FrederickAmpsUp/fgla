@@ -14,12 +14,17 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
       desc.color_attachments.size());
   std::vector<VkImageMemoryBarrier2> memory_barriers;
 
+  VkExtent2D max_extent = { 0, 0 };
+
   for (uint32_t i = 0; i < desc.color_attachments.size(); ++i) {
     const auto &attachment_desc = desc.color_attachments[i];
     auto &attachment_info = color_attachments[i];
 
     const ImageViewImpl &view = *dynamic_cast<ImageViewImpl *>(
         fgla::internal::ImplAccessor::get_impl(attachment_desc.view));
+
+    max_extent.width = std::max(max_extent.width, view.get_extent().width);
+    max_extent.height = std::max(max_extent.height, view.get_extent().height);
 
     attachment_info.sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO;
     attachment_info.imageView = view.get_view();
@@ -77,10 +82,7 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
   info.sType = VK_STRUCTURE_TYPE_RENDERING_INFO;
 
   info.renderArea.offset = {0, 0};
-
-  /// 🚨🚨🚨 WAR CRIME 🚨🚨🚨
-  //  --- FIX THIS PLEASE ---
-  info.renderArea.extent = {800, 600};
+  info.renderArea.extent = max_extent;
 
   info.layerCount = 1;
 

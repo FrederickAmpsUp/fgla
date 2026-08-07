@@ -223,7 +223,7 @@ std::optional<Error> SurfaceImpl::configure(
 
   for (int i = 0; i < n_images; ++i) {
     std::unique_ptr<fgla::Image::Impl> image =
-        std::make_unique<SwapchainImageImpl>(images[i], logi_dev);
+        std::make_unique<SwapchainImageImpl>(images[i], logi_dev, VkExtent3D { extent.width, extent.height, 1 });
     this->swapchain_images[i] = fgla::Image::from_raw(std::move(image));
   }
 
