@@ -15,6 +15,9 @@ set(SPDLOG_HEADER_ONLY OFF CACHE BOOL "" FORCE)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/spdlog)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/fmt)
 add_subdirectory(${PROJECT_SOURCE_DIR}/extern/magic_enum)
+
+include(slang.cmake)
+
 add_subdirectory(impl)
 
 add_library(fgla::fgla ALIAS fgla)

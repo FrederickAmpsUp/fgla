@@ -23,6 +23,8 @@
           vulkan-headers
           vulkan-tools
           vulkan-validation-layers
+
+          shader-slang
         ];
         shellHook = ''
           cat > .clangd <<EOF
