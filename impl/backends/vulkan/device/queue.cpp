@@ -4,10 +4,7 @@
 
 namespace fgla::backends::vulkan {
 
-DeviceImpl::DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
-                       QueueAllocator::Queues queues)
-    : device(device), physical_device(physical_device),
-      queues(std::move(queues)) {
+void DeviceImpl::init_queue() {
   for (auto &[_, queue] : this->queues) {
     QueueImpl *qi = dynamic_cast<QueueImpl *>(
         fgla::internal::ImplAccessor::get_impl(queue));
@@ -54,15 +51,6 @@ VkCommandPool DeviceImpl::get_command_pool(uint32_t queue_family_index) {
   this->command_pools.insert({queue_family_index, pool});
 
   return pool;
-}
-
-DeviceImpl::~DeviceImpl() {
-  vkDeviceWaitIdle(this->device);
-  this->queues.clear();
-  for (auto [family_index, command_pool] : this->command_pools) {
-    vkDestroyCommandPool(this->device, command_pool, nullptr);
-  }
-  vkDestroyDevice(this->device, nullptr);
 }
 
 } // namespace fgla::backends::vulkan

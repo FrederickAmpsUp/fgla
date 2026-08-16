@@ -6,10 +6,17 @@
 #include <fgla/device.hpp>
 #include <fgla/internal.hpp>
 #include <unordered_map>
+#include <slang-com-ptr.h>
+#include <slang.h>
 
 namespace fgla::backends::vulkan {
 
 struct DeviceImpl : public Device::Impl {
+private:
+  void init_queue();
+  void init_shader();
+public:
+
   DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
              QueueAllocator::Queues queues);
 
@@ -33,5 +40,8 @@ private:
 
   std::vector<VkSemaphore> semaphore_pool;
   std::unordered_map<uint32_t, VkCommandPool> command_pools;
+
+  Slang::ComPtr<slang::IGlobalSession> slang_global_session;
+  Slang::ComPtr<slang::ISession> slang_session;
 };
 } // namespace fgla::backends::vulkan
