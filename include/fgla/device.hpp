@@ -1,10 +1,13 @@
 #pragma once
 
+#include <fgla/shader_module.hpp>
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/util.hpp>
+#include <filesystem>
 #include <memory>
 #include <optional>
+#include <vector>
 
 namespace fgla {
 
@@ -12,7 +15,11 @@ namespace fgla {
 class Device {
 public:
   /// Represents the settings used to create a `Device`
-  struct Descriptor {};
+  struct Descriptor {
+  public:
+    /// A number of directories in which to search for shader source modules
+    const std::vector<std::filesystem::path> &shader_paths;
+  };
 
   /// Retrieve a `Queue` of the given type and index
   ///

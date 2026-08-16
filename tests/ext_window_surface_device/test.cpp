@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
   auto device =
       "Failed to create device" *
       adapter.create_device(
-          {}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
+          {{}}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
                fgla::Queue::Request{fgla::Queue::Type::Transfer, 1},
                fgla::Queue::Request{fgla::ext::windowing::QueueTypeExt::Present,
                                     1, &present_queue_opts}});
