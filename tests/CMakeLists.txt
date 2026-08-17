@@ -11,6 +11,7 @@ set(TEST_DIRS
     ext_window_surface_device_image_view
     command_buffer
     render_pass
+    shader_module
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

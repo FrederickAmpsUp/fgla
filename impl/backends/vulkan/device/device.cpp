@@ -5,11 +5,12 @@
 namespace fgla::backends::vulkan {
 
 DeviceImpl::DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
-                       QueueAllocator::Queues queues)
+                       QueueAllocator::Queues queues,
+                       const std::vector<std::filesystem::path> &shader_paths)
     : device(device), physical_device(physical_device),
       queues(std::move(queues)) {
   init_queue();
-  init_shader();
+  init_shader(shader_paths);
 }
 
 DeviceImpl::~DeviceImpl() {

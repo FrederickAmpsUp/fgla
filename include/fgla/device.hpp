@@ -3,6 +3,7 @@
 #include <fgla/shader_module.hpp>
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
+#include <fgla/error.hpp>
 #include <fgla/util.hpp>
 #include <filesystem>
 #include <memory>
@@ -36,9 +37,15 @@ public:
       return {};
   }
 
+  inline Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &desc) {
+    return this->impl->load_shader_module(desc);
+  }
+
   /// The backend-defined implementation of the `Device`'s functions
   struct Impl {
     virtual Queue *get_queue(Queue::Type, uint32_t) = 0;
+
+    virtual Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &) = 0;
 
     virtual ~Impl() = 0;
   };
