@@ -76,9 +76,9 @@ namespace fgla::backends::vulkan {
   CASE(CUBE, VK_IMAGE_VIEW_TYPE_CUBE)                                          \
   CASE(CUBE_ARRAY, VK_IMAGE_VIEW_TYPE_CUBE_ARRAY)
 
-constexpr VkFormat vulkanize(TextureFormat fmt) {
+constexpr VkFormat vulkanize(Format fmt) {
 #define CASE(name, vk)                                                         \
-  case TextureFormat::name:                                                    \
+  case Format::name:                                                    \
     return vk;
   switch (fmt) {
     VK_FORMAT_MAPPING
@@ -88,15 +88,15 @@ constexpr VkFormat vulkanize(TextureFormat fmt) {
   }
 }
 
-constexpr TextureFormat devulkanize(VkFormat fmt) {
+constexpr Format devulkanize(VkFormat fmt) {
 #define CASE(name, vk)                                                         \
   case vk:                                                                     \
-    return TextureFormat::name;
+    return Format::name;
   switch (fmt) {
     VK_FORMAT_MAPPING
 #undef CASE
   default:
-    return TextureFormat::UNDEFINED;
+    return Format::UNDEFINED;
   }
 }
 

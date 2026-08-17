@@ -5,9 +5,9 @@
 
 namespace fgla {
 
-/// Represents a texture "format", the mapping of the texture's raw data to
+/// Represents a "format", the mapping of raw data to
 /// colors
-class TextureFormat {
+class Format {
 public:
   enum Value {
     R8_UNORM,
@@ -71,22 +71,22 @@ public:
     UNDEFINED
   };
 
-  TextureFormat() = default;
-  constexpr TextureFormat(Value v) : v(v) {}
+  Format() = default;
+  constexpr Format(Value v) : v(v) {}
 
   constexpr operator Value() const { return v; }
   explicit operator bool() const = delete;
 
-  constexpr bool operator==(TextureFormat other) const {
+  constexpr bool operator==(Format other) const {
     return this->v == other.v;
   }
   constexpr bool operator==(Value other) const { return this->v == other; }
-  constexpr bool operator!=(TextureFormat other) const {
+  constexpr bool operator!=(Format other) const {
     return this->v != other.v;
   }
   constexpr bool operator!=(Value other) const { return this->v != other; }
 
-  /// @brief Checks if the `TextureFormat` uses sRGB encoding
+  /// @brief Checks if the `Format` uses sRGB encoding
   bool is_srgb() const { // maintain me!
     switch (this->v) {
     case R8G8B8A8_SRGB:
@@ -138,8 +138,8 @@ struct Extent2d {
 } // namespace fgla
 
 namespace std {
-template <> struct hash<fgla::TextureFormat> {
-  std::size_t operator()(fgla::TextureFormat fmt) const noexcept {
+template <> struct hash<fgla::Format> {
+  std::size_t operator()(fgla::Format fmt) const noexcept {
     return std::hash<int>()(static_cast<int>(fmt));
   }
 };

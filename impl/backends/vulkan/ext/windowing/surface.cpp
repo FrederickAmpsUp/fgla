@@ -267,16 +267,16 @@ SurfaceImpl::get_capabilities(const Adapter &adapter) {
                                        nullptr);
 
   if (n_formats > 0) {
-    std::unordered_set<TextureFormat> unique_formats;
+    std::unordered_set<Format> unique_formats;
     std::vector<VkSurfaceFormatKHR> formats(n_formats);
     vkGetPhysicalDeviceSurfaceFormatsKHR(phys_dev, this->surface, &n_formats,
                                          formats.data());
 
     for (const auto &format : formats) {
-      TextureFormat fmt = devulkanize(format.format);
+      Format fmt = devulkanize(format.format);
       // only support sRGB for now, due to color space stuff. want to add HDR
       // later.
-      if (fmt != TextureFormat::UNDEFINED && fmt.is_srgb())
+      if (fmt != Format::UNDEFINED && fmt.is_srgb())
         unique_formats.insert(fmt);
     }
     caps.formats = std::vector(unique_formats.begin(), unique_formats.end());

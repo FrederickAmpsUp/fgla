@@ -18,7 +18,7 @@ public:
   using AspectFlags = uint8_t;
 
   struct Descriptor {
-    TextureFormat format;
+    Format format;
     ImageView::Mode mode;
     ImageView::AspectFlags aspect_flags;
     uint32_t base_mip_level, num_mip_levels;

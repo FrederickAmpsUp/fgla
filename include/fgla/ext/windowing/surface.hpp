@@ -24,13 +24,13 @@ public:
   };
 
   struct Configuration {
-    TextureFormat format;
+    Format format;
     PresentMode present_mode;
     fgla::Extent2d size;
   };
 
   struct Capabilities {
-    std::vector<TextureFormat> formats;
+    std::vector<Format> formats;
     std::vector<PresentMode> present_modes;
   };
 
