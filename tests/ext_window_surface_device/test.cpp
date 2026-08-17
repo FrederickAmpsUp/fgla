@@ -48,16 +48,16 @@ int main(int argc, char **argv) {
 
   auto caps = surface.get_capabilities(adapter);
 
-  fgla::TextureFormat surface_format = fgla::TextureFormat::UNDEFINED;
+  fgla::Format surface_format = fgla::Format::UNDEFINED;
   auto present_mode = fgla::ext::windowing::Surface::PresentMode::AUTO_VSYNC;
 
   spdlog::info(" ----- Format Support -----");
   for (const auto format : caps.formats) {
     spdlog::info("Supported format: {}", format.to_string());
-    if (format == fgla::TextureFormat::B8G8R8A8_SRGB) surface_format = format;
+    if (format == fgla::Format::B8G8R8A8_SRGB) surface_format = format;
   }
 
-  if (surface_format == fgla::TextureFormat::UNDEFINED) {
+  if (surface_format == fgla::Format::UNDEFINED) {
     surface_format = caps.formats[0];
   }
 
