@@ -35,6 +35,7 @@ var annotated_dup =
       [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
       [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
       [ "RenderPass", "classfgla_1_1RenderPass.html", "classfgla_1_1RenderPass" ],
+      [ "RenderPipeline", "classfgla_1_1RenderPipeline.html", "classfgla_1_1RenderPipeline" ],
       [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
       [ "ShaderModule", "classfgla_1_1ShaderModule.html", "classfgla_1_1ShaderModule" ],
       [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],

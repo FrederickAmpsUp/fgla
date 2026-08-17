@@ -99,6 +99,7 @@ $(function(){initNavTree('classfgla_1_1RenderPass.html',''); initResizable(true)
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1RenderPass-members.html">List of all members</a>  </div>
@@ -123,6 +124,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1RenderPass_1_1StoreOp.html">StoreOp</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a79bc4f38f856c9a5bfb23cc6852b0cee" id="r_a79bc4f38f856c9a5bfb23cc6852b0cee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79bc4f38f856c9a5bfb23cc6852b0cee">bind_pipeline</a> (const <a class="el" href="classfgla_1_1RenderPipeline.html">RenderPipeline</a> &amp;pipeline)</td></tr>
+<tr class="separator:a79bc4f38f856c9a5bfb23cc6852b0cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd2f54b9011c3a2ad4f98f169cf4952" id="r_a4fd2f54b9011c3a2ad4f98f169cf4952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fd2f54b9011c3a2ad4f98f169cf4952">draw</a> (uint32_t vertex_count)</td></tr>
+<tr class="separator:a4fd2f54b9011c3a2ad4f98f169cf4952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad17cd40b7b5f26230033cf0a282d41b4" id="r_ad17cd40b7b5f26230033cf0a282d41b4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfgla_1_1RenderPass.html">RenderPass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad17cd40b7b5f26230033cf0a282d41b4">from_raw</a> (std::unique_ptr&lt; <a class="el" href="structfgla_1_1RenderPass_1_1Impl.html">Impl</a> &gt; impl)</td></tr>
@@ -135,8 +143,68 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00011">11</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00012">12</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a79bc4f38f856c9a5bfb23cc6852b0cee" name="a79bc4f38f856c9a5bfb23cc6852b0cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bc4f38f856c9a5bfb23cc6852b0cee">&#9670;&#160;</a></span>bind_pipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fgla::RenderPass::bind_pipeline </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1RenderPipeline.html">RenderPipeline</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pipeline</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00044">44</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                                            {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;bind_pipeline(pipeline);</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4fd2f54b9011c3a2ad4f98f169cf4952" name="a4fd2f54b9011c3a2ad4f98f169cf4952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd2f54b9011c3a2ad4f98f169cf4952">&#9670;&#160;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fgla::RenderPass::draw </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>vertex_count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00048">48</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                          {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;draw(vertex_count);</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad17cd40b7b5f26230033cf0a282d41b4" name="ad17cd40b7b5f26230033cf0a282d41b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad17cd40b7b5f26230033cf0a282d41b4">&#9670;&#160;</a></span>from_raw()</h2>
 
@@ -161,12 +229,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1RenderPass.html">RenderPass</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00050">50</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                              {</div>
-<div class="line"><span class="lineno">   51</span>    RenderPass render_pass;</div>
-<div class="line"><span class="lineno">   52</span>    render_pass.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> render_pass;</div>
-<div class="line"><span class="lineno">   54</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00062">62</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                                                              {</div>
+<div class="line"><span class="lineno">   63</span>    RenderPass render_pass;</div>
+<div class="line"><span class="lineno">   64</span>    render_pass.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> render_pass;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,7 +259,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00057">57</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00069">69</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
 
 </div>
 </div>
