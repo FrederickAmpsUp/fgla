@@ -81,16 +81,10 @@ QueueAllocator::big_brain_allocator_algorithm(
                                             present_queue_opts.adapter))
                 ->get_physical_device();
 
-        uint32_t n_queue_families = 0;
-        vkGetPhysicalDeviceQueueFamilyProperties(vk_device, &n_queue_families,
-                                                 nullptr);
 
         VkBool32 present_support = false;
-        for (int i = 0; i < n_queue_families; ++i) {
-          vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, i, vk_surface,
+        vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, family.index, vk_surface,
                                                &present_support);
-          if (present_support) break;
-        }
 
         supported = present_support;
       } break;
