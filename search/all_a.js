@@ -5,5 +5,6 @@ var searchData=
   ['message_2',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
   ['minor_3',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
   ['mode_4',['Mode',['../classfgla_1_1ImageView.html#aae0a455da2e66b3b5703100d495f2fb5',1,'fgla::ImageView']]],
-  ['mode_5',['mode',['../structfgla_1_1ImageView_1_1Descriptor.html#af5a7ec98a2e0f6b3d41acb8369f031ef',1,'fgla::ImageView::Descriptor']]]
+  ['mode_5',['mode',['../structfgla_1_1ImageView_1_1Descriptor.html#af5a7ec98a2e0f6b3d41acb8369f031ef',1,'fgla::ImageView::Descriptor']]],
+  ['module_5fname_6',['module_name',['../structfgla_1_1ShaderModule_1_1Descriptor.html#add7c6ec3a76c23838642d256fa2a6238',1,'fgla::ShaderModule::Descriptor']]]
 ];

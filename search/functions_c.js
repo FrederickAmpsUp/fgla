@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['textureformat_0',['TextureFormat',['../classfgla_1_1TextureFormat.html#afe56e48981b2728c185c2a80a10e5e14',1,'fgla::TextureFormat::TextureFormat()=default'],['../classfgla_1_1TextureFormat.html#ac42f289ad5e7830c495ef1b39b4ca07f',1,'fgla::TextureFormat::TextureFormat(Value v)']]],
-  ['to_5fstring_1',['to_string',['../classfgla_1_1TextureFormat.html#a0c2186b5f9507bd730dd700a3d370697',1,'fgla::TextureFormat']]]
+  ['select_5fadapter_0',['select_adapter',['../classfgla_1_1Instance.html#ad8f34a69b087f99e60846cb8fd9e70a1',1,'fgla::Instance::select_adapter(const std::function&lt; int(const Adapter &amp;)&gt; &amp;scorer, std::vector&lt; Adapter &gt; &amp;adapters)'],['../classfgla_1_1Instance.html#a08c6ac70293d35088c02fc94ef8a674f',1,'fgla::Instance::select_adapter(const std::function&lt; int(const Adapter &amp;)&gt; &amp;scorer, std::vector&lt; Adapter &gt; &amp;&amp;adapters)']]],
+  ['submit_1',['submit',['../classfgla_1_1Queue.html#aaf1f2f7d7ab1458c3b657de3a5d9b151',1,'fgla::Queue::submit()'],['../structfgla_1_1Queue_1_1Impl.html#aea61c8e16112ad14058dcf5b5cbb1f73',1,'fgla::Queue::Impl::submit()']]],
+  ['surface_5fsupport_5ffilter_2',['surface_support_filter',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#ad4bd0b44c99e31f283adb63645fa8558',1,'fgla::ext::windowing::WindowingExtension']]]
 ];

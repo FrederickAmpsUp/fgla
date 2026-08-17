@@ -20,6 +20,7 @@ var namespacefgla =
     [ "Queue", "classfgla_1_1Queue.html", "classfgla_1_1Queue" ],
     [ "RenderPass", "classfgla_1_1RenderPass.html", "classfgla_1_1RenderPass" ],
     [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
+    [ "ShaderModule", "classfgla_1_1ShaderModule.html", "classfgla_1_1ShaderModule" ],
     [ "TextureFormat", "classfgla_1_1TextureFormat.html", "classfgla_1_1TextureFormat" ],
     [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],
     [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ],

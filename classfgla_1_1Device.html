@@ -125,6 +125,8 @@ Classes</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad5589c678ac2aa4ae5f61441bf25ca6f" id="r_ad5589c678ac2aa4ae5f61441bf25ca6f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; <a class="el" href="classfgla_1_1Queue.html">Queue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5589c678ac2aa4ae5f61441bf25ca6f">get_queue</a> (<a class="el" href="classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060d">Queue::Type</a> type, uint32_t index)</td></tr>
 <tr class="separator:ad5589c678ac2aa4ae5f61441bf25ca6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46aea2ee54dc882f58f45a6d54e0f589" id="r_a46aea2ee54dc882f58f45a6d54e0f589"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ShaderModule.html">ShaderModule</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46aea2ee54dc882f58f45a6d54e0f589">load_shader_module</a> (const <a class="el" href="structfgla_1_1ShaderModule_1_1Descriptor.html">ShaderModule::Descriptor</a> &amp;desc)</td></tr>
+<tr class="separator:a46aea2ee54dc882f58f45a6d54e0f589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -139,7 +141,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a device, which is used to create rendering objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00012">12</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00016">16</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a09e413eea2460149634511af392b8952" name="a09e413eea2460149634511af392b8952"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e413eea2460149634511af392b8952">&#9670;&#160;</a></span>from_raw()</h2>
@@ -165,12 +167,12 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Creates a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00041">41</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                          {</div>
-<div class="line"><span class="lineno">   42</span>    Device device;</div>
-<div class="line"><span class="lineno">   43</span>    device.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> device;</div>
-<div class="line"><span class="lineno">   45</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00055">55</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                                          {</div>
+<div class="line"><span class="lineno">   56</span>    Device device;</div>
+<div class="line"><span class="lineno">   57</span>    device.impl = std::move(impl);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> device;</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,14 +212,44 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The specified queue, or <code>std::nullopt</code> if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00024">24</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>                                            {</div>
-<div class="line"><span class="lineno">   25</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (q)</div>
-<div class="line"><span class="lineno">   27</span>      <span class="keywordflow">return</span> *q;</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   29</span>      <span class="keywordflow">return</span> {};</div>
-<div class="line"><span class="lineno">   30</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00032">32</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                            {</div>
+<div class="line"><span class="lineno">   33</span>    Queue *q = this-&gt;impl-&gt;get_queue(type, index);</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (q)</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">return</span> *q;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><span class="lineno">   38</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a46aea2ee54dc882f58f45a6d54e0f589" name="a46aea2ee54dc882f58f45a6d54e0f589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46aea2ee54dc882f58f45a6d54e0f589">&#9670;&#160;</a></span>load_shader_module()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1ShaderModule.html">ShaderModule</a> &gt; fgla::Device::load_shader_module </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structfgla_1_1ShaderModule_1_1Descriptor.html">ShaderModule::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>desc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00040">40</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                                     {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;load_shader_module(desc);</div>
+<div class="line"><span class="lineno">   42</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,7 +274,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00048">48</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00062">62</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

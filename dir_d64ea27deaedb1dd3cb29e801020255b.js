@@ -16,6 +16,7 @@ var dir_d64ea27deaedb1dd3cb29e801020255b =
     [ "internal.hpp", "internal_8hpp.html", "internal_8hpp" ],
     [ "queue.hpp", "queue_8hpp.html", "queue_8hpp" ],
     [ "render_pass.hpp", "render__pass_8hpp.html", "render__pass_8hpp" ],
+    [ "shader_module.hpp", "shader__module_8hpp.html", "shader__module_8hpp" ],
     [ "types.hpp", "types_8hpp.html", "types_8hpp" ],
     [ "util.hpp", "util_8hpp.html", "util_8hpp" ]
 ];
