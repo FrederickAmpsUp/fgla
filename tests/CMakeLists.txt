@@ -12,6 +12,7 @@ set(TEST_DIRS
     command_buffer
     render_pass
     shader_module
+    render_pipeline
 )
 
 foreach(test_name IN LISTS TEST_DIRS)
