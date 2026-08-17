@@ -55,7 +55,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adapter_8hpp.html",
-"classfgla_1_1TextureFormat.html#af2e10b1c9d0e1e8ef07147d0647efeb5a5c72738e47e5c4032de42f0bd387fdef",
+"classfgla_1_1Result.html",
 "structfgla_1_1Completion_1_1Impl.html#ab0fe84a527c5bd9449300fd295125217",
 "structfgla_1_1ext_1_1windowing_1_1Window_1_1Impl.html#a377770d1f21196698c2f49cbbabd0183"
 ];

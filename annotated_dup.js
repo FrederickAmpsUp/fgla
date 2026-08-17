@@ -29,6 +29,7 @@ var annotated_dup =
       [ "Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],
       [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
       [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
+      [ "Format", "classfgla_1_1Format.html", "classfgla_1_1Format" ],
       [ "Image", "classfgla_1_1Image.html", "classfgla_1_1Image" ],
       [ "ImageView", "classfgla_1_1ImageView.html", "classfgla_1_1ImageView" ],
       [ "Instance", "classfgla_1_1Instance.html", "classfgla_1_1Instance" ],
@@ -36,11 +37,10 @@ var annotated_dup =
       [ "RenderPass", "classfgla_1_1RenderPass.html", "classfgla_1_1RenderPass" ],
       [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
       [ "ShaderModule", "classfgla_1_1ShaderModule.html", "classfgla_1_1ShaderModule" ],
-      [ "TextureFormat", "classfgla_1_1TextureFormat.html", "classfgla_1_1TextureFormat" ],
       [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],
       [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ]
     ] ],
     [ "std", "namespacestd.html", [
-      [ "hash< fgla::TextureFormat >", "structstd_1_1hash_3_01fgla_1_1TextureFormat_01_4.html", "structstd_1_1hash_3_01fgla_1_1TextureFormat_01_4" ]
+      [ "hash< fgla::Format >", "structstd_1_1hash_3_01fgla_1_1Format_01_4.html", "structstd_1_1hash_3_01fgla_1_1Format_01_4" ]
     ] ]
 ];
