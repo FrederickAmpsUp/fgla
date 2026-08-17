@@ -24,6 +24,7 @@ public:
   virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
 
   virtual Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &desc) override;
+  virtual Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &desc) override;
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }

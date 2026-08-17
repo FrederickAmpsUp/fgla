@@ -18,6 +18,8 @@ add_library(fgla_backend_vulkan STATIC
     device/device.cpp
     device/queue.cpp
     device/shader.cpp
+    device/pipeline.cpp
+    render_pipeline.cpp
     shader_module.cpp
     backend.cpp
     image.cpp

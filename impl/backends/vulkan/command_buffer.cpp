@@ -94,6 +94,23 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
 
   vkCmdBeginRendering(this->command_buffer, &info);
 
+  VkViewport viewport = {
+    .x = 0.0f,
+    .y = 0.0f,
+    .width = (float)max_extent.width,
+    .height = (float)max_extent.height,
+    .minDepth = 0.0f,
+    .maxDepth = 1.0f
+  };
+
+  VkRect2D scissor = {
+    .offset = { 0, 0 },
+    .extent = max_extent
+  };
+
+  vkCmdSetViewport(this->command_buffer, 0, 1, &viewport);
+  vkCmdSetScissor(this->command_buffer, 0, 1, &scissor);
+
   return RenderPass::from_raw(
       std::make_unique<RenderPassImpl>(this->command_buffer));
 }

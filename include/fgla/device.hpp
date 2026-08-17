@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/render_pipeline.hpp>
 #include <fgla/shader_module.hpp>
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
@@ -41,11 +42,16 @@ public:
     return this->impl->load_shader_module(desc);
   }
 
+  inline Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &desc) {
+    return this->impl->create_render_pipeline(desc);
+  }
+
   /// The backend-defined implementation of the `Device`'s functions
   struct Impl {
     virtual Queue *get_queue(Queue::Type, uint32_t) = 0;
 
     virtual Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &) = 0;
+    virtual Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &) = 0;
 
     virtual ~Impl() = 0;
   };

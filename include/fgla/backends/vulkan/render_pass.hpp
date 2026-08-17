@@ -9,6 +9,9 @@ struct RenderPassImpl : public RenderPass::Impl {
   RenderPassImpl(VkCommandBuffer command_buffer)
       : command_buffer(command_buffer) {}
 
+  virtual void bind_pipeline(const RenderPipeline &pipeline) override;
+  virtual void draw(uint32_t vertex_count) override;
+
   virtual ~RenderPassImpl() override;
 
 private:

@@ -3,6 +3,7 @@
 #include <fgla/color.hpp>
 #include <fgla/image_view.hpp>
 #include <fgla/internal.hpp>
+#include <fgla/render_pipeline.hpp>
 #include <memory>
 #include <vector>
 
@@ -40,8 +41,19 @@ public:
     const std::vector<ColorAttachmentDescriptor> &color_attachments;
   };
 
+  inline void bind_pipeline(const RenderPipeline &pipeline) {
+    return this->impl->bind_pipeline(pipeline);
+  }
+
+  inline void draw(uint32_t vertex_count) {
+    return this->impl->draw(vertex_count);
+  }
+
   /// The backend-defined implementation of the `RenderPass`'s functions
   struct Impl {
+    virtual void bind_pipeline(const RenderPipeline &) = 0;
+    virtual void draw(uint32_t) = 0;
+
     virtual ~Impl() = 0;
   };
 
