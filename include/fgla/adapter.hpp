@@ -7,6 +7,20 @@
 namespace fgla {
 
 #define FGLA_OBJ_NAME Adapter
+
+/** Represents an adapter, which is used to set up and create a `Device` */
+FGLA_OBJ_START
+
+/** Stores the settings used to create an `Adapter` */
+struct Descriptor {
+  // TODO
+};
+
+/** Stores information about an `Adapter` */
+struct Info {
+  std::string device_name;
+};
+
 #define FGLA_OBJ_FUNCTIONS(FN)                                                 \
   FN(/**                                                                       \
       * Attempts to create a `Device`                                          \
@@ -23,19 +37,6 @@ namespace fgla {
       * Retrieves this `Adapter`'s `Info`                                      \
       */                                                                       \
      , Info, get_info, (), ())
-
-/** Represents an adapter, which is used to set up and create a `Device` */
-FGLA_OBJ_START
-
-/** Stores the settings used to create an `Adapter` */
-struct Descriptor {
-  // TODO
-};
-
-/** Stores information about an `Adapter` */
-struct Info {
-  std::string device_name;
-};
 
 FGLA_OBJ_END
 
