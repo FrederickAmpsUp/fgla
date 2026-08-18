@@ -7,6 +7,7 @@
 #endif
 
 #include <memory>
+#include <type_traits>
 
 class FGLA_OBJ_NAME {
 public:
@@ -34,6 +35,11 @@ public:
     virtual ~Impl() = 0;
   };
 #undef FN
+
+  template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0>
+  T &unwrap() {
+    return static_cast<T &>(*this->impl);
+  }
 
   FGLA_OBJ_NAME from_raw(std::unique_ptr<Impl> impl) {
     FGLA_OBJ_NAME obj;
