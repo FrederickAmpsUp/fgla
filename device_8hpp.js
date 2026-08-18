@@ -1,6 +1,6 @@
 var device_8hpp =
 [
-    [ "fgla::Device", "classfgla_1_1Device.html", "classfgla_1_1Device" ],
-    [ "fgla::Device::Descriptor", "structfgla_1_1Device_1_1Descriptor.html", "structfgla_1_1Device_1_1Descriptor" ],
-    [ "fgla::Device::Impl", "structfgla_1_1Device_1_1Impl.html", "structfgla_1_1Device_1_1Impl" ]
+    [ "fgla::Descriptor", "structfgla_1_1Descriptor.html", "structfgla_1_1Descriptor" ],
+    [ "FGLA_OBJ_FUNCTIONS", "device_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],
+    [ "FGLA_OBJ_NAME", "device_8hpp.html#ac9347ca045796552e86e06b72e9123ba", null ]
 ];

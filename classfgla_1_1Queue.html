@@ -132,9 +132,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5083df600828d9b5a36e9c9a000414fe" id="r_a5083df600828d9b5a36e9c9a000414fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5083df600828d9b5a36e9c9a000414fe">begin_recording</a> ()</td></tr>
+<tr class="memitem:a5083df600828d9b5a36e9c9a000414fe" id="r_a5083df600828d9b5a36e9c9a000414fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; CommandBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5083df600828d9b5a36e9c9a000414fe">begin_recording</a> ()</td></tr>
 <tr class="separator:a5083df600828d9b5a36e9c9a000414fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1f2f7d7ab1458c3b657de3a5d9b151" id="r_aaf1f2f7d7ab1458c3b657de3a5d9b151"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf1f2f7d7ab1458c3b657de3a5d9b151">submit</a> (<a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &amp;&amp;cb, std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt; wait_completions={})</td></tr>
+<tr class="memitem:aaf1f2f7d7ab1458c3b657de3a5d9b151" id="r_aaf1f2f7d7ab1458c3b657de3a5d9b151"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Completion &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf1f2f7d7ab1458c3b657de3a5d9b151">submit</a> (CommandBuffer &amp;&amp;cb, std::initializer_list&lt; Completion &gt; wait_completions={})</td></tr>
 <tr class="separator:aaf1f2f7d7ab1458c3b657de3a5d9b151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -196,7 +196,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &gt; fgla::Queue::begin_recording </td>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; CommandBuffer &gt; fgla::Queue::begin_recording </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -259,14 +259,14 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt; fgla::Queue::submit </td>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Completion &gt; fgla::Queue::submit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classfgla_1_1CommandBuffer.html">CommandBuffer</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>cb</em></span>, </td>
+          <td class="paramtype">CommandBuffer &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>cb</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classfgla_1_1Completion.html">Completion</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>wait_completions</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+          <td class="paramtype">std::initializer_list&lt; Completion &gt;</td>          <td class="paramname"><span class="paramname"><em>wait_completions</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
         </tr>
       </table>
   </td>

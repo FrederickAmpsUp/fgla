@@ -10,8 +10,7 @@ var searchData=
   ['get_5fextension_7',['get_extension',['../classfgla_1_1Instance.html#a316c04a1604eb50606ec26f1dfde0bbd',1,'fgla::Instance::get_extension()'],['../structfgla_1_1Instance_1_1Impl.html#a3d27b3f44927da0ec05e52db45bbf456',1,'fgla::Instance::Impl::get_extension()']]],
   ['get_5fframebuffer_5fsize_8',['get_framebuffer_size',['../classfgla_1_1ext_1_1windowing_1_1Window.html#a740bc35ce522f574c4ae6f157a091137',1,'fgla::ext::windowing::Window::get_framebuffer_size()'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Impl.html#a09756e178741dbd76056b254f03c1204',1,'fgla::ext::windowing::Window::Impl::get_framebuffer_size()']]],
   ['get_5fimpl_9',['get_impl',['../structfgla_1_1internal_1_1ImplAccessor.html#ad35892e951c385a5c43d2d66403c5f20',1,'fgla::internal::ImplAccessor']]],
-  ['get_5finfo_10',['get_info',['../classfgla_1_1Adapter.html#aed97c4b9905b2e688dbc03dc3f0657c4',1,'fgla::Adapter::get_info()'],['../structfgla_1_1Adapter_1_1Impl.html#ab315d6524bfbab62cd4c3c3c7a6432a8',1,'fgla::Adapter::Impl::get_info()']]],
-  ['get_5fqueue_11',['get_queue',['../classfgla_1_1Device.html#ad5589c678ac2aa4ae5f61441bf25ca6f',1,'fgla::Device::get_queue()'],['../structfgla_1_1Device_1_1Impl.html#ad7169be1193df7329eeebce73360845c',1,'fgla::Device::Impl::get_queue()']]],
-  ['get_5fregistry_12',['get_registry',['../namespacefgla_1_1backend.html#a8401251fdb4337ba781f1071f20e6d81',1,'fgla::backend']]],
-  ['graphics_13',['Graphics',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494',1,'fgla::Queue']]]
+  ['get_5finfo_10',['get_info',['../classfgla_1_1Adapter.html#a07b02619725630a10e27d6860771dbcc',1,'fgla::Adapter::get_info()'],['../structfgla_1_1Adapter_1_1Impl.html#afb75083991336d2386e9aa46ebd6e2ba',1,'fgla::Adapter::Impl::get_info()']]],
+  ['get_5fregistry_11',['get_registry',['../namespacefgla_1_1backend.html#a8401251fdb4337ba781f1071f20e6d81',1,'fgla::backend']]],
+  ['graphics_12',['Graphics',['../classfgla_1_1Queue.html#a7c5be631d28826cd1465410481d3060dad334dfcea59127bedfcdbe0a3ee7f494',1,'fgla::Queue']]]
 ];

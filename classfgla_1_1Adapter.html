@@ -100,55 +100,52 @@ $(function(){initNavTree('classfgla_1_1Adapter.html',''); initResizable(true); }
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classfgla_1_1Adapter-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Adapter Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Represents an adapter, which is used to set up and create a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code>  
- <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Descriptor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the settings used to create an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>  <a href="structfgla_1_1Adapter_1_1Descriptor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>'s functions.  <a href="structfgla_1_1Adapter_1_1Impl.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents information about an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>  <a href="structfgla_1_1Adapter_1_1Info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4dab30c711c2eca13de2a47a9eb1c27b" id="r_a4dab30c711c2eca13de2a47a9eb1c27b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Device.html">Device</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dab30c711c2eca13de2a47a9eb1c27b">create_device</a> (const <a class="el" href="structfgla_1_1Device_1_1Descriptor.html">Device::Descriptor</a> &amp;descriptor, std::initializer_list&lt; <a class="el" href="structfgla_1_1Queue_1_1Request.html">Queue::Request</a> &gt; queues)</td></tr>
-<tr class="separator:a4dab30c711c2eca13de2a47a9eb1c27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed97c4b9905b2e688dbc03dc3f0657c4" id="r_aed97c4b9905b2e688dbc03dc3f0657c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed97c4b9905b2e688dbc03dc3f0657c4">get_info</a> () const</td></tr>
-<tr class="memdesc:aed97c4b9905b2e688dbc03dc3f0657c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves this <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>'s <code><a class="el" href="structfgla_1_1Adapter_1_1Info.html" title="Represents information about an Adapter">Info</a></code>  <br /></td></tr>
-<tr class="separator:aed97c4b9905b2e688dbc03dc3f0657c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2406b9e10d6a85af912c050ffdedb7fe" id="r_a2406b9e10d6a85af912c050ffdedb7fe"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfgla_1_1Adapter.html">Adapter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2406b9e10d6a85af912c050ffdedb7fe">from_raw</a> (std::unique_ptr&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a> &gt; impl)</td></tr>
-<tr class="separator:a2406b9e10d6a85af912c050ffdedb7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:ac06cf072aa647185632537a764206ad1" id="r_ac06cf072aa647185632537a764206ad1"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac06cf072aa647185632537a764206ad1">fgla::internal::ImplAccessor</a></td></tr>
-<tr class="separator:ac06cf072aa647185632537a764206ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65d20fb1c5bb8a580f9d96c4fc0f15c" id="r_aa65d20fb1c5bb8a580f9d96c4fc0f15c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa65d20fb1c5bb8a580f9d96c4fc0f15c">Adapter</a> (const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)=delete</td></tr>
+<tr class="separator:aa65d20fb1c5bb8a580f9d96c4fc0f15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b6bfe51f3c84b68af30e28a59866f0" id="r_ae3b6bfe51f3c84b68af30e28a59866f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3b6bfe51f3c84b68af30e28a59866f0">operator=</a> (const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)=delete</td></tr>
+<tr class="separator:ae3b6bfe51f3c84b68af30e28a59866f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a9f697818f2e821c74652a843c38c19" id="r_a1a9f697818f2e821c74652a843c38c19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a9f697818f2e821c74652a843c38c19">Adapter</a> (<a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a1a9f697818f2e821c74652a843c38c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122ba7328fe9e0308976b95e22d017ff" id="r_a122ba7328fe9e0308976b95e22d017ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a122ba7328fe9e0308976b95e22d017ff">operator=</a> (<a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a122ba7328fe9e0308976b95e22d017ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025a6ce5730ef24d1796f5c6a4c7e234" id="r_a025a6ce5730ef24d1796f5c6a4c7e234"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Device &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a025a6ce5730ef24d1796f5c6a4c7e234">create_device</a> (const Device::Descriptor &amp;desc, std::initializer_list&lt; <a class="el" href="structfgla_1_1Queue_1_1Request.html">Queue::Request</a> &gt; queues)</td></tr>
+<tr class="separator:a025a6ce5730ef24d1796f5c6a4c7e234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b02619725630a10e27d6860771dbcc" id="r_a07b02619725630a10e27d6860771dbcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07b02619725630a10e27d6860771dbcc">get_info</a> ()</td></tr>
+<tr class="separator:a07b02619725630a10e27d6860771dbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b1c50a6216cce085d77f7faaab43a1" id="r_a49b1c50a6216cce085d77f7faaab43a1"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a>, T &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a49b1c50a6216cce085d77f7faaab43a1"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a49b1c50a6216cce085d77f7faaab43a1">unwrap</a> ()</td></tr>
+<tr class="separator:a49b1c50a6216cce085d77f7faaab43a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a48f1e3953616fdc8d78df95fd3c0b7" id="r_a5a48f1e3953616fdc8d78df95fd3c0b7"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a>, T &gt;, int &gt;  = 0&gt; </td></tr>
+<tr class="memitem:a5a48f1e3953616fdc8d78df95fd3c0b7"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5a48f1e3953616fdc8d78df95fd3c0b7">unwrap</a> () const</td></tr>
+<tr class="separator:a5a48f1e3953616fdc8d78df95fd3c0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2c7680ee57ad4bc4fb43f8c13c9dea" id="r_a3c2c7680ee57ad4bc4fb43f8c13c9dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c2c7680ee57ad4bc4fb43f8c13c9dea">from_raw</a> (std::unique_ptr&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a> &gt; impl)</td></tr>
+<tr class="separator:a3c2c7680ee57ad4bc4fb43f8c13c9dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents an adapter, which is used to set up and create a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> </p>
+<div class="textblock"><p>Represents an adapter, which is used to set up and create a <code>Device</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00011">11</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4dab30c711c2eca13de2a47a9eb1c27b" name="a4dab30c711c2eca13de2a47a9eb1c27b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dab30c711c2eca13de2a47a9eb1c27b">&#9670;&#160;</a></span>create_device()</h2>
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00012">12</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa65d20fb1c5bb8a580f9d96c4fc0f15c" name="aa65d20fb1c5bb8a580f9d96c4fc0f15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65d20fb1c5bb8a580f9d96c4fc0f15c">&#9670;&#160;</a></span>Adapter() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,9 +154,60 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Device.html">Device</a> &gt; fgla::Adapter::create_device </td>
+          <td class="memname">fgla::Adapter::Adapter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structfgla_1_1Device_1_1Descriptor.html">Device::Descriptor</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>descriptor</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a9f697818f2e821c74652a843c38c19" name="a1a9f697818f2e821c74652a843c38c19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9f697818f2e821c74652a843c38c19">&#9670;&#160;</a></span>Adapter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">fgla::Adapter::Adapter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a025a6ce5730ef24d1796f5c6a4c7e234" name="a025a6ce5730ef24d1796f5c6a4c7e234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a025a6ce5730ef24d1796f5c6a4c7e234">&#9670;&#160;</a></span>create_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Device &gt; fgla::Adapter::create_device </td>
+          <td>(</td>
+          <td class="paramtype">const Device::Descriptor &amp;</td>          <td class="paramname"><span class="paramname"><em>desc</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -173,24 +221,25 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Attempts to create a <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code> </p><dl class="params"><dt>Parameters</dt><dd>
+<ul>
+<li>Attempts to create a <code>Device</code> *<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">descriptor</td><td>The <code><a class="el" href="structfgla_1_1Device_1_1Descriptor.html" title="Represents the settings used to create a Device">Device::Descriptor</a></code> with the <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code>'s properties </td></tr>
-    <tr><td class="paramname">queues</td><td>A list of <code>Queue::Requests</code> to create <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code>s for </td></tr>
+    <tr><td class="paramname">descriptor</td><td>The <code>Device::Descriptor</code> with the <code>Device</code>'s * properties *</td></tr>
+    <tr><td class="paramname">queues</td><td>A list of <code>Queue::Requests</code> to create <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code>s for * </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The created <code><a class="el" href="classfgla_1_1Device.html" title="Represents a device, which is used to create rendering objects.">Device</a></code>, or an <code><a class="el" href="structfgla_1_1Error.html" title="Represents a failure state from a function call.">Error</a></code> with failure information </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The created <code>Device</code>, or an <code><a class="el" href="structfgla_1_1Error.html" title="Represents a failure state from a function call.">Error</a></code> with failure information <br  />
+ </dd></dl>
+</li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00028">28</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                          {</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> this-&gt;impl-&gt;create_device(descriptor, queues);</div>
-<div class="line"><span class="lineno">   31</span>  }</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+
 </div>
 </div>
-<a id="a2406b9e10d6a85af912c050ffdedb7fe" name="a2406b9e10d6a85af912c050ffdedb7fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2406b9e10d6a85af912c050ffdedb7fe">&#9670;&#160;</a></span>from_raw()</h2>
+<a id="a3c2c7680ee57ad4bc4fb43f8c13c9dea" name="a3c2c7680ee57ad4bc4fb43f8c13c9dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c2c7680ee57ad4bc4fb43f8c13c9dea">&#9670;&#160;</a></span>from_raw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +248,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> fgla::Adapter::from_raw </td>
+          <td class="memname"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> fgla::Adapter::from_raw </td>
           <td>(</td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>impl</em></span></td><td>)</td>
           <td></td>
@@ -207,23 +256,17 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Creates an <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code> from a raw implementation This should only be used internally </p>
 
-<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00049">49</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                           {</div>
-<div class="line"><span class="lineno">   50</span>    Adapter adapter;</div>
-<div class="line"><span class="lineno">   51</span>    adapter.impl = std::move(impl);</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> adapter;</div>
-<div class="line"><span class="lineno">   53</span>  }</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+
 </div>
 </div>
-<a id="aed97c4b9905b2e688dbc03dc3f0657c4" name="aed97c4b9905b2e688dbc03dc3f0657c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed97c4b9905b2e688dbc03dc3f0657c4">&#9670;&#160;</a></span>get_info()</h2>
+<a id="a07b02619725630a10e27d6860771dbcc" name="a07b02619725630a10e27d6860771dbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b02619725630a10e27d6860771dbcc">&#9670;&#160;</a></span>get_info()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,6 +276,118 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a> fgla::Adapter::get_info </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<ul>
+<li>Retrieves this <code><a class="el" href="classfgla_1_1Adapter.html">Adapter</a></code>'s <code><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a></code> <br  />
+ </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a122ba7328fe9e0308976b95e22d017ff" name="a122ba7328fe9e0308976b95e22d017ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122ba7328fe9e0308976b95e22d017ff">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp; fgla::Adapter::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3b6bfe51f3c84b68af30e28a59866f0" name="ae3b6bfe51f3c84b68af30e28a59866f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b6bfe51f3c84b68af30e28a59866f0">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp; fgla::Adapter::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49b1c50a6216cce085d77f7faaab43a1" name="a49b1c50a6216cce085d77f7faaab43a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b1c50a6216cce085d77f7faaab43a1">&#9670;&#160;</a></span>unwrap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a>, T &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; fgla::Adapter::unwrap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a48f1e3953616fdc8d78df95fd3c0b7" name="a5a48f1e3953616fdc8d78df95fd3c0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a48f1e3953616fdc8d78df95fd3c0b7">&#9670;&#160;</a></span>unwrap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="structfgla_1_1Adapter_1_1Impl.html">Impl</a>, T &gt;, int &gt;  = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; fgla::Adapter::unwrap </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -245,35 +400,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves this <code><a class="el" href="classfgla_1_1Adapter.html" title="Represents an adapter, which is used to set up and create a Device">Adapter</a></code>'s <code><a class="el" href="structfgla_1_1Adapter_1_1Info.html" title="Represents information about an Adapter">Info</a></code> </p>
-
-<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00034">34</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keywordflow">return</span> this-&gt;impl-&gt;get_info(); };</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="ac06cf072aa647185632537a764206ad1" name="ac06cf072aa647185632537a764206ad1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac06cf072aa647185632537a764206ad1">&#9670;&#160;</a></span>fgla::internal::ImplAccessor</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend struct <a class="el" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00056">56</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
 
 </div>
 </div>

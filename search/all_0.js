@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../structfgla_1_1Color.html#af6643b399dcfa309ea3c1771903c36cd',1,'fgla::Color']]],
-  ['adapter_1',['Adapter',['../classfgla_1_1Adapter.html',1,'fgla']]],
+  ['adapter_1',['Adapter',['../classfgla_1_1Adapter.html',1,'fgla::Adapter'],['../classfgla_1_1Adapter.html#aa65d20fb1c5bb8a580f9d96c4fc0f15c',1,'fgla::Adapter::Adapter(const Adapter &amp;)=delete'],['../classfgla_1_1Adapter.html#a1a9f697818f2e821c74652a843c38c19',1,'fgla::Adapter::Adapter(Adapter &amp;&amp;)=default']]],
   ['adapter_2',['adapter',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#a44a3927337cc7cc9b7426bef4fb1e9e3',1,'fgla::ext::windowing::PresentQueueOptions']]],
   ['adapter_2ehpp_3',['adapter.hpp',['../adapter_8hpp.html',1,'']]],
   ['app_5fname_4',['app_name',['../structfgla_1_1Instance_1_1Descriptor.html#a3f8d8a919e7d4a6362c2164c2603e3e5',1,'fgla::Instance::Descriptor']]],
