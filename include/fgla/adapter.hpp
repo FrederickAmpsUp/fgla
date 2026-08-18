@@ -2,61 +2,41 @@
 
 #include <fgla/device.hpp>
 #include <fgla/error.hpp>
-#include <fgla/internal.hpp>
-#include <memory>
+#include <fgla/object_gen.hpp>
 
 namespace fgla {
 
-/// Represents an adapter, which is used to set up and create a `Device`
-class Adapter {
-public:
-  /// Represents the settings used to create an `Adapter`
-  struct Descriptor {
-    // TODO
-  };
+#define FGLA_OBJ_NAME Adapter
+#define FGLA_OBJ_FUNCTIONS(FN)                                                 \
+  FN(/**                                                                       \
+      * Attempts to create a `Device`                                          \
+      * @param descriptor The `Device::Descriptor` with the `Device`'s         \
+      * properties                                                             \
+      * @param queues A list of `Queue::Requests` to create `Queue`s for       \
+      * @returns The created `Device`, or an `Error` with failure information  \
+      */                                                                       \
+     , Result<Device>, create_device,                                          \
+     (const Device::Descriptor &desc,                                          \
+      std::initializer_list<Queue::Request> queues),                           \
+     (desc, queues))                                                           \
+  FN(/**                                                                       \
+      * Retrieves this `Adapter`'s `Info`                                      \
+      */                                                                       \
+     , Info, get_info, (), ())
 
-  /// Represents information about an `Adapter`
-  struct Info {
-    std::string device_name;
-  };
+/** Represents an adapter, which is used to set up and create a `Device` */
+FGLA_OBJ_START
 
-  /// Attempts to create a `Device`
-  /// @param descriptor The `Device::Descriptor` with the `Device`'s properties
-  /// @param queues A list of `Queue::Requests` to create `Queue`s for
-  /// @returns The created `Device`, or an `Error` with failure information
-  inline Result<Device>
-  create_device(const Device::Descriptor &descriptor,
-                std::initializer_list<Queue::Request> queues) {
-    return this->impl->create_device(descriptor, queues);
-  }
-
-  /// Retrieves this `Adapter`'s `Info`
-  inline Info get_info() const { return this->impl->get_info(); };
-
-  /// The backend-defined implementation of the `Adapter`'s functions
-  struct Impl {
-    virtual Result<Device>
-    create_device(const Device::Descriptor &,
-                  std::initializer_list<Queue::Request>) = 0;
-
-    virtual Info get_info() const = 0;
-
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates an `Adapter` from a raw implementation
-  /// This should only be used internally
-  static inline Adapter from_raw(std::unique_ptr<Impl> impl) {
-    Adapter adapter;
-    adapter.impl = std::move(impl);
-    return adapter;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
+/** Stores the settings used to create an `Adapter` */
+struct Descriptor {
+  // TODO
 };
 
-inline Adapter::Impl::~Impl() = default;
+/** Stores information about an `Adapter` */
+struct Info {
+  std::string device_name;
+};
+
+FGLA_OBJ_END
 
 } // namespace fgla
