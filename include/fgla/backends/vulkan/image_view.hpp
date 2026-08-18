@@ -7,7 +7,8 @@
 namespace fgla::backends::vulkan {
 
 struct ImageViewImpl : public ImageView::Impl {
-  ImageViewImpl(BaseImageImpl &image, VkImageView image_view, VkExtent3D extent, VkDevice device)
+  ImageViewImpl(BaseImageImpl &image, VkImageView image_view, VkExtent3D extent,
+                VkDevice device)
       : image(image), image_view(image_view), extent(extent), device(device) {}
 
   inline BaseImageImpl &get_image() const { return this->image; }

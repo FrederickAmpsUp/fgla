@@ -1,5 +1,5 @@
-#include "fgla/render_pipeline.hpp"
-#include "fgla/shader_module.hpp"
+#include <fgla/render_pipeline.hpp>
+#include <fgla/shader_module.hpp>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
 #include <fgla/render_pass.hpp>
@@ -39,18 +39,16 @@ int main(int argc, char **argv) {
   auto device =
       "Failed to create device" *
       adapter.create_device(
-          {{
-            std::filesystem::path(__FILE__).parent_path()
-          }}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
-               fgla::Queue::Request{fgla::Queue::Type::Transfer, 1},
-               fgla::Queue::Request{fgla::ext::windowing::QueueTypeExt::Present,
-                                    1, &present_queue_opts}});
+          {{std::filesystem::path(__FILE__).parent_path()}},
+          {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1},
+           fgla::Queue::Request{fgla::Queue::Type::Transfer, 1},
+           fgla::Queue::Request{fgla::ext::windowing::QueueTypeExt::Present, 1,
+                                &present_queue_opts}});
 
   fgla::Queue &graphics = *device.get_queue(fgla::Queue::Type::Graphics, 0);
   fgla::Queue &transfer = *device.get_queue(fgla::Queue::Type::Transfer, 0);
   fgla::Queue &present =
       *device.get_queue(fgla::ext::windowing::QueueTypeExt::Present, 0);
-
 
   auto caps = surface.get_capabilities(adapter);
 
@@ -90,22 +88,14 @@ int main(int argc, char **argv) {
 
   fgla::ShaderModule shader = std::move(*shader_module_res);
 
-  fgla::RenderPipeline pipeline = "Failed to create pipeline" *device.create_render_pipeline({
-    .vertex = {
-      .module = shader,
-      .entry_point = "vs_main"
-    },
-    .primitive = {
-      .topology = fgla::RenderPipeline::PrimitiveState::Topology::TRIANGLE_LIST
-    },
-    .fragment = {{
-      .module = shader,
-      .entry_point = "fs_main"
-    }},
-    .color_attachments = {
-      { .format = surface_format }
-    }
-  });
+  fgla::RenderPipeline pipeline =
+      "Failed to create pipeline" *
+      device.create_render_pipeline(
+          {.vertex = {.module = shader, .entry_point = "vs_main"},
+           .primitive = {.topology = fgla::RenderPipeline::PrimitiveState::
+                             Topology::TRIANGLE_LIST},
+           .fragment = {{.module = shader, .entry_point = "fs_main"}},
+           .color_attachments = {{.format = surface_format}}});
 
   while (window.is_open()) {
     auto &image = ("Failed to retrieve swapchain image" *

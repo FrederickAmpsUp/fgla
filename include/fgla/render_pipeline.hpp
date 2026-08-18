@@ -36,7 +36,7 @@ public:
 
   struct Descriptor {
     /* TODO: pipeline layout OR a better named version */
-    ShaderStage    vertex;
+    ShaderStage vertex;
     PrimitiveState primitive;
     std::optional<ShaderStage> fragment;
     std::vector<ColorAttachment> color_attachments;
@@ -53,6 +53,7 @@ public:
     render_pipeline.impl = std::move(impl);
     return render_pipeline;
   }
+
 private:
   friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;

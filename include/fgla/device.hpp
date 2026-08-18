@@ -1,10 +1,10 @@
 #pragma once
 
-#include <fgla/render_pipeline.hpp>
-#include <fgla/shader_module.hpp>
+#include <fgla/error.hpp>
 #include <fgla/internal.hpp>
 #include <fgla/queue.hpp>
-#include <fgla/error.hpp>
+#include <fgla/render_pipeline.hpp>
+#include <fgla/shader_module.hpp>
 #include <fgla/util.hpp>
 #include <filesystem>
 #include <memory>
@@ -38,11 +38,13 @@ public:
       return {};
   }
 
-  inline Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &desc) {
+  inline Result<ShaderModule>
+  load_shader_module(const ShaderModule::Descriptor &desc) {
     return this->impl->load_shader_module(desc);
   }
 
-  inline Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &desc) {
+  inline Result<RenderPipeline>
+  create_render_pipeline(const RenderPipeline::Descriptor &desc) {
     return this->impl->create_render_pipeline(desc);
   }
 
@@ -50,8 +52,10 @@ public:
   struct Impl {
     virtual Queue *get_queue(Queue::Type, uint32_t) = 0;
 
-    virtual Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &) = 0;
-    virtual Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &) = 0;
+    virtual Result<ShaderModule>
+    load_shader_module(const ShaderModule::Descriptor &) = 0;
+    virtual Result<RenderPipeline>
+    create_render_pipeline(const RenderPipeline::Descriptor &) = 0;
 
     virtual ~Impl() = 0;
   };

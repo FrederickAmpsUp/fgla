@@ -1,4 +1,5 @@
 #include "spdlog/spdlog.h"
+
 #include <fgla/backend.hpp>
 #include <fgla/instance.hpp>
 #include <iomanip>
@@ -52,9 +53,8 @@ int main(int argc, char **argv) {
             << std::endl;
 
   auto device_res = adapter.create_device(
-      {{
-        std::filesystem::path(__FILE__).parent_path()
-      }}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1}});
+      {{std::filesystem::path(__FILE__).parent_path()}},
+      {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1}});
 
   if (!device_res) {
     std::cerr << "Failed to create device!" << std::endl;

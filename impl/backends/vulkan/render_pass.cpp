@@ -5,13 +5,11 @@ namespace fgla::backends::vulkan {
 
 void RenderPassImpl::bind_pipeline(const RenderPipeline &pipeline) {
   VkPipeline vk_pipeline = dynamic_cast<RenderPipelineImpl *>(
-      fgla::internal::ImplAccessor::get_impl(pipeline))->get_pipeline();
+                               fgla::internal::ImplAccessor::get_impl(pipeline))
+                               ->get_pipeline();
 
-  vkCmdBindPipeline(
-      this->command_buffer,
-      VK_PIPELINE_BIND_POINT_GRAPHICS,
-      vk_pipeline
-  );
+  vkCmdBindPipeline(this->command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                    vk_pipeline);
 }
 
 void RenderPassImpl::draw(uint32_t vertex_count) {

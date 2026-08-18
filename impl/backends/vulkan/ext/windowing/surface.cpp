@@ -223,7 +223,8 @@ std::optional<Error> SurfaceImpl::configure(
 
   for (int i = 0; i < n_images; ++i) {
     std::unique_ptr<fgla::Image::Impl> image =
-        std::make_unique<SwapchainImageImpl>(images[i], logi_dev, VkExtent3D { extent.width, extent.height, 1 });
+        std::make_unique<SwapchainImageImpl>(
+            images[i], logi_dev, VkExtent3D{extent.width, extent.height, 1});
     this->swapchain_images[i] = fgla::Image::from_raw(std::move(image));
   }
 
@@ -276,8 +277,7 @@ SurfaceImpl::get_capabilities(const Adapter &adapter) {
       Format fmt = devulkanize(format.format);
       // only support sRGB for now, due to color space stuff. want to add HDR
       // later.
-      if (fmt != Format::UNDEFINED && fmt.is_srgb())
-        unique_formats.insert(fmt);
+      if (fmt != Format::UNDEFINED && fmt.is_srgb()) unique_formats.insert(fmt);
     }
     caps.formats = std::vector(unique_formats.begin(), unique_formats.end());
   }

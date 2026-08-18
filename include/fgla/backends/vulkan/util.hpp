@@ -78,7 +78,7 @@ namespace fgla::backends::vulkan {
 
 constexpr VkFormat vulkanize(Format fmt) {
 #define CASE(name, vk)                                                         \
-  case Format::name:                                                    \
+  case Format::name:                                                           \
     return vk;
   switch (fmt) {
     VK_FORMAT_MAPPING

@@ -28,7 +28,7 @@ protected:
   VkImage image;
   VkDevice device;
 
-  VkExtent3D extent = { 0, 0, 0 };
+  VkExtent3D extent = {0, 0, 0};
 
   VkImageLayout layout = VK_IMAGE_LAYOUT_UNDEFINED;
 };

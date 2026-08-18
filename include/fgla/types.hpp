@@ -77,13 +77,9 @@ public:
   constexpr operator Value() const { return v; }
   explicit operator bool() const = delete;
 
-  constexpr bool operator==(Format other) const {
-    return this->v == other.v;
-  }
+  constexpr bool operator==(Format other) const { return this->v == other.v; }
   constexpr bool operator==(Value other) const { return this->v == other; }
-  constexpr bool operator!=(Format other) const {
-    return this->v != other.v;
-  }
+  constexpr bool operator!=(Format other) const { return this->v != other.v; }
   constexpr bool operator!=(Value other) const { return this->v != other; }
 
   /// @brief Checks if the `Format` uses sRGB encoding

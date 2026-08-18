@@ -1,7 +1,7 @@
 #pragma once
 
-#include <memory>
 #include <fgla/internal.hpp>
+#include <memory>
 
 namespace fgla {
 
@@ -25,6 +25,7 @@ public:
     shader_module.impl = std::move(impl);
     return shader_module;
   }
+
 private:
   friend struct fgla::internal::ImplAccessor;
   std::unique_ptr<Impl> impl;

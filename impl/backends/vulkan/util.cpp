@@ -13,8 +13,7 @@ void signal_timeline_from_binary(VkDevice device, VkQueue queue,
   timeline_info.signalSemaphoreValueCount = 1;
   timeline_info.pSignalSemaphoreValues = &timeline_value;
 
-  VkPipelineStageFlags stage_mask =
-    VK_PIPELINE_STAGE_ALL_COMMANDS_BIT;
+  VkPipelineStageFlags stage_mask = VK_PIPELINE_STAGE_ALL_COMMANDS_BIT;
 
   VkSubmitInfo submit{};
   submit.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;

@@ -14,7 +14,7 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
       desc.color_attachments.size());
   std::vector<VkImageMemoryBarrier2> memory_barriers;
 
-  VkExtent2D max_extent = { 0, 0 };
+  VkExtent2D max_extent = {0, 0};
 
   for (uint32_t i = 0; i < desc.color_attachments.size(); ++i) {
     const auto &attachment_desc = desc.color_attachments[i];
@@ -94,19 +94,14 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
 
   vkCmdBeginRendering(this->command_buffer, &info);
 
-  VkViewport viewport = {
-    .x = 0.0f,
-    .y = 0.0f,
-    .width = (float)max_extent.width,
-    .height = (float)max_extent.height,
-    .minDepth = 0.0f,
-    .maxDepth = 1.0f
-  };
+  VkViewport viewport = {.x = 0.0f,
+                         .y = 0.0f,
+                         .width = (float)max_extent.width,
+                         .height = (float)max_extent.height,
+                         .minDepth = 0.0f,
+                         .maxDepth = 1.0f};
 
-  VkRect2D scissor = {
-    .offset = { 0, 0 },
-    .extent = max_extent
-  };
+  VkRect2D scissor = {.offset = {0, 0}, .extent = max_extent};
 
   vkCmdSetViewport(this->command_buffer, 0, 1, &viewport);
   vkCmdSetScissor(this->command_buffer, 0, 1, &scissor);

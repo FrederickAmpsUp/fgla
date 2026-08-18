@@ -5,9 +5,9 @@
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/device.hpp>
 #include <fgla/internal.hpp>
-#include <unordered_map>
 #include <slang-com-ptr.h>
 #include <slang.h>
+#include <unordered_map>
 
 namespace fgla::backends::vulkan {
 
@@ -15,16 +15,18 @@ struct DeviceImpl : public Device::Impl {
 private:
   void init_queue();
   void init_shader(const std::vector<std::filesystem::path> &shader_paths);
-public:
 
+public:
   DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
              QueueAllocator::Queues queues,
              const std::vector<std::filesystem::path> &shader_paths);
 
   virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
 
-  virtual Result<ShaderModule> load_shader_module(const ShaderModule::Descriptor &desc) override;
-  virtual Result<RenderPipeline> create_render_pipeline(const RenderPipeline::Descriptor &desc) override;
+  virtual Result<ShaderModule>
+  load_shader_module(const ShaderModule::Descriptor &desc) override;
+  virtual Result<RenderPipeline>
+  create_render_pipeline(const RenderPipeline::Descriptor &desc) override;
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }

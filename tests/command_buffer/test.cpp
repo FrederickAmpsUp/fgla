@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
 
   auto device_res = adapter.create_device(
       {{}}, {fgla::Queue::Request{fgla::Queue::Type::Graphics, 2},
-           fgla::Queue::Request{fgla::Queue::Type::Transfer, 1}});
+             fgla::Queue::Request{fgla::Queue::Type::Transfer, 1}});
 
   if (!device_res) {
     std::cerr << "Failed to create device!" << std::endl;
