@@ -102,22 +102,45 @@ $(function(){initNavTree('fgla_8hpp_source.html',''); initResizable(true); });
 <div class="contents">
 <a href="fgla_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="adapter_8hpp.html">fgla/adapter.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="backend_8hpp.html">fgla/backend.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="device_8hpp.html">fgla/device.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="error_8hpp.html">fgla/error.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="extension_8hpp.html">fgla/extension.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="instance_8hpp.html">fgla/instance.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="queue_8hpp.html">fgla/queue.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">fgla/types.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="util_8hpp.html">fgla/util.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Core types / utilities</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="color_8hpp.html">fgla/color.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="error_8hpp.html">fgla/error.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">fgla/types.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="util_8hpp.html">fgla/util.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Core objects</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="adapter_8hpp.html">fgla/adapter.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="backend_8hpp.html">fgla/backend.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="completion_8hpp.html">fgla/completion.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="device_8hpp.html">fgla/device.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="extension_8hpp.html">fgla/extension.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="instance_8hpp.html">fgla/instance.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="queue_8hpp.html">fgla/queue.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Resources</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="image_8hpp.html">fgla/image.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="image__view_8hpp.html">fgla/image_view.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="shader__module_8hpp.html">fgla/shader_module.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// Commands / rendering</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="command__buffer_8hpp.html">fgla/command_buffer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="render__pass_8hpp.html">fgla/render_pass.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="render__pipeline_8hpp.html">fgla/render_pipeline.hpp</a>&gt;</span></div>
 <div class="ttc" id="aadapter_8hpp_html"><div class="ttname"><a href="adapter_8hpp.html">adapter.hpp</a></div></div>
 <div class="ttc" id="abackend_8hpp_html"><div class="ttname"><a href="backend_8hpp.html">backend.hpp</a></div></div>
+<div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div></div>
+<div class="ttc" id="acommand__buffer_8hpp_html"><div class="ttname"><a href="command__buffer_8hpp.html">command_buffer.hpp</a></div></div>
+<div class="ttc" id="acompletion_8hpp_html"><div class="ttname"><a href="completion_8hpp.html">completion.hpp</a></div></div>
 <div class="ttc" id="adevice_8hpp_html"><div class="ttname"><a href="device_8hpp.html">device.hpp</a></div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div></div>
 <div class="ttc" id="aextension_8hpp_html"><div class="ttname"><a href="extension_8hpp.html">extension.hpp</a></div></div>
+<div class="ttc" id="aimage_8hpp_html"><div class="ttname"><a href="image_8hpp.html">image.hpp</a></div></div>
+<div class="ttc" id="aimage__view_8hpp_html"><div class="ttname"><a href="image__view_8hpp.html">image_view.hpp</a></div></div>
 <div class="ttc" id="ainstance_8hpp_html"><div class="ttname"><a href="instance_8hpp.html">instance.hpp</a></div></div>
 <div class="ttc" id="aqueue_8hpp_html"><div class="ttname"><a href="queue_8hpp.html">queue.hpp</a></div></div>
+<div class="ttc" id="arender__pass_8hpp_html"><div class="ttname"><a href="render__pass_8hpp.html">render_pass.hpp</a></div></div>
+<div class="ttc" id="arender__pipeline_8hpp_html"><div class="ttname"><a href="render__pipeline_8hpp.html">render_pipeline.hpp</a></div></div>
+<div class="ttc" id="ashader__module_8hpp_html"><div class="ttname"><a href="shader__module_8hpp.html">shader_module.hpp</a></div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div></div>
 <div class="ttc" id="autil_8hpp_html"><div class="ttname"><a href="util_8hpp.html">util.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
