@@ -1,57 +1,47 @@
-#ifndef FGLA_OBJ_NAME
-#error "Please define FGLA_OBJ_NAME before including this file"
-#endif
-
-#ifndef FGLA_OBJ_FUNCTIONS
-#define FGLA_OBJ_FUNCTIONS
-#endif
+#pragma once
 
 #include <memory>
 #include <type_traits>
 
-class FGLA_OBJ_NAME {
-public:
-  FGLA_OBJ_NAME() = default;
+#define FGLA_FN_BODY(doc, ret, name, args, fwd)                                \
+  doc inline ret name args { return this->impl->name fwd; }
 
-  // Delete copy
-  FGLA_OBJ_NAME(const FGLA_OBJ_NAME &) = delete;
-  FGLA_OBJ_NAME &operator=(const FGLA_OBJ_NAME &) = delete;
+#define FGLA_FN_IMPL(doc, ret, name, args, fwd) doc virtual ret name args = 0;
 
-  // Allow move
-  FGLA_OBJ_NAME(FGLA_OBJ_NAME &&) = default;
-  FGLA_OBJ_NAME &operator=(FGLA_OBJ_NAME &&) = default;
+#define FGLA_OBJ_START                                                         \
+  class FGLA_OBJ_NAME {                                                        \
+  private:                                                                     \
+    FGLA_OBJ_NAME() = default;                                                 \
+                                                                               \
+  public:                                                                      \
+    FGLA_OBJ_NAME(const FGLA_OBJ_NAME &) = delete;                             \
+    FGLA_OBJ_NAME &operator=(const FGLA_OBJ_NAME &) = delete;                  \
+    FGLA_OBJ_NAME(FGLA_OBJ_NAME &&) = default;                                 \
+    FGLA_OBJ_NAME &operator=(FGLA_OBJ_NAME &&) = default;                      \
+                                                                               \
+    FGLA_OBJ_FUNCTIONS(FGLA_FN_BODY)
 
-#define FN(ret, name, args, fwd)                                               \
-  ret name args { return this->impl->name fwd; }
-
-  FGLA_OBJ_FUNCTIONS
-#undef FN
-
-#define FN(ret, name, args, _) virtual ret name args = 0;
-
-  struct Impl {
-    FGLA_OBJ_FUNCTIONS
-
-    virtual ~Impl() = 0;
-  };
-#undef FN
-
-  template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0>
-  T &unwrap() {
-    return static_cast<T &>(*this->impl);
-  }
-
-  FGLA_OBJ_NAME from_raw(std::unique_ptr<Impl> impl) {
-    FGLA_OBJ_NAME obj;
-    obj.impl = std::move(impl);
-    return obj;
-  }
-
-private:
-  std::unique_ptr<Impl> impl;
-};
-
-inline FGLA_OBJ_NAME::Impl::~Impl() = default;
-
-#undef FGLA_OBJ_NAME
-#undef FGLA_OBJ_FUNCTIONS
+#define FGLA_OBJ_END                                                           \
+  struct Impl {                                                                \
+    FGLA_OBJ_FUNCTIONS(FGLA_FN_IMPL)                                           \
+    virtual ~Impl() = 0;                                                       \
+  };                                                                           \
+  template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
+  T &unwrap() {                                                                \
+    return static_cast<T &>(*this->impl);                                      \
+  }                                                                            \
+  template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
+  const T &unwrap() const {                                                    \
+    return static_cast<const T &>(*impl);                                      \
+  }                                                                            \
+  FGLA_OBJ_NAME from_raw(std::unique_ptr<Impl> impl) {                         \
+    FGLA_OBJ_NAME obj;                                                         \
+    obj.impl = std::move(impl);                                                \
+    return obj;                                                                \
+  }                                                                            \
+                                                                               \
+private:                                                                       \
+  std::unique_ptr<Impl> impl;                                                  \
+  }                                                                            \
+  ;                                                                            \
+  inline FGLA_OBJ_NAME::Impl::~Impl() = default;
