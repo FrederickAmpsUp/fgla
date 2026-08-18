@@ -39,4 +39,7 @@ struct Info {
 
 FGLA_OBJ_END
 
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
+
 } // namespace fgla
