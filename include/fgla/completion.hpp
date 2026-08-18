@@ -1,49 +1,26 @@
 #pragma once
 
-#include <fgla/internal.hpp>
-#include <memory>
+#include <fgla/object_gen.hpp>
 
 namespace fgla {
 
-/// Signals the completion of a submitted operation, which can be
-/// waited on or used to synchronize subsequent operations
-class Completion {
-public:
-  Completion(const Completion &other)
-      : impl(other.impl ? other.impl->clone() : nullptr) {}
+#define FGLA_OBJ_NAME Completion
+/**
+ * Signals the completion of a submitted operation,
+ * which can be waited on or used to synchronize subsequent operations
+ */
+FGLA_OBJ_START
 
-  Completion &operator=(const Completion &other) {
-    if (this != &other) {
-      impl = other.impl ? other.impl->clone() : nullptr;
-    }
-    return *this;
-  }
+#define FGLA_OBJ_FUNCTIONS(FN)                                                 \
+  FN(/**                                                                       \
+      * Clones this `Completion`                                               \
+      * @returns A clone of this `Completion`                                  \
+      */                                                                       \
+     , Completion, clone, (), ())
 
-  Completion(Completion &&) noexcept = default;
-  Completion &operator=(Completion &&) noexcept = default;
+FGLA_OBJ_END
 
-  Completion() = default;
-
-  /// The backend-defined implementation of the `Completion`'s functions
-  struct Impl {
-    virtual std::unique_ptr<Impl> clone() const = 0;
-
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates a `Completion` from a raw implementation
-  /// This should only be used internally
-  static inline Completion from_raw(std::unique_ptr<Impl> impl) {
-    Completion completion;
-    completion.impl = std::move(impl);
-    return completion;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
-};
-
-inline Completion::Impl::~Impl() = default;
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 } // namespace fgla
