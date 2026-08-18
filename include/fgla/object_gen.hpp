@@ -26,14 +26,14 @@
     virtual ~Impl() = 0;                                                       \
   };                                                                           \
   template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
-  T &unwrap() {                                                                \
+  T &to_impl() {                                                               \
     return static_cast<T &>(*this->impl);                                      \
   }                                                                            \
   template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
-  const T &unwrap() const {                                                    \
+  const T &to_impl() const {                                                   \
     return static_cast<const T &>(*impl);                                      \
   }                                                                            \
-  FGLA_OBJ_NAME from_raw(std::unique_ptr<Impl> impl) {                         \
+  FGLA_OBJ_NAME from_impl(std::unique_ptr<Impl> impl) {                        \
     FGLA_OBJ_NAME obj;                                                         \
     obj.impl = std::move(impl);                                                \
     return obj;                                                                \
