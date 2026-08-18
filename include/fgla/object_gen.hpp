@@ -17,11 +17,10 @@
     FGLA_OBJ_NAME(const FGLA_OBJ_NAME &) = delete;                             \
     FGLA_OBJ_NAME &operator=(const FGLA_OBJ_NAME &) = delete;                  \
     FGLA_OBJ_NAME(FGLA_OBJ_NAME &&) = default;                                 \
-    FGLA_OBJ_NAME &operator=(FGLA_OBJ_NAME &&) = default;                      \
-                                                                               \
-    FGLA_OBJ_FUNCTIONS(FGLA_FN_BODY)
+    FGLA_OBJ_NAME &operator=(FGLA_OBJ_NAME &&) = default;
 
 #define FGLA_OBJ_END                                                           \
+  FGLA_OBJ_FUNCTIONS(FGLA_FN_BODY)                                             \
   struct Impl {                                                                \
     FGLA_OBJ_FUNCTIONS(FGLA_FN_IMPL)                                           \
     virtual ~Impl() = 0;                                                       \
