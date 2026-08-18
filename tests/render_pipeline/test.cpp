@@ -1,8 +1,8 @@
-#include <fgla/render_pipeline.hpp>
-#include <fgla/shader_module.hpp>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
 #include <fgla/render_pass.hpp>
+#include <fgla/render_pipeline.hpp>
+#include <fgla/shader_module.hpp>
 #include <magic_enum/magic_enum.hpp>
 #include <spdlog/spdlog.h>
 
