@@ -18,6 +18,8 @@
           cmake
           ninja
 
+          pre-commit
+
           glfw
           vulkan-loader
           vulkan-headers
