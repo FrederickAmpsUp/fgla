@@ -17,10 +17,14 @@ namespace fgla {
  * Represents a device, which is used to create rendering objects
  */
 FGLA_OBJ_START
-/// Represents the settings used to create a `Device`
+/**
+ * Represents the settings used to create a `Device`
+ */
 struct Descriptor {
 public:
-  /// A number of directories in which to search for shader source modules
+  /**
+   * A number of directories in which to search for shader source modules
+   */
   const std::vector<std::filesystem::path> &shader_paths;
 };
 #define FGLA_OBJ_FUNCTIONS(FN)                                                 \
