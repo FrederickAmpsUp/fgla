@@ -36,7 +36,7 @@ struct Info {
   FN(/**                                                                       \
       * Retrieves this `Adapter`'s `Info`                                      \
       */                                                                       \
-     , Info, get_info, (), ())
+     , Info, get_info, () const, ())
 
 FGLA_OBJ_END
 
