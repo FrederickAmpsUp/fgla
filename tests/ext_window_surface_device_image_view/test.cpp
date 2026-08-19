@@ -91,7 +91,8 @@ int main(int argc, char **argv) {
         .num_array_layers = 1,
     });
 
-    surface.present(present, std::move(image), {image.get_completion()});
+    surface.present(present, std::move(image),
+                    {image.get_completion().clone()});
 
     window.poll_events();
   }

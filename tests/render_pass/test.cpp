@@ -111,9 +111,10 @@ int main(int argc, char **argv) {
 
     image.get_completion() =
         "Failed to submit command buffer!" *
-        graphics.submit(std::move(cb), {image.get_completion()});
+        graphics.submit(std::move(cb), {image.get_completion().clone()});
 
-    surface.present(present, std::move(image), {image.get_completion()});
+    surface.present(present, std::move(image),
+                    {image.get_completion().clone()});
 
     window.poll_events();
   }

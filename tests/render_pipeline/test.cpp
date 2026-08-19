@@ -125,15 +125,15 @@ int main(int argc, char **argv) {
                         {0.2f, 0.3f, 0.9f, 1.0f}),
                     .store_op = fgla::RenderPass::StoreOp::STORE}}});
 
-      pass.bind_pipeline(pipeline);
-      pass.draw(3);
+      pass.draw(pipeline, 3);
     }
 
     image.get_completion() =
         "Failed to submit command buffer!" *
-        graphics.submit(std::move(cb), {image.get_completion()});
+        graphics.submit(std::move(cb), {image.get_completion().clone()});
 
-    surface.present(present, std::move(image), {image.get_completion()});
+    surface.present(present, std::move(image),
+                    {image.get_completion().clone()});
 
     window.poll_events();
   }
