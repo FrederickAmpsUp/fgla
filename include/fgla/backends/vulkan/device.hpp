@@ -4,7 +4,6 @@
 #include <fgla/backends/vulkan/adapter.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/device.hpp>
-#include <fgla/internal.hpp>
 #include <slang-com-ptr.h>
 #include <slang.h>
 #include <unordered_map>
@@ -21,7 +20,8 @@ public:
              QueueAllocator::Queues queues,
              const std::vector<std::filesystem::path> &shader_paths);
 
-  virtual Queue *get_queue(Queue::Type type, uint32_t index) override;
+  virtual std::optional<std::reference_wrapper<Queue>>
+  get_queue(Queue::Type type, uint32_t index) override;
 
   virtual Result<ShaderModule>
   load_shader_module(const ShaderModule::Descriptor &desc) override;

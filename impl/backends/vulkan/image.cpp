@@ -45,7 +45,7 @@ BaseImageImpl::create_view(const ImageView::Descriptor &desc) {
       std::max(1u, this->extent.height >> desc.base_mip_level),
       std::max(1u, this->extent.depth >> desc.base_mip_level)};
 
-  return ImageView::from_raw(
+  return ImageView::from_impl(
       std::make_unique<ImageViewImpl>(*this, view, view_extent, this->device));
 }
 } // namespace fgla::backends::vulkan

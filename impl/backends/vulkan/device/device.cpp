@@ -1,5 +1,4 @@
 #include <fgla/backends/vulkan/device.hpp>
-#include <fgla/internal.hpp>
 #include <spdlog/spdlog.h>
 
 namespace fgla::backends::vulkan {

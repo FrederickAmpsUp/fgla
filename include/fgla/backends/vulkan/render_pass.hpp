@@ -9,13 +9,14 @@ struct RenderPassImpl : public RenderPass::Impl {
   RenderPassImpl(VkCommandBuffer command_buffer)
       : command_buffer(command_buffer) {}
 
-  virtual void bind_pipeline(const RenderPipeline &pipeline) override;
-  virtual void draw(uint32_t vertex_count) override;
+  virtual void draw(const RenderPipeline &pipeline,
+                    uint32_t vertex_count) override;
 
   virtual ~RenderPassImpl() override;
 
 private:
   VkCommandBuffer command_buffer;
+  VkPipeline current_pipeline = VK_NULL_HANDLE;
 };
 
 } // namespace fgla::backends::vulkan

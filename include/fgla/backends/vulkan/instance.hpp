@@ -17,7 +17,7 @@ struct InstanceImpl : public Instance::Impl {
 
   virtual const backend::Backend &get_backend() override;
 
-  virtual void *get_extension(extension::ExtensionUUID uuid) override;
+  virtual void *get_extension_raw(extension::ExtensionUUID uuid) override;
 
   virtual ~InstanceImpl() override;
 

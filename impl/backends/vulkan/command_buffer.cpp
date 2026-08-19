@@ -20,8 +20,7 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
     const auto &attachment_desc = desc.color_attachments[i];
     auto &attachment_info = color_attachments[i];
 
-    const ImageViewImpl &view = *dynamic_cast<ImageViewImpl *>(
-        fgla::internal::ImplAccessor::get_impl(attachment_desc.view));
+    const ImageViewImpl &view = attachment_desc.view.to_impl<ImageViewImpl>();
 
     max_extent.width = std::max(max_extent.width, view.get_extent().width);
     max_extent.height = std::max(max_extent.height, view.get_extent().height);
@@ -106,7 +105,7 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
   vkCmdSetViewport(this->command_buffer, 0, 1, &viewport);
   vkCmdSetScissor(this->command_buffer, 0, 1, &scissor);
 
-  return RenderPass::from_raw(
+  return RenderPass::from_impl(
       std::make_unique<RenderPassImpl>(this->command_buffer));
 }
 

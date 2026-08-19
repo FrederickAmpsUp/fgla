@@ -1,27 +1,26 @@
 #include <fgla/backends/vulkan/device.hpp>
-#include <fgla/internal.hpp>
 #include <spdlog/spdlog.h>
 
 namespace fgla::backends::vulkan {
 
 void DeviceImpl::init_queue() {
   for (auto &[_, queue] : this->queues) {
-    QueueImpl *qi = dynamic_cast<QueueImpl *>(
-        fgla::internal::ImplAccessor::get_impl(queue));
+    QueueImpl &qi = queue.to_impl<QueueImpl>();
 
-    qi->init(this->device, &this->semaphore_pool,
-             this->get_command_pool(qi->get_family_index()));
+    qi.init(this->device, &this->semaphore_pool,
+            this->get_command_pool(qi.get_family_index()));
   }
 }
 
-Queue *DeviceImpl::get_queue(Queue::Type type, uint32_t index) {
+std::optional<std::reference_wrapper<Queue>>
+DeviceImpl::get_queue(Queue::Type type, uint32_t index) {
   std::pair<Queue::Type, uint32_t> key = {type, index};
 
   if (this->queues.find(key) == this->queues.end()) {
-    return nullptr;
+    return std::nullopt;
   }
 
-  return &this->queues.at({type, index});
+  return this->queues.at({type, index});
 }
 
 // TODO: make this thread safe

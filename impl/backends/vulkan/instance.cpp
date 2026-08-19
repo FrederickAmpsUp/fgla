@@ -156,7 +156,7 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
                  vendor_name);
 
     auto adapter_impl = std::make_unique<AdapterImpl>(candidate);
-    adapters.push_back(Adapter::from_raw(std::move(adapter_impl)));
+    adapters.push_back(Adapter::from_impl(std::move(adapter_impl)));
   }
 
   return adapters;
@@ -165,9 +165,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
 std::function<int(const Adapter &)>
 InstanceImpl::get_adapter_scorer(const Adapter::Descriptor &descriptor) {
   return [&](const Adapter &a) -> int {
-    auto impl =
-        dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
-    return score_physical_device(impl->get_physical_device(), descriptor);
+    auto &impl = a.to_impl<AdapterImpl>();
+    return score_physical_device(impl.get_physical_device(), descriptor);
   };
 }
 
@@ -175,7 +174,7 @@ const backend::Backend &InstanceImpl::get_backend() {
   return fgla::backend::get_registry().at(UUID);
 }
 
-void *InstanceImpl::get_extension(extension::ExtensionUUID uuid) {
+void *InstanceImpl::get_extension_raw(extension::ExtensionUUID uuid) {
 #ifdef FGLA_VK_EXT_WINDOWING
   if (uuid == fgla::ext::windowing::WindowingExtension::UUID) {
     fgla::ext::windowing::WindowingExtension &ext =

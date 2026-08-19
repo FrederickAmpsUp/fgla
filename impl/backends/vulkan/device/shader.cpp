@@ -77,7 +77,7 @@ DeviceImpl::load_shader_module(const ShaderModule::Descriptor &desc) {
     return Error(4, "Failed to create Vulkan shader module");
   }
 
-  return ShaderModule::from_raw(
+  return ShaderModule::from_impl(
       std::make_unique<ShaderModuleImpl>(shader_module, this->device));
 }
 

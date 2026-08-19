@@ -18,7 +18,7 @@ struct AdapterImpl : public fgla::Adapter::Impl {
   AdapterImpl(VkPhysicalDevice physical_device)
       : physical_device(physical_device) {}
 
-  inline VkPhysicalDevice get_physical_device() {
+  inline VkPhysicalDevice get_physical_device() const {
     return this->physical_device;
   }
 

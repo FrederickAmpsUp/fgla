@@ -5,7 +5,6 @@
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #include <fgla/backends/vulkan/instance.hpp>
 #include <fgla/backends/vulkan/util.hpp>
-#include <fgla/internal.hpp>
 #include <fmt/format.h>
 #include <spdlog/spdlog.h>
 #include <unordered_map>
@@ -103,9 +102,7 @@ std::vector<uint32_t> find_graphics_present_families(VkPhysicalDevice phys_dev,
 
 SurfaceImpl::SurfaceImpl(WindowImpl &window, const fgla::Instance &instance) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
-  this->instance = dynamic_cast<InstanceImpl *>(
-                       fgla::internal::ImplAccessor::get_impl(instance))
-                       ->get_instance();
+  this->instance = instance.to_impl<InstanceImpl>().get_instance();
   VkResult res = glfwCreateWindowSurface(this->instance, window.get_window(),
                                          nullptr, &this->surface);
 
@@ -133,11 +130,8 @@ std::optional<Error> SurfaceImpl::configure(
                configuration.size.height);
 
   VkPhysicalDevice phys_dev =
-      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
-          ->get_physical_device();
-  VkDevice logi_dev =
-      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
-          ->get_device();
+      device.to_impl<DeviceImpl>().get_physical_device();
+  VkDevice logi_dev = device.to_impl<DeviceImpl>().get_device();
 
   VkFormat fmt = vulkanize(configuration.format); // ez pz
   VkPresentModeKHR pm =
@@ -195,9 +189,7 @@ std::optional<Error> SurfaceImpl::configure(
   create_info.oldSwapchain = this->swapchain;
   VkSwapchainKHR old_swapchain = this->swapchain;
 
-  VkDevice dev =
-      static_cast<DeviceImpl *>(fgla::internal::ImplAccessor::get_impl(device))
-          ->get_device();
+  VkDevice dev = device.to_impl<DeviceImpl>().get_device();
 
   VkResult res =
       vkCreateSwapchainKHR(dev, &create_info, nullptr, &this->swapchain);
@@ -225,7 +217,7 @@ std::optional<Error> SurfaceImpl::configure(
     std::unique_ptr<fgla::Image::Impl> image =
         std::make_unique<SwapchainImageImpl>(
             images[i], logi_dev, VkExtent3D{extent.width, extent.height, 1});
-    this->swapchain_images[i] = fgla::Image::from_raw(std::move(image));
+    this->swapchain_images[i] = fgla::Image::from_impl(std::move(image));
   }
 
   logger->info("Retrieved {} swapchain images.", n_images);
@@ -257,9 +249,7 @@ std::optional<Error> SurfaceImpl::configure(
 fgla::ext::windowing::Surface::Capabilities
 SurfaceImpl::get_capabilities(const Adapter &adapter) {
   VkPhysicalDevice phys_dev =
-      static_cast<AdapterImpl *>(
-          fgla::internal::ImplAccessor::get_impl(adapter))
-          ->get_physical_device();
+      adapter.to_impl<AdapterImpl>().get_physical_device();
 
   fgla::ext::windowing::Surface::Capabilities caps = {};
 
@@ -320,7 +310,7 @@ SurfaceImpl::get_capabilities(const Adapter &adapter) {
 }
 
 fgla::Result<std::reference_wrapper<fgla::Image>>
-SurfaceImpl::get_current_image(const fgla::Queue &queue) {
+SurfaceImpl::get_current_image(fgla::Queue &queue) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
   VkSemaphore available_semaphore = this->get_semaphore();
@@ -337,8 +327,7 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   if (res == VK_SUBOPTIMAL_KHR) // TODO: report this to the user
     logger->warn("Swapchain suboptimal.");
 
-  QueueImpl &queue_impl =
-      *dynamic_cast<QueueImpl *>(fgla::internal::ImplAccessor::get_impl(queue));
+  QueueImpl &queue_impl = queue.to_impl<QueueImpl>();
   VkQueue vk_queue = queue_impl.get_queue();
 
   Image &image = this->swapchain_images[image_index];
@@ -349,7 +338,7 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
                               queue_impl.get_timeline(),
                               ++queue_impl.get_timeline_value());
 
-  auto completion = Completion::from_raw(std::make_unique<CompletionImpl>(
+  auto completion = Completion::from_impl(std::make_unique<CompletionImpl>(
       queue_impl.get_timeline(), queue_impl.get_timeline_value()));
 
   image.get_completion() = std::move(completion);
@@ -357,10 +346,8 @@ SurfaceImpl::get_current_image(const fgla::Queue &queue) {
   return std::reference_wrapper(image);
 }
 
-VkImage get_image(fgla::Image &im) {
-  return dynamic_cast<BaseImageImpl *>(
-             fgla::internal::ImplAccessor::get_impl(im))
-      ->get_image();
+VkImage get_image(const fgla::Image &im) {
+  return im.to_impl<BaseImageImpl>().get_image();
 }
 
 std::optional<Error>
@@ -369,22 +356,17 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
   VkPresentInfoKHR present_info = {};
   present_info.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
 
-  VkQueue queue = dynamic_cast<QueueImpl *>(
-                      fgla::internal::ImplAccessor::get_impl(present_queue))
-                      ->get_queue();
+  VkQueue queue = present_queue.to_impl<QueueImpl>().get_queue();
 
   VkSemaphore wait_semaphore = this->get_semaphore();
 
   auto cb_res = present_queue.begin_recording();
   if (cb_res.has_error()) return cb_res.error();
 
-  auto &cb_impl = *dynamic_cast<CommandBufferImpl *>(
-      fgla::internal::ImplAccessor::get_impl(cb_res.value()));
+  auto &cb_impl = cb_res.value().to_impl<CommandBufferImpl>();
   auto cb = cb_impl.get_command_buffer();
 
-  VkImageLayout &img_layout = dynamic_cast<BaseImageImpl *>(
-                                  fgla::internal::ImplAccessor::get_impl(image))
-                                  ->get_layout();
+  VkImageLayout &img_layout = image.to_impl<BaseImageImpl>().get_layout();
 
   if (img_layout != VK_IMAGE_LAYOUT_PRESENT_SRC_KHR) {
     VkImageMemoryBarrier2 barrier = {};
@@ -428,8 +410,7 @@ SurfaceImpl::present(fgla::Queue &present_queue, fgla::Image &&image,
   wait_semaphores.reserve(wait_completions.size());
 
   for (const auto &completion : wait_completions) {
-    auto &completion_impl = *dynamic_cast<CompletionImpl *>(
-        fgla::internal::ImplAccessor::get_impl(completion));
+    const auto &completion_impl = completion.to_impl<CompletionImpl>();
 
     VkSemaphoreSubmitInfo wait_semaphore = {};
     wait_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;

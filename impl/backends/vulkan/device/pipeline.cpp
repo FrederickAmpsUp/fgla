@@ -1,6 +1,5 @@
-#include "fgla/backends/vulkan/render_pipeline.hpp"
-
 #include <fgla/backends/vulkan/device.hpp>
+#include <fgla/backends/vulkan/render_pipeline.hpp>
 #include <fgla/backends/vulkan/shader_module.hpp>
 #include <fgla/backends/vulkan/util.hpp>
 
@@ -16,18 +15,15 @@ DeviceImpl::create_render_pipeline(const RenderPipeline::Descriptor &desc) {
   stages[0] = {
       .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
       .stage = VK_SHADER_STAGE_VERTEX_BIT,
-      .module = dynamic_cast<ShaderModuleImpl *>(
-                    fgla::internal::ImplAccessor::get_impl(desc.vertex.module))
-                    ->get_shader_module(),
+      .module =
+          desc.vertex.module.to_impl<ShaderModuleImpl>().get_shader_module(),
       .pName = desc.vertex.entry_point};
 
   if (desc.fragment.has_value()) {
     stages[1] = {.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
                  .stage = VK_SHADER_STAGE_FRAGMENT_BIT,
-                 .module = dynamic_cast<ShaderModuleImpl *>(
-                               fgla::internal::ImplAccessor::get_impl(
-                                   desc.fragment->module))
-                               ->get_shader_module(),
+                 .module = desc.fragment->module.to_impl<ShaderModuleImpl>()
+                               .get_shader_module(),
                  .pName = desc.fragment->entry_point};
     stage_count = 2;
   }
@@ -144,7 +140,7 @@ DeviceImpl::create_render_pipeline(const RenderPipeline::Descriptor &desc) {
   res = vkCreateGraphicsPipelines(this->device, VK_NULL_HANDLE, 1,
                                   &pipeline_info, nullptr, &pipeline);
 
-  return RenderPipeline::from_raw(
+  return RenderPipeline::from_impl(
       std::make_unique<RenderPipelineImpl>(layout, pipeline, this->device));
 }
 

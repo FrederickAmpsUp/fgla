@@ -2,7 +2,6 @@
 #include <fgla/backends/vulkan/command_buffer.hpp>
 #include <fgla/backends/vulkan/device.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
-#include <fgla/internal.hpp>
 #include <vulkan/vulkan_core.h>
 #ifdef FGLA_VK_EXT_WINDOWING
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
@@ -72,14 +71,11 @@ QueueAllocator::big_brain_allocator_algorithm(
             *reinterpret_cast<fgla::ext::windowing::PresentQueueOptions *>(
                 request.user_data);
         VkSurfaceKHR vk_surface =
-            dynamic_cast<fgla::backends::vulkan::ext::windowing::SurfaceImpl *>(
-                fgla::internal::ImplAccessor::get_impl(
-                    present_queue_opts.surface))
-                ->get_surface();
+            present_queue_opts.surface.to_impl<ext::windowing::SurfaceImpl>()
+                .get_surface();
         VkPhysicalDevice vk_device =
-            dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(
-                                            present_queue_opts.adapter))
-                ->get_physical_device();
+            present_queue_opts.adapter.to_impl<AdapterImpl>()
+                .get_physical_device();
 
         VkBool32 present_support = false;
         vkGetPhysicalDeviceSurfaceSupportKHR(vk_device, family.index,
@@ -195,7 +191,7 @@ QueueAllocator::Queues QueueAllocator::get_queues(VkDevice device) {
 
     std::unique_ptr<QueueImpl> queue_impl =
         std::make_unique<QueueImpl>(vk_queue, queue.first);
-    Queue fg_queue = Queue::from_raw(std::move(queue_impl));
+    Queue fg_queue = Queue::from_impl(std::move(queue_impl));
 
     queues.insert({queue_handle, std::move(fg_queue)});
   }
@@ -240,7 +236,7 @@ Result<CommandBuffer> QueueImpl::init_cb(VkCommandBuffer command_buffer,
     return Error(2, "Failed to begin Vulkan command buffer");
   }
 
-  return CommandBuffer::from_raw(
+  return CommandBuffer::from_impl(
       std::make_unique<CommandBufferImpl>(command_buffer, fence));
 }
 
@@ -299,8 +295,7 @@ QueueImpl::submit(CommandBuffer &&cb,
                   std::initializer_list<fgla::Completion> wait_completions) {
   static auto logger = spdlog::get("fgla::backends::vulkan");
 
-  CommandBufferImpl &command_buffer = *dynamic_cast<CommandBufferImpl *>(
-      fgla::internal::ImplAccessor::get_impl(cb));
+  CommandBufferImpl &command_buffer = cb.to_impl<CommandBufferImpl>();
 
   command_buffer.end_recording();
 
@@ -311,8 +306,7 @@ QueueImpl::submit(CommandBuffer &&cb,
   wait_semaphores.reserve(wait_completions.size());
 
   for (const auto &completion : wait_completions) {
-    auto &completion_impl = *dynamic_cast<CompletionImpl *>(
-        fgla::internal::ImplAccessor::get_impl(completion));
+    auto &completion_impl = completion.to_impl<CompletionImpl>();
 
     VkSemaphoreSubmitInfo wait_semaphore = {};
     wait_semaphore.sType = VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO;
@@ -353,7 +347,7 @@ QueueImpl::submit(CommandBuffer &&cb,
 
   logger->info("Submitted Vulkan command buffer.");
 
-  return Completion::from_raw(
+  return Completion::from_impl(
       std::make_unique<CompletionImpl>(this->timeline, this->timeline_value));
 }
 

@@ -9,7 +9,7 @@ namespace fgla::backends::vulkan::ext::windowing {
 struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   SurfaceImpl(WindowImpl &window, const fgla::Instance &instance);
 
-  inline VkSurfaceKHR get_surface() { return this->surface; }
+  inline VkSurfaceKHR get_surface() const { return this->surface; }
 
   virtual std::optional<Error>
   configure(fgla::Device &device,
@@ -19,7 +19,7 @@ struct SurfaceImpl : fgla::ext::windowing::Surface::Impl {
   get_capabilities(const Adapter &adapter) override;
 
   virtual fgla::Result<std::reference_wrapper<fgla::Image>>
-  get_current_image(const fgla::Queue &queue) override;
+  get_current_image(fgla::Queue &queue) override;
 
   virtual std::optional<Error>
   present(fgla::Queue &present_queue, fgla::Image &&image,

@@ -2,10 +2,9 @@
 #include <fgla/backends/vulkan/ext/windowing/extension.hpp>
 #include <fgla/backends/vulkan/ext/windowing/surface.hpp>
 #include <fgla/backends/vulkan/ext/windowing/window.hpp>
-#include <fgla/internal.hpp>
-#include <memory>
 #include <set>
 #include <spdlog/spdlog.h>
+#include <string>
 
 namespace fgla::backends::vulkan::ext::windowing {
 
@@ -15,23 +14,21 @@ Result<fgla::ext::windowing::Window> WindowingExtensionImpl::create_window(
   if (!impl->is_ok()) {
     return Error(0);
   }
-  return fgla::ext::windowing::Window::from_raw(std::move(impl));
+  return fgla::ext::windowing::Window::from_impl(std::move(impl));
 }
 
 std::function<bool(const Adapter &)>
 WindowingExtensionImpl::surface_support_filter(
     const fgla::ext::windowing::Surface &surface) {
   return [&](const Adapter &a) -> bool {
-    auto a_impl =
-        dynamic_cast<AdapterImpl *>(fgla::internal::ImplAccessor::get_impl(a));
-    auto s_impl = dynamic_cast<SurfaceImpl *>(
-        fgla::internal::ImplAccessor::get_impl(surface));
+    auto &a_impl = a.to_impl<AdapterImpl>();
+    auto &s_impl = surface.to_impl<SurfaceImpl>();
 
     uint32_t n_extensions = 0;
-    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr,
+    vkEnumerateDeviceExtensionProperties(a_impl.get_physical_device(), nullptr,
                                          &n_extensions, nullptr);
     std::vector<VkExtensionProperties> extensions(n_extensions);
-    vkEnumerateDeviceExtensionProperties(a_impl->get_physical_device(), nullptr,
+    vkEnumerateDeviceExtensionProperties(a_impl.get_physical_device(), nullptr,
                                          &n_extensions, extensions.data());
 
     std::set<std::string> required_extensions = {
@@ -44,13 +41,13 @@ WindowingExtensionImpl::surface_support_filter(
     if (!required_extensions.empty()) return false;
 
     uint32_t n_queue_families = 0;
-    vkGetPhysicalDeviceQueueFamilyProperties(a_impl->get_physical_device(),
+    vkGetPhysicalDeviceQueueFamilyProperties(a_impl.get_physical_device(),
                                              &n_queue_families, nullptr);
 
     VkBool32 present_support = false;
     for (int i = 0; n_queue_families; ++i) {
-      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl->get_physical_device(), i,
-                                           s_impl->get_surface(),
+      vkGetPhysicalDeviceSurfaceSupportKHR(a_impl.get_physical_device(), i,
+                                           s_impl.get_surface(),
                                            &present_support);
 
       if (present_support) break;
@@ -86,13 +83,13 @@ bool WindowImpl::is_open() { return !glfwWindowShouldClose(this->window); }
 
 Result<fgla::ext::windowing::Surface>
 WindowImpl::create_surface(const fgla::Instance &instance) {
-  auto surface = std::make_shared<SurfaceImpl>(*this, instance);
+  auto surface = std::make_unique<SurfaceImpl>(*this, instance);
 
   if (!surface->is_ok()) {
     return Error(0, "Failed to create Vulkan surface");
   }
 
-  return fgla::ext::windowing::Surface::from_raw(surface);
+  return fgla::ext::windowing::Surface::from_impl(std::move(surface));
 }
 
 Extent2d WindowImpl::get_framebuffer_size() const {

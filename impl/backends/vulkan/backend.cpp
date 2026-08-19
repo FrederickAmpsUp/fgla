@@ -44,7 +44,7 @@ fgla_backends_vulkan_create_instance(const Instance::Descriptor *descriptor) {
   std::unique_ptr<InstanceImpl> impl =
       std::make_unique<InstanceImpl>(*descriptor);
   if (!impl->is_ok()) return nullptr;
-  auto instance = Instance::from_raw(std::move(impl));
+  auto instance = Instance::from_impl(std::move(impl));
   return new Instance(std::move(instance));
 }
 

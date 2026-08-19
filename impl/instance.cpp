@@ -1,6 +1,7 @@
 #include <fgla/backend.hpp>
 #include <fgla/instance.hpp>
 #include <fmt/format.h>
+#include <functional>
 
 // TODO: proper error codes
 
@@ -50,6 +51,32 @@ Result<Instance> Instance::create(const Instance::Descriptor &descriptor) {
   return Error(
       0,
       "Failed to create an fgla::Instance as there are no available backends.");
+}
+
+Result<Adapter>
+Instance::select_adapter(const std::function<int(const Adapter &)> &scorer,
+                         std::vector<Adapter> &adapters) {
+
+  size_t best_index;
+  int best_score = -1;
+
+  size_t i = 0;
+  for (const Adapter &adapter : adapters) {
+    int score = scorer(adapter);
+    if (score > best_score) {
+      best_score = score;
+      best_index = i;
+    }
+    ++i;
+  }
+
+  if (best_score < 0) {
+    return Error(0, "No suitable adapters found");
+  }
+
+  Adapter best_adapter = std::move(adapters[best_index]);
+  adapters.erase(adapters.begin() + best_index);
+  return best_adapter;
 }
 
 } // namespace fgla
