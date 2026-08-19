@@ -58,7 +58,7 @@ struct Request {
       */                                                                       \
      , Result<Completion>, submit,                                             \
      (CommandBuffer && cb,                                                     \
-      std::initializer_list<Completion> wait_completions),                     \
+      std::initializer_list<Completion> wait_completions = {}),                \
      (std::move(cb), wait_completions))
 
 FGLA_OBJ_END
