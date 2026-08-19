@@ -4,9 +4,14 @@
 #include <type_traits>
 
 #define FGLA_FN_BODY(doc, ret, name, args, fwd)                                \
-  doc inline ret name args { return this->impl->name fwd; }
+  doc inline ret name args { return this->impl->name fwd; }                    \
+                                                                               \
+public:
 
-#define FGLA_FN_IMPL(doc, ret, name, args, fwd) doc virtual ret name args = 0;
+#define FGLA_FN_IMPL(doc, ret, name, args, fwd)                                \
+  doc virtual ret name args = 0;                                               \
+                                                                               \
+public:
 
 #define FGLA_OBJ_START                                                         \
   class FGLA_OBJ_NAME {                                                        \
@@ -24,6 +29,7 @@
   struct Impl {                                                                \
     FGLA_OBJ_FUNCTIONS(FGLA_FN_IMPL)                                           \
     virtual ~Impl() = 0;                                                       \
+    friend class FGLA_OBJ_NAME;                                                \
   };                                                                           \
   template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
   T &to_impl() {                                                               \
