@@ -39,7 +39,7 @@ public:
   const T &to_impl() const {                                                   \
     return dynamic_cast<const T &>(*impl);                                     \
   }                                                                            \
-  FGLA_OBJ_NAME from_impl(std::unique_ptr<Impl> impl) {                        \
+  static FGLA_OBJ_NAME from_impl(std::unique_ptr<Impl> impl) {                 \
     FGLA_OBJ_NAME obj;                                                         \
     obj.impl = std::move(impl);                                                \
     return obj;                                                                \
