@@ -3,7 +3,7 @@
 #include <fgla/completion.hpp>
 #include <fgla/image.hpp>
 #include <fgla/instance.hpp>
-#include <fgla/internal.hpp>
+#include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
 #include <memory>
 #include <optional>
@@ -11,80 +11,57 @@
 
 namespace fgla::ext::windowing {
 
-// TODO: document this
-/// Represents a surface, which is used to render to a window
-class Surface {
-public:
-  enum class PresentMode {
-    FIFO,
-    MAILBOX,
-    IMMEDIATE,
-    AUTO_VSYNC,
-    AUTO_NO_VSYNC
-  };
+#define FGLA_OBJ_NAME Surface
 
-  struct Configuration {
-    Format format;
-    PresentMode present_mode;
-    fgla::Extent2d size;
-  };
+/**
+ * Represents a surface, which is used to render to a window
+ */
+FGLA_OBJ_START
 
-  struct Capabilities {
-    std::vector<Format> formats;
-    std::vector<PresentMode> present_modes;
-  };
+enum class PresentMode { FIFO, MAILBOX, IMMEDIATE, AUTO_VSYNC, AUTO_NO_VSYNC };
 
-  inline std::optional<Error> configure(fgla::Device &device,
-                                        const Configuration &config) {
-    return this->impl->configure(device, config);
-  }
-  inline Capabilities get_capabilities(const Adapter &adapter) {
-    return this->impl->get_capabilities(adapter);
-  }
-
-  inline fgla::Result<std::reference_wrapper<fgla::Image>>
-  get_current_image(const fgla::Queue &queue) {
-    return this->impl->get_current_image(queue);
-  }
-
-  inline std::optional<Error>
-  present(fgla::Queue &present_queue, fgla::Image &&image,
-          std::initializer_list<fgla::Completion> wait_completions = {}) {
-    return this->impl->present(present_queue, std::move(image),
-                               wait_completions);
-  }
-
-  inline void cleanup() { return this->impl->cleanup(); }
-
-  /// The backend-defined implementation of the `Surface`'s functions
-  struct Impl {
-    virtual std::optional<Error> configure(fgla::Device &,
-                                           const Configuration &) = 0;
-    virtual Capabilities get_capabilities(const Adapter &) = 0;
-    virtual fgla::Result<std::reference_wrapper<fgla::Image>>
-    get_current_image(const fgla::Queue &) = 0;
-    virtual std::optional<Error>
-    present(fgla::Queue &, fgla::Image &&,
-            std::initializer_list<fgla::Completion>) = 0;
-    virtual void cleanup() = 0;
-
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates a `Surface` from a raw implementation
-  /// This should only be used internally
-  static inline Surface from_raw(std::shared_ptr<Impl> impl) {
-    Surface surface;
-    surface.impl = std::move(impl);
-    return surface;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::shared_ptr<Impl> impl;
+struct Configuration {
+  Format format;
+  PresentMode present_mode;
+  fgla::Extent2d size;
 };
 
-inline Surface::Impl::~Impl() = default;
+struct Capabilities {
+  std::vector<Format> formats;
+  std::vector<PresentMode> present_modes;
+};
+
+#define FGLA_OBJ_FUNCTIONS(FN)                                                 \
+  FN(/**                                                                       \
+      * @todo TODO                                                             \
+      */                                                                       \
+     , std::optional<Error>, configure,                                        \
+     (fgla::Device & device, const Configuration &config), (device, config))   \
+  FN(/**                                                                       \
+      * @todo TODO                                                             \
+      */                                                                       \
+     , Capabilities, get_capabilities, (const Adapter &adapter), (adapter))    \
+  FN(/**                                                                       \
+      * @todo TODO                                                             \
+      */                                                                       \
+     , fgla::Result<std::reference_wrapper<fgla::Image>>, get_current_image,   \
+     (fgla::Queue & queue), (queue))                                           \
+  FN(/**                                                                       \
+      * @todo TODO                                                             \
+      */                                                                       \
+     , std::optional<fgla::Error>, present,                                    \
+     (fgla::Queue & queue, fgla::Image && image,                               \
+      std::initializer_list<fgla::Completion> wait_completions = {}),          \
+     (queue, std::move(image), wait_completions))                              \
+  FN(/**                                                                       \
+      * @todo TODO                                                             \
+      */                                                                       \
+     , void, cleanup, (), ())
+
+FGLA_OBJ_END
+
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 struct QueueTypeExt {
   static constexpr Queue::Type Present =
