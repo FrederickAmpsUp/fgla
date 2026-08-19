@@ -5,7 +5,6 @@
 #include <fgla/instance.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
-#include <memory>
 #include <optional>
 #include <vector>
 

@@ -4,7 +4,6 @@
 #include <fgla/ext/windowing/surface.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
-#include <memory>
 
 namespace fgla::ext::windowing {
 
