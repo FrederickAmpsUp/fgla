@@ -3,7 +3,6 @@
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
 #include <fgla/extension.hpp>
-#include <fgla/internal.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/util.hpp>
 #include <functional>
