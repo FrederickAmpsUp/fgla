@@ -15,10 +15,9 @@ public:
 
 #define FGLA_OBJ_START                                                         \
   class FGLA_OBJ_NAME {                                                        \
-  private:                                                                     \
+  public:                                                                      \
     FGLA_OBJ_NAME() = default;                                                 \
                                                                                \
-  public:                                                                      \
     FGLA_OBJ_NAME(const FGLA_OBJ_NAME &) = delete;                             \
     FGLA_OBJ_NAME &operator=(const FGLA_OBJ_NAME &) = delete;                  \
     FGLA_OBJ_NAME(FGLA_OBJ_NAME &&) = default;                                 \
