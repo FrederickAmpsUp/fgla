@@ -1,49 +1,57 @@
 #pragma once
 
-#include <cstdint>
-#include <fgla/internal.hpp>
+#include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
-#include <memory>
 
 namespace fgla {
 
-/// Represents a view into an image.
-class ImageView {
-public:
-  /// Determines the interpreted shape of the image data.
-  enum class Mode { D1, D2, D3, D1_ARRAY, D2_ARRAY, CUBE, CUBE_ARRAY };
-  struct AspectBits {
-    enum Value : uint8_t { COLOR = 1 << 0, DEPTH = 1 << 1, STENCIL = 1 << 2 };
-  };
-  using AspectFlags = uint8_t;
+#define FGLA_OBJ_NAME ImageView
 
-  struct Descriptor {
-    Format format;
-    ImageView::Mode mode;
-    ImageView::AspectFlags aspect_flags;
-    uint32_t base_mip_level, num_mip_levels;
-    uint32_t base_array_layer, num_array_layers;
-  };
+/**
+ * Represents a view of an `Image`, specifying the format, aspect
+ * and subresource range through which the image is accessed
+ */
+FGLA_OBJ_START
 
-  /// The backend-defined implementation of the `ImageView`'s functions
-  struct Impl {
+/**
+ * The interpreted shape of the data
+ */
+enum class Mode { D1, D2, D3, D1_ARRAY, D2_ARRAY, CUBE, CUBE_ARRAY };
 
-    virtual ~Impl() = 0;
-  };
+/**
+ * Specifies which aspect(s) of an `Image` an `ImageView` accesses.
+ */
+struct AspectBits {
+  enum Value : uint8_t { COLOR = 1 << 0, DEPTH = 1 << 1, STENCIL = 1 << 2 };
+};
+using AspectFlags = uint8_t;
 
-  /// Creates an `ImageView` from a raw implementation
-  /// This should only be used internally
-  static inline ImageView from_raw(std::unique_ptr<ImageView::Impl> impl) {
-    ImageView image_view;
-    image_view.impl = std::move(impl);
-    return image_view;
-  }
+/**
+ * Stores the settings used to create an `ImageView`
+ */
+struct Descriptor {
+  /**
+   * The color format to interpret the `Image` as
+   */
+  Format format;
+  /**
+   * The shape to interpret the `Image` as
+   */
+  Mode mode;
+  /**
+   * The aspect of the `Image` to access
+   */
+  AspectFlags aspect_flags;
 
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
+  uint32_t base_mip_level, num_mip_levels;
+  uint32_t base_array_layer, num_array_layers;
 };
 
-inline ImageView::Impl::~Impl() = default;
+#define FGLA_OBJ_FUNCTIONS(FN)
+
+FGLA_OBJ_END
+
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 } // namespace fgla

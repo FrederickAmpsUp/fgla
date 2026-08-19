@@ -1,36 +1,32 @@
 #pragma once
 
-#include <fgla/internal.hpp>
-#include <memory>
+#include <fgla/object_gen.hpp>
+#include <string>
 
 namespace fgla {
 
-// Represents a compiled collection of shader code used to create pipelines.
-class ShaderModule {
-public:
-  struct Descriptor {
-    const std::string &module_name;
-  };
+#define FGLA_OBJ_NAME ShaderModule
 
-  /// The backend-defined implementation of the `ShaderModule`'s functions
-  struct Impl {
+FGLA_OBJ_START
 
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates a `ShaderModule` from a raw implementation
-  /// This should only be used internally
-  static inline ShaderModule from_raw(std::unique_ptr<Impl> impl) {
-    ShaderModule shader_module;
-    shader_module.impl = std::move(impl);
-    return shader_module;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
+/**
+ * Describes the settings used to load a `ShaderModule`
+ */
+struct Descriptor {
+  /**
+   * The name of the shader module to load
+   *
+   * @note The module is searched for as a `.slang` file in
+   * the paths specified by `Device::Descriptor::shader_paths`
+   */
+  const std::string &module_name;
 };
 
-inline ShaderModule::Impl::~Impl() = default;
+#define FGLA_OBJ_FUNCTIONS(FN)
+
+FGLA_OBJ_END
+
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 } // namespace fgla

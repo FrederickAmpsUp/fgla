@@ -4,59 +4,66 @@
 #include <fgla/command_buffer.hpp>
 #include <fgla/completion.hpp>
 #include <fgla/error.hpp>
-#include <fgla/internal.hpp>
-#include <memory>
+#include <fgla/object_gen.hpp>
 
 namespace fgla {
 
-/// Represents a logical queue, which is used to submit GPU commands
-class Queue {
-public:
-  /// Type type of a `Queue`, indicating what functions it may perform
-  enum class Type { Graphics, Transfer };
+#define FGLA_OBJ_NAME Queue
 
-  /// Represents the creation of a number of `Queue`s, all with a shared `Type`
-  struct Request {
-    /// The type of the `Queue`s to create
-    Type type;
-    /// The number of `Queue`s of this type to create
-    uint32_t count;
-    /// @brief Any arbitrary data to use during queue creation
-    ///
-    /// This may be left null in most cases
-    void *user_data = nullptr;
-  };
+/**
+ * Represents a logical queue, which is used to submit GPU commands
+ */
+FGLA_OBJ_START
 
-  inline Result<CommandBuffer> begin_recording() {
-    return this->impl->begin_recording();
-  }
-  inline Result<Completion>
-  submit(CommandBuffer &&cb,
-         std::initializer_list<Completion> wait_completions = {}) {
-    return this->impl->submit(std::move(cb), wait_completions);
-  }
+/**
+ * The type of a `Queue`, indicating which functions it may perform
+ */
+enum class Type { Graphics, Transfer };
 
-  /// The backend-defined implementation of the `Queue`'s functions
-  struct Impl {
-    virtual Result<CommandBuffer> begin_recording() = 0;
-    virtual Result<Completion>
-    submit(CommandBuffer &&cb,
-           std::initializer_list<Completion> wait_completions) = 0;
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates a `Queue` from a raw implementation
-  /// This should only be used internally
-  static inline Queue from_raw(std::unique_ptr<Impl> impl) {
-    Queue queue;
-    queue.impl = std::move(impl);
-    return queue;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
+/**
+ * Describes the creation of a number of `Queue`s, all with a shared `Type`
+ */
+struct Request {
+  /**
+   * The type of the `Queues` to create
+   */
+  Type type;
+  /**
+   * The number of `Queues` of the given type to create
+   */
+  uint32_t count;
+  /**
+   * Any arbitrary data to use during queue creation
+   *
+   * @note This may be left null in most cases
+   */
+  void *user_data = nullptr;
 };
 
-inline Queue::Impl::~Impl() = default;
+#define FGLA_OBJ_FUNCTIONS(FN)                                                 \
+  FN(/**                                                                       \
+      * Starts recording commands to a `CommandBuffer`                         \
+      *                                                                        \
+      * @returns The `CommandBuffer`, ready to accept commands                 \
+      */                                                                       \
+     , Result<CommandBuffer>, begin_recording, (), ())                         \
+  FN(/**                                                                       \
+      * Submits a `CommandBuffer` so that its commands may be executed         \
+      *                                                                        \
+      * @param cb The `CommandBuffer` to submit                                \
+      * @param wait_completions A numer of `Completion`s to wait on            \
+      * before command execution is started for this `CommandBuffer`           \
+      * @returns A `Completion` which will trigger when command execution is   \
+      * finished, or an `Error` containing failure information                 \
+      */                                                                       \
+     , Result<Completion>, submit,                                             \
+     (CommandBuffer && cb,                                                     \
+      std::initializer_list<Completion> wait_completions),                     \
+     (std::move(cb), wait_completions))
+
+FGLA_OBJ_END
+
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
+
 } // namespace fgla

@@ -1,5 +1,7 @@
 #pragma once
 
+// your days are limited
+
 namespace fgla::internal {
 
 /// Allows access to the raw polymorphic implementation of FGLA classes

@@ -3,43 +3,39 @@
 #include <fgla/completion.hpp>
 #include <fgla/error.hpp>
 #include <fgla/image_view.hpp>
-#include <fgla/internal.hpp>
-#include <memory>
+#include <fgla/object_gen.hpp>
 
 namespace fgla {
 
-/// Represents an image, a multidimensional (up to 3d) block of GPU-resident
-/// structured data
-class Image {
-public:
-  inline Result<ImageView>
-  create_view(const ImageView::Descriptor &descriptor) {
-    return this->impl->create_view(descriptor);
-  }
+#define FGLA_OBJ_NAME Image
 
-  inline Completion &get_completion() { return this->impl->get_completion(); }
+/**
+ * Represents an image, a multidimensional (up to 3d) block of GPU-resident
+ * structured data
+ */
+FGLA_OBJ_START
 
-  /// The backend-defined implementation of the `Image`'s functions
-  struct Impl {
-    virtual Result<ImageView> create_view(const ImageView::Descriptor &) = 0;
-    virtual Completion &get_completion() = 0;
+#define FGLA_OBJ_FUNCTIONS(FN)                                                 \
+  FN(/**                                                                       \
+      * Creates an `ImageView` referencing this `Image` with the specified     \
+      * settings                                                               \
+      *                                                                        \
+      * @param descriptor An `ImageView::Descriptor` specifying the data       \
+      * format and subresource range of the `Image` to view                    \
+      * @returns An `ImageView` with the specified settings or an `Error`      \
+      * containing failure information                                         \
+      */                                                                       \
+     , Result<ImageView>, create_view, (const ImageView::Descriptor &desc),    \
+     (desc))                                                                   \
+  FN(/**                                                                       \
+      * @returns a handle to an arbitrary `Completion` stored in this `Image`  \
+      * @note This is a convenience slot to store an arbitrary `Completion`    \
+      */                                                                       \
+     , Completion &, get_completion, (), ())
 
-    virtual ~Impl() = 0;
-  };
+FGLA_OBJ_END
 
-  /// Creates an `Image` from a raw implentation
-  /// This should only be used internally
-  static inline Image from_raw(std::unique_ptr<Image::Impl> impl) {
-    Image image;
-    image.impl = std::move(impl);
-    return image;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
-};
-
-inline Image::Impl::~Impl() = default;
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 } // namespace fgla

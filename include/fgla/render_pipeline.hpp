@@ -1,64 +1,90 @@
 #pragma once
 
-#include <fgla/internal.hpp>
+#include <fgla/object_gen.hpp>
 #include <fgla/shader_module.hpp>
 #include <fgla/types.hpp>
-#include <memory>
 #include <optional>
 #include <vector>
 
 namespace fgla {
 
-class RenderPipeline {
-public:
-  struct ShaderStage {
-    const ShaderModule &module;
-    const char *entry_point;
-  };
+#define FGLA_OBJ_NAME RenderPipeline
 
-  struct PrimitiveState {
-    enum class Topology {
-      POINT_LIST,
-      LINE_LIST,
-      LINE_STRIP,
-      TRIANGLE_LIST,
-      TRIANGLE_STRIP
-    };
+FGLA_OBJ_START
 
-    Topology topology = Topology::TRIANGLE_LIST;
-  };
+/**
+ * Describes a shader stage used by a `RenderPipeline`
+ */
+struct ShaderStage {
+  /**
+   * The shader module containing the stage
+   */
+  const ShaderModule &module;
 
-  /* TODO: raster state */
-
-  struct ColorAttachment {
-    Format format;
-  };
-
-  struct Descriptor {
-    /* TODO: pipeline layout OR a better named version */
-    ShaderStage vertex;
-    PrimitiveState primitive;
-    std::optional<ShaderStage> fragment;
-    std::vector<ColorAttachment> color_attachments;
-  };
-
-  struct Impl {
-    virtual ~Impl() = 0;
-  };
-
-  /// Creates a `RenderPipeline` from a raw implementation
-  /// This should only be used internally
-  static inline RenderPipeline from_raw(std::unique_ptr<Impl> impl) {
-    RenderPipeline render_pipeline;
-    render_pipeline.impl = std::move(impl);
-    return render_pipeline;
-  }
-
-private:
-  friend struct fgla::internal::ImplAccessor;
-  std::unique_ptr<Impl> impl;
+  /**
+   * The name of the entry point to execute.
+   */
+  const char *entry_point;
 };
 
-inline RenderPipeline::Impl::~Impl() = default;
+/**
+ * Describes how primitives are assembled by a `RenderPipeline`
+ */
+struct PrimitiveState {
+  /**
+   * Determines how vertices are grouped into primitives
+   */
+  enum class Topology {
+    POINT_LIST,
+    LINE_LIST,
+    LINE_STRIP,
+    TRIANGLE_LIST,
+    TRIANGLE_STRIP
+  };
+
+  Topology topology = Topology::TRIANGLE_LIST;
+};
+/* TODO: raster state */
+
+/**
+ * Describes a color attachment used by a `RenderPipeline`
+ */
+struct ColorAttachment {
+  /**
+   * The format of the color attachment
+   */
+  Format format;
+};
+
+/**
+ * Stores the settings used to create a `RenderPipeline`
+ */
+struct Descriptor {
+  /* TODO: pipeline layout OR a better named version */
+  /**
+   * The vertex shader stage used by the pipeline
+   */
+  ShaderStage vertex;
+  /**
+   * The primitive assembly settings used by the pipeline
+   */
+  PrimitiveState primitive;
+  /**
+   * The fragment shader stage used by the pipeline,
+   * or `std::nullopt` it none is used
+   */
+  std::optional<ShaderStage> fragment;
+  /**
+   * The color attachments written by the pipeline
+   */
+  std::vector<ColorAttachment> color_attachments;
+};
+
+#define FGLA_OBJ_FUNCTIONS(FN)
+
+FGLA_OBJ_END
+
+#undef FGLA_OBJ_NAME
+#undef FGLA_OBJ_FUNCTIONS
 
 } // namespace fgla
