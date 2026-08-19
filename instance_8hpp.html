@@ -99,7 +99,9 @@ $(function(){initNavTree('instance_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">instance.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,23 +109,16 @@ $(function(){initNavTree('instance_8hpp.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="extension_8hpp_source.html">fgla/extension.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="internal_8hpp_source.html">fgla/internal.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="util_8hpp_source.html">fgla/util.hpp</a>&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 </div>
 <p><a href="instance_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Instance.html">fgla::Instance</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an instance, which is used to acquire an <code><a class="el" href="classfgla_1_1Adapter.html">Adapter</a></code>  <a href="classfgla_1_1Instance.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Instance_1_1Descriptor.html">fgla::Instance::Descriptor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the settings used to create an <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code>  <a href="structfgla_1_1Instance_1_1Descriptor.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Instance_1_1Impl.html">fgla::Instance::Impl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1Instance.html" title="Represents an instance, which is used to acquire an Adapter">Instance</a></code>'s functions.  <a href="structfgla_1_1Instance_1_1Impl.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Descriptor.html">fgla::Descriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -132,7 +127,83 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla_1_1backend.html">fgla::backend</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac9347ca045796552e86e06b72e9123ba" id="r_ac9347ca045796552e86e06b72e9123ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9347ca045796552e86e06b72e9123ba">FGLA_OBJ_NAME</a>&#160;&#160;&#160;Instance</td></tr>
+<tr class="separator:ac9347ca045796552e86e06b72e9123ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdb493e62ad18b6d0c947b92e2671ea" id="r_a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a>(FN)</td></tr>
+<tr class="separator:a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a677e18f92dec7bd22d55987e84f2b60e" id="r_a677e18f92dec7bd22d55987e84f2b60e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Instance &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">fgla::create</a> (const <a class="el" href="structfgla_1_1Descriptor.html">Descriptor</a> &amp;descriptor)</td></tr>
+<tr class="separator:a677e18f92dec7bd22d55987e84f2b60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f9589da098900c73f438c4de6b5887" id="r_a52f9589da098900c73f438c4de6b5887"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">fgla::get_adapter</a> (const <a class="el" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;descriptor)</td></tr>
+<tr class="separator:a52f9589da098900c73f438c4de6b5887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffe5c4164d8229af464198d6542b30c" id="r_abffe5c4164d8229af464198d6542b30c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">fgla::select_adapter</a> (const std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer, std::vector&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt; &amp;adapters)</td></tr>
+<tr class="separator:abffe5c4164d8229af464198d6542b30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808a78b90b686e8c5213498f2324df7c" id="r_a808a78b90b686e8c5213498f2324df7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfgla_1_1Result.html">Result</a>&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a808a78b90b686e8c5213498f2324df7c">fgla::select_adapter</a> (const std::function&lt; int(const <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer, std::vector&lt; <a class="el" href="classfgla_1_1Adapter.html">Adapter</a> &gt; &amp;&amp;adapters)</td></tr>
+<tr class="separator:a808a78b90b686e8c5213498f2324df7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9405a9a97bd7e21454de00e1593fcfd4" id="r_a9405a9a97bd7e21454de00e1593fcfd4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9405a9a97bd7e21454de00e1593fcfd4"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">fgla::get_extension</a> ()</td></tr>
+<tr class="separator:a9405a9a97bd7e21454de00e1593fcfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0bdb493e62ad18b6d0c947b92e2671ea" name="a0bdb493e62ad18b6d0c947b92e2671ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdb493e62ad18b6d0c947b92e2671ea">&#9670;&#160;</a></span>FGLA_OBJ_FUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_FUNCTIONS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FN</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , std::vector&lt;Adapter&gt;, enumerate_adapters, (), ())                       \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> Adapter &amp;)&gt;, get_adapter_scorer,                \</div>
+<div class="line">     (<span class="keyword">const</span> Adapter::Descriptor &amp;descriptor), (descriptor))                    \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , <span class="keyword">const</span> backend::Backend &amp;, get_backend, (), ())                          \</div>
+<div class="line">  FN(<span class="keyword">private</span>:, <span class="keywordtype">void</span> *, get_extension_raw, (extension::ExtensionUUID uuid),     \</div>
+<div class="line">     (uuid))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00105">105</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">  106</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">  108</span>                                                                       \</div>
+<div class="line"><span class="lineno">  109</span>     , std::vector&lt;Adapter&gt;, enumerate_adapters, (), ())                       \</div>
+<div class="line"><span class="lineno">  110</span>  FN(</div>
+<div class="line"><span class="lineno">  113</span>                                                                       \</div>
+<div class="line"><span class="lineno">  114</span>     , std::function&lt;int(const Adapter &amp;)&gt;, get_adapter_scorer,                \</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac9347ca045796552e86e06b72e9123ba" name="ac9347ca045796552e86e06b72e9123ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9347ca045796552e86e06b72e9123ba">&#9670;&#160;</a></span>FGLA_OBJ_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_NAME&#160;&#160;&#160;Instance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="instance_8hpp_source.html#l00019">19</a> of file <a class="el" href="instance_8hpp_source.html">instance.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

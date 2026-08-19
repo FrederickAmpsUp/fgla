@@ -99,7 +99,9 @@ $(function(){initNavTree('queue_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">queue.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -107,28 +109,84 @@ $(function(){initNavTree('queue_8hpp.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="command__buffer_8hpp_source.html">fgla/command_buffer.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="completion_8hpp_source.html">fgla/completion.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="internal_8hpp_source.html">fgla/internal.hpp</a>&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 </div>
 <p><a href="queue_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Queue.html">fgla::Queue</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a logical queue, which is used to submit GPU commands.  <a href="classfgla_1_1Queue.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Queue_1_1Request.html">fgla::Queue::Request</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the creation of a number of <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code>s, all with a shared <code>Type</code>  <a href="structfgla_1_1Queue_1_1Request.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Queue_1_1Impl.html">fgla::Queue::Impl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code>'s functions.  <a href="structfgla_1_1Queue_1_1Impl.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Request.html">fgla::Request</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html">fgla</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac9347ca045796552e86e06b72e9123ba" id="r_ac9347ca045796552e86e06b72e9123ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9347ca045796552e86e06b72e9123ba">FGLA_OBJ_NAME</a>&#160;&#160;&#160;Queue</td></tr>
+<tr class="separator:ac9347ca045796552e86e06b72e9123ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdb493e62ad18b6d0c947b92e2671ea" id="r_a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a>(FN)</td></tr>
+<tr class="separator:a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:aa9df1a80b3e8f79eef8d84efc789bc83" id="r_aa9df1a80b3e8f79eef8d84efc789bc83"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83">fgla::Type</a> { <a class="el" href="namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494">fgla::Graphics</a>
+, <a class="el" href="namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e">fgla::Transfer</a>
+ }</td></tr>
+<tr class="separator:aa9df1a80b3e8f79eef8d84efc789bc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0bdb493e62ad18b6d0c947b92e2671ea" name="a0bdb493e62ad18b6d0c947b92e2671ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdb493e62ad18b6d0c947b92e2671ea">&#9670;&#160;</a></span>FGLA_OBJ_FUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_FUNCTIONS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FN</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , Result&lt;CommandBuffer&gt;, begin_recording, (), ())                         \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , Result&lt;Completion&gt;, submit,                                             \</div>
+<div class="line">     (CommandBuffer &amp;&amp; cb,                                                     \</div>
+<div class="line">      std::initializer_list&lt;Completion&gt; wait_completions),                     \</div>
+<div class="line">     (std::move(cb), wait_completions))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00043">43</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   48</span>                                                                       \</div>
+<div class="line"><span class="lineno">   49</span>     , Result&lt;CommandBuffer&gt;, begin_recording, (), ())                         \</div>
+<div class="line"><span class="lineno">   50</span>  FN(</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac9347ca045796552e86e06b72e9123ba" name="ac9347ca045796552e86e06b72e9123ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9347ca045796552e86e06b72e9123ba">&#9670;&#160;</a></span>FGLA_OBJ_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_NAME&#160;&#160;&#160;Queue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="queue_8hpp_source.html#l00011">11</a> of file <a class="el" href="queue_8hpp_source.html">queue.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

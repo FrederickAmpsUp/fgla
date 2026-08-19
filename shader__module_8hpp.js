@@ -1,6 +1,6 @@
 var shader__module_8hpp =
 [
-    [ "fgla::ShaderModule", "classfgla_1_1ShaderModule.html", "classfgla_1_1ShaderModule" ],
-    [ "fgla::ShaderModule::Descriptor", "structfgla_1_1ShaderModule_1_1Descriptor.html", "structfgla_1_1ShaderModule_1_1Descriptor" ],
-    [ "fgla::ShaderModule::Impl", "structfgla_1_1ShaderModule_1_1Impl.html", "structfgla_1_1ShaderModule_1_1Impl" ]
+    [ "fgla::Descriptor", "structfgla_1_1Descriptor.html", "structfgla_1_1Descriptor" ],
+    [ "FGLA_OBJ_FUNCTIONS", "shader__module_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],
+    [ "FGLA_OBJ_NAME", "shader__module_8hpp.html#ac9347ca045796552e86e06b72e9123ba", null ]
 ];

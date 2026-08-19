@@ -4,15 +4,15 @@ var searchData=
   ['parse_5fctr_1',['parse_ctr',['../structfgla_1_1util_1_1UUID.html#a0758e24e56c979d0367b29e1b05c8fc5',1,'fgla::util::UUID']]],
   ['parse_5fhex_2',['parse_hex',['../namespacefgla_1_1util.html#ae7bb416a7d53a9a194f3b72c3e765355',1,'fgla::util']]],
   ['patch_3',['patch',['../structfgla_1_1VersionTriple.html#a5e6597de5d1c644a243e52ab799a638b',1,'fgla::VersionTriple']]],
-  ['point_5flist_4',['POINT_LIST',['../structfgla_1_1RenderPipeline_1_1PrimitiveState.html#ae025289991249fac17ede237fd8cdd71ad2632e54a7b9520714554554f4b9619d',1,'fgla::RenderPipeline::PrimitiveState']]],
+  ['point_5flist_4',['POINT_LIST',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2ad2632e54a7b9520714554554f4b9619d',1,'fgla::PrimitiveState']]],
   ['poll_5fevents_5',['poll_events',['../classfgla_1_1ext_1_1windowing_1_1Window.html#aa28b3728d90edc986ce59b4ed135ebbf',1,'fgla::ext::windowing::Window::poll_events()'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Impl.html#a3e8aec3e1bd9ef26623830177c3e15db',1,'fgla::ext::windowing::Window::Impl::poll_events()']]],
-  ['preferred_5fbackend_6',['preferred_backend',['../structfgla_1_1Instance_1_1Descriptor.html#aa45ffbeb03bbc9f4da04e6c67250b9dc',1,'fgla::Instance::Descriptor']]],
+  ['preferred_5fbackend_6',['preferred_backend',['../structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623',1,'fgla::Descriptor']]],
   ['present_7',['Present',['../structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html#aac9d379ce07dd84857906ab34f532b19',1,'fgla::ext::windowing::QueueTypeExt']]],
   ['present_8',['present',['../classfgla_1_1ext_1_1windowing_1_1Surface.html#ada06ede00af04e137305d8a9758ce342',1,'fgla::ext::windowing::Surface::present()'],['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html#a0514a6e56047e9255cbd7c18a308fd61',1,'fgla::ext::windowing::Surface::Impl::present()']]],
   ['present_5fmode_9',['present_mode',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html#a7e3d488568efd9b33c02558551e6c42a',1,'fgla::ext::windowing::Surface::Configuration']]],
   ['present_5fmodes_10',['present_modes',['../structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html#ad02f3a9d85682290d655bd06da661bd9',1,'fgla::ext::windowing::Surface::Capabilities']]],
   ['presentmode_11',['PresentMode',['../classfgla_1_1ext_1_1windowing_1_1Surface.html#a599bbcd326427932c4aa4a1834a51a8a',1,'fgla::ext::windowing::Surface']]],
   ['presentqueueoptions_12',['PresentQueueOptions',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html',1,'fgla::ext::windowing']]],
-  ['primitive_13',['primitive',['../structfgla_1_1RenderPipeline_1_1Descriptor.html#a01a57a4d3a9c3eeba5626b6071811006',1,'fgla::RenderPipeline::Descriptor']]],
-  ['primitivestate_14',['PrimitiveState',['../structfgla_1_1RenderPipeline_1_1PrimitiveState.html',1,'fgla::RenderPipeline']]]
+  ['primitive_13',['primitive',['../structfgla_1_1Descriptor.html#a9148fce471ce69aa2af7569f6bbaaa4a',1,'fgla::Descriptor']]],
+  ['primitivestate_14',['PrimitiveState',['../structfgla_1_1PrimitiveState.html',1,'fgla']]]
 ];

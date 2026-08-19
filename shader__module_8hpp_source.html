@@ -102,54 +102,35 @@ $(function(){initNavTree('shader__module_8hpp_source.html',''); initResizable(tr
 <div class="contents">
 <a href="shader__module_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="internal_8hpp.html">fgla/internal.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="object__gen_8hpp.html">fgla/object_gen.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Represents a compiled collection of shader code used to create pipelines.</span></div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classfgla_1_1ShaderModule.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1ShaderModule.html">ShaderModule</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structfgla_1_1ShaderModule_1_1Descriptor.html">   11</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1ShaderModule_1_1Descriptor.html">Descriptor</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structfgla_1_1ShaderModule_1_1Descriptor.html#add7c6ec3a76c23838642d256fa2a6238">   12</a></span>    <span class="keyword">const</span> std::string &amp;<a class="code hl_variable" href="structfgla_1_1ShaderModule_1_1Descriptor.html#add7c6ec3a76c23838642d256fa2a6238">module_name</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  };</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="shader__module_8hpp.html#ac9347ca045796552e86e06b72e9123ba">    8</a></span><span class="preprocessor">#define FGLA_OBJ_NAME ShaderModule</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Descriptor.html">Descriptor</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc">   22</a></span>  <span class="keyword">const</span> std::string &amp;<a class="code hl_variable" href="structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc">module_name</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structfgla_1_1ShaderModule_1_1Impl.html">   16</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1ShaderModule_1_1Impl.html">Impl</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structfgla_1_1ShaderModule_1_1Impl.html#acd496c917ea5aa7a343767ebc0f323aa">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structfgla_1_1ShaderModule_1_1Impl.html#acd496c917ea5aa7a343767ebc0f323aa">~Impl</a>() = 0;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  };</div>
-</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classfgla_1_1ShaderModule.html#ad7fb618c3ba23a82279a8566fc4ebdaf">   23</a></span>  <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1ShaderModule.html">ShaderModule</a> <a class="code hl_function" href="classfgla_1_1ShaderModule.html#ad7fb618c3ba23a82279a8566fc4ebdaf">from_raw</a>(std::unique_ptr&lt;Impl&gt; impl) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classfgla_1_1ShaderModule.html">ShaderModule</a> shader_module;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    shader_module.impl = std::move(impl);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> shader_module;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  }</div>
-</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="shader__module_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">   25</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classfgla_1_1ShaderModule.html#ac06cf072aa647185632537a764206ad1">   30</a></span>  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">inline</span> <a class="code hl_function" href="structfgla_1_1ShaderModule_1_1Impl.html#acd496c917ea5aa7a343767ebc0f323aa">ShaderModule::Impl::~Impl</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>} <span class="comment">// namespace fgla</span></div>
-<div class="ttc" id="aclassfgla_1_1ShaderModule_html"><div class="ttname"><a href="classfgla_1_1ShaderModule.html">fgla::ShaderModule</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">shader_module.hpp:9</a></div></div>
-<div class="ttc" id="aclassfgla_1_1ShaderModule_html_ad7fb618c3ba23a82279a8566fc4ebdaf"><div class="ttname"><a href="classfgla_1_1ShaderModule.html#ad7fb618c3ba23a82279a8566fc4ebdaf">fgla::ShaderModule::from_raw</a></div><div class="ttdeci">static ShaderModule from_raw(std::unique_ptr&lt; Impl &gt; impl)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">shader_module.hpp:23</a></div></div>
-<div class="ttc" id="ainternal_8hpp_html"><div class="ttname"><a href="internal_8hpp.html">internal.hpp</a></div></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <span class="comment">// namespace fgla</span></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00007">adapter.hpp:7</a></div></div>
-<div class="ttc" id="astructfgla_1_1ShaderModule_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1ShaderModule_1_1Descriptor.html">fgla::ShaderModule::Descriptor</a></div><div class="ttdef"><b>Definition</b> <a href="#l00011">shader_module.hpp:11</a></div></div>
-<div class="ttc" id="astructfgla_1_1ShaderModule_1_1Descriptor_html_add7c6ec3a76c23838642d256fa2a6238"><div class="ttname"><a href="structfgla_1_1ShaderModule_1_1Descriptor.html#add7c6ec3a76c23838642d256fa2a6238">fgla::ShaderModule::Descriptor::module_name</a></div><div class="ttdeci">const std::string &amp; module_name</div><div class="ttdef"><b>Definition</b> <a href="#l00012">shader_module.hpp:12</a></div></div>
-<div class="ttc" id="astructfgla_1_1ShaderModule_1_1Impl_html"><div class="ttname"><a href="structfgla_1_1ShaderModule_1_1Impl.html">fgla::ShaderModule::Impl</a></div><div class="ttdoc">The backend-defined implementation of the ShaderModule's functions.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">shader_module.hpp:16</a></div></div>
-<div class="ttc" id="astructfgla_1_1ShaderModule_1_1Impl_html_acd496c917ea5aa7a343767ebc0f323aa"><div class="ttname"><a href="structfgla_1_1ShaderModule_1_1Impl.html#acd496c917ea5aa7a343767ebc0f323aa">fgla::ShaderModule::Impl::~Impl</a></div><div class="ttdeci">virtual ~Impl()=0</div></div>
-<div class="ttc" id="astructfgla_1_1internal_1_1ImplAccessor_html"><div class="ttname"><a href="structfgla_1_1internal_1_1ImplAccessor.html">fgla::internal::ImplAccessor</a></div><div class="ttdoc">Allows access to the raw polymorphic implementation of FGLA classes.</div><div class="ttdef"><b>Definition</b> <a href="internal_8hpp_source.html#l00006">internal.hpp:6</a></div></div>
+<div class="ttc" id="aobject__gen_8hpp_html"><div class="ttname"><a href="object__gen_8hpp.html">object_gen.hpp</a></div></div>
+<div class="ttc" id="aobject__gen_8hpp_html_a1bad6750f59853c9314a4fb0512ffdd1"><div class="ttname"><a href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div><div class="ttdeci">#define FGLA_OBJ_START</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00016">object_gen.hpp:16</a></div></div>
+<div class="ttc" id="aobject__gen_8hpp_html_ac9963c604e17101253a1d4216ef4b7b8"><div class="ttname"><a href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div><div class="ttdeci">#define FGLA_OBJ_END</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00027">object_gen.hpp:27</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1Descriptor.html">fgla::Descriptor</a></div><div class="ttdef"><b>Definition</b> <a href="#l00015">shader_module.hpp:15</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_aa2e81550356df4f311164e11dd12b3bc"><div class="ttname"><a href="structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc">fgla::Descriptor::module_name</a></div><div class="ttdeci">const std::string &amp; module_name</div><div class="ttdef"><b>Definition</b> <a href="#l00022">shader_module.hpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

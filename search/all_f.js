@@ -45,9 +45,7 @@ var searchData=
   ['render_5fpass_2ehpp_42',['render_pass.hpp',['../render__pass_8hpp.html',1,'']]],
   ['render_5fpipeline_2ehpp_43',['render_pipeline.hpp',['../render__pipeline_8hpp.html',1,'']]],
   ['render_5ftarget_44',['render_target',['../structfgla_1_1TextureFormatSupportDetails.html#a9769ca3f489765eab1e15f8eff417eeb',1,'fgla::TextureFormatSupportDetails']]],
-  ['renderpass_45',['RenderPass',['../classfgla_1_1RenderPass.html',1,'fgla']]],
-  ['renderpipeline_46',['RenderPipeline',['../classfgla_1_1RenderPipeline.html',1,'fgla']]],
-  ['request_47',['Request',['../structfgla_1_1Queue_1_1Request.html',1,'fgla::Queue']]],
-  ['required_5fextensions_48',['required_extensions',['../structfgla_1_1Instance_1_1Descriptor.html#a13a9b8c1d29c7654ac83902769b6991a',1,'fgla::Instance::Descriptor']]],
-  ['result_49',['Result',['../classfgla_1_1Result.html',1,'fgla::Result&lt; T, E &gt;'],['../classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0',1,'fgla::Result::Result(T &amp;&amp;t)'],['../classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520',1,'fgla::Result::Result()'],['../classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27',1,'fgla::Result::Result(E &amp;&amp;e)']]]
+  ['request_45',['Request',['../structfgla_1_1Request.html',1,'fgla']]],
+  ['required_5fextensions_46',['required_extensions',['../structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307',1,'fgla::Descriptor']]],
+  ['result_47',['Result',['../classfgla_1_1Result.html',1,'fgla::Result&lt; T, E &gt;'],['../classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0',1,'fgla::Result::Result(T &amp;&amp;t)'],['../classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520',1,'fgla::Result::Result()'],['../classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27',1,'fgla::Result::Result(E &amp;&amp;e)']]]
 ];

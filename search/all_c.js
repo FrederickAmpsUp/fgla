@@ -1,8 +1,8 @@
 var searchData=
 [
   ['object_5fgen_2ehpp_0',['object_gen.hpp',['../object__gen_8hpp.html',1,'']]],
-  ['op_1',['Op',['../structfgla_1_1RenderPass_1_1LoadOp.html#a1425b042caf790ec60ef52ea4f536dcf',1,'fgla::RenderPass::LoadOp::Op'],['../structfgla_1_1RenderPass_1_1StoreOp.html#a19d694ca5bed06125508b97cc4f0448b',1,'fgla::RenderPass::StoreOp::Op']]],
-  ['op_2',['op',['../structfgla_1_1RenderPass_1_1LoadOp.html#a657f5fb49dc658ea3d8d1af2e34cb557',1,'fgla::RenderPass::LoadOp::op'],['../structfgla_1_1RenderPass_1_1StoreOp.html#a0bd43f3817e22a152781ae1deb610bc6',1,'fgla::RenderPass::StoreOp::op']]],
+  ['op_1',['Op',['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074',1,'fgla::LoadOp::Op'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8f',1,'fgla::StoreOp::Op']]],
+  ['op_2',['op',['../structfgla_1_1LoadOp.html#ae79950346ede0980ea873fdf8cc0b09b',1,'fgla::LoadOp::op'],['../structfgla_1_1StoreOp.html#a6d61db745a1868a1c28bb0634a0b439c',1,'fgla::StoreOp::op']]],
   ['operator_20bool_3',['operator bool',['../classfgla_1_1Result.html#ac4d646c791f4d470856bed5ad8d47653',1,'fgla::Result::operator bool()'],['../classfgla_1_1Format.html#a55440cbedd3e75eac2862c0d5f3b1bd7',1,'fgla::Format::operator bool() const =delete']]],
   ['operator_20value_4',['operator Value',['../classfgla_1_1Format.html#ad916dad19677a2e904d29c910b0e1551',1,'fgla::Format']]],
   ['operator_21_3d_5',['operator!=',['../classfgla_1_1Format.html#a0d68fbad72c3471fd02f325b46042bf0',1,'fgla::Format::operator!=(Format other) const'],['../classfgla_1_1Format.html#ae79d061622c2844097acd1f37099a8c5',1,'fgla::Format::operator!=(Value other) const'],['../structfgla_1_1util_1_1UUID.html#a2217deecd224c4add4f2a5b994354c99',1,'fgla::util::UUID::operator!=()']]],

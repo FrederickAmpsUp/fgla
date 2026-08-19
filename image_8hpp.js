@@ -1,5 +1,5 @@
 var image_8hpp =
 [
-    [ "fgla::Image", "classfgla_1_1Image.html", "classfgla_1_1Image" ],
-    [ "fgla::Image::Impl", "structfgla_1_1Image_1_1Impl.html", "structfgla_1_1Image_1_1Impl" ]
+    [ "FGLA_OBJ_FUNCTIONS", "image_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],
+    [ "FGLA_OBJ_NAME", "image_8hpp.html#ac9347ca045796552e86e06b72e9123ba", null ]
 ];

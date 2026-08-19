@@ -99,6 +99,7 @@ $(function(){initNavTree('structfgla_1_1Adapter_1_1Impl.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="structfgla_1_1Adapter_1_1Impl-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">fgla::Adapter::Impl Struct Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -108,12 +109,17 @@ $(function(){initNavTree('structfgla_1_1Adapter_1_1Impl.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4ded7e6af10a68610809cfe96ccd6bde" id="r_a4ded7e6af10a68610809cfe96ccd6bde"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Device &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ded7e6af10a68610809cfe96ccd6bde">create_device</a> (const Device::Descriptor &amp;desc, std::initializer_list&lt; <a class="el" href="structfgla_1_1Queue_1_1Request.html">Queue::Request</a> &gt; queues)=0</td></tr>
+<tr class="memitem:a4ded7e6af10a68610809cfe96ccd6bde" id="r_a4ded7e6af10a68610809cfe96ccd6bde"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; Device &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ded7e6af10a68610809cfe96ccd6bde">create_device</a> (const Device::Descriptor &amp;desc, std::initializer_list&lt; Queue::Request &gt; queues)=0</td></tr>
 <tr class="separator:a4ded7e6af10a68610809cfe96ccd6bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb75083991336d2386e9aa46ebd6e2ba" id="r_afb75083991336d2386e9aa46ebd6e2ba"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb75083991336d2386e9aa46ebd6e2ba">get_info</a> ()=0</td></tr>
 <tr class="separator:afb75083991336d2386e9aa46ebd6e2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a639344abe472dac7a8f270cb069f24e5" id="r_a639344abe472dac7a8f270cb069f24e5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a639344abe472dac7a8f270cb069f24e5">~Impl</a> ()=0</td></tr>
 <tr class="separator:a639344abe472dac7a8f270cb069f24e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a214994091e9a150016e217b9782bbfb9" id="r_a214994091e9a150016e217b9782bbfb9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a214994091e9a150016e217b9782bbfb9">Adapter</a></td></tr>
+<tr class="separator:a214994091e9a150016e217b9782bbfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -162,7 +168,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::initializer_list&lt; <a class="el" href="structfgla_1_1Queue_1_1Request.html">Queue::Request</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>queues</em></span>&#160;)</td>
+          <td class="paramtype">std::initializer_list&lt; Queue::Request &gt;</td>          <td class="paramname"><span class="paramname"><em>queues</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -175,7 +181,7 @@ Public Member Functions</h2></td></tr>
 <li>Attempts to create a <code>Device</code> *<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">descriptor</td><td>The <code>Device::Descriptor</code> with the <code>Device</code>'s * properties *</td></tr>
-    <tr><td class="paramname">queues</td><td>A list of <code>Queue::Requests</code> to create <code><a class="el" href="classfgla_1_1Queue.html" title="Represents a logical queue, which is used to submit GPU commands.">Queue</a></code>s for * </td></tr>
+    <tr><td class="paramname">queues</td><td>A list of <code>Queue::Requests</code> to create <code>Queue</code>s for * </td></tr>
   </table>
   </dd>
 </dl>
@@ -212,6 +218,31 @@ Public Member Functions</h2></td></tr>
 <li>Retrieves this <code><a class="el" href="classfgla_1_1Adapter.html">Adapter</a></code>'s <code><a class="el" href="structfgla_1_1Adapter_1_1Info.html">Info</a></code> <br  />
  </li>
 </ul>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a214994091e9a150016e217b9782bbfb9" name="a214994091e9a150016e217b9782bbfb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a214994091e9a150016e217b9782bbfb9">&#9670;&#160;</a></span>Adapter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classfgla_1_1Adapter.html">Adapter</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="adapter_8hpp_source.html#l00033">33</a> of file <a class="el" href="adapter_8hpp_source.html">adapter.hpp</a>.</p>
 
 </div>
 </div>

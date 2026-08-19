@@ -1,9 +1,9 @@
 var render__pass_8hpp =
 [
-    [ "fgla::RenderPass", "classfgla_1_1RenderPass.html", "classfgla_1_1RenderPass" ],
-    [ "fgla::RenderPass::LoadOp", "structfgla_1_1RenderPass_1_1LoadOp.html", "structfgla_1_1RenderPass_1_1LoadOp" ],
-    [ "fgla::RenderPass::StoreOp", "structfgla_1_1RenderPass_1_1StoreOp.html", "structfgla_1_1RenderPass_1_1StoreOp" ],
-    [ "fgla::RenderPass::ColorAttachmentDescriptor", "structfgla_1_1RenderPass_1_1ColorAttachmentDescriptor.html", "structfgla_1_1RenderPass_1_1ColorAttachmentDescriptor" ],
-    [ "fgla::RenderPass::Descriptor", "structfgla_1_1RenderPass_1_1Descriptor.html", "structfgla_1_1RenderPass_1_1Descriptor" ],
-    [ "fgla::RenderPass::Impl", "structfgla_1_1RenderPass_1_1Impl.html", "structfgla_1_1RenderPass_1_1Impl" ]
+    [ "fgla::LoadOp", "structfgla_1_1LoadOp.html", "structfgla_1_1LoadOp" ],
+    [ "fgla::StoreOp", "structfgla_1_1StoreOp.html", "structfgla_1_1StoreOp" ],
+    [ "fgla::ColorAttachmentDescriptor", "structfgla_1_1ColorAttachmentDescriptor.html", "structfgla_1_1ColorAttachmentDescriptor" ],
+    [ "fgla::Descriptor", "structfgla_1_1Descriptor.html", "structfgla_1_1Descriptor" ],
+    [ "FGLA_OBJ_FUNCTIONS", "render__pass_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],
+    [ "FGLA_OBJ_NAME", "render__pass_8hpp.html#ac9347ca045796552e86e06b72e9123ba", null ]
 ];
