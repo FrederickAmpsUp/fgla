@@ -7,15 +7,13 @@ var annotated_dup =
       ] ],
       [ "ext", "namespacefgla_1_1ext.html", [
         [ "windowing", "namespacefgla_1_1ext_1_1windowing.html", [
+          [ "Capabilities", "structfgla_1_1ext_1_1windowing_1_1Capabilities.html", "structfgla_1_1ext_1_1windowing_1_1Capabilities" ],
+          [ "Configuration", "structfgla_1_1ext_1_1windowing_1_1Configuration.html", "structfgla_1_1ext_1_1windowing_1_1Configuration" ],
+          [ "Descriptor", "structfgla_1_1ext_1_1windowing_1_1Descriptor.html", "structfgla_1_1ext_1_1windowing_1_1Descriptor" ],
           [ "PresentQueueOptions", "structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html", "structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions" ],
           [ "QueueTypeExt", "structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html", "structfgla_1_1ext_1_1windowing_1_1QueueTypeExt" ],
-          [ "Surface", "classfgla_1_1ext_1_1windowing_1_1Surface.html", "classfgla_1_1ext_1_1windowing_1_1Surface" ],
-          [ "Window", "classfgla_1_1ext_1_1windowing_1_1Window.html", "classfgla_1_1ext_1_1windowing_1_1Window" ],
           [ "WindowingExtension", "classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html", "classfgla_1_1ext_1_1windowing_1_1WindowingExtension" ]
         ] ]
-      ] ],
-      [ "internal", "namespacefgla_1_1internal.html", [
-        [ "ImplAccessor", "structfgla_1_1internal_1_1ImplAccessor.html", "structfgla_1_1internal_1_1ImplAccessor" ]
       ] ],
       [ "util", "namespacefgla_1_1util.html", [
         [ "FilterableList", "classfgla_1_1util_1_1FilterableList.html", "classfgla_1_1util_1_1FilterableList" ],

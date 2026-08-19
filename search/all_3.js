@@ -11,7 +11,7 @@ var searchData=
   ['d32_5ffloat_5fs8_5fuint_8',['D32_FLOAT_S8_UINT',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429aceab255082ae7d3207f2b78e5ce3ccf3d3d',1,'fgla::Format']]],
   ['data_9',['data',['../classfgla_1_1util_1_1FilterableList.html#a3bcdb6503800d7e17b3f82dc0c6cde14',1,'fgla::util::FilterableList']]],
   ['depth_10',['DEPTH',['../structfgla_1_1AspectBits.html#a26d308774a5f644e48f2b028bafc208ba75ee8d1fced7314b56b200652ac3322e',1,'fgla::AspectBits']]],
-  ['descriptor_11',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Descriptor.html',1,'fgla::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Window_1_1Descriptor.html',1,'fgla::ext::windowing::Window::Descriptor']]],
+  ['descriptor_11',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Descriptor.html',1,'fgla::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html',1,'fgla::ext::windowing::Descriptor']]],
   ['device_2ehpp_12',['device.hpp',['../device_8hpp.html',1,'']]],
   ['device_5fname_13',['device_name',['../structfgla_1_1Adapter_1_1Info.html#a154b5481d343d3841682ab4b60cba4d2',1,'fgla::Adapter::Info']]],
   ['dont_5fcare_14',['DONT_CARE',['../structfgla_1_1LoadOp.html#acf4ed29c9b39882a7819d444d6910d1e',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a7b237e0f345d4e1ee4e8c3ecddd26795',1,'fgla::StoreOp::DONT_CARE'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a3d241dc381afd54422199a5e6864275a',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8fa3d241dc381afd54422199a5e6864275a',1,'fgla::StoreOp::DONT_CARE']]]

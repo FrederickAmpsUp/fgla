@@ -105,105 +105,103 @@ $(function(){initNavTree('instance_8hpp_source.html',''); initResizable(true); }
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="adapter_8hpp.html">fgla/adapter.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="error_8hpp.html">fgla/error.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="extension_8hpp.html">fgla/extension.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="internal_8hpp.html">fgla/internal.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="object__gen_8hpp.html">fgla/object_gen.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="util_8hpp.html">fgla/util.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>backend {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">struct </span>Backend;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacefgla_1_1backend.html#af6c6ff6d1acb88818a8dd6f0f3e8c891">BackendUUID</a> = util::UUID&lt;16&gt;;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <span class="comment">// namespace backend</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="instance_8hpp.html#ac9347ca045796552e86e06b72e9123ba">   19</a></span><span class="preprocessor">#define FGLA_OBJ_NAME Instance</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">struct </span>Descriptor {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">   34</a></span>  std::optional&lt;backend::BackendUUID&gt; <a class="code hl_variable" href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">preferred_backend</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">   39</a></span>  std::vector&lt;extension::ExtensionUUID&gt; <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">required_extensions</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">   43</a></span>  <a class="code hl_struct" href="structfgla_1_1VersionTriple.html">VersionTriple</a> <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">app_version</a> = {1, 0, 0};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">   47</a></span>  std::string <a class="code hl_variable" href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">app_name</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">   55</a></span><span class="keyword">static</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Instance&gt;</a> <a class="code hl_function" href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1Descriptor.html">Descriptor</a> &amp;descriptor);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">   63</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Adapter&gt;</a> <a class="code hl_function" href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">get_adapter</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;descriptor) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(this-&gt;get_adapter_scorer(descriptor),</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                              this-&gt;enumerate_adapters());</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="object__gen_8hpp.html">fgla/object_gen.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="util_8hpp.html">fgla/util.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacefgla.html">fgla</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>backend {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">struct </span>Backend;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using </span><a class="code hl_typedef" href="namespacefgla_1_1backend.html#af6c6ff6d1acb88818a8dd6f0f3e8c891">BackendUUID</a> = util::UUID&lt;16&gt;;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>} <span class="comment">// namespace backend</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="instance_8hpp.html#ac9347ca045796552e86e06b72e9123ba">   18</a></span><span class="preprocessor">#define FGLA_OBJ_NAME Instance</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">struct </span>Descriptor {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">   33</a></span>  std::optional&lt;backend::BackendUUID&gt; <a class="code hl_variable" href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">preferred_backend</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">   38</a></span>  std::vector&lt;extension::ExtensionUUID&gt; <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">required_extensions</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">   42</a></span>  <a class="code hl_struct" href="structfgla_1_1VersionTriple.html">VersionTriple</a> <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">app_version</a> = {1, 0, 0};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">   46</a></span>  std::string <a class="code hl_variable" href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">app_name</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">   54</a></span><span class="keyword">static</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Instance&gt;</a> <a class="code hl_function" href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">create</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1Descriptor.html">Descriptor</a> &amp;descriptor);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">   62</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Adapter&gt;</a> <a class="code hl_function" href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">get_adapter</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1Adapter_1_1Descriptor.html">Adapter::Descriptor</a> &amp;descriptor) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(this-&gt;get_adapter_scorer(descriptor),</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                              this-&gt;enumerate_adapters());</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>Result&lt;Adapter&gt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">   76</a></span><a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>               std::vector&lt;Adapter&gt; &amp;adapters);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Adapter&gt;</a></div>
-<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacefgla.html#a808a78b90b686e8c5213498f2324df7c">   85</a></span><a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>               std::vector&lt;Adapter&gt; &amp;&amp;adapters) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(scorer, adapters);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>Result&lt;Adapter&gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">   75</a></span><a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>               std::vector&lt;Adapter&gt; &amp;adapters);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">inline</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;Adapter&gt;</a></div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespacefgla.html#a808a78b90b686e8c5213498f2324df7c">   84</a></span><a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">int</span>(<span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Adapter.html">Adapter</a> &amp;)&gt; &amp;scorer,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>               std::vector&lt;Adapter&gt; &amp;&amp;adapters) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">select_adapter</a>(scorer, adapters);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">   95</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::optional&lt;std::reference_wrapper&lt;T&gt;&gt; <a class="code hl_function" href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">get_extension</a>() {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_class" href="structfgla_1_1util_1_1UUID.html">extension::ExtensionUUID</a> uuid = T::UUID;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> *ext = this-&gt;get_extension_raw(uuid);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (ext) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">   94</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; std::optional&lt;std::reference_wrapper&lt;T&gt;&gt; <a class="code hl_function" href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">get_extension</a>() {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_class" href="structfgla_1_1util_1_1UUID.html">extension::ExtensionUUID</a> uuid = T::UUID;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> *ext = this-&gt;get_extension_raw(uuid);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordflow">if</span> (ext) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(ext);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="" data-end="">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="instance_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">  105</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">  FN(</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                                                                       \</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>     , std::vector&lt;Adapter&gt;, enumerate_adapters, (), ())                       \</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  FN(</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                                                       \</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>     , std::function&lt;int(const Adapter &amp;)&gt;, get_adapter_scorer,                \</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="" data-end="">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="instance_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">  104</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                                                       \</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>     , std::vector&lt;Adapter&gt;, enumerate_adapters, (), ())                       \</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  FN(</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                                                                       \</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>     , std::function&lt;int(const Adapter &amp;)&gt;, get_adapter_scorer,                \</div>
 </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>     (const Adapter::Descriptor &amp;descriptor), (descriptor))                    \</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  FN(</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                                                       \</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>     , const backend::Backend &amp;, get_backend, (), ())                          \</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  FN(private:, void *, get_extension_raw, (extension::ExtensionUUID uuid),     \</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>     (uuid))</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>} <span class="comment">// namespace fgla</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>     (const Adapter::Descriptor &amp;descriptor), (descriptor))                    \</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  FN(</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                                                       \</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>     , const backend::Backend &amp;, get_backend, (), ())                          \</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  FN(private:, void *, get_extension_raw, (extension::ExtensionUUID uuid),     \</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>     (uuid))</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>} <span class="comment">// namespace fgla</span></div>
 <div class="ttc" id="aadapter_8hpp_html"><div class="ttname"><a href="adapter_8hpp.html">adapter.hpp</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Adapter_html"><div class="ttname"><a href="classfgla_1_1Adapter.html">fgla::Adapter</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00012">adapter.hpp:12</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Result_html"><div class="ttname"><a href="classfgla_1_1Result.html">fgla::Result</a></div><div class="ttdoc">Represents a potential success or failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00027">error.hpp:27</a></div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div></div>
 <div class="ttc" id="aextension_8hpp_html"><div class="ttname"><a href="extension_8hpp.html">extension.hpp</a></div></div>
-<div class="ttc" id="ainternal_8hpp_html"><div class="ttname"><a href="internal_8hpp.html">internal.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_1_1backend_html_af6c6ff6d1acb88818a8dd6f0f3e8c891"><div class="ttname"><a href="namespacefgla_1_1backend.html#af6c6ff6d1acb88818a8dd6f0f3e8c891">fgla::backend::BackendUUID</a></div><div class="ttdeci">util::UUID&lt; 16 &gt; BackendUUID</div><div class="ttdoc">A Universally Unique Identifier identifying a Backend</div><div class="ttdef"><b>Definition</b> <a href="backend_8hpp_source.html#l00011">backend.hpp:11</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00007">adapter.hpp:7</a></div></div>
-<div class="ttc" id="anamespacefgla_html_a52f9589da098900c73f438c4de6b5887"><div class="ttname"><a href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">fgla::get_adapter</a></div><div class="ttdeci">Result&lt; Adapter &gt; get_adapter(const Adapter::Descriptor &amp;descriptor)</div><div class="ttdef"><b>Definition</b> <a href="#l00063">instance.hpp:63</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a52f9589da098900c73f438c4de6b5887"><div class="ttname"><a href="namespacefgla.html#a52f9589da098900c73f438c4de6b5887">fgla::get_adapter</a></div><div class="ttdeci">Result&lt; Adapter &gt; get_adapter(const Adapter::Descriptor &amp;descriptor)</div><div class="ttdef"><b>Definition</b> <a href="#l00062">instance.hpp:62</a></div></div>
 <div class="ttc" id="anamespacefgla_html_a677e18f92dec7bd22d55987e84f2b60e"><div class="ttname"><a href="namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e">fgla::create</a></div><div class="ttdeci">static Result&lt; Instance &gt; create(const Descriptor &amp;descriptor)</div></div>
-<div class="ttc" id="anamespacefgla_html_a9405a9a97bd7e21454de00e1593fcfd4"><div class="ttname"><a href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">fgla::get_extension</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt; get_extension()</div><div class="ttdef"><b>Definition</b> <a href="#l00095">instance.hpp:95</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a9405a9a97bd7e21454de00e1593fcfd4"><div class="ttname"><a href="namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4">fgla::get_extension</a></div><div class="ttdeci">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt; get_extension()</div><div class="ttdef"><b>Definition</b> <a href="#l00094">instance.hpp:94</a></div></div>
 <div class="ttc" id="anamespacefgla_html_abffe5c4164d8229af464198d6542b30c"><div class="ttname"><a href="namespacefgla.html#abffe5c4164d8229af464198d6542b30c">fgla::select_adapter</a></div><div class="ttdeci">Result&lt; Adapter &gt; select_adapter(const std::function&lt; int(const Adapter &amp;)&gt; &amp;scorer, std::vector&lt; Adapter &gt; &amp;adapters)</div></div>
 <div class="ttc" id="aobject__gen_8hpp_html"><div class="ttname"><a href="object__gen_8hpp.html">object_gen.hpp</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_a1bad6750f59853c9314a4fb0512ffdd1"><div class="ttname"><a href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div><div class="ttdeci">#define FGLA_OBJ_START</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00016">object_gen.hpp:16</a></div></div>
-<div class="ttc" id="aobject__gen_8hpp_html_ac9963c604e17101253a1d4216ef4b7b8"><div class="ttname"><a href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div><div class="ttdeci">#define FGLA_OBJ_END</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00027">object_gen.hpp:27</a></div></div>
+<div class="ttc" id="aobject__gen_8hpp_html_ac9963c604e17101253a1d4216ef4b7b8"><div class="ttname"><a href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div><div class="ttdeci">#define FGLA_OBJ_END</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00026">object_gen.hpp:26</a></div></div>
 <div class="ttc" id="astructfgla_1_1Adapter_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1Adapter_1_1Descriptor.html">fgla::Adapter::Descriptor</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00015">adapter.hpp:15</a></div></div>
 <div class="ttc" id="astructfgla_1_1Descriptor_html"><div class="ttname"><a href="structfgla_1_1Descriptor.html">fgla::Descriptor</a></div><div class="ttdef"><b>Definition</b> <a href="shader__module_8hpp_source.html#l00015">shader_module.hpp:15</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_a911f5bd0037bda5dce0594d8822a6b0f"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">fgla::Descriptor::app_version</a></div><div class="ttdeci">VersionTriple app_version</div><div class="ttdef"><b>Definition</b> <a href="#l00043">instance.hpp:43</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_a97d6713d419845d01b3f4216a59e3307"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">fgla::Descriptor::required_extensions</a></div><div class="ttdeci">std::vector&lt; extension::ExtensionUUID &gt; required_extensions</div><div class="ttdef"><b>Definition</b> <a href="#l00039">instance.hpp:39</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_ac6fe373ba34eb868e19eb8ecde120dfd"><div class="ttname"><a href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">fgla::Descriptor::app_name</a></div><div class="ttdeci">std::string app_name</div><div class="ttdef"><b>Definition</b> <a href="#l00047">instance.hpp:47</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_ae151effa1d2f5bc83968e951d694a623"><div class="ttname"><a href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">fgla::Descriptor::preferred_backend</a></div><div class="ttdeci">std::optional&lt; backend::BackendUUID &gt; preferred_backend</div><div class="ttdef"><b>Definition</b> <a href="#l00034">instance.hpp:34</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_a911f5bd0037bda5dce0594d8822a6b0f"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a911f5bd0037bda5dce0594d8822a6b0f">fgla::Descriptor::app_version</a></div><div class="ttdeci">VersionTriple app_version</div><div class="ttdef"><b>Definition</b> <a href="#l00042">instance.hpp:42</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_a97d6713d419845d01b3f4216a59e3307"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307">fgla::Descriptor::required_extensions</a></div><div class="ttdeci">std::vector&lt; extension::ExtensionUUID &gt; required_extensions</div><div class="ttdef"><b>Definition</b> <a href="#l00038">instance.hpp:38</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_ac6fe373ba34eb868e19eb8ecde120dfd"><div class="ttname"><a href="structfgla_1_1Descriptor.html#ac6fe373ba34eb868e19eb8ecde120dfd">fgla::Descriptor::app_name</a></div><div class="ttdeci">std::string app_name</div><div class="ttdef"><b>Definition</b> <a href="#l00046">instance.hpp:46</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_ae151effa1d2f5bc83968e951d694a623"><div class="ttname"><a href="structfgla_1_1Descriptor.html#ae151effa1d2f5bc83968e951d694a623">fgla::Descriptor::preferred_backend</a></div><div class="ttdeci">std::optional&lt; backend::BackendUUID &gt; preferred_backend</div><div class="ttdef"><b>Definition</b> <a href="#l00033">instance.hpp:33</a></div></div>
 <div class="ttc" id="astructfgla_1_1VersionTriple_html"><div class="ttname"><a href="structfgla_1_1VersionTriple.html">fgla::VersionTriple</a></div><div class="ttdoc">A 3-number version identifier.</div><div class="ttdef"><b>Definition</b> <a href="util_8hpp_source.html#l00011">util.hpp:11</a></div></div>
 <div class="ttc" id="astructfgla_1_1util_1_1UUID_html"><div class="ttname"><a href="structfgla_1_1util_1_1UUID.html">fgla::util::UUID&lt; 16 &gt;</a></div></div>
 <div class="ttc" id="autil_8hpp_html"><div class="ttname"><a href="util_8hpp.html">util.hpp</a></div></div>

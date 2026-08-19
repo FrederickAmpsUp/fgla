@@ -99,14 +99,16 @@ $(function(){initNavTree('surface_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">surface.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="completion_8hpp_source.html">fgla/completion.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="image_8hpp_source.html">fgla/image.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="instance_8hpp_source.html">fgla/instance.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="internal_8hpp_source.html">fgla/internal.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8hpp_source.html">fgla/types.hpp</a>&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
@@ -116,15 +118,9 @@ $(function(){initNavTree('surface_8hpp.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html">fgla::ext::windowing::Surface</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a surface, which is used to render to a window.  <a href="classfgla_1_1ext_1_1windowing_1_1Surface.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Configuration.html">fgla::ext::windowing::Configuration</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Configuration.html">fgla::ext::windowing::Surface::Configuration</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Capabilities.html">fgla::ext::windowing::Surface::Capabilities</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html">fgla::ext::windowing::Surface::Impl</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backend-defined implementation of the <code><a class="el" href="classfgla_1_1ext_1_1windowing_1_1Surface.html" title="Represents a surface, which is used to render to a window.">Surface</a></code>'s functions.  <a href="structfgla_1_1ext_1_1windowing_1_1Surface_1_1Impl.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1Capabilities.html">fgla::ext::windowing::Capabilities</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html">fgla::ext::windowing::QueueTypeExt</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,7 +135,97 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla_1_1ext_1_1windowing.html">fgla::ext::windowing</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac9347ca045796552e86e06b72e9123ba" id="r_ac9347ca045796552e86e06b72e9123ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9347ca045796552e86e06b72e9123ba">FGLA_OBJ_NAME</a>&#160;&#160;&#160;Surface</td></tr>
+<tr class="separator:ac9347ca045796552e86e06b72e9123ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdb493e62ad18b6d0c947b92e2671ea" id="r_a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a>(FN)</td></tr>
+<tr class="separator:a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a645ab464f197d5b578cd12e30dd87614" id="r_a645ab464f197d5b578cd12e30dd87614"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614">fgla::ext::windowing::PresentMode</a> { <br />
+&#160;&#160;<a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614ac589858dbe1d06c46544266ae4cd2c6f">fgla::ext::windowing::FIFO</a>
+, <a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a30e70859a464559e8e70bcf467f34028">fgla::ext::windowing::MAILBOX</a>
+, <a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614ae35884a2445bc4ae2df52f188763273c">fgla::ext::windowing::IMMEDIATE</a>
+, <a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a3a701c2147aba28015bd3ee5463f521a">fgla::ext::windowing::AUTO_VSYNC</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a37c4d49c1c48e055c84810f78dacf512">fgla::ext::windowing::AUTO_NO_VSYNC</a>
+<br />
+ }</td></tr>
+<tr class="separator:a645ab464f197d5b578cd12e30dd87614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0bdb493e62ad18b6d0c947b92e2671ea" name="a0bdb493e62ad18b6d0c947b92e2671ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdb493e62ad18b6d0c947b92e2671ea">&#9670;&#160;</a></span>FGLA_OBJ_FUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_FUNCTIONS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FN</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , std::optional&lt;Error&gt;, configure,                                        \</div>
+<div class="line">     (fgla::Device &amp; device, <span class="keyword">const</span> Configuration &amp;config), (device, config))   \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , Capabilities, get_capabilities, (<span class="keyword">const</span> Adapter &amp;adapter), (adapter))    \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , <a class="code hl_class" href="classfgla_1_1Result.html">fgla::Result</a>&lt;std::reference_wrapper&lt;fgla::Image&gt;&gt;, get_current_image,   \</div>
+<div class="line">     (fgla::Queue &amp; queue), (queue))                                           \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , std::optional&lt;fgla::Error&gt;, present,                                    \</div>
+<div class="line">     (fgla::Queue &amp; queue, fgla::Image &amp;&amp; image,                               \</div>
+<div class="line">      std::initializer_list&lt;fgla::Completion&gt; wait_completions = {}),          \</div>
+<div class="line">     (queue, std::move(image), wait_completions))                              \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , <span class="keywordtype">void</span>, cleanup, (), ())</div>
+<div class="ttc" id="aclassfgla_1_1Result_html"><div class="ttname"><a href="classfgla_1_1Result.html">fgla::Result</a></div><div class="ttdoc">Represents a potential success or failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00027">error.hpp:27</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00034">34</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   37</span>                                                                       \</div>
+<div class="line"><span class="lineno">   38</span>     , std::optional&lt;Error&gt;, configure,                                        \</div>
+<div class="line"><span class="lineno">   39</span>     (fgla::Device &amp; device, const Configuration &amp;config), (device, config))   \</div>
+<div class="line"><span class="lineno">   40</span>  FN(</div>
+<div class="line"><span class="lineno">   42</span>                                                                       \</div>
+<div class="line"><span class="lineno">   43</span>     , Capabilities, get_capabilities, (const Adapter &amp;adapter), (adapter))    \</div>
+<div class="line"><span class="lineno">   44</span>  FN(</div>
+<div class="line"><span class="lineno">   46</span>                                                                       \</div>
+<div class="line"><span class="lineno">   47</span>     , fgla::Result&lt;std::reference_wrapper&lt;fgla::Image&gt;&gt;, get_current_image,   \</div>
+<div class="line"><span class="lineno">   48</span>     (fgla::Queue &amp; queue), (queue))                                           \</div>
+<div class="line"><span class="lineno">   49</span>  FN(</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac9347ca045796552e86e06b72e9123ba" name="ac9347ca045796552e86e06b72e9123ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9347ca045796552e86e06b72e9123ba">&#9670;&#160;</a></span>FGLA_OBJ_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FGLA_OBJ_NAME&#160;&#160;&#160;Surface</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00014">14</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
