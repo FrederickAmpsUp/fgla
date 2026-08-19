@@ -10,9 +10,9 @@ struct CompletionImpl : public fgla::Completion::Impl {
   CompletionImpl(VkSemaphore semaphore, uint64_t value)
       : semaphore(semaphore), value(value) {}
 
-  virtual inline std::unique_ptr<fgla::Completion::Impl>
-  clone() const override {
-    return std::make_unique<CompletionImpl>(this->semaphore, this->value);
+  virtual inline fgla::Completion clone() const override {
+    return fgla::Completion::from_impl(
+        std::make_unique<CompletionImpl>(this->semaphore, this->value));
   }
 
   inline VkSemaphore get_semaphore() const { return this->semaphore; }
