@@ -110,7 +110,6 @@ $(function(){initNavTree('surface_8hpp.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="instance_8hpp_source.html">fgla/instance.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8hpp_source.html">fgla/types.hpp</a>&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
@@ -193,20 +192,20 @@ Enumerations</h2></td></tr>
 <div class="line">     , <span class="keywordtype">void</span>, cleanup, (), ())</div>
 <div class="ttc" id="aclassfgla_1_1Result_html"><div class="ttname"><a href="classfgla_1_1Result.html">fgla::Result</a></div><div class="ttdoc">Represents a potential success or failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00027">error.hpp:27</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00034">34</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   35</span><span class="preprocessor">  FN(</span></div>
-<div class="line"><span class="lineno">   37</span>                                                                       \</div>
-<div class="line"><span class="lineno">   38</span>     , std::optional&lt;Error&gt;, configure,                                        \</div>
-<div class="line"><span class="lineno">   39</span>     (fgla::Device &amp; device, const Configuration &amp;config), (device, config))   \</div>
-<div class="line"><span class="lineno">   40</span>  FN(</div>
-<div class="line"><span class="lineno">   42</span>                                                                       \</div>
-<div class="line"><span class="lineno">   43</span>     , Capabilities, get_capabilities, (const Adapter &amp;adapter), (adapter))    \</div>
-<div class="line"><span class="lineno">   44</span>  FN(</div>
-<div class="line"><span class="lineno">   46</span>                                                                       \</div>
-<div class="line"><span class="lineno">   47</span>     , fgla::Result&lt;std::reference_wrapper&lt;fgla::Image&gt;&gt;, get_current_image,   \</div>
-<div class="line"><span class="lineno">   48</span>     (fgla::Queue &amp; queue), (queue))                                           \</div>
-<div class="line"><span class="lineno">   49</span>  FN(</div>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00033">33</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   34</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   36</span>                                                                       \</div>
+<div class="line"><span class="lineno">   37</span>     , std::optional&lt;Error&gt;, configure,                                        \</div>
+<div class="line"><span class="lineno">   38</span>     (fgla::Device &amp; device, const Configuration &amp;config), (device, config))   \</div>
+<div class="line"><span class="lineno">   39</span>  FN(</div>
+<div class="line"><span class="lineno">   41</span>                                                                       \</div>
+<div class="line"><span class="lineno">   42</span>     , Capabilities, get_capabilities, (const Adapter &amp;adapter), (adapter))    \</div>
+<div class="line"><span class="lineno">   43</span>  FN(</div>
+<div class="line"><span class="lineno">   45</span>                                                                       \</div>
+<div class="line"><span class="lineno">   46</span>     , fgla::Result&lt;std::reference_wrapper&lt;fgla::Image&gt;&gt;, get_current_image,   \</div>
+<div class="line"><span class="lineno">   47</span>     (fgla::Queue &amp; queue), (queue))                                           \</div>
+<div class="line"><span class="lineno">   48</span>  FN(</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,7 +221,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00014">14</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="surface_8hpp_source.html#l00013">13</a> of file <a class="el" href="surface_8hpp_source.html">surface.hpp</a>.</p>
 
 </div>
 </div>
