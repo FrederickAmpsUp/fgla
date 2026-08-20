@@ -26,6 +26,11 @@ struct Descriptor {
    *  The height of the window, in pixels
    */
   uint32_t height = 600;
+  /**
+   * Whether the window size may be changed
+   * by the window manager
+   */
+  bool resizable = false;
   /*
    *  The name or title of the window
    */

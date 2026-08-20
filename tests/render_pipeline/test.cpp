@@ -20,8 +20,12 @@ int main(int argc, char **argv) {
                         .get();
 
   auto window = "Window creation failed" *
-                windowing.create_window(
-                    {.width = 800, .height = 600, .name = "Test Window"});
+                windowing.create_window({.width = 800,
+                                         .height = 600,
+                                         .resizable = true,
+                                         .name = "Test Window"});
+
+  fgla::Extent2d window_size = window.get_framebuffer_size();
 
   auto surface = "Surface creation failed" * window.create_surface(instance);
 
@@ -71,8 +75,8 @@ int main(int argc, char **argv) {
                  magic_enum::enum_name(present_mode));
   }
 
-  auto fail = surface.configure(
-      device, {surface_format, present_mode, window.get_framebuffer_size()});
+  auto fail =
+      surface.configure(device, {surface_format, present_mode, window_size});
 
   if (fail.has_value()) {
     spdlog::error("Surface configuration failed with message: \"{}\"",
@@ -136,6 +140,20 @@ int main(int argc, char **argv) {
                     {image.get_completion().clone()});
 
     window.poll_events();
+
+    fgla::Extent2d new_size = window.get_framebuffer_size();
+    if (new_size.width != window_size.width ||
+        new_size.height != window_size.height) {
+      window_size = new_size;
+      auto fail = surface.configure(
+          device, {surface_format, present_mode, window_size});
+
+      if (fail.has_value()) {
+        spdlog::error("Surface configuration failed with message: \"{}\"",
+                      (*fail).message.value_or(""));
+        return 1;
+      }
+    }
   }
 
   surface.cleanup();
