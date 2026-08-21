@@ -143,109 +143,232 @@ private:
   };
 };
 
-/// @brief Retrieves the success object from a `Result`, printing a custom
-/// message on failure
+namespace detail {
+
+[[noreturn]] inline void fatal(const char *message, const Error &error) {
+  if (message) {
+    std::cerr << message << '\n';
+  }
+
+  if (error.message) {
+    std::cerr << *error.message << '\n';
+  }
+
+  std::exit(static_cast<int>(error.code));
+}
+
+[[noreturn]] inline void fatal(const char *message, int exit_code) {
+  if (message) {
+    std::cerr << message << '\n';
+  }
+
+  std::exit(exit_code);
+}
+
+} // namespace detail
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
 ///
-/// @note asserts if `res` is in an error state
+/// @note Terminates the program with the error code stored in `Error`.
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance"
-/// *fgla::Instance::create({});
+/// fgla::Instance instance =
+///     "Failed to create instance" *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E>
-T &operator*(const char *msg, Result<T, E> &res) {
-  assert(res.is_ok() && msg);
+template <typename T> T &operator*(const char *msg, Result<T, Error> &res) {
+  if (!res) {
+    detail::fatal(msg, res.error());
+  }
+
   return *res;
 }
-/// @brief Retrieves the success object from a `Result`, printing a custom
-/// message on failure
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
 ///
-/// @note asserts if `res` is in an error state
+/// @note Terminates the program with the error code stored in `Error`.
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance"
-/// *fgla::Instance::create({});
+/// fgla::Instance instance =
+///     "Failed to create instance" *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E>
-const T &operator*(const char *msg, const Result<T, E> &res) {
-  assert(res.is_ok() && msg);
+template <typename T>
+const T &operator*(const char *msg, const Result<T, Error> &res) {
+  if (!res) {
+    detail::fatal(msg, res.error());
+  }
+
   return *res;
 }
-/// @brief Retrieves the success object from a `Result`, printing a custom
-/// message on failure
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
 ///
 /// @param msg The message to print if `res` is in a failure state
 /// @param res The result to unwrap
 ///
-/// @note asserts if `res` is in an error state
+/// @note Terminates the program with the error code stored in `Error`.
 ///
 /// @code
-/// fgla::Instance instance = "Failed to create instance"
-/// *fgla::Instance::create({});
+/// fgla::Instance instance =
+///     "Failed to create instance" *fgla::Instance::create({});
 /// @endcode
-template <typename T, typename E>
-T &&operator*(const char *msg, Result<T, E> &&res) {
-  assert(res.is_ok() && msg);
-  return std::move(*res);
-}
-/// @brief Retrieves the success object from a `Result`, printing a custom
-/// message on failure
-///
-/// @param msg The message to print if `res` is in a failure state
-/// @param res The result to unwrap
-///
-/// @note asserts if `res` is in an error state
-///
-/// @code
-/// fgla::Instance instance = "Failed to create instance"
-/// *fgla::Instance::create({});
-/// @endcode
-template <typename T, typename E>
-const T &&operator*(const char *msg, const Result<T, E> &&res) {
-  assert(res.is_ok() && msg);
+template <typename T> T operator*(const char *msg, Result<T, Error> &&res) {
+  if (!res) {
+    detail::fatal(msg, res.error());
+  }
+
   return std::move(*res);
 }
 
-/// Returns the value stored in `res`
-/// Displays an error message and exits the program if `res` contains an error
-/// @tparam T the success type of the `Result` to unwrap
-/// @tparam E the failure type of the `Result` to unwrap
+/// @brief Retrieves the success object from a `Result`, terminating on failure
+///
+/// @param msg The message to print if `res` is in a failure state
+/// @param res The result to unwrap
+///
+/// @note Terminates the program with the error code stored in `Error`.
+///
+/// @code
+/// fgla::Instance instance =
+///     "Failed to create instance" *fgla::Instance::create({});
+/// @endcode
+template <typename T>
+T operator*(const char *msg, const Result<T, Error> &&res) {
+  if (!res) {
+    detail::fatal(msg, res.error());
+  }
+
+  return std::move(*res);
+}
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
+///
+/// @tparam T The success type of the `Result`
+/// @tparam E The failure type of the `Result`
+/// @param msg The message to print if `res` is in a failure state
+/// @param res The result to unwrap
+///
+/// @note For a generic error type, the supplied exit code is `-1`.
+template <typename T, typename E>
+T &operator*(const char *msg, Result<T, E> &res) {
+  if (!res) {
+    detail::fatal(msg, -1);
+  }
+
+  return *res;
+}
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
+///
+/// @tparam T The success type of the `Result`
+/// @tparam E The failure type of the `Result`
+/// @param msg The message to print if `res` is in a failure state
+/// @param res The result to unwrap
+///
+/// @note For a generic error type, the supplied exit code is `-1`.
+template <typename T, typename E>
+const T &operator*(const char *msg, const Result<T, E> &res) {
+  if (!res) {
+    detail::fatal(msg, -1);
+  }
+
+  return *res;
+}
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
+///
+/// @tparam T The success type of the `Result`
+/// @tparam E The failure type of the `Result`
+/// @param msg The message to print if `res` is in a failure state
+/// @param res The result to unwrap
+///
+/// @note For a generic error type, the supplied exit code is `-1`.
+template <typename T, typename E>
+T operator*(const char *msg, Result<T, E> &&res) {
+  if (!res) {
+    detail::fatal(msg, -1);
+  }
+
+  return std::move(*res);
+}
+
+/// @brief Retrieves the success object from a `Result`, terminating on failure
+///
+/// @tparam T The success type of the `Result`
+/// @tparam E The failure type of the `Result`
+/// @param msg The message to print if `res` is in a failure state
+/// @param res The result to unwrap
+///
+/// @note For a generic error type, the supplied exit code is `-1`.
+template <typename T, typename E>
+T operator*(const char *msg, const Result<T, E> &&res) {
+  if (!res) {
+    detail::fatal(msg, -1);
+  }
+
+  return std::move(*res);
+}
+
+/// @brief Returns the value stored in `res`, terminating on failure
+///
+/// @tparam T The success type of the `Result`
+/// @tparam E The failure type of the `Result`
 /// @param res The `Result` to unwrap
-/// @param message The error message to display on failure
-/// @param exit_code The exit code to use on failure
+/// @param message The message to display on failure
+/// @param exit_code The exit code to use for generic error types
+///
 /// @returns The unwrapped value
 template <typename T, typename E>
 T unwrap(Result<T, E> res, const char *message = "Fatal Error",
          int exit_code = -1) {
   if (!res) {
-    std::cerr << message << std::endl;
-    std::exit(exit_code);
-  } else {
-    return std::move(*res);
+    detail::fatal(message, exit_code);
   }
+
+  return std::move(*res);
 }
 
-/// Returns the value stored in `opt`
-/// Displays an error message and exits the program if `opt` contains no value
-/// @tparam T the type of object to unwrap (will be inferred from arguments)
+/// @brief Returns the value stored in a `Result<T, Error>`, terminating on
+/// failure
+///
+/// @tparam T The success type of the `Result`
+/// @param res The `Result` to unwrap
+/// @param message The message to display on failure
+///
+/// @returns The unwrapped value
+///
+/// @note If `res` contains an error, its optional message is printed and its
+///       error code is used as the process exit code. The `message` argument
+///       is printed before the error's message.
+template <typename T>
+T unwrap(Result<T, Error> res, const char *message = "Fatal Error") {
+  if (!res) {
+    detail::fatal(message, res.error());
+  }
+
+  return std::move(*res);
+}
+
+/// @brief Returns the value stored in `opt`, terminating on failure
+///
+/// @tparam T The type stored in the `std::optional`
 /// @param opt The `std::optional` to unwrap
-/// @param message The error message to display on failure
-/// @param exit_code The exit code to use on faulure
+/// @param message The message to display if `opt` contains no value
+/// @param exit_code The exit code to use on failure
+///
 /// @returns The unwrapped value
 template <typename T>
 T unwrap(std::optional<T> opt, const char *message = "Fatal Error",
          int exit_code = -1) {
   if (!opt) {
-    std::cerr << message << std::endl;
-    std::exit(exit_code);
-  } else {
-    return std::move(*opt);
+    detail::fatal(message, exit_code);
   }
+
+  return std::move(*opt);
 }
+
 } // namespace fgla

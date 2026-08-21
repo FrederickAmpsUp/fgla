@@ -84,13 +84,8 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  auto shader_module_res = device.load_shader_module({"test"});
-
-  if (shader_module_res.has_error()) {
-    spdlog::error("{}", shader_module_res.error().message.value_or(""));
-  }
-
-  fgla::ShaderModule shader = std::move(*shader_module_res);
+  auto shader =
+      "Failed to load shader module" * device.load_shader_module({"test"});
 
   fgla::RenderPipeline pipeline =
       "Failed to create pipeline" *
