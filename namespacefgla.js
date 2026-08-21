@@ -1,6 +1,10 @@
 var namespacefgla =
 [
     [ "backend", "namespacefgla_1_1backend.html", "namespacefgla_1_1backend" ],
+    [ "detail", "namespacefgla_1_1detail.html", [
+      [ "fatal", "namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97", null ],
+      [ "fatal", "namespacefgla_1_1detail.html#a526317385b60afad73ee7d1af7ffb530", null ]
+    ] ],
     [ "ext", "namespacefgla_1_1ext.html", "namespacefgla_1_1ext" ],
     [ "extension", "namespacefgla_1_1extension.html", [
       [ "ExtensionUUID", "namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959", null ]
@@ -40,12 +44,17 @@ var namespacefgla =
     [ "create", "namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e", null ],
     [ "get_adapter", "namespacefgla.html#a52f9589da098900c73f438c4de6b5887", null ],
     [ "get_extension", "namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4", null ],
-    [ "operator*", "namespacefgla.html#af0adb7740f5e04aeb9b1cf557f847bb8", null ],
+    [ "operator*", "namespacefgla.html#a8d166ab3fd7dc7cdce16ad0d60489ab6", null ],
     [ "operator*", "namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98", null ],
-    [ "operator*", "namespacefgla.html#a5a177c9d657f4d3a1192c1ee112fe140", null ],
+    [ "operator*", "namespacefgla.html#a41d258f040434c28666db8855b8923e6", null ],
+    [ "operator*", "namespacefgla.html#a9e7ae1814965125c993f68de925fbe73", null ],
+    [ "operator*", "namespacefgla.html#ac2092e3268ba8a4091bb9d968c1e3fe1", null ],
     [ "operator*", "namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f", null ],
+    [ "operator*", "namespacefgla.html#a4c59998eb6dfee784e62d0e65448e5a8", null ],
+    [ "operator*", "namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9", null ],
     [ "select_adapter", "namespacefgla.html#a808a78b90b686e8c5213498f2324df7c", null ],
     [ "select_adapter", "namespacefgla.html#abffe5c4164d8229af464198d6542b30c", null ],
     [ "unwrap", "namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e", null ],
+    [ "unwrap", "namespacefgla.html#ab3de5c388e0fe48b41df28473fa3972d", null ],
     [ "unwrap", "namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815", null ]
 ];

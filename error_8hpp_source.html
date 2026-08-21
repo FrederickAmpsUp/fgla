@@ -239,61 +239,158 @@ $(function(){initNavTree('error_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>};</div>
 </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
-<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">  159</a></span>T &amp;<a class="code hl_function" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;res) {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="namespacefgla_1_1detail.html">  146</a></span><span class="keyword">namespace </span>detail {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">  148</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">fatal</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message, <span class="keyword">const</span> <a class="code hl_struct" href="structfgla_1_1Error.html">Error</a> &amp;error) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordflow">if</span> (message) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    std::cerr &lt;&lt; message &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordflow">if</span> (error.<a class="code hl_variable" href="structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a">message</a>) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    std::cerr &lt;&lt; *error.<a class="code hl_variable" href="structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a">message</a> &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  std::exit(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(error.<a class="code hl_variable" href="structfgla_1_1Error.html#a9a3b973cd0add3f2bf8b3b699c346b1e">code</a>));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
 </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
-<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98">  176</a></span><span class="keyword">const</span> T &amp;<a class="code hl_function" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;res) {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  assert(res.<a class="code hl_function" href="classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b">is_ok</a>() &amp;&amp; msg);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="namespacefgla_1_1detail.html#a526317385b60afad73ee7d1af7ffb530">  160</a></span>[[noreturn]] <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">fatal</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message, <span class="keywordtype">int</span> exit_code) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordflow">if</span> (message) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    std::cerr &lt;&lt; message &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  std::exit(exit_code);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
 </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
-<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="namespacefgla.html#a5a177c9d657f4d3a1192c1ee112fe140">  193</a></span>T &amp;&amp;<a class="code hl_function" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;&amp;res) {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  assert(res.is_ok() &amp;&amp; msg);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>} <span class="comment">// namespace detail</span></div>
 </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
-<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="namespacefgla.html#af0adb7740f5e04aeb9b1cf557f847bb8">  210</a></span><span class="keyword">const</span> T &amp;&amp;<a class="code hl_function" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;&amp;res) {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  assert(res.is_ok() &amp;&amp; msg);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">  181</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T &amp;<a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, Error&gt;</a> &amp;res) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
 </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
-<div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">  224</a></span>T <a class="code hl_function" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a>(<a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> res, <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Fatal Error&quot;</span>,</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>         <span class="keywordtype">int</span> exit_code = -1) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    std::exit(exit_code);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00201" data-start="{" data-end="}">
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="namespacefgla.html#a9e7ae1814965125c993f68de925fbe73">  201</a></span><span class="keyword">const</span> T &amp;<a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, Error&gt;</a> &amp;res) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
 </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815">  242</a></span>T <a class="code hl_function" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a>(std::optional&lt;T&gt; opt, <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Fatal Error&quot;</span>,</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>         <span class="keywordtype">int</span> exit_code = -1) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    std::exit(exit_code);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">return</span> std::move(*opt);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  }</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>}</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="namespacefgla.html#a4c59998eb6dfee784e62d0e65448e5a8">  220</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; T <a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, Error&gt;</a> &amp;&amp;res) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, res.error());</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
 </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>} <span class="comment">// namespace fgla</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="}">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="namespacefgla.html#a41d258f040434c28666db8855b8923e6">  240</a></span>T <a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, Error&gt;</a> &amp;&amp;res) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, res.error());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>}</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
+<div class="foldopen" id="foldopen00257" data-start="{" data-end="}">
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">  257</a></span>T &amp;<a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;res) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, -1);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>}</div>
+</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98">  274</a></span><span class="keyword">const</span> T &amp;<a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;res) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, -1);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
+</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
+<div class="foldopen" id="foldopen00291" data-start="{" data-end="}">
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="namespacefgla.html#ac2092e3268ba8a4091bb9d968c1e3fe1">  291</a></span>T <a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;&amp;res) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, -1);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>}</div>
+</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
+<div class="foldopen" id="foldopen00308" data-start="{" data-end="}">
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="namespacefgla.html#a8d166ab3fd7dc7cdce16ad0d60489ab6">  308</a></span>T <a class="code hl_function" href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">operator*</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg, <span class="keyword">const</span> <a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> &amp;&amp;res) {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(msg, -1);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}</div>
+</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> E&gt;</div>
+<div class="foldopen" id="foldopen00326" data-start="{" data-end="}">
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno"><a class="line" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">  326</a></span>T <a class="code hl_function" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a>(<a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, E&gt;</a> res, <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Fatal Error&quot;</span>,</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>         <span class="keywordtype">int</span> exit_code = -1) {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(message, exit_code);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>}</div>
+</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00348" data-start="{" data-end="}">
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="namespacefgla.html#ab3de5c388e0fe48b41df28473fa3972d">  348</a></span>T <a class="code hl_function" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a>(<a class="code hl_class" href="classfgla_1_1Result.html">Result&lt;T, Error&gt;</a> res, <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Fatal Error&quot;</span>) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(message, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
+</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00365" data-start="{" data-end="}">
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno"><a class="line" href="namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815">  365</a></span>T <a class="code hl_function" href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">unwrap</a>(std::optional&lt;T&gt; opt, <span class="keyword">const</span> <span class="keywordtype">char</span> *message = <span class="stringliteral">&quot;Fatal Error&quot;</span>,</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>         <span class="keywordtype">int</span> exit_code = -1) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <a class="code hl_function" href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">detail::fatal</a>(message, exit_code);</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  }</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>  <span class="keywordflow">return</span> std::move(*opt);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
+</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>} <span class="comment">// namespace fgla</span></div>
 <div class="ttc" id="aclassfgla_1_1Result_html"><div class="ttname"><a href="classfgla_1_1Result.html">fgla::Result</a></div><div class="ttdoc">Represents a potential success or failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">error.hpp:27</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Result_html_a0cba5eb73880d30199d75766e77ad2e4"><div class="ttname"><a href="classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4">fgla::Result::t</a></div><div class="ttdeci">T t</div><div class="ttdef"><b>Definition</b> <a href="#l00141">error.hpp:141</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Result_html_a22e201962f3525ba9409bddbc6ef9ba4"><div class="ttname"><a href="classfgla_1_1Result.html#a22e201962f3525ba9409bddbc6ef9ba4">fgla::Result::error</a></div><div class="ttdeci">E &amp;&amp; error() &amp;&amp;</div><div class="ttdoc">Retrieves the error object.</div><div class="ttdef"><b>Definition</b> <a href="#l00120">error.hpp:120</a></div></div>
@@ -318,9 +415,10 @@ $(function(){initNavTree('error_8hpp_source.html',''); initResizable(true); });
 <div class="ttc" id="aclassfgla_1_1Result_html_ad3084a504d74bfa731ebb5dbc3c5ae27"><div class="ttname"><a href="classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27">fgla::Result::Result</a></div><div class="ttdeci">Result(E &amp;&amp;e)</div><div class="ttdoc">Creates a new failure result.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">error.hpp:35</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Result_html_ad85de89f13f6d4fa253a6899e8e88520"><div class="ttname"><a href="classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520">fgla::Result::Result</a></div><div class="ttdeci">Result()</div><div class="ttdef"><b>Definition</b> <a href="#l00032">error.hpp:32</a></div></div>
 <div class="ttc" id="aclassfgla_1_1Result_html_aec04f57e34b0330a64ce7a5da09188f0"><div class="ttname"><a href="classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0">fgla::Result::Result</a></div><div class="ttdeci">Result(T &amp;&amp;t)</div><div class="ttdoc">Creates a new success result.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">error.hpp:31</a></div></div>
+<div class="ttc" id="anamespacefgla_1_1detail_html_a688d73f0d829d06185c7f8e377463a97"><div class="ttname"><a href="namespacefgla_1_1detail.html#a688d73f0d829d06185c7f8e377463a97">fgla::detail::fatal</a></div><div class="ttdeci">void fatal(const char *message, const Error &amp;error)</div><div class="ttdef"><b>Definition</b> <a href="#l00148">error.hpp:148</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00007">adapter.hpp:7</a></div></div>
-<div class="ttc" id="anamespacefgla_html_a203732d926f64e0ba6afe8de0f8c001e"><div class="ttname"><a href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">fgla::unwrap</a></div><div class="ttdeci">T unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</div><div class="ttdef"><b>Definition</b> <a href="#l00224">error.hpp:224</a></div></div>
-<div class="ttc" id="anamespacefgla_html_aed6f9c9afadf60543ec308d56c87bd5f"><div class="ttname"><a href="namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f">fgla::operator*</a></div><div class="ttdeci">T &amp; operator*(const char *msg, Result&lt; T, E &gt; &amp;res)</div><div class="ttdoc">Retrieves the success object from a Result, printing a custom message on failure.</div><div class="ttdef"><b>Definition</b> <a href="#l00159">error.hpp:159</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a203732d926f64e0ba6afe8de0f8c001e"><div class="ttname"><a href="namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e">fgla::unwrap</a></div><div class="ttdeci">T unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)</div><div class="ttdoc">Returns the value stored in res, terminating on failure.</div><div class="ttdef"><b>Definition</b> <a href="#l00326">error.hpp:326</a></div></div>
+<div class="ttc" id="anamespacefgla_html_af38eadd6c1021f6adbfd194d443567d9"><div class="ttname"><a href="namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9">fgla::operator*</a></div><div class="ttdeci">T &amp; operator*(const char *msg, Result&lt; T, Error &gt; &amp;res)</div><div class="ttdoc">Retrieves the success object from a Result, terminating on failure.</div><div class="ttdef"><b>Definition</b> <a href="#l00181">error.hpp:181</a></div></div>
 <div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="types_8hpp_source.html#l00136">types.hpp:136</a></div></div>
 <div class="ttc" id="astructfgla_1_1Error_html"><div class="ttname"><a href="structfgla_1_1Error.html">fgla::Error</a></div><div class="ttdoc">Represents a failure state from a function call.</div><div class="ttdef"><b>Definition</b> <a href="#l00012">error.hpp:12</a></div></div>
 <div class="ttc" id="astructfgla_1_1Error_html_a3824fef47c9768c96587c135a2b772da"><div class="ttname"><a href="structfgla_1_1Error.html#a3824fef47c9768c96587c135a2b772da">fgla::Error::Error</a></div><div class="ttdeci">Error(uint64_t code, std::string message=&quot;&quot;)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">error.hpp:13</a></div></div>
