@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/buffer.hpp>
 #include <fgla/error.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/queue.hpp>
@@ -56,7 +57,16 @@ public:
       * information                                                            \
       */                                                                       \
      , Result<RenderPipeline>, create_render_pipeline,                         \
-     (const RenderPipeline::Descriptor &desc), (desc))
+     (const RenderPipeline::Descriptor &desc), (desc))                         \
+  FN(/**                                                                       \
+      * Creates a `Buffer` and allocates its `Memory`                          \
+      *                                                                        \
+      * @param desc The `Buffer::Descriptor` containing settings for the       \
+      * buffer to be created                                                   \
+      * @returns The created `Buffer`, or an `Error` with failure information  \
+      */                                                                       \
+     , Result<Buffer>, create_buffer, (const Buffer::Descriptor &desc),        \
+     (desc))
 
 FGLA_OBJ_END
 
