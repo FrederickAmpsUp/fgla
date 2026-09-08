@@ -34,6 +34,38 @@ public:
   /// @param e The failure object
   inline Result(E &&e) : e(std::move(e)), ok(false) {}
 
+  template<
+    typename U,
+    typename = std::enable_if_t<
+      std::is_convertible_v<U*, T*>
+    >
+  >
+  Result(const Result<U, E>& other) {
+    if (other.has_error()) {
+      this->ok = false;
+      this->e = other.error();
+    } else {
+      this->ok = true;
+      this->t = other.value();
+    }
+  }
+
+  template<
+    typename U,
+    typename = std::enable_if_t<
+      std::is_convertible_v<U*, T*>
+    >
+  >
+  Result(Result<U, E>&& other) {
+    if (other.has_error()) {
+      this->ok = false;
+      this->e = std::move(other.error());
+    } else {
+      this->ok = true;
+      this->t = std::move(other.value());
+    }
+  }
+
   /// Checks if the result is in a success state
   inline operator bool() const { return this->ok; }
   /// Checks if the result is in a success state
