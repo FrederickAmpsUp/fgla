@@ -27,7 +27,7 @@ public:
   FGLA_OBJ_FUNCTIONS(FGLA_FN_BODY)                                             \
   struct Impl {                                                                \
     FGLA_OBJ_FUNCTIONS(FGLA_FN_IMPL)                                           \
-    virtual ~Impl() = 0;                                                       \
+    virtual ~Impl() = default;                                                 \
     friend class FGLA_OBJ_NAME;                                                \
   };                                                                           \
   template <typename T, std::enable_if_t<std::is_base_of_v<Impl, T>, int> = 0> \
@@ -47,5 +47,4 @@ public:
 private:                                                                       \
   std::unique_ptr<Impl> impl;                                                  \
   }                                                                            \
-  ;                                                                            \
-  inline FGLA_OBJ_NAME::Impl::~Impl() = default;
+  ;
