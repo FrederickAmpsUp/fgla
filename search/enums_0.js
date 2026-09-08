@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['Mode',['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3',1,'fgla']]]
+  ['cpuaccess_0',['CpuAccess',['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11',1,'fgla']]]
 ];

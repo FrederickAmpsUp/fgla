@@ -122,6 +122,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1AccessConst.html">AccessConst</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfgla_1_1Adapter.html">Adapter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1AspectBits.html">AspectBits</a></td></tr>
@@ -180,6 +182,12 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a9b4692efd4ce9aa144d86e7b5f3929e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c23d071e722c0eba28fdad291535d11" id="r_a4c23d071e722c0eba28fdad291535d11"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c23d071e722c0eba28fdad291535d11">CpuAccess</a> : uint8_t { <a class="el" href="#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0
+, <a class="el" href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">READ</a> = 1 &lt;&lt; 0
+, <a class="el" href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">WRITE</a> = 1 &lt;&lt; 1
+, <a class="el" href="#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">READ_WRITE</a> = READ | WRITE
+ }</td></tr>
+<tr class="separator:a4c23d071e722c0eba28fdad291535d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9df1a80b3e8f79eef8d84efc789bc83" id="r_aa9df1a80b3e8f79eef8d84efc789bc83"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9df1a80b3e8f79eef8d84efc789bc83">Type</a> { <a class="el" href="#aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494">Graphics</a>
 , <a class="el" href="#aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e">Transfer</a>
  }</td></tr>
@@ -242,6 +250,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a9405a9a97bd7e21454de00e1593fcfd4" id="r_a9405a9a97bd7e21454de00e1593fcfd4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9405a9a97bd7e21454de00e1593fcfd4"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; std::reference_wrapper&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9405a9a97bd7e21454de00e1593fcfd4">get_extension</a> ()</td></tr>
 <tr class="separator:a9405a9a97bd7e21454de00e1593fcfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af18528d76114bbe70bf145d38f7cb118" id="r_af18528d76114bbe70bf145d38f7cb118"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af18528d76114bbe70bf145d38f7cb118">operator AccessConst</a> () &amp;&amp;</td></tr>
+<tr class="separator:af18528d76114bbe70bf145d38f7cb118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4117edb55037fcc08b8d6aa62f3e6e02" id="r_a4117edb55037fcc08b8d6aa62f3e6e02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a> constexpr Memory::CpuAccess&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4117edb55037fcc08b8d6aa62f3e6e02">operator|</a> (Memory::CpuAccess a, Memory::CpuAccess b)</td></tr>
+<tr class="separator:a4117edb55037fcc08b8d6aa62f3e6e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb00c11834831e11e62c421966f0446" id="r_a8bb00c11834831e11e62c421966f0446"><td class="memItemLeft" align="right" valign="top">constexpr Memory::CpuAccess&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bb00c11834831e11e62c421966f0446">operator&amp;</a> (Memory::CpuAccess a, Memory::CpuAccess b)</td></tr>
+<tr class="separator:a8bb00c11834831e11e62c421966f0446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a3fcf65017e3bb6d1deecb5d35a8e3b9a" name="a3fcf65017e3bb6d1deecb5d35a8e3b9a"></a>
@@ -261,6 +275,47 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4c23d071e722c0eba28fdad291535d11" name="a4c23d071e722c0eba28fdad291535d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c23d071e722c0eba28fdad291535d11">&#9670;&#160;</a></span>CpuAccess</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4c23d071e722c0eba28fdad291535d11">fgla::CpuAccess</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Represents a contiguous chunk of memory associated with a <code>Buffer</code>, <code>Texture</code>, or similar object. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693" name="a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4" name="a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4"></a>READ&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e" name="a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e"></a>WRITE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144" name="a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144"></a>READ_WRITE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00019">19</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                     : uint8_t {</div>
+<div class="line"><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><span class="lineno">   21</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">READ</a> = 1 &lt;&lt; 0,</div>
+<div class="line"><span class="lineno">   22</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">WRITE</a> = 1 &lt;&lt; 1,</div>
+<div class="line"><span class="lineno">   23</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">READ_WRITE</a> = <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">READ</a> | <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">WRITE</a></div>
+<div class="line"><span class="lineno">   24</span>};</div>
+<div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">fgla::CpuAccess::READ</a></div><div class="ttdeci">@ READ</div></div>
+<div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">fgla::CpuAccess::READ_WRITE</a></div><div class="ttdeci">@ READ_WRITE</div></div>
+<div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">fgla::CpuAccess::NONE</a></div><div class="ttdeci">@ NONE</div></div>
+<div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">fgla::CpuAccess::WRITE</a></div><div class="ttdeci">@ WRITE</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a9b4692efd4ce9aa144d86e7b5f3929e3" name="a9b4692efd4ce9aa144d86e7b5f3929e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b4692efd4ce9aa144d86e7b5f3929e3">&#9670;&#160;</a></span>Mode</h2>
 
@@ -445,6 +500,57 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="af18528d76114bbe70bf145d38f7cb118" name="af18528d76114bbe70bf145d38f7cb118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18528d76114bbe70bf145d38f7cb118">&#9670;&#160;</a></span>operator AccessConst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">fgla::operator <a class="el" href="classfgla_1_1AccessConst.html">AccessConst</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00048">48</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8bb00c11834831e11e62c421966f0446" name="a8bb00c11834831e11e62c421966f0446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb00c11834831e11e62c421966f0446">&#9670;&#160;</a></span>operator&amp;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Memory::CpuAccess fgla::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype">Memory::CpuAccess</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Memory::CpuAccess</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00090">90</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>            {initNavTree(<span class="stringliteral">&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8d166ab3fd7dc7cdce16ad0d60489ab6" name="a8d166ab3fd7dc7cdce16ad0d60489ab6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d166ab3fd7dc7cdce16ad0d60489ab6">&#9670;&#160;</a></span>operator*() <span class="overload">[1/8]</span></h2>
 
@@ -483,14 +589,14 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>For a generic error type, the supplied exit code is <code>-1</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00308">308</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  308</span>                                                       {</div>
-<div class="line"><span class="lineno">  309</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  310</span>    detail::fatal(msg, -1);</div>
-<div class="line"><span class="lineno">  311</span>  }</div>
-<div class="line"><span class="lineno">  312</span> </div>
-<div class="line"><span class="lineno">  313</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  314</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00332">332</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  332</span>                                                       {</div>
+<div class="line"><span class="lineno">  333</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  334</span>    detail::fatal(msg, -1);</div>
+<div class="line"><span class="lineno">  335</span>  }</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  338</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,14 +638,14 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>For a generic error type, the supplied exit code is <code>-1</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00274">274</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  274</span>                                                             {</div>
-<div class="line"><span class="lineno">  275</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  276</span>    detail::fatal(msg, -1);</div>
-<div class="line"><span class="lineno">  277</span>  }</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  280</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00298">298</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  298</span>                                                             {</div>
+<div class="line"><span class="lineno">  299</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  300</span>    detail::fatal(msg, -1);</div>
+<div class="line"><span class="lineno">  301</span>  }</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  304</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -576,15 +682,15 @@ template&lt;typename T &gt; </div>
 <div class="fragment"><div class="line">fgla::Instance instance =</div>
 <div class="line">    <span class="stringliteral">&quot;Failed to create instance&quot;</span> *fgla::Instance::create({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00240">240</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  240</span>                                                           {</div>
-<div class="line"><span class="lineno">  241</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  242</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
-<div class="line"><span class="lineno">  243</span>  }</div>
-<div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  246</span>}</div>
-<div class="ttc" id="aclassfgla_1_1Result_html_a54136770feeff015dea308075052507f"><div class="ttname"><a href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">fgla::Result::error</a></div><div class="ttdeci">E &amp; error() &amp;</div><div class="ttdoc">Retrieves the error object.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00108">error.hpp:108</a></div></div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00264">264</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  264</span>                                                           {</div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  266</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><span class="lineno">  267</span>  }</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  270</span>}</div>
+<div class="ttc" id="aclassfgla_1_1Result_html_a54136770feeff015dea308075052507f"><div class="ttname"><a href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">fgla::Result::error</a></div><div class="ttdeci">E &amp; error() &amp;</div><div class="ttdoc">Retrieves the error object.</div><div class="ttdef"><b>Definition</b> <a href="error_8hpp_source.html#l00132">error.hpp:132</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -621,14 +727,14 @@ template&lt;typename T &gt; </div>
 <div class="fragment"><div class="line">fgla::Instance instance =</div>
 <div class="line">    <span class="stringliteral">&quot;Failed to create instance&quot;</span> *fgla::Instance::create({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00201">201</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  201</span>                                                                 {</div>
-<div class="line"><span class="lineno">  202</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  203</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
-<div class="line"><span class="lineno">  204</span>  }</div>
-<div class="line"><span class="lineno">  205</span> </div>
-<div class="line"><span class="lineno">  206</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  207</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00225">225</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>                                                                 {</div>
+<div class="line"><span class="lineno">  226</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  227</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><span class="lineno">  228</span>  }</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  231</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -670,14 +776,14 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>For a generic error type, the supplied exit code is <code>-1</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00291">291</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  291</span>                                                 {</div>
-<div class="line"><span class="lineno">  292</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  293</span>    detail::fatal(msg, -1);</div>
-<div class="line"><span class="lineno">  294</span>  }</div>
-<div class="line"><span class="lineno">  295</span> </div>
-<div class="line"><span class="lineno">  296</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  297</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00315">315</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>                                                 {</div>
+<div class="line"><span class="lineno">  316</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  317</span>    detail::fatal(msg, -1);</div>
+<div class="line"><span class="lineno">  318</span>  }</div>
+<div class="line"><span class="lineno">  319</span> </div>
+<div class="line"><span class="lineno">  320</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  321</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -719,14 +825,14 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>For a generic error type, the supplied exit code is <code>-1</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00257">257</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  257</span>                                                 {</div>
-<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  259</span>    detail::fatal(msg, -1);</div>
-<div class="line"><span class="lineno">  260</span>  }</div>
-<div class="line"><span class="lineno">  261</span> </div>
-<div class="line"><span class="lineno">  262</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  263</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00281">281</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>                                                 {</div>
+<div class="line"><span class="lineno">  282</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  283</span>    detail::fatal(msg, -1);</div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  287</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -763,14 +869,14 @@ template&lt;typename T &gt; </div>
 <div class="fragment"><div class="line">fgla::Instance instance =</div>
 <div class="line">    <span class="stringliteral">&quot;Failed to create instance&quot;</span> *fgla::Instance::create({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00220">220</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  220</span>                                                                           {</div>
-<div class="line"><span class="lineno">  221</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  222</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
-<div class="line"><span class="lineno">  223</span>  }</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  226</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00244">244</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>                                                                           {</div>
+<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  246</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  250</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -807,15 +913,46 @@ template&lt;typename T &gt; </div>
 <div class="fragment"><div class="line">fgla::Instance instance =</div>
 <div class="line">    <span class="stringliteral">&quot;Failed to create instance&quot;</span> *fgla::Instance::create({});</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00181">181</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>                                                                           {</div>
-<div class="line"><span class="lineno">  182</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  183</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
-<div class="line"><span class="lineno">  184</span>  }</div>
-<div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>  <span class="keywordflow">return</span> *res;</div>
-<div class="line"><span class="lineno">  187</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00205">205</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>                                                                           {</div>
+<div class="line"><span class="lineno">  206</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  207</span>    detail::fatal(msg, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>  <span class="keywordflow">return</span> *res;</div>
+<div class="line"><span class="lineno">  211</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a4117edb55037fcc08b8d6aa62f3e6e02" name="a4117edb55037fcc08b8d6aa62f3e6e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4117edb55037fcc08b8d6aa62f3e6e02">&#9670;&#160;</a></span>operator|()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a> constexpr Memory::CpuAccess fgla::operator| </td>
+          <td>(</td>
+          <td class="paramtype">Memory::CpuAccess</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Memory::CpuAccess</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00086">86</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+
 </div>
 </div>
 <a id="a808a78b90b686e8c5213498f2324df7c" name="a808a78b90b686e8c5213498f2324df7c"></a>
@@ -927,14 +1064,14 @@ template&lt;typename T , typename E &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00326">326</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  327</span>                             {</div>
-<div class="line"><span class="lineno">  328</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  329</span>    detail::fatal(message, exit_code);</div>
-<div class="line"><span class="lineno">  330</span>  }</div>
-<div class="line"><span class="lineno">  331</span> </div>
-<div class="line"><span class="lineno">  332</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  333</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00350">350</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  351</span>                             {</div>
+<div class="line"><span class="lineno">  352</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  353</span>    detail::fatal(message, exit_code);</div>
+<div class="line"><span class="lineno">  354</span>  }</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  357</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -976,14 +1113,14 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If <code>res</code> contains an error, its optional message is printed and its error code is used as the process exit code. The <code>message</code> argument is printed before the error's message. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00348">348</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  348</span>                                                                    {</div>
-<div class="line"><span class="lineno">  349</span>  <span class="keywordflow">if</span> (!res) {</div>
-<div class="line"><span class="lineno">  350</span>    detail::fatal(message, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
-<div class="line"><span class="lineno">  351</span>  }</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>  <span class="keywordflow">return</span> std::move(*res);</div>
-<div class="line"><span class="lineno">  354</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00372">372</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  372</span>                                                                    {</div>
+<div class="line"><span class="lineno">  373</span>  <span class="keywordflow">if</span> (!res) {</div>
+<div class="line"><span class="lineno">  374</span>    detail::fatal(message, res.<a class="code hl_function" href="classfgla_1_1Result.html#a54136770feeff015dea308075052507f">error</a>());</div>
+<div class="line"><span class="lineno">  375</span>  }</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>  <span class="keywordflow">return</span> std::move(*res);</div>
+<div class="line"><span class="lineno">  378</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1030,14 +1167,14 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The unwrapped value </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00365">365</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  366</span>                             {</div>
-<div class="line"><span class="lineno">  367</span>  <span class="keywordflow">if</span> (!opt) {</div>
-<div class="line"><span class="lineno">  368</span>    detail::fatal(message, exit_code);</div>
-<div class="line"><span class="lineno">  369</span>  }</div>
-<div class="line"><span class="lineno">  370</span> </div>
-<div class="line"><span class="lineno">  371</span>  <span class="keywordflow">return</span> std::move(*opt);</div>
-<div class="line"><span class="lineno">  372</span>}</div>
+<p class="definition">Definition at line <a class="el" href="error_8hpp_source.html#l00389">389</a> of file <a class="el" href="error_8hpp_source.html">error.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  390</span>                             {</div>
+<div class="line"><span class="lineno">  391</span>  <span class="keywordflow">if</span> (!opt) {</div>
+<div class="line"><span class="lineno">  392</span>    detail::fatal(message, exit_code);</div>
+<div class="line"><span class="lineno">  393</span>  }</div>
+<div class="line"><span class="lineno">  394</span> </div>
+<div class="line"><span class="lineno">  395</span>  <span class="keywordflow">return</span> std::move(*opt);</div>
+<div class="line"><span class="lineno">  396</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

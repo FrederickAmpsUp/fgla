@@ -4,5 +4,6 @@ var searchData=
   ['window_2ehpp_1',['window.hpp',['../window_8hpp.html',1,'']]],
   ['windowing_2',['Windowing',['../namespacefgla_1_1ext.html#a8d9bc0a18c158c947d05c9cdb9e17330',1,'fgla::ext']]],
   ['windowing_2ehpp_3',['windowing.hpp',['../windowing_8hpp.html',1,'']]],
-  ['windowingextension_4',['WindowingExtension',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html',1,'fgla::ext::windowing']]]
+  ['windowingextension_4',['WindowingExtension',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html',1,'fgla::ext::windowing']]],
+  ['write_5',['WRITE',['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e',1,'fgla']]]
 ];

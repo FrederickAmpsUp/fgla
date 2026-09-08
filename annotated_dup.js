@@ -20,6 +20,7 @@ var annotated_dup =
         [ "PairHash", "structfgla_1_1util_1_1PairHash.html", "structfgla_1_1util_1_1PairHash" ],
         [ "UUID", "structfgla_1_1util_1_1UUID.html", "structfgla_1_1util_1_1UUID" ]
       ] ],
+      [ "AccessConst", "classfgla_1_1AccessConst.html", "classfgla_1_1AccessConst" ],
       [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
       [ "AspectBits", "structfgla_1_1AspectBits.html", "structfgla_1_1AspectBits" ],
       [ "Color", "structfgla_1_1Color.html", "structfgla_1_1Color" ],

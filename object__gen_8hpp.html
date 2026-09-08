@@ -223,7 +223,7 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="adapter_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a>(<a class="code hl_define" href="#ab9ca2b9918844c5955a4444a3e6f3747">FGLA_FN_BODY</a>)                                             \</div>
 <div class="line">  <span class="keyword">struct </span>Impl {                                                                \</div>
 <div class="line">    FGLA_OBJ_FUNCTIONS(<a class="code hl_define" href="#af712beab7bcddc62d47289d3d5ae56b7">FGLA_FN_IMPL</a>)                                           \</div>
-<div class="line">    <span class="keyword">virtual</span> ~Impl() = 0;                                                       \</div>
+<div class="line">    <span class="keyword">virtual</span> ~Impl() = <span class="keywordflow">default</span>;                                                 \</div>
 <div class="line">    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_define" href="adapter_8hpp.html#ac9347ca045796552e86e06b72e9123ba">FGLA_OBJ_NAME</a>;                                                \</div>
 <div class="line">  };                                                                           \</div>
 <div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::enable_if_t&lt;std::is_base_of_v&lt;Impl, T&gt;, <span class="keywordtype">int</span>&gt; = 0&gt; \</div>
@@ -243,8 +243,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keyword">private</span>:                                                                       \</div>
 <div class="line">  std::unique_ptr&lt;Impl&gt; impl;                                                  \</div>
 <div class="line">  }                                                                            \</div>
-<div class="line">  ;                                                                            \</div>
-<div class="line">  <span class="keyword">inline</span> FGLA_OBJ_NAME::Impl::~Impl() = <span class="keywordflow">default</span>;</div>
+<div class="line">  ;</div>
 <div class="ttc" id="aadapter_8hpp_html_a0bdb493e62ad18b6d0c947b92e2671ea"><div class="ttname"><a href="adapter_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a></div><div class="ttdeci">#define FGLA_OBJ_FUNCTIONS(FN)</div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00024">adapter.hpp:24</a></div></div>
 <div class="ttc" id="aadapter_8hpp_html_ac9347ca045796552e86e06b72e9123ba"><div class="ttname"><a href="adapter_8hpp.html#ac9347ca045796552e86e06b72e9123ba">FGLA_OBJ_NAME</a></div><div class="ttdeci">#define FGLA_OBJ_NAME</div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00009">adapter.hpp:9</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_ab9ca2b9918844c5955a4444a3e6f3747"><div class="ttname"><a href="#ab9ca2b9918844c5955a4444a3e6f3747">FGLA_FN_BODY</a></div><div class="ttdeci">#define FGLA_FN_BODY(doc, ret, name, args, fwd)</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00006">object_gen.hpp:6</a></div></div>
@@ -255,7 +254,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="lineno">   27</span><span class="preprocessor">  FGLA_OBJ_FUNCTIONS(FGLA_FN_BODY)                                             \</span></div>
 <div class="line"><span class="lineno">   28</span><span class="preprocessor">  struct Impl {                                                                \</span></div>
 <div class="line"><span class="lineno">   29</span><span class="preprocessor">    FGLA_OBJ_FUNCTIONS(FGLA_FN_IMPL)                                           \</span></div>
-<div class="line"><span class="lineno">   30</span><span class="preprocessor">    virtual ~Impl() = 0;                                                       \</span></div>
+<div class="line"><span class="lineno">   30</span><span class="preprocessor">    virtual ~Impl() = default;                                                 \</span></div>
 <div class="line"><span class="lineno">   31</span><span class="preprocessor">    friend class FGLA_OBJ_NAME;                                                \</span></div>
 <div class="line"><span class="lineno">   32</span><span class="preprocessor">  };                                                                           \</span></div>
 <div class="line"><span class="lineno">   33</span><span class="preprocessor">  template &lt;typename T, std::enable_if_t&lt;std::is_base_of_v&lt;Impl, T&gt;, int&gt; = 0&gt; \</span></div>
@@ -275,8 +274,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="lineno">   47</span><span class="preprocessor">private:                                                                       \</span></div>
 <div class="line"><span class="lineno">   48</span><span class="preprocessor">  std::unique_ptr&lt;Impl&gt; impl;                                                  \</span></div>
 <div class="line"><span class="lineno">   49</span><span class="preprocessor">  }                                                                            \</span></div>
-<div class="line"><span class="lineno">   50</span><span class="preprocessor">  ;                                                                            \</span></div>
-<div class="line"><span class="lineno">   51</span><span class="preprocessor">  inline FGLA_OBJ_NAME::Impl::~Impl() = default;</span></div>
+<div class="line"><span class="lineno">   50</span><span class="preprocessor">  ;</span></div>
 </div><!-- fragment -->
 </div>
 </div>

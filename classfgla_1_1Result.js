@@ -3,6 +3,8 @@ var classfgla_1_1Result =
     [ "Result", "classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0", null ],
     [ "Result", "classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520", null ],
     [ "Result", "classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27", null ],
+    [ "Result", "classfgla_1_1Result.html#a2666f39a3fa01b20922acac346db0e42", null ],
+    [ "Result", "classfgla_1_1Result.html#a338ce688eb27cb9bad1a0062dd8bc6d1", null ],
     [ "~Result", "classfgla_1_1Result.html#a7d4c320dcd8a6adc1ddd4dbffee5711f", null ],
     [ "error", "classfgla_1_1Result.html#a54136770feeff015dea308075052507f", null ],
     [ "error", "classfgla_1_1Result.html#a22e201962f3525ba9409bddbc6ef9ba4", null ],

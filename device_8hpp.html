@@ -104,7 +104,8 @@ $(function(){initNavTree('device_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">device.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="buffer_8hpp_source.html">fgla/buffer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="queue_8hpp_source.html">fgla/queue.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="render__pipeline_8hpp_source.html">fgla/render_pipeline.hpp</a>&gt;</code><br />
@@ -148,25 +149,14 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  FN(</div>
-<div class="line">                                                                       \</div>
-<div class="line">     , std::optional&lt;std::reference_wrapper&lt;Queue&gt;&gt;, get_queue,                \</div>
-<div class="line">     (Queue::Type type, uint32_t index), (type, index))                        \</div>
-<div class="line">  FN(</div>
-<div class="line">                                                                       \</div>
-<div class="line">     , Result&lt;ShaderModule&gt;, load_shader_module,                               \</div>
-<div class="line">     (<span class="keyword">const</span> ShaderModule::Descriptor &amp;desc), (desc))                           \</div>
-<div class="line">  FN(</div>
-<div class="line">                                                                       \</div>
-<div class="line">     , Result&lt;RenderPipeline&gt;, create_render_pipeline,                         \</div>
-<div class="line">     (<span class="keyword">const</span> RenderPipeline::Descriptor &amp;desc), (desc))</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00030">30</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   31</span><span class="preprocessor">  FN(</span></div>
-<div class="line"><span class="lineno">   37</span>                                                                       \</div>
-<div class="line"><span class="lineno">   38</span>     , std::optional&lt;std::reference_wrapper&lt;Queue&gt;&gt;, get_queue,                \</div>
-<div class="line"><span class="lineno">   39</span>     (Queue::Type type, uint32_t index), (type, index))                        \</div>
+
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00031">31</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   32</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   38</span>                                                                       \</div>
+<div class="line"><span class="lineno">   39</span>     , std::optional&lt;std::reference_wrapper&lt;Queue&gt;&gt;, get_queue,                \</div>
+<div class="line"><span class="lineno">   40</span>     (Queue::Type type, uint32_t index), (type, index))                        \</div>
+<div class="line"><span class="lineno">   41</span>  FN(</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,7 +172,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00015">15</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="device_8hpp_source.html#l00016">16</a> of file <a class="el" href="device_8hpp_source.html">device.hpp</a>.</p>
 
 </div>
 </div>

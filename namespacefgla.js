@@ -10,6 +10,7 @@ var namespacefgla =
       [ "ExtensionUUID", "namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959", null ]
     ] ],
     [ "util", "namespacefgla_1_1util.html", "namespacefgla_1_1util" ],
+    [ "AccessConst", "classfgla_1_1AccessConst.html", "classfgla_1_1AccessConst" ],
     [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
     [ "AspectBits", "structfgla_1_1AspectBits.html", "structfgla_1_1AspectBits" ],
     [ "Color", "structfgla_1_1Color.html", "structfgla_1_1Color" ],
@@ -28,6 +29,12 @@ var namespacefgla =
     [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],
     [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ],
     [ "AspectFlags", "namespacefgla.html#a3fcf65017e3bb6d1deecb5d35a8e3b9a", null ],
+    [ "CpuAccess", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11", [
+      [ "NONE", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "READ", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4", null ],
+      [ "WRITE", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e", null ],
+      [ "READ_WRITE", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144", null ]
+    ] ],
     [ "Mode", "namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3", [
       [ "D1", "namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3a4a4079e06eb2f7ba7a12821c7c58a3f6", null ],
       [ "D2", "namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3ac4d62b6dcca08e5caf06c01889282859", null ],
@@ -44,6 +51,8 @@ var namespacefgla =
     [ "create", "namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e", null ],
     [ "get_adapter", "namespacefgla.html#a52f9589da098900c73f438c4de6b5887", null ],
     [ "get_extension", "namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4", null ],
+    [ "operator AccessConst", "namespacefgla.html#af18528d76114bbe70bf145d38f7cb118", null ],
+    [ "operator&", "namespacefgla.html#a8bb00c11834831e11e62c421966f0446", null ],
     [ "operator*", "namespacefgla.html#a8d166ab3fd7dc7cdce16ad0d60489ab6", null ],
     [ "operator*", "namespacefgla.html#a7d1cd2ba34a33215b91e8eafd0113d98", null ],
     [ "operator*", "namespacefgla.html#a41d258f040434c28666db8855b8923e6", null ],
@@ -52,6 +61,7 @@ var namespacefgla =
     [ "operator*", "namespacefgla.html#aed6f9c9afadf60543ec308d56c87bd5f", null ],
     [ "operator*", "namespacefgla.html#a4c59998eb6dfee784e62d0e65448e5a8", null ],
     [ "operator*", "namespacefgla.html#af38eadd6c1021f6adbfd194d443567d9", null ],
+    [ "operator|", "namespacefgla.html#a4117edb55037fcc08b8d6aa62f3e6e02", null ],
     [ "select_adapter", "namespacefgla.html#a808a78b90b686e8c5213498f2324df7c", null ],
     [ "select_adapter", "namespacefgla.html#abffe5c4164d8229af464198d6542b30c", null ],
     [ "unwrap", "namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e", null ],

@@ -41,12 +41,14 @@ var searchData=
   ['r8g8b8a8_5fsrgb_38',['R8G8B8A8_SRGB',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acead795cdd33014e701717d4256dfa08c39',1,'fgla::Format']]],
   ['r8g8b8a8_5fuint_39',['R8G8B8A8_UINT',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acea92b12e52d86d6293bd1484025a67f285',1,'fgla::Format']]],
   ['r8g8b8a8_5funorm_40',['R8G8B8A8_UNORM',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acea7458e75c5a212216ae6e13054df4d82f',1,'fgla::Format']]],
-  ['register_5fbackend_41',['register_backend',['../namespacefgla_1_1backend.html#a4e3714480040e5e503b7b64d42ec02d3',1,'fgla::backend']]],
-  ['render_5fpass_2ehpp_42',['render_pass.hpp',['../render__pass_8hpp.html',1,'']]],
-  ['render_5fpipeline_2ehpp_43',['render_pipeline.hpp',['../render__pipeline_8hpp.html',1,'']]],
-  ['render_5ftarget_44',['render_target',['../structfgla_1_1TextureFormatSupportDetails.html#a9769ca3f489765eab1e15f8eff417eeb',1,'fgla::TextureFormatSupportDetails']]],
-  ['request_45',['Request',['../structfgla_1_1Request.html',1,'fgla']]],
-  ['required_5fextensions_46',['required_extensions',['../structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307',1,'fgla::Descriptor']]],
-  ['resizable_47',['resizable',['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html#a788a51a0d5ce9924d056340553540caa',1,'fgla::ext::windowing::Descriptor']]],
-  ['result_48',['Result',['../classfgla_1_1Result.html',1,'fgla::Result&lt; T, E &gt;'],['../classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0',1,'fgla::Result::Result(T &amp;&amp;t)'],['../classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520',1,'fgla::Result::Result()'],['../classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27',1,'fgla::Result::Result(E &amp;&amp;e)']]]
+  ['read_41',['READ',['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4',1,'fgla']]],
+  ['read_5fwrite_42',['READ_WRITE',['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144',1,'fgla']]],
+  ['register_5fbackend_43',['register_backend',['../namespacefgla_1_1backend.html#a4e3714480040e5e503b7b64d42ec02d3',1,'fgla::backend']]],
+  ['render_5fpass_2ehpp_44',['render_pass.hpp',['../render__pass_8hpp.html',1,'']]],
+  ['render_5fpipeline_2ehpp_45',['render_pipeline.hpp',['../render__pipeline_8hpp.html',1,'']]],
+  ['render_5ftarget_46',['render_target',['../structfgla_1_1TextureFormatSupportDetails.html#a9769ca3f489765eab1e15f8eff417eeb',1,'fgla::TextureFormatSupportDetails']]],
+  ['request_47',['Request',['../structfgla_1_1Request.html',1,'fgla']]],
+  ['required_5fextensions_48',['required_extensions',['../structfgla_1_1Descriptor.html#a97d6713d419845d01b3f4216a59e3307',1,'fgla::Descriptor']]],
+  ['resizable_49',['resizable',['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html#a788a51a0d5ce9924d056340553540caa',1,'fgla::ext::windowing::Descriptor']]],
+  ['result_50',['Result',['../classfgla_1_1Result.html',1,'fgla::Result&lt; T, E &gt;'],['../classfgla_1_1Result.html#aec04f57e34b0330a64ce7a5da09188f0',1,'fgla::Result::Result(T &amp;&amp;t)'],['../classfgla_1_1Result.html#ad85de89f13f6d4fa253a6899e8e88520',1,'fgla::Result::Result()'],['../classfgla_1_1Result.html#ad3084a504d74bfa731ebb5dbc3c5ae27',1,'fgla::Result::Result(E &amp;&amp;e)'],['../classfgla_1_1Result.html#a2666f39a3fa01b20922acac346db0e42',1,'fgla::Result::Result(const Result&lt; U, E &gt; &amp;other)'],['../classfgla_1_1Result.html#a338ce688eb27cb9bad1a0062dd8bc6d1',1,'fgla::Result::Result(Result&lt; U, E &gt; &amp;&amp;other)']]]
 ];
