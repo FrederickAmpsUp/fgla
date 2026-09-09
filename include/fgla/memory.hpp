@@ -85,18 +85,16 @@ public:
       * Acquires CPU access to the `Memory`                                    \
       *                                                                        \
       * @returns An `AccessMut` providing read/write pointers to this          \
-      * `Memory`, or an `Error` containing failure information                                  \
+      * `Memory`, or an `Error` containing failure information                 \
       */                                                                       \
-     ,                                                                         \
-     Result<AccessMut>, access, (), ())                                        \
+     , Result<AccessMut>, access, (), ())                                      \
   FN(/**                                                                       \
       * Acquires CPU access to the `Memory`                                    \
       *                                                                        \
       * @returns An `AccessConst` providing read-only pointers to this         \
-      * `Memory`, or an `Error` containing failure information                                  \
+      * `Memory`, or an `Error` containing failure information                 \
       */                                                                       \
-     ,                                                                         \
-     Result<AccessConst>, access, () const, ())
+     , Result<AccessConst>, access, () const, ())
 
 FGLA_OBJ_END
 

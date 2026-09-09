@@ -2,8 +2,10 @@
 
 #include <cstdint>
 #include <fgla/backends/vulkan/adapter.hpp>
+#include <fgla/backends/vulkan/memory.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/device.hpp>
+#include <fgla/memory.hpp>
 #include <slang-com-ptr.h>
 #include <slang.h>
 #include <unordered_map>
@@ -27,6 +29,15 @@ public:
   load_shader_module(const ShaderModule::Descriptor &desc) override;
   virtual Result<RenderPipeline>
   create_render_pipeline(const RenderPipeline::Descriptor &desc) override;
+
+  virtual Result<Buffer> create_buffer(const Buffer::Descriptor &desc) override;
+
+  Result<Memory> allocate_memory(VkMemoryRequirements requirements,
+                                 Memory::CpuAccess cpu_access);
+  void free_memory(const MemoryImpl &memory);
+  inline void free_memory(Memory &&memory) {
+    return this->free_memory(memory.to_impl<MemoryImpl>());
+  }
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }

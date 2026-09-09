@@ -77,7 +77,8 @@ int main(int argc, char **argv) {
       "Failed to create buffer!" *
       device.create_buffer(
           {.memory = {.size = sizeof(data),
-                      .cpu_access = fgla::Memory::CpuAccess::READ_WRITE}});
+                      .cpu_access = fgla::Memory::CpuAccess::READ_WRITE},
+           .usage = fgla::Buffer::Usage::VERTEX});
 
   fgla::Memory &memory = buffer.get_memory();
 
@@ -85,7 +86,8 @@ int main(int argc, char **argv) {
     fgla::Memory::AccessMut access =
         "Failed to access buffer memory!" * memory.access();
 
-    memcpy(access.write(), data, sizeof(data));
+    std::byte *ptr = access.write();
+    memcpy(ptr, data, sizeof(data));
   }
 
   const fgla::Memory &cmemory = memory;

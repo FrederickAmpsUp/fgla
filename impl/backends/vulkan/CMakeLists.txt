@@ -19,13 +19,16 @@ add_library(fgla_backend_vulkan STATIC
     device/queue.cpp
     device/shader.cpp
     device/pipeline.cpp
+    device/buffer.cpp
+    device/memory.cpp
     render_pipeline.cpp
     shader_module.cpp
     backend.cpp
     image.cpp
     command_buffer.cpp
     util.cpp
-    render_pass.cpp)
+    render_pass.cpp
+    memory.cpp)
 target_link_libraries(fgla_backend_vulkan PRIVATE
     spdlog::spdlog fmt::fmt
     Vulkan::Vulkan slang::slang

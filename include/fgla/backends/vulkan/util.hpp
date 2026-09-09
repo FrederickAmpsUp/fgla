@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/buffer.hpp>
 #include <fgla/image_view.hpp>
 #include <fgla/render_pass.hpp>
 #include <fgla/types.hpp>
@@ -160,6 +161,33 @@ constexpr fgla::RenderPass::StoreOp::Op devulkanize(VkAttachmentStoreOp op) {
   default:
     return fgla::RenderPass::StoreOp::Op::DONT_CARE;
   }
+}
+
+constexpr VkBufferUsageFlags vulkanize(fgla::Buffer::Usage usage) noexcept {
+  VkBufferUsageFlags flags = 0;
+
+  if ((usage & fgla::Buffer::Usage::VERTEX) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_VERTEX_BUFFER_BIT;
+
+  if ((usage & fgla::Buffer::Usage::INDEX) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_INDEX_BUFFER_BIT;
+
+  if ((usage & fgla::Buffer::Usage::UNIFORM) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT;
+
+  if ((usage & fgla::Buffer::Usage::STORAGE) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_STORAGE_BUFFER_BIT;
+
+  if ((usage & fgla::Buffer::Usage::INDIRECT) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT;
+
+  if ((usage & fgla::Buffer::Usage::TRANSFER_SRC) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_TRANSFER_SRC_BIT;
+
+  if ((usage & fgla::Buffer::Usage::TRANSFER_DST) != fgla::Buffer::Usage::NONE)
+    flags |= VK_BUFFER_USAGE_TRANSFER_DST_BIT;
+
+  return flags;
 }
 
 void signal_timeline_from_binary(VkDevice device, VkQueue queue,
