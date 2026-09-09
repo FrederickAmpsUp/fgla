@@ -43,7 +43,7 @@ Result<Buffer> DeviceImpl::create_buffer(const Buffer::Descriptor &desc) {
   }
 
   return Buffer::from_impl(
-      std::make_unique<BufferImpl>(buffer, std::move(*mem_res)));
+      std::make_unique<BufferImpl>(buffer, std::move(*mem_res), this->device));
 }
 
 } // namespace fgla::backends::vulkan

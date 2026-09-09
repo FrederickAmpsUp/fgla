@@ -28,7 +28,8 @@ add_library(fgla_backend_vulkan STATIC
     command_buffer.cpp
     util.cpp
     render_pass.cpp
-    memory.cpp)
+    memory.cpp
+    buffer.cpp)
 target_link_libraries(fgla_backend_vulkan PRIVATE
     spdlog::spdlog fmt::fmt
     Vulkan::Vulkan slang::slang
