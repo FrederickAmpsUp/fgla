@@ -170,6 +170,19 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a4262f291163f1d649834bc2efbd3796d" id="r_a4262f291163f1d649834bc2efbd3796d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4262f291163f1d649834bc2efbd3796d">Usage</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">VERTEX</a> = 1 &lt;&lt; 0
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">INDEX</a> = 1 &lt;&lt; 1
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">UNIFORM</a> = 1 &lt;&lt; 2
+, <br />
+&#160;&#160;<a class="el" href="#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">STORAGE</a> = 1 &lt;&lt; 3
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">INDIRECT</a> = 1 &lt;&lt; 4
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">TRANSFER_SRC</a> = 1 &lt;&lt; 5
+, <a class="el" href="#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">TRANSFER_DST</a> = 1 &lt;&lt; 6
+<br />
+ }</td></tr>
+<tr class="separator:a4262f291163f1d649834bc2efbd3796d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b4692efd4ce9aa144d86e7b5f3929e3" id="r_a9b4692efd4ce9aa144d86e7b5f3929e3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4692efd4ce9aa144d86e7b5f3929e3">Mode</a> { <br />
 &#160;&#160;<a class="el" href="#a9b4692efd4ce9aa144d86e7b5f3929e3a4a4079e06eb2f7ba7a12821c7c58a3f6">D1</a>
 , <a class="el" href="#a9b4692efd4ce9aa144d86e7b5f3929e3ac4d62b6dcca08e5caf06c01889282859">D2</a>
@@ -195,6 +208,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa97c7c4fe5e575a13c841a0581d3b089" id="r_aa97c7c4fe5e575a13c841a0581d3b089"><td class="memItemLeft" align="right" valign="top"><a class="el" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a> constexpr Buffer::Usage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa97c7c4fe5e575a13c841a0581d3b089">operator|</a> (Buffer::Usage a, Buffer::Usage b) noexcept</td></tr>
+<tr class="separator:aa97c7c4fe5e575a13c841a0581d3b089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456037a9b2dd742373ad66f6fb1d9182" id="r_a456037a9b2dd742373ad66f6fb1d9182"><td class="memItemLeft" align="right" valign="top">constexpr Buffer::Usage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a456037a9b2dd742373ad66f6fb1d9182">operator&amp;</a> (Buffer::Usage a, Buffer::Usage b) noexcept</td></tr>
+<tr class="separator:a456037a9b2dd742373ad66f6fb1d9182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38eadd6c1021f6adbfd194d443567d9" id="r_af38eadd6c1021f6adbfd194d443567d9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af38eadd6c1021f6adbfd194d443567d9"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af38eadd6c1021f6adbfd194d443567d9">operator*</a> (const char *msg, <a class="el" href="classfgla_1_1Result.html">Result</a>&lt; T, <a class="el" href="structfgla_1_1Error.html">Error</a> &gt; &amp;res)</td></tr>
 <tr class="memdesc:af38eadd6c1021f6adbfd194d443567d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the success object from a <code><a class="el" href="classfgla_1_1Result.html" title="Represents a potential success or failure state from a function call.">Result</a></code>, terminating on failure.  <br /></td></tr>
@@ -304,14 +321,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00019">19</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   19</span>                     : uint8_t {</div>
-<div class="line"><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
 <div class="line"><span class="lineno">   21</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">READ</a> = 1 &lt;&lt; 0,</div>
 <div class="line"><span class="lineno">   22</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">WRITE</a> = 1 &lt;&lt; 1,</div>
 <div class="line"><span class="lineno">   23</span>  <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">READ_WRITE</a> = <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">READ</a> | <a class="code hl_enumvalue" href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">WRITE</a></div>
 <div class="line"><span class="lineno">   24</span>};</div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">fgla::Usage::NONE</a></div><div class="ttdeci">@ NONE</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">fgla::CpuAccess::READ</a></div><div class="ttdeci">@ READ</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">fgla::CpuAccess::READ_WRITE</a></div><div class="ttdeci">@ READ_WRITE</div></div>
-<div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">fgla::CpuAccess::NONE</a></div><div class="ttdeci">@ NONE</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e"><div class="ttname"><a href="#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">fgla::CpuAccess::WRITE</a></div><div class="ttdeci">@ WRITE</div></div>
 </div><!-- fragment -->
 </div>
@@ -387,6 +404,57 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   21</span>{ <a class="code hl_enumvalue" href="#aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494">Graphics</a>, <a class="code hl_enumvalue" href="#aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e">Transfer</a> };</div>
 <div class="ttc" id="anamespacefgla_html_aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e"><div class="ttname"><a href="#aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e">fgla::Type::Transfer</a></div><div class="ttdeci">@ Transfer</div></div>
 <div class="ttc" id="anamespacefgla_html_aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494"><div class="ttname"><a href="#aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494">fgla::Type::Graphics</a></div><div class="ttdeci">@ Graphics</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4262f291163f1d649834bc2efbd3796d" name="a4262f291163f1d649834bc2efbd3796d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4262f291163f1d649834bc2efbd3796d">&#9670;&#160;</a></span>Usage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4262f291163f1d649834bc2efbd3796d">fgla::Usage</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693" name="a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b" name="a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b"></a>VERTEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076" name="a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076"></a>INDEX&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2" name="a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2"></a>UNIFORM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f" name="a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f"></a>STORAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06" name="a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06"></a>INDIRECT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de" name="a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de"></a>TRANSFER_SRC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf" name="a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf"></a>TRANSFER_DST&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00012">12</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>                 : uint32_t {</div>
+<div class="line"><span class="lineno">   13</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><span class="lineno">   14</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">VERTEX</a> = 1 &lt;&lt; 0,</div>
+<div class="line"><span class="lineno">   15</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">INDEX</a> = 1 &lt;&lt; 1,</div>
+<div class="line"><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">UNIFORM</a> = 1 &lt;&lt; 2,</div>
+<div class="line"><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">STORAGE</a> = 1 &lt;&lt; 3,</div>
+<div class="line"><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">INDIRECT</a> = 1 &lt;&lt; 4,</div>
+<div class="line"><span class="lineno">   19</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">TRANSFER_SRC</a> = 1 &lt;&lt; 5,</div>
+<div class="line"><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">TRANSFER_DST</a> = 1 &lt;&lt; 6,</div>
+<div class="line"><span class="lineno">   21</span>};</div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">fgla::Usage::VERTEX</a></div><div class="ttdeci">@ VERTEX</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">fgla::Usage::INDIRECT</a></div><div class="ttdeci">@ INDIRECT</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">fgla::Usage::STORAGE</a></div><div class="ttdeci">@ STORAGE</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">fgla::Usage::TRANSFER_SRC</a></div><div class="ttdeci">@ TRANSFER_SRC</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">fgla::Usage::UNIFORM</a></div><div class="ttdeci">@ UNIFORM</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">fgla::Usage::TRANSFER_DST</a></div><div class="ttdeci">@ TRANSFER_DST</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076"><div class="ttname"><a href="#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">fgla::Usage::INDEX</a></div><div class="ttdeci">@ INDEX</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -519,8 +587,41 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a456037a9b2dd742373ad66f6fb1d9182" name="a456037a9b2dd742373ad66f6fb1d9182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456037a9b2dd742373ad66f6fb1d9182">&#9670;&#160;</a></span>operator&amp;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Buffer::Usage fgla::operator&amp; </td>
+          <td>(</td>
+          <td class="paramtype">Buffer::Usage</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Buffer::Usage</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00042">42</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                       {</div>
+<div class="line"><span class="lineno">   44</span>  <span class="keywordflow">return</span> (Buffer::Usage)((uint32_t)a | (uint32_t)b);</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8bb00c11834831e11e62c421966f0446" name="a8bb00c11834831e11e62c421966f0446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bb00c11834831e11e62c421966f0446">&#9670;&#160;</a></span>operator&amp;()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb00c11834831e11e62c421966f0446">&#9670;&#160;</a></span>operator&amp;() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -546,8 +647,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00090">90</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>            {initNavTree(<span class="stringliteral">&#39;</span></div>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00088">88</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>            {initNavTree(<span class="stringliteral">&#39;types_8hpp.7</span></div>
+<div class="line"><span class="lineno">   94</span><span class="stringliteral"></span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -924,8 +1026,39 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aa97c7c4fe5e575a13c841a0581d3b089" name="aa97c7c4fe5e575a13c841a0581d3b089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97c7c4fe5e575a13c841a0581d3b089">&#9670;&#160;</a></span>operator|() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a> constexpr Buffer::Usage fgla::operator| </td>
+          <td>(</td>
+          <td class="paramtype">Buffer::Usage</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Buffer::Usage</td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00039">39</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a4117edb55037fcc08b8d6aa62f3e6e02" name="a4117edb55037fcc08b8d6aa62f3e6e02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4117edb55037fcc08b8d6aa62f3e6e02">&#9670;&#160;</a></span>operator|()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4117edb55037fcc08b8d6aa62f3e6e02">&#9670;&#160;</a></span>operator|() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,8 +1084,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00086">86</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00084">84</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>            {initNavTree(<span class="stringliteral">&#39;</span></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a808a78b90b686e8c5213498f2324df7c" name="a808a78b90b686e8c5213498f2324df7c"></a>

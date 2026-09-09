@@ -100,7 +100,9 @@ $(function(){initNavTree('buffer_8hpp.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">buffer.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -125,6 +127,29 @@ Macros</h2></td></tr>
 <tr class="separator:ac9347ca045796552e86e06b72e9123ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bdb493e62ad18b6d0c947b92e2671ea" id="r_a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bdb493e62ad18b6d0c947b92e2671ea">FGLA_OBJ_FUNCTIONS</a>(FN)</td></tr>
 <tr class="separator:a0bdb493e62ad18b6d0c947b92e2671ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a4262f291163f1d649834bc2efbd3796d" id="r_a4262f291163f1d649834bc2efbd3796d"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796d">fgla::Usage</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">fgla::NONE</a> = 0
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">fgla::VERTEX</a> = 1 &lt;&lt; 0
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">fgla::INDEX</a> = 1 &lt;&lt; 1
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">fgla::UNIFORM</a> = 1 &lt;&lt; 2
+, <br />
+&#160;&#160;<a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">fgla::STORAGE</a> = 1 &lt;&lt; 3
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">fgla::INDIRECT</a> = 1 &lt;&lt; 4
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">fgla::TRANSFER_SRC</a> = 1 &lt;&lt; 5
+, <a class="el" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">fgla::TRANSFER_DST</a> = 1 &lt;&lt; 6
+<br />
+ }</td></tr>
+<tr class="separator:a4262f291163f1d649834bc2efbd3796d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa97c7c4fe5e575a13c841a0581d3b089" id="r_aa97c7c4fe5e575a13c841a0581d3b089"><td class="memItemLeft" align="right" valign="top"><a class="el" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a> constexpr Buffer::Usage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">fgla::operator|</a> (Buffer::Usage a, Buffer::Usage b) noexcept</td></tr>
+<tr class="separator:aa97c7c4fe5e575a13c841a0581d3b089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456037a9b2dd742373ad66f6fb1d9182" id="r_a456037a9b2dd742373ad66f6fb1d9182"><td class="memItemLeft" align="right" valign="top">constexpr Buffer::Usage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">fgla::operator&amp;</a> (Buffer::Usage a, Buffer::Usage b) noexcept</td></tr>
+<tr class="separator:a456037a9b2dd742373ad66f6fb1d9182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a0bdb493e62ad18b6d0c947b92e2671ea" name="a0bdb493e62ad18b6d0c947b92e2671ea"></a>
@@ -148,11 +173,11 @@ Macros</h2></td></tr>
 <div class="line">                                                                       \</div>
 <div class="line">     , <span class="keyword">const</span> Memory &amp;, get_memory, () <span class="keyword">const</span>, ())</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00017">17</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   18</span><span class="preprocessor">  FN(</span></div>
-<div class="line"><span class="lineno">   20</span>                                                                       \</div>
-<div class="line"><span class="lineno">   21</span>     , Memory &amp;, get_memory, (), ())                                           \</div>
+<p class="definition">Definition at line <a class="el" href="buffer_8hpp_source.html#l00028">28</a> of file <a class="el" href="buffer_8hpp_source.html">buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   29</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   31</span>                                                                       \</div>
+<div class="line"><span class="lineno">   32</span>     , Memory &amp;, get_memory, (), ())                                           \</div>
 </div><!-- fragment -->
 </div>
 </div>

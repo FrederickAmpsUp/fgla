@@ -111,33 +111,68 @@ $(function(){initNavTree('buffer_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">struct </span>Descriptor {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">   13</a></span>  Memory::Descriptor <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">memory</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="comment">// TODO: buffer usage, etc</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="" data-end="">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="buffer_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">   17</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">  FN(</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                                                                       \</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>     , Memory &amp;, get_memory, (), ())                                           \</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796d">   12</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796d">Usage</a> : uint32_t {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">NONE</a> = 0,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">VERTEX</a> = 1 &lt;&lt; 0,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">INDEX</a> = 1 &lt;&lt; 1,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">UNIFORM</a> = 1 &lt;&lt; 2,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">STORAGE</a> = 1 &lt;&lt; 3,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">INDIRECT</a> = 1 &lt;&lt; 4,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">TRANSFER_SRC</a> = 1 &lt;&lt; 5,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">TRANSFER_DST</a> = 1 &lt;&lt; 6,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  FN(</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                                                                       \</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>     , const Memory &amp;, get_memory, () const, ())</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>} <span class="comment">// namespace fgla</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">struct </span>Descriptor {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">   24</a></span>  Memory::Descriptor <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">memory</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da">   25</a></span>  <a class="code hl_enumeration" href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796d">Usage</a> <a class="code hl_variable" href="structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da">usage</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="" data-end="">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="buffer_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">   28</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                                                                       \</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>     , Memory &amp;, get_memory, (), ())                                           \</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  FN(</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                                                       \</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>     , const Memory &amp;, get_memory, () const, ())</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">   39</a></span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
+</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">   42</a></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">constexpr</span> Buffer::Usage <a class="code hl_function" href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">operator|</a>(Buffer::Usage a, Buffer::Usage b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordflow">return</span> (Buffer::Usage)((uint32_t)a | (uint32_t)b);</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">constexpr</span> Buffer::Usage <a class="code hl_function" href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">operator&amp;</a>(Buffer::Usage a, Buffer::Usage b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">return</span> (Buffer::Usage)((uint32_t)a &amp; (uint32_t)b);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>} <span class="comment">// namespace fgla</span></div>
 <div class="ttc" id="amemory_8hpp_html"><div class="ttname"><a href="memory_8hpp.html">memory.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00007">adapter.hpp:7</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796d"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796d">fgla::Usage</a></div><div class="ttdeci">Usage</div><div class="ttdef"><b>Definition</b> <a href="#l00012">buffer.hpp:12</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b">fgla::Usage::VERTEX</a></div><div class="ttdeci">@ VERTEX</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06">fgla::Usage::INDIRECT</a></div><div class="ttdeci">@ INDIRECT</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da754a5d433173b5ddc7debc2110ac575f">fgla::Usage::STORAGE</a></div><div class="ttdeci">@ STORAGE</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de">fgla::Usage::TRANSFER_SRC</a></div><div class="ttdeci">@ TRANSFER_SRC</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2">fgla::Usage::UNIFORM</a></div><div class="ttdeci">@ UNIFORM</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf">fgla::Usage::TRANSFER_DST</a></div><div class="ttdeci">@ TRANSFER_DST</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">fgla::Usage::NONE</a></div><div class="ttdeci">@ NONE</div></div>
+<div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076">fgla::Usage::INDEX</a></div><div class="ttdeci">@ INDEX</div></div>
+<div class="ttc" id="anamespacefgla_html_a456037a9b2dd742373ad66f6fb1d9182"><div class="ttname"><a href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">fgla::operator&amp;</a></div><div class="ttdeci">constexpr Buffer::Usage operator&amp;(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00042">buffer.hpp:42</a></div></div>
+<div class="ttc" id="anamespacefgla_html_aa97c7c4fe5e575a13c841a0581d3b089"><div class="ttname"><a href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">fgla::operator|</a></div><div class="ttdeci">FGLA_OBJ_END constexpr Buffer::Usage operator|(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00039">buffer.hpp:39</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html"><div class="ttname"><a href="object__gen_8hpp.html">object_gen.hpp</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_a1bad6750f59853c9314a4fb0512ffdd1"><div class="ttname"><a href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div><div class="ttdeci">#define FGLA_OBJ_START</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00016">object_gen.hpp:16</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_ac9963c604e17101253a1d4216ef4b7b8"><div class="ttname"><a href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div><div class="ttdeci">#define FGLA_OBJ_END</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00026">object_gen.hpp:26</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_a9f40179d26687c29c1767fa8ae8b0592"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">fgla::Descriptor::memory</a></div><div class="ttdeci">Memory::Descriptor memory</div><div class="ttdef"><b>Definition</b> <a href="#l00013">buffer.hpp:13</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_a59db2c1ccf18aaeb7095628c959761da"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da">fgla::Descriptor::usage</a></div><div class="ttdeci">Usage usage</div><div class="ttdef"><b>Definition</b> <a href="#l00025">buffer.hpp:25</a></div></div>
+<div class="ttc" id="astructfgla_1_1Descriptor_html_a9f40179d26687c29c1767fa8ae8b0592"><div class="ttname"><a href="structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592">fgla::Descriptor::memory</a></div><div class="ttdeci">Memory::Descriptor memory</div><div class="ttdef"><b>Definition</b> <a href="#l00024">buffer.hpp:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
