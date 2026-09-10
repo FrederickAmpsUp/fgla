@@ -28,14 +28,20 @@ void RenderPassImpl::draw(const RenderPass::DrawDescriptor &descriptor) {
 
   if (descriptor.index_buffer) {
     VkIndexType index_type = VK_INDEX_TYPE_UINT16;
-    if (descriptor.index_buffer->format == fgla::RenderPass::DrawDescriptor::IndexBuffer::Format::UINT32)
+    if (descriptor.index_buffer->format ==
+        fgla::RenderPass::DrawDescriptor::IndexBuffer::Format::UINT32)
       index_type = VK_INDEX_TYPE_UINT32;
 
-    vkCmdBindIndexBuffer(this->command_buffer, descriptor.index_buffer->buffer.to_impl<BufferImpl>().get_buffer(), descriptor.index_buffer->offset, index_type);
+    vkCmdBindIndexBuffer(
+        this->command_buffer,
+        descriptor.index_buffer->buffer.to_impl<BufferImpl>().get_buffer(),
+        descriptor.index_buffer->offset, index_type);
   }
 
   if (descriptor.index_buffer)
-    vkCmdDrawIndexed(this->command_buffer, descriptor.vertex_count, descriptor.instance_count, descriptor.first_vertex, 0, descriptor.first_instance);
+    vkCmdDrawIndexed(this->command_buffer, descriptor.vertex_count,
+                     descriptor.instance_count, descriptor.first_vertex, 0,
+                     descriptor.first_instance);
   else
     vkCmdDraw(this->command_buffer, descriptor.vertex_count,
               descriptor.instance_count, descriptor.first_vertex,

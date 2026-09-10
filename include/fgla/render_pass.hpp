@@ -65,10 +65,7 @@ struct DrawDescriptor {
   };
 
   struct IndexBuffer {
-    enum class Format {
-      UINT16,
-      UINT32
-    };
+    enum class Format { UINT16, UINT32 };
 
     const Buffer &buffer;
     uint32_t offset = 0;

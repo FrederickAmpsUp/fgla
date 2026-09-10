@@ -1,4 +1,5 @@
 #include "fgla/backends/vulkan/device.hpp"
+
 #include <cmath>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
@@ -94,16 +95,12 @@ int main(int argc, char **argv) {
   auto shader =
       "Failed to load shader module" * device.load_shader_module({"test"});
 
-  const std::vector<Vertex> vertices = {
-      {{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-      {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
-      {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
-      {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}
-  };
+  const std::vector<Vertex> vertices = {{{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+                                        {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
+                                        {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
+                                        {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}};
 
-  const std::vector<uint16_t> indices = {
-      0, 1, 2, 2, 3, 0
-  };
+  const std::vector<uint16_t> indices = {0, 1, 2, 2, 3, 0};
 
   fgla::RenderPipeline::VertexBufferBinding vertex_binding = {
       .stride = sizeof(Vertex),
@@ -139,17 +136,19 @@ int main(int argc, char **argv) {
            .usage = fgla::Buffer::Usage::INDEX});
 
   {
-    auto access = "Failed to access vertex buffer memory" * vertex_buffer.get_memory().access();
+    auto access = "Failed to access vertex buffer memory" *
+                  vertex_buffer.get_memory().access();
 
     memcpy(access.write(), vertices.data(), sizeof(Vertex) * vertices.size());
   }
 
   {
-    auto access = "Failed to access index buffer memory" * index_buffer.get_memory().access();
+    auto access = "Failed to access index buffer memory" *
+                  index_buffer.get_memory().access();
 
     memcpy(access.write(), indices.data(), sizeof(indices[0]) * indices.size());
   }
-  
+
   uint32_t frame = 0;
 
   while (window.is_open()) {
@@ -182,7 +181,9 @@ int main(int argc, char **argv) {
 
       pass.draw({.pipeline = pipeline,
                  .vertex_buffers = {{vertex_buffer}},
-                 .index_buffer = {{.buffer=index_buffer, .format=fgla::RenderPass::DrawDescriptor::IndexBuffer::Format::UINT16}},
+                 .index_buffer = {{.buffer = index_buffer,
+                                   .format = fgla::RenderPass::DrawDescriptor::
+                                       IndexBuffer::Format::UINT16}},
                  .vertex_count = (uint32_t)indices.size()});
     }
 
@@ -208,7 +209,8 @@ int main(int argc, char **argv) {
         return 1;
       }
 
-      vkDeviceWaitIdle(device.to_impl<fgla::backends::vulkan::DeviceImpl>().get_device());
+      vkDeviceWaitIdle(
+          device.to_impl<fgla::backends::vulkan::DeviceImpl>().get_device());
     }
     ++frame;
   }
