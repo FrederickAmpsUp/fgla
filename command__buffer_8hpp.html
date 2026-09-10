@@ -98,17 +98,25 @@ $(function(){initNavTree('command__buffer_8hpp.html',''); initResizable(true); }
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">command_buffer.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="buffer_8hpp_source.html">fgla/buffer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="error_8hpp_source.html">fgla/error.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="render__pass_8hpp_source.html">fgla/render_pass.hpp</a>&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
 </div>
 <p><a href="command__buffer_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1BufferCopy.html">fgla::BufferCopy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefgla.html">fgla</a></td></tr>
@@ -139,12 +147,20 @@ Macros</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">  FN(</div>
 <div class="line">                                                                       \</div>
 <div class="line">     , Result&lt;RenderPass&gt;, begin_render_pass,                                  \</div>
-<div class="line">     (<span class="keyword">const</span> RenderPass::Descriptor &amp;desc), (desc))</div>
-</div><!-- fragment --><p>Represents a command buffer, which is used to record commands before submitting to the GPU </p>
-
-<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00016">16</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   17</span><span class="preprocessor">  FN(</span></div>
+<div class="line">     (<span class="keyword">const</span> RenderPass::Descriptor &amp;desc), (desc))                             \</div>
+<div class="line">  FN(</div>
+<div class="line">                                                                       \</div>
+<div class="line">     , <span class="keywordtype">void</span>, copy_buffer,                                                      \</div>
+<div class="line">     (<span class="keyword">const</span> Buffer &amp;src, <span class="keyword">const</span> Buffer &amp;dst,                                    \</div>
+<div class="line">      std::initializer_list&lt;BufferCopy&gt; regions),                              \</div>
+<div class="line">     (src, dst, regions))</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00024">24</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   25</span><span class="preprocessor">  FN(</span></div>
+<div class="line"><span class="lineno">   30</span>                                                                       \</div>
+<div class="line"><span class="lineno">   31</span>     , Result&lt;RenderPass&gt;, begin_render_pass,                                  \</div>
+<div class="line"><span class="lineno">   32</span>     (const RenderPass::Descriptor &amp;desc), (desc))                             \</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -160,7 +176,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00009">9</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="command__buffer_8hpp_source.html#l00011">11</a> of file <a class="el" href="command__buffer_8hpp_source.html">command_buffer.hpp</a>.</p>
 
 </div>
 </div>

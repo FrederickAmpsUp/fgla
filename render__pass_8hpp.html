@@ -109,6 +109,7 @@ $(function(){initNavTree('render__pass_8hpp.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="image__view_8hpp_source.html">fgla/image_view.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="render__pipeline_8hpp_source.html">fgla/render_pipeline.hpp</a>&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="render__pass_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -124,6 +125,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Descriptor.html">fgla::Descriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1DrawDescriptor.html">fgla::DrawDescriptor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1DrawDescriptor_1_1VertexBuffer.html">fgla::DrawDescriptor::VertexBuffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1DrawDescriptor_1_1IndexBuffer.html">fgla::DrawDescriptor::IndexBuffer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -157,9 +162,9 @@ Macros</h2></td></tr>
 <div class="line">                                                                       \</div>
 <div class="line">     , <span class="keywordtype">void</span>, draw, (<span class="keyword">const</span> DrawDescriptor &amp;desc), (desc))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00072">72</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   73</span><span class="preprocessor">  FN(</span></div>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00087">87</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">  FN(</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -175,7 +180,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00012">12</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00013">13</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
 
 </div>
 </div>

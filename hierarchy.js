@@ -7,6 +7,7 @@ var hierarchy =
     [ "fgla::AspectBits", "structfgla_1_1AspectBits.html", null ],
     [ "fgla::backend::Backend", "structfgla_1_1backend_1_1Backend.html", null ],
     [ "fgla::backend::BackendRegistrar", "structfgla_1_1backend_1_1BackendRegistrar.html", null ],
+    [ "fgla::BufferCopy", "structfgla_1_1BufferCopy.html", null ],
     [ "fgla::ext::windowing::Capabilities", "structfgla_1_1ext_1_1windowing_1_1Capabilities.html", null ],
     [ "fgla::Color", "structfgla_1_1Color.html", null ],
     [ "fgla::ColorAttachment", "structfgla_1_1ColorAttachment.html", null ],
@@ -23,6 +24,7 @@ var hierarchy =
     [ "fgla::util::UUID< size >::Hash", "structfgla_1_1util_1_1UUID_1_1Hash.html", null ],
     [ "std::hash< fgla::Format >", "structstd_1_1hash_3_01fgla_1_1Format_01_4.html", null ],
     [ "fgla::Adapter::Impl", "structfgla_1_1Adapter_1_1Impl.html", null ],
+    [ "fgla::DrawDescriptor::IndexBuffer", "structfgla_1_1DrawDescriptor_1_1IndexBuffer.html", null ],
     [ "fgla::Adapter::Info", "structfgla_1_1Adapter_1_1Info.html", null ],
     [ "fgla::LoadOp", "structfgla_1_1LoadOp.html", null ],
     [ "fgla::util::PairHash", "structfgla_1_1util_1_1PairHash.html", null ],
@@ -38,6 +40,7 @@ var hierarchy =
     [ "fgla::util::UUID< 16 >", "structfgla_1_1util_1_1UUID.html", null ],
     [ "fgla::VersionTriple", "structfgla_1_1VersionTriple.html", null ],
     [ "fgla::VertexAttribute", "structfgla_1_1VertexAttribute.html", null ],
+    [ "fgla::DrawDescriptor::VertexBuffer", "structfgla_1_1DrawDescriptor_1_1VertexBuffer.html", null ],
     [ "fgla::VertexBufferBinding", "structfgla_1_1VertexBufferBinding.html", null ],
     [ "fgla::ext::windowing::WindowingExtension", "classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html", null ]
 ];

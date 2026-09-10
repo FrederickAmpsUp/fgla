@@ -23,6 +23,7 @@ var annotated_dup =
       [ "AccessConst", "classfgla_1_1AccessConst.html", "classfgla_1_1AccessConst" ],
       [ "Adapter", "classfgla_1_1Adapter.html", "classfgla_1_1Adapter" ],
       [ "AspectBits", "structfgla_1_1AspectBits.html", "structfgla_1_1AspectBits" ],
+      [ "BufferCopy", "structfgla_1_1BufferCopy.html", "structfgla_1_1BufferCopy" ],
       [ "Color", "structfgla_1_1Color.html", "structfgla_1_1Color" ],
       [ "ColorAttachment", "structfgla_1_1ColorAttachment.html", "structfgla_1_1ColorAttachment" ],
       [ "ColorAttachmentDescriptor", "structfgla_1_1ColorAttachmentDescriptor.html", "structfgla_1_1ColorAttachmentDescriptor" ],

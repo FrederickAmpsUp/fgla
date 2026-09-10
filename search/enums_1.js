@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inputrate_0',['InputRate',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7d',1,'fgla::VertexBufferBinding']]]
+  ['format_0',['Format',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#aab8986d5baa778dcd76c6267f68f1503',1,'fgla::DrawDescriptor::IndexBuffer']]]
 ];

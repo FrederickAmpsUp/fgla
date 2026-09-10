@@ -1,7 +1,7 @@
 var searchData=
 [
   ['object_5fgen_2ehpp_0',['object_gen.hpp',['../object__gen_8hpp.html',1,'']]],
-  ['offset_1',['offset',['../structfgla_1_1VertexAttribute.html#ac5d084eaa9d0955333ccc14be4ed1915',1,'fgla::VertexAttribute']]],
+  ['offset_1',['offset',['../structfgla_1_1DrawDescriptor_1_1VertexBuffer.html#a8a1ac4c18713d320eb735fad67e61a9e',1,'fgla::DrawDescriptor::VertexBuffer::offset'],['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#a40a750b47ab513d5e0a367cdc97ccba1',1,'fgla::DrawDescriptor::IndexBuffer::offset'],['../structfgla_1_1VertexAttribute.html#ac5d084eaa9d0955333ccc14be4ed1915',1,'fgla::VertexAttribute::offset']]],
   ['op_2',['Op',['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074',1,'fgla::LoadOp::Op'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8f',1,'fgla::StoreOp::Op']]],
   ['op_3',['op',['../structfgla_1_1LoadOp.html#ae79950346ede0980ea873fdf8cc0b09b',1,'fgla::LoadOp::op'],['../structfgla_1_1StoreOp.html#a6d61db745a1868a1c28bb0634a0b439c',1,'fgla::StoreOp::op']]],
   ['operator_20accessconst_4',['operator AccessConst',['../namespacefgla.html#af18528d76114bbe70bf145d38f7cb118',1,'fgla']]],
