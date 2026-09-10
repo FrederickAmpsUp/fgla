@@ -6,5 +6,6 @@ var searchData=
   ['storage_3',['storage',['../structfgla_1_1TextureFormatSupportDetails.html#ae58e28a92635303b707c2be468c7e57b',1,'fgla::TextureFormatSupportDetails']]],
   ['store_4',['STORE',['../structfgla_1_1StoreOp.html#a6971b4759165c5b6d2309645f65f9fde',1,'fgla::StoreOp']]],
   ['store_5fop_5',['store_op',['../structfgla_1_1ColorAttachmentDescriptor.html#a595e7f6ea0145269d415841387499a32',1,'fgla::ColorAttachmentDescriptor']]],
-  ['surface_6',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]]
+  ['stride_6',['stride',['../structfgla_1_1VertexBufferBinding.html#ac92626f83791277a77faefcb25b997ef',1,'fgla::VertexBufferBinding']]],
+  ['surface_7',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]]
 ];

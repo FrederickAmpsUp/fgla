@@ -37,7 +37,9 @@ var annotated_dup =
       [ "ShaderStage", "structfgla_1_1ShaderStage.html", "structfgla_1_1ShaderStage" ],
       [ "StoreOp", "structfgla_1_1StoreOp.html", "structfgla_1_1StoreOp" ],
       [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],
-      [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ]
+      [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ],
+      [ "VertexAttribute", "structfgla_1_1VertexAttribute.html", "structfgla_1_1VertexAttribute" ],
+      [ "VertexBufferBinding", "structfgla_1_1VertexBufferBinding.html", "structfgla_1_1VertexBufferBinding" ]
     ] ],
     [ "std", "namespacestd.html", [
       [ "hash< fgla::Format >", "structstd_1_1hash_3_01fgla_1_1Format_01_4.html", "structstd_1_1hash_3_01fgla_1_1Format_01_4" ]

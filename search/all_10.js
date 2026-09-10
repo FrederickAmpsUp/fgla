@@ -13,7 +13,8 @@ var searchData=
   ['store_10',['STORE',['../structfgla_1_1StoreOp.html#a6971b4759165c5b6d2309645f65f9fde',1,'fgla::StoreOp::STORE'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8fa3cfba54f6873dfd55b0b09d32910b20e',1,'fgla::StoreOp::STORE']]],
   ['store_5fop_11',['store_op',['../structfgla_1_1ColorAttachmentDescriptor.html#a595e7f6ea0145269d415841387499a32',1,'fgla::ColorAttachmentDescriptor']]],
   ['storeop_12',['StoreOp',['../structfgla_1_1StoreOp.html',1,'fgla']]],
-  ['surface_13',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]],
-  ['surface_2ehpp_14',['surface.hpp',['../surface_8hpp.html',1,'']]],
-  ['surface_5fsupport_5ffilter_15',['surface_support_filter',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#ad4bd0b44c99e31f283adb63645fa8558',1,'fgla::ext::windowing::WindowingExtension']]]
+  ['stride_13',['stride',['../structfgla_1_1VertexBufferBinding.html#ac92626f83791277a77faefcb25b997ef',1,'fgla::VertexBufferBinding']]],
+  ['surface_14',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]],
+  ['surface_2ehpp_15',['surface.hpp',['../surface_8hpp.html',1,'']]],
+  ['surface_5fsupport_5ffilter_16',['surface_support_filter',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#ad4bd0b44c99e31f283adb63645fa8558',1,'fgla::ext::windowing::WindowingExtension']]]
 ];

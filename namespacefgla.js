@@ -28,6 +28,8 @@ var namespacefgla =
     [ "StoreOp", "structfgla_1_1StoreOp.html", "structfgla_1_1StoreOp" ],
     [ "TextureFormatSupportDetails", "structfgla_1_1TextureFormatSupportDetails.html", "structfgla_1_1TextureFormatSupportDetails" ],
     [ "VersionTriple", "structfgla_1_1VersionTriple.html", "structfgla_1_1VersionTriple" ],
+    [ "VertexAttribute", "structfgla_1_1VertexAttribute.html", "structfgla_1_1VertexAttribute" ],
+    [ "VertexBufferBinding", "structfgla_1_1VertexBufferBinding.html", "structfgla_1_1VertexBufferBinding" ],
     [ "AspectFlags", "namespacefgla.html#a3fcf65017e3bb6d1deecb5d35a8e3b9a", null ],
     [ "CpuAccess", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11", [
       [ "NONE", "namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693", null ],

@@ -21,5 +21,6 @@ var structfgla_1_1Descriptor =
     [ "shader_paths", "structfgla_1_1Descriptor.html#a8942f65ad0e36538baaa2ce06efaef14", null ],
     [ "size", "structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566", null ],
     [ "usage", "structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da", null ],
-    [ "vertex", "structfgla_1_1Descriptor.html#aaab3d7c75ae33a95c2642f1f8ce6005e", null ]
+    [ "vertex", "structfgla_1_1Descriptor.html#aaab3d7c75ae33a95c2642f1f8ce6005e", null ],
+    [ "vertex_buffer_bindings", "structfgla_1_1Descriptor.html#a1c9a186855b0ab595843f791c2daf101", null ]
 ];

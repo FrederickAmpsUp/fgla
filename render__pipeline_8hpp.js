@@ -1,5 +1,7 @@
 var render__pipeline_8hpp =
 [
+    [ "fgla::VertexAttribute", "structfgla_1_1VertexAttribute.html", "structfgla_1_1VertexAttribute" ],
+    [ "fgla::VertexBufferBinding", "structfgla_1_1VertexBufferBinding.html", "structfgla_1_1VertexBufferBinding" ],
     [ "fgla::ShaderStage", "structfgla_1_1ShaderStage.html", "structfgla_1_1ShaderStage" ],
     [ "fgla::PrimitiveState", "structfgla_1_1PrimitiveState.html", "structfgla_1_1PrimitiveState" ],
     [ "fgla::ColorAttachment", "structfgla_1_1ColorAttachment.html", "structfgla_1_1ColorAttachment" ],

@@ -11,6 +11,7 @@ var searchData=
   ['aspect_5fflags_8',['aspect_flags',['../structfgla_1_1Descriptor.html#a923da326828a4f50b34e3349ba8f419b',1,'fgla::Descriptor']]],
   ['aspectbits_9',['AspectBits',['../structfgla_1_1AspectBits.html',1,'fgla']]],
   ['aspectflags_10',['AspectFlags',['../namespacefgla.html#a3fcf65017e3bb6d1deecb5d35a8e3b9a',1,'fgla']]],
-  ['auto_5fno_5fvsync_11',['AUTO_NO_VSYNC',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a37c4d49c1c48e055c84810f78dacf512',1,'fgla::ext::windowing']]],
-  ['auto_5fvsync_12',['AUTO_VSYNC',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a3a701c2147aba28015bd3ee5463f521a',1,'fgla::ext::windowing']]]
+  ['attrs_11',['attrs',['../structfgla_1_1VertexBufferBinding.html#ab908ac619ddcbf321d1c8c116d30452b',1,'fgla::VertexBufferBinding']]],
+  ['auto_5fno_5fvsync_12',['AUTO_NO_VSYNC',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a37c4d49c1c48e055c84810f78dacf512',1,'fgla::ext::windowing']]],
+  ['auto_5fvsync_13',['AUTO_VSYNC',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a3a701c2147aba28015bd3ee5463f521a',1,'fgla::ext::windowing']]]
 ];

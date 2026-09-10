@@ -36,5 +36,7 @@ var hierarchy =
     [ "fgla::util::UUID< size >", "structfgla_1_1util_1_1UUID.html", null ],
     [ "fgla::util::UUID< 16 >", "structfgla_1_1util_1_1UUID.html", null ],
     [ "fgla::VersionTriple", "structfgla_1_1VersionTriple.html", null ],
+    [ "fgla::VertexAttribute", "structfgla_1_1VertexAttribute.html", null ],
+    [ "fgla::VertexBufferBinding", "structfgla_1_1VertexBufferBinding.html", null ],
     [ "fgla::ext::windowing::WindowingExtension", "classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html", null ]
 ];
