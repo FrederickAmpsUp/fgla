@@ -11,7 +11,8 @@ var searchData=
   ['inputrate_8',['InputRate',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7d',1,'fgla::VertexBufferBinding']]],
   ['instance_9',['INSTANCE',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7da76425f17a58d9249cadacc9a27771a80',1,'fgla::VertexBufferBinding']]],
   ['instance_2ehpp_10',['instance.hpp',['../instance_8hpp.html',1,'']]],
-  ['is_5favailable_11',['is_available',['../structfgla_1_1backend_1_1Backend.html#a09218c21f713de2736ba05ea011bbf25',1,'fgla::backend::Backend::is_available'],['../namespacefgla_1_1backend.html#a38d0f7725e22aa5adb8daaca6393abae',1,'fgla::backend::is_available()']]],
-  ['is_5fok_12',['is_ok',['../classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b',1,'fgla::Result']]],
-  ['is_5fsrgb_13',['is_srgb',['../classfgla_1_1Format.html#a10e33c3cfaf2ba7197eb45541d081d5d',1,'fgla::Format']]]
+  ['instance_5fcount_11',['instance_count',['../structfgla_1_1DrawDescriptor.html#a69a32de869cee97f2d3da88f479dae00',1,'fgla::DrawDescriptor']]],
+  ['is_5favailable_12',['is_available',['../structfgla_1_1backend_1_1Backend.html#a09218c21f713de2736ba05ea011bbf25',1,'fgla::backend::Backend::is_available'],['../namespacefgla_1_1backend.html#a38d0f7725e22aa5adb8daaca6393abae',1,'fgla::backend::is_available()']]],
+  ['is_5fok_13',['is_ok',['../classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b',1,'fgla::Result']]],
+  ['is_5fsrgb_14',['is_srgb',['../classfgla_1_1Format.html#a10e33c3cfaf2ba7197eb45541d081d5d',1,'fgla::Format']]]
 ];

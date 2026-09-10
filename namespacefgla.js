@@ -17,6 +17,7 @@ var namespacefgla =
     [ "ColorAttachment", "structfgla_1_1ColorAttachment.html", "structfgla_1_1ColorAttachment" ],
     [ "ColorAttachmentDescriptor", "structfgla_1_1ColorAttachmentDescriptor.html", "structfgla_1_1ColorAttachmentDescriptor" ],
     [ "Descriptor", "structfgla_1_1Descriptor.html", "structfgla_1_1Descriptor" ],
+    [ "DrawDescriptor", "structfgla_1_1DrawDescriptor.html", "structfgla_1_1DrawDescriptor" ],
     [ "Error", "structfgla_1_1Error.html", "structfgla_1_1Error" ],
     [ "Extent2d", "structfgla_1_1Extent2d.html", "structfgla_1_1Extent2d" ],
     [ "Format", "classfgla_1_1Format.html", "classfgla_1_1Format" ],

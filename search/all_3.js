@@ -14,5 +14,6 @@ var searchData=
   ['descriptor_11',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Descriptor.html',1,'fgla::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html',1,'fgla::ext::windowing::Descriptor']]],
   ['device_2ehpp_12',['device.hpp',['../device_8hpp.html',1,'']]],
   ['device_5fname_13',['device_name',['../structfgla_1_1Adapter_1_1Info.html#a154b5481d343d3841682ab4b60cba4d2',1,'fgla::Adapter::Info']]],
-  ['dont_5fcare_14',['DONT_CARE',['../structfgla_1_1LoadOp.html#acf4ed29c9b39882a7819d444d6910d1e',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a7b237e0f345d4e1ee4e8c3ecddd26795',1,'fgla::StoreOp::DONT_CARE'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a3d241dc381afd54422199a5e6864275a',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8fa3d241dc381afd54422199a5e6864275a',1,'fgla::StoreOp::DONT_CARE']]]
+  ['dont_5fcare_14',['DONT_CARE',['../structfgla_1_1LoadOp.html#acf4ed29c9b39882a7819d444d6910d1e',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a7b237e0f345d4e1ee4e8c3ecddd26795',1,'fgla::StoreOp::DONT_CARE'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a3d241dc381afd54422199a5e6864275a',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8fa3d241dc381afd54422199a5e6864275a',1,'fgla::StoreOp::DONT_CARE']]],
+  ['drawdescriptor_15',['DrawDescriptor',['../structfgla_1_1DrawDescriptor.html',1,'fgla']]]
 ];

@@ -15,6 +15,7 @@ var hierarchy =
     [ "fgla::Adapter::Descriptor", "structfgla_1_1Adapter_1_1Descriptor.html", null ],
     [ "fgla::Descriptor", "structfgla_1_1Descriptor.html", null ],
     [ "fgla::ext::windowing::Descriptor", "structfgla_1_1ext_1_1windowing_1_1Descriptor.html", null ],
+    [ "fgla::DrawDescriptor", "structfgla_1_1DrawDescriptor.html", null ],
     [ "fgla::Error", "structfgla_1_1Error.html", null ],
     [ "fgla::Extent2d", "structfgla_1_1Extent2d.html", null ],
     [ "fgla::util::FilterableList< T >", "classfgla_1_1util_1_1FilterableList.html", null ],

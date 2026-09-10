@@ -104,7 +104,8 @@ $(function(){initNavTree('render__pass_8hpp.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">render_pass.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="color_8hpp_source.html">fgla/color.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="buffer_8hpp_source.html">fgla/buffer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="color_8hpp_source.html">fgla/color.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="image__view_8hpp_source.html">fgla/image_view.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="object__gen_8hpp_source.html">fgla/object_gen.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="render__pipeline_8hpp_source.html">fgla/render_pipeline.hpp</a>&gt;</code><br />
@@ -121,6 +122,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1ColorAttachmentDescriptor.html">fgla::ColorAttachmentDescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1Descriptor.html">fgla::Descriptor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfgla_1_1DrawDescriptor.html">fgla::DrawDescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -152,12 +155,11 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  FN(</div>
 <div class="line">                                                                       \</div>
-<div class="line">     , <span class="keywordtype">void</span>, draw, (<span class="keyword">const</span> RenderPipeline &amp;pipeline, uint32_t vertex_count),    \</div>
-<div class="line">     (pipeline, vertex_count))</div>
+<div class="line">     , <span class="keywordtype">void</span>, draw, (<span class="keyword">const</span> DrawDescriptor &amp;desc), (desc))</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00059">59</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><span class="lineno">   60</span><span class="preprocessor">  FN(</span></div>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00072">72</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><span class="lineno">   73</span><span class="preprocessor">  FN(</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -173,7 +175,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00011">11</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="render__pass_8hpp_source.html#l00012">12</a> of file <a class="el" href="render__pass_8hpp_source.html">render_pass.hpp</a>.</p>
 
 </div>
 </div>

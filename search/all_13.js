@@ -6,7 +6,9 @@ var searchData=
   ['vertex_3',['VERTEX',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7da0c3e47aef93a7f244f41ab309a33634b',1,'fgla::VertexBufferBinding::VERTEX'],['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b',1,'fgla::VERTEX']]],
   ['vertex_4',['vertex',['../structfgla_1_1Descriptor.html#aaab3d7c75ae33a95c2642f1f8ce6005e',1,'fgla::Descriptor']]],
   ['vertex_5fbuffer_5fbindings_5',['vertex_buffer_bindings',['../structfgla_1_1Descriptor.html#a1c9a186855b0ab595843f791c2daf101',1,'fgla::Descriptor']]],
-  ['vertexattribute_6',['VertexAttribute',['../structfgla_1_1VertexAttribute.html',1,'fgla']]],
-  ['vertexbufferbinding_7',['VertexBufferBinding',['../structfgla_1_1VertexBufferBinding.html',1,'fgla']]],
-  ['view_8',['view',['../structfgla_1_1ColorAttachmentDescriptor.html#ac4e88ee5013a1a25b77a9d35bcf37775',1,'fgla::ColorAttachmentDescriptor']]]
+  ['vertex_5fbuffers_6',['vertex_buffers',['../structfgla_1_1DrawDescriptor.html#a94751f74d0ac2ffadb1024d18a4b41d4',1,'fgla::DrawDescriptor']]],
+  ['vertex_5fcount_7',['vertex_count',['../structfgla_1_1DrawDescriptor.html#a83f5b143331bb93d34e6d435d554e8d4',1,'fgla::DrawDescriptor']]],
+  ['vertexattribute_8',['VertexAttribute',['../structfgla_1_1VertexAttribute.html',1,'fgla']]],
+  ['vertexbufferbinding_9',['VertexBufferBinding',['../structfgla_1_1VertexBufferBinding.html',1,'fgla']]],
+  ['view_10',['view',['../structfgla_1_1ColorAttachmentDescriptor.html#ac4e88ee5013a1a25b77a9d35bcf37775',1,'fgla::ColorAttachmentDescriptor']]]
 ];
