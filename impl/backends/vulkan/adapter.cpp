@@ -45,6 +45,7 @@ Result<Device> AdapterImpl::create_device(
   device_features_13.sType =
       VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES;
   device_features_13.synchronization2 = VK_TRUE;
+  device_features_13.dynamicRendering = VK_TRUE;
 
   VkPhysicalDeviceVulkan12Features device_features_12 = {};
   device_features_12.sType =

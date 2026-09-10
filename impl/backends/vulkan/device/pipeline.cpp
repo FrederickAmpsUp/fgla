@@ -184,6 +184,8 @@ DeviceImpl::create_render_pipeline(const RenderPipeline::Descriptor &desc) {
   pipeline_info.pDynamicState = &dynamic_state;
   pipeline_info.layout = layout;
 
+  pipeline_info.pNext = &rendering;
+
   VkPipeline pipeline;
   res = vkCreateGraphicsPipelines(this->device, VK_NULL_HANDLE, 1,
                                   &pipeline_info, nullptr, &pipeline);
