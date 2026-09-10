@@ -1,3 +1,4 @@
+#include "fgla/backends/vulkan/device.hpp"
 #include <cmath>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
@@ -93,9 +94,16 @@ int main(int argc, char **argv) {
   auto shader =
       "Failed to load shader module" * device.load_shader_module({"test"});
 
-  Vertex vertices[] = {{{0.0, -0.5}, {1.0, 0.0, 0.0}},
-                       {{0.5, 0.5}, {0.0, 1.0, 0.0}},
-                       {{-0.5, 0.5}, {0.0, 0.0, 1.0}}};
+  const std::vector<Vertex> vertices = {
+      {{-0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+      {{0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
+      {{0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}},
+      {{-0.5f, 0.5f}, {1.0f, 1.0f, 1.0f}}
+  };
+
+  const std::vector<uint16_t> indices = {
+      0, 1, 2, 2, 3, 0
+  };
 
   fgla::RenderPipeline::VertexBufferBinding vertex_binding = {
       .stride = sizeof(Vertex),
@@ -119,29 +127,32 @@ int main(int argc, char **argv) {
   fgla::Buffer vertex_buffer =
       "Failed to create vertex buffer" *
       device.create_buffer(
-          {.memory = {.size = sizeof(vertices),
+          {.memory = {.size = sizeof(Vertex) * vertices.size(),
                       .cpu_access = fgla::Memory::CpuAccess::WRITE},
            .usage = fgla::Buffer::Usage::VERTEX});
 
+  fgla::Buffer index_buffer =
+      "Failed to create index buffer" *
+      device.create_buffer(
+          {.memory = {.size = sizeof(indices[0]) * indices.size(),
+                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .usage = fgla::Buffer::Usage::INDEX});
+
+  {
+    auto access = "Failed to access vertex buffer memory" * vertex_buffer.get_memory().access();
+
+    memcpy(access.write(), vertices.data(), sizeof(Vertex) * vertices.size());
+  }
+
+  {
+    auto access = "Failed to access index buffer memory" * index_buffer.get_memory().access();
+
+    memcpy(access.write(), indices.data(), sizeof(indices[0]) * indices.size());
+  }
+  
   uint32_t frame = 0;
 
   while (window.is_open()) {
-    for (int i = 0; i < 3; ++i) {
-      uint32_t col_frame = (frame / 5) + i * 120;
-      vertices[i].color[0] = sinf(6.28f * col_frame / 360.0f) * 0.5f + 0.5f;
-      vertices[i].color[1] =
-          sinf(6.28f * (120 + col_frame) / 360.0f) * 0.5f + 0.5f;
-      vertices[i].color[2] =
-          sinf(6.28f * (240 + col_frame) / 360.0f) * 0.5f + 0.5f;
-    }
-
-    {
-      auto access = "Failed to access vertex buffer memory " *
-                    vertex_buffer.get_memory().access();
-
-      memcpy(access.write(), vertices, sizeof(vertices));
-    }
-
     auto &image = ("Failed to retrieve swapchain image" *
                    surface.get_current_image(present))
                       .get();
@@ -171,7 +182,8 @@ int main(int argc, char **argv) {
 
       pass.draw({.pipeline = pipeline,
                  .vertex_buffers = {{vertex_buffer}},
-                 .vertex_count = sizeof(vertices) / sizeof(vertices[0])});
+                 .index_buffer = {{.buffer=index_buffer, .format=fgla::RenderPass::DrawDescriptor::IndexBuffer::Format::UINT16}},
+                 .vertex_count = (uint32_t)indices.size()});
     }
 
     image.get_completion() =
@@ -195,9 +207,10 @@ int main(int argc, char **argv) {
                       (*fail).message.value_or(""));
         return 1;
       }
+
+      vkDeviceWaitIdle(device.to_impl<fgla::backends::vulkan::DeviceImpl>().get_device());
     }
     ++frame;
-    spdlog::error("frame");
   }
 
   surface.cleanup();

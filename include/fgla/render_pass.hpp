@@ -5,6 +5,7 @@
 #include <fgla/image_view.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/render_pipeline.hpp>
+#include <optional>
 #include <vector>
 
 namespace fgla {
@@ -58,9 +59,26 @@ struct Descriptor {
 };
 
 struct DrawDescriptor {
+  struct VertexBuffer {
+    const Buffer &buffer;
+    uint32_t offset = 0;
+  };
+
+  struct IndexBuffer {
+    enum class Format {
+      UINT16,
+      UINT32
+    };
+
+    const Buffer &buffer;
+    uint32_t offset = 0;
+    Format format;
+  };
+
   const RenderPipeline &pipeline;
 
-  std::vector<std::reference_wrapper<Buffer>> vertex_buffers;
+  std::vector<VertexBuffer> vertex_buffers;
+  std::optional<IndexBuffer> index_buffer;
 
   uint32_t vertex_count;
   uint32_t first_vertex = 0;

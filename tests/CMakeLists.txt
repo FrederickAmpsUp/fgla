@@ -15,6 +15,7 @@ set(TEST_DIRS
     render_pipeline
     buffer
     vertex_buffer
+    index_buffer
 )
 
 foreach(test_name IN LISTS TEST_DIRS)
