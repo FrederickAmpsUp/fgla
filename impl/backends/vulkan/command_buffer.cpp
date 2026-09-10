@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <fgla/backends/vulkan/buffer.hpp>
 #include <fgla/backends/vulkan/command_buffer.hpp>
 #include <fgla/backends/vulkan/image_view.hpp>
 #include <fgla/backends/vulkan/queue.hpp>
@@ -107,6 +108,28 @@ CommandBufferImpl::begin_render_pass(const fgla::RenderPass::Descriptor &desc) {
 
   return RenderPass::from_impl(
       std::make_unique<RenderPassImpl>(this->command_buffer));
+}
+
+void CommandBufferImpl::copy_buffer(
+    const Buffer &src, const Buffer &dst,
+    std::initializer_list<CommandBuffer::BufferCopy> regions) {
+  std::vector<VkBufferCopy> buffer_copies;
+  buffer_copies.reserve(regions.size());
+
+  for (const auto &region : regions) {
+    VkBufferCopy buffer_copy = {};
+    buffer_copy.srcOffset = region.src_offset;
+    buffer_copy.dstOffset = region.dst_offset;
+    buffer_copy.size = region.size;
+
+    buffer_copies.push_back(buffer_copy);
+  }
+
+  VkBuffer buf_src = src.to_impl<BufferImpl>().get_buffer();
+  VkBuffer buf_dst = dst.to_impl<BufferImpl>().get_buffer();
+
+  vkCmdCopyBuffer(this->command_buffer, buf_src, buf_dst, buffer_copies.size(),
+                  buffer_copies.data());
 }
 
 void CommandBufferImpl::end_recording() {

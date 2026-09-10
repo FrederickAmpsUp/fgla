@@ -347,8 +347,8 @@ QueueImpl::submit(CommandBuffer &&cb,
 
   logger->info("Submitted Vulkan command buffer.");
 
-  return Completion::from_impl(
-      std::make_unique<CompletionImpl>(this->timeline, this->timeline_value));
+  return Completion::from_impl(std::make_unique<CompletionImpl>(
+      this->device, this->timeline, this->timeline_value));
 }
 
 QueueImpl::~QueueImpl() {

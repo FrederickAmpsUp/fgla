@@ -338,8 +338,9 @@ SurfaceImpl::get_current_image(fgla::Queue &queue) {
                               queue_impl.get_timeline(),
                               ++queue_impl.get_timeline_value());
 
-  auto completion = Completion::from_impl(std::make_unique<CompletionImpl>(
-      queue_impl.get_timeline(), queue_impl.get_timeline_value()));
+  auto completion = Completion::from_impl(
+      std::make_unique<CompletionImpl>(this->device, queue_impl.get_timeline(),
+                                       queue_impl.get_timeline_value()));
 
   image.get_completion() = std::move(completion);
 

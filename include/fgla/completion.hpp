@@ -16,7 +16,10 @@ FGLA_OBJ_START
       * Clones this `Completion`                                               \
       * @returns A clone of this `Completion`                                  \
       */                                                                       \
-     , Completion, clone, () const, ())
+     , Completion, clone, () const, ())                                        \
+  FN(/** \                                                                     \
+      */                                                                       \
+     , void, wait, () const, ())
 
 FGLA_OBJ_END
 

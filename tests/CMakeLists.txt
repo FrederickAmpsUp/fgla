@@ -16,6 +16,7 @@ set(TEST_DIRS
     buffer
     vertex_buffer
     index_buffer
+    buffer_copy
 )
 
 foreach(test_name IN LISTS TEST_DIRS)
