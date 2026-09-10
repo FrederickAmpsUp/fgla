@@ -27,6 +27,8 @@ Result<Memory> DeviceImpl::allocate_memory(VkMemoryRequirements requirements,
                                            Memory::CpuAccess cpu_access) {
   VkMemoryPropertyFlags props = 0;
 
+  if (cpu_access == Memory::CpuAccess::NONE)
+    props |= VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT;
   if (cpu_access != Memory::CpuAccess::NONE)
     props |= VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT;
   if ((cpu_access & Memory::CpuAccess::READ) != Memory::CpuAccess::NONE)
