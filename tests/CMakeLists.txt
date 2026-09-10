@@ -14,6 +14,7 @@ set(TEST_DIRS
     shader_module
     render_pipeline
     buffer
+    vertex_buffer
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

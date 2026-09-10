@@ -5,6 +5,34 @@
 
 namespace fgla::backends::vulkan {
 
+static VkVertexInputBindingDescription get_binding_description(
+    uint32_t binding, uint32_t stride,
+    RenderPipeline::VertexBufferBinding::InputRate input_rate) {
+  VkVertexInputBindingDescription binding_description = {};
+  binding_description.binding = binding;
+  binding_description.stride = stride;
+
+  if (input_rate == RenderPipeline::VertexBufferBinding::InputRate::INSTANCE)
+    binding_description.inputRate = VK_VERTEX_INPUT_RATE_INSTANCE;
+  else
+    binding_description.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
+
+  return binding_description;
+}
+
+static VkVertexInputAttributeDescription
+get_attribute_description(uint32_t binding, uint32_t location,
+                          const RenderPipeline::VertexAttribute &attr) {
+  VkVertexInputAttributeDescription attr_description = {};
+
+  attr_description.binding = binding;
+  attr_description.location = location;
+  attr_description.format = vulkanize(attr.format);
+  attr_description.offset = attr.offset;
+
+  return attr_description;
+}
+
 Result<RenderPipeline>
 DeviceImpl::create_render_pipeline(const RenderPipeline::Descriptor &desc) {
   // vulkan, what the fuck.
@@ -39,9 +67,29 @@ DeviceImpl::create_render_pipeline(const RenderPipeline::Descriptor &desc) {
     return Error(1, "Failed to create vulkan pipeline layout");
   }
 
+  std::vector<VkVertexInputBindingDescription> binding_descs;
+  std::vector<VkVertexInputAttributeDescription> attr_descs;
+
+  for (const auto &binding : desc.vertex_buffer_bindings) {
+    uint32_t binding_idx = binding_descs.size();
+    binding_descs.push_back(get_binding_description(binding_idx, binding.stride,
+                                                    binding.input_rate));
+    for (const auto &attr : binding.attrs) {
+      uint32_t location_idx = attr_descs.size();
+      attr_descs.push_back(
+          get_attribute_description(binding_idx, location_idx, attr));
+    }
+  }
+
   VkPipelineVertexInputStateCreateInfo vertex_input_state = {};
   vertex_input_state.sType =
       VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+
+  vertex_input_state.vertexBindingDescriptionCount = binding_descs.size();
+  vertex_input_state.pVertexBindingDescriptions = binding_descs.data();
+
+  vertex_input_state.vertexAttributeDescriptionCount = attr_descs.size();
+  vertex_input_state.pVertexAttributeDescriptions = attr_descs.data();
 
   VkPrimitiveTopology primitive_topology;
 

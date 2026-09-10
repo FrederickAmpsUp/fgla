@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
                         {0.2f, 0.3f, 0.9f, 1.0f}),
                     .store_op = fgla::RenderPass::StoreOp::STORE}}});
 
-      pass.draw(pipeline, 3);
+      pass.draw({.pipeline = pipeline, .vertex_count = 3});
     }
 
     image.get_completion() =

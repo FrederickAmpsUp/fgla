@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/buffer.hpp>
 #include <fgla/color.hpp>
 #include <fgla/image_view.hpp>
 #include <fgla/object_gen.hpp>
@@ -56,16 +57,27 @@ struct Descriptor {
   const std::vector<ColorAttachmentDescriptor> &color_attachments;
 };
 
+struct DrawDescriptor {
+  const RenderPipeline &pipeline;
+
+  std::vector<std::reference_wrapper<Buffer>> vertex_buffers;
+
+  uint32_t vertex_count;
+  uint32_t first_vertex = 0;
+
+  uint32_t instance_count = 1;
+  uint32_t first_instance = 0;
+};
+
 #define FGLA_OBJ_FUNCTIONS(FN)                                                 \
   FN(/**                                                                       \
       * Draws the specified number of vertices using the                       \
       * specified `RenderPipeline`                                             \
       *                                                                        \
-      * @param pipeline The `RenderPipeline` to use for drawing                \
-      * @param vertex_count The number of vertices to draw                     \
+      * @param desc The `DrawDescriptor` containing                            \
+      * settings to use for drawing                                            \
       */                                                                       \
-     , void, draw, (const RenderPipeline &pipeline, uint32_t vertex_count),    \
-     (pipeline, vertex_count))
+     , void, draw, (const DrawDescriptor &desc), (desc))
 
 FGLA_OBJ_END
 

@@ -1,3 +1,4 @@
+#include <cmath>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
 #include <fgla/render_pass.hpp>
@@ -5,6 +6,11 @@
 #include <fgla/shader_module.hpp>
 #include <magic_enum/magic_enum.hpp>
 #include <spdlog/spdlog.h>
+
+struct Vertex {
+  float position[2];
+  float color[3];
+};
 
 int main(int argc, char **argv) {
   auto instance = "Failed to create instance" *
@@ -87,16 +93,55 @@ int main(int argc, char **argv) {
   auto shader =
       "Failed to load shader module" * device.load_shader_module({"test"});
 
+  Vertex vertices[] = {{{0.0, -0.5}, {1.0, 0.0, 0.0}},
+                       {{0.5, 0.5}, {0.0, 1.0, 0.0}},
+                       {{-0.5, 0.5}, {0.0, 0.0, 1.0}}};
+
+  fgla::RenderPipeline::VertexBufferBinding vertex_binding = {
+      .stride = sizeof(Vertex),
+      .attrs = {{
+                    .offset = offsetof(Vertex, position),
+                    .format = fgla::Format::FLOAT32x2,
+                },
+                {.offset = offsetof(Vertex, color),
+                 .format = fgla::Format::FLOAT32x3}}};
+
   fgla::RenderPipeline pipeline =
       "Failed to create pipeline" *
       device.create_render_pipeline(
-          {.vertex = {.module = shader, .entry_point = "vs_main"},
+          {.vertex_buffer_bindings = {vertex_binding},
+           .vertex = {.module = shader, .entry_point = "vs_main"},
            .primitive = {.topology = fgla::RenderPipeline::PrimitiveState::
                              Topology::TRIANGLE_LIST},
            .fragment = {{.module = shader, .entry_point = "fs_main"}},
            .color_attachments = {{.format = surface_format}}});
 
+  fgla::Buffer vertex_buffer =
+      "Failed to create vertex buffer" *
+      device.create_buffer(
+          {.memory = {.size = sizeof(vertices),
+                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .usage = fgla::Buffer::Usage::VERTEX});
+
+  uint32_t frame = 0;
+
   while (window.is_open()) {
+    for (int i = 0; i < 3; ++i) {
+      uint32_t col_frame = (frame / 5) + i * 120;
+      vertices[i].color[0] = sinf(6.28f * col_frame / 360.0f) * 0.5f + 0.5f;
+      vertices[i].color[1] =
+          sinf(6.28f * (120 + col_frame) / 360.0f) * 0.5f + 0.5f;
+      vertices[i].color[2] =
+          sinf(6.28f * (240 + col_frame) / 360.0f) * 0.5f + 0.5f;
+    }
+
+    {
+      auto access = "Failed to access vertex buffer memory " *
+                    vertex_buffer.get_memory().access();
+
+      memcpy(access.write(), vertices, sizeof(vertices));
+    }
+
     auto &image = ("Failed to retrieve swapchain image" *
                    surface.get_current_image(present))
                       .get();
@@ -124,7 +169,9 @@ int main(int argc, char **argv) {
                         {0.2f, 0.3f, 0.9f, 1.0f}),
                     .store_op = fgla::RenderPass::StoreOp::STORE}}});
 
-      pass.draw(pipeline, 3);
+      pass.draw({.pipeline = pipeline,
+                 .vertex_buffers = {vertex_buffer},
+                 .vertex_count = sizeof(vertices) / sizeof(vertices[0])});
     }
 
     image.get_completion() =
@@ -149,6 +196,7 @@ int main(int argc, char **argv) {
         return 1;
       }
     }
+    ++frame;
   }
 
   surface.cleanup();

@@ -21,12 +21,10 @@ struct VertexAttribute {
  * Describes the layout and usage of a vertex buffer
  */
 struct VertexBufferBinding {
-  enum class InputRate {
-    VERTEX, INSTANCE
-  };
+  enum class InputRate { VERTEX, INSTANCE };
 
   size_t stride;
-  InputRate input_rate;
+  InputRate input_rate = InputRate::VERTEX;
   std::vector<VertexAttribute> attrs;
 };
 

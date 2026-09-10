@@ -15,6 +15,8 @@ struct BufferImpl : public Buffer::Impl {
     return this->memory;
   }
 
+  inline VkBuffer get_buffer() const { return this->buffer; }
+
   virtual ~BufferImpl() override;
 
 private:
