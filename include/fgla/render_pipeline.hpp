@@ -12,6 +12,24 @@ namespace fgla {
 
 FGLA_OBJ_START
 
+struct VertexAttribute {
+  size_t offset;
+  Format format;
+};
+
+/**
+ * Describes the layout and usage of a vertex buffer
+ */
+struct VertexBufferBinding {
+  enum class InputRate {
+    VERTEX, INSTANCE
+  };
+
+  size_t stride;
+  InputRate input_rate;
+  std::vector<VertexAttribute> attrs;
+};
+
 /**
  * Describes a shader stage used by a `RenderPipeline`
  */
@@ -61,6 +79,11 @@ struct ColorAttachment {
  */
 struct Descriptor {
   /* TODO: pipeline layout OR a better named version */
+
+  /**
+   * The vertex buffer bindings used by the pipeline
+   */
+  std::vector<VertexBufferBinding> vertex_buffer_bindings;
   /**
    * The vertex shader stage used by the pipeline
    */
