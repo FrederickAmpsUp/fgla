@@ -1,7 +1,6 @@
-#include "fgla/backends/vulkan/memory.hpp"
-
 #include <fgla/backends/vulkan/buffer.hpp>
 #include <fgla/backends/vulkan/device.hpp>
+#include <fgla/backends/vulkan/memory.hpp>
 #include <fgla/backends/vulkan/util.hpp>
 
 namespace fgla::backends::vulkan {
@@ -12,38 +11,31 @@ Result<Buffer> DeviceImpl::create_buffer(const Buffer::Descriptor &desc) {
 
   create_info.size = desc.memory.size;
   create_info.usage = vulkanize(desc.usage);
-  create_info.sharingMode = VK_SHARING_MODE_CONCURRENT;
+  create_info.sharingMode = this->used_queue_family_indices.size() > 1
+                                ? VK_SHARING_MODE_CONCURRENT
+                                : VK_SHARING_MODE_EXCLUSIVE;
+  create_info.queueFamilyIndexCount = this->used_queue_family_indices.size();
+  create_info.pQueueFamilyIndices = this->used_queue_family_indices.data();
+
+  VmaAllocationCreateInfo allocation_create_info =
+      make_allocation_create_info(desc.memory);
 
   VkBuffer buffer;
+  VmaAllocation allocation;
+  VmaAllocationInfo allocation_info;
 
-  VkResult res = vkCreateBuffer(this->device, &create_info, nullptr, &buffer);
+  VkResult res =
+      vmaCreateBuffer(this->allocator, &create_info, &allocation_create_info,
+                      &buffer, &allocation, &allocation_info);
   if (res != VK_SUCCESS) {
     return Error(1, "Failed to create Vulkan buffer");
   }
 
-  VkMemoryRequirements memory_requirements;
-  vkGetBufferMemoryRequirements(this->device, buffer, &memory_requirements);
-
-  Result<Memory> mem_res =
-      this->allocate_memory(memory_requirements, desc.memory.cpu_access);
-
-  if (mem_res.has_error()) {
-    vkDestroyBuffer(this->device, buffer, nullptr);
-    return Error(mem_res.error());
-  }
-
-  auto &impl = (*mem_res).to_impl<MemoryImpl>();
-
-  res = vkBindBufferMemory(this->device, buffer, impl.get_device_memory(),
-                           impl.get_offset());
-  if (res != VK_SUCCESS) {
-    vkDestroyBuffer(this->device, buffer, nullptr);
-    this->free_memory(std::move(*mem_res));
-    return Error(2, "Failed to bind Vulkan buffer memory");
-  }
+  Memory memory = Memory::from_impl(std::make_unique<MemoryImpl>(
+      allocation, allocation_info.pMappedData, *this));
 
   return Buffer::from_impl(
-      std::make_unique<BufferImpl>(buffer, std::move(*mem_res), this->device));
+      std::make_unique<BufferImpl>(buffer, std::move(memory), this->device));
 }
 
 } // namespace fgla::backends::vulkan

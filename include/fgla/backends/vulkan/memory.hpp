@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fgla/memory.hpp>
+#include <vk_mem_alloc.h>
 #include <vulkan/vulkan.h>
 
 namespace fgla::backends::vulkan {
@@ -8,25 +9,19 @@ namespace fgla::backends::vulkan {
 struct DeviceImpl;
 
 struct MemoryImpl : public Memory::Impl {
-  MemoryImpl(VkDeviceMemory device_memory, VkDeviceSize offset,
-             VkDeviceSize size, void *data, DeviceImpl &device)
-      : device_memory(device_memory), offset(offset), size(size), data(data),
-        device(device) {}
+  MemoryImpl(VmaAllocation allocation, void *data, DeviceImpl &device)
+      : allocation(allocation), data(data), device(device) {}
 
   virtual Result<Memory::AccessMut> access() override;
   virtual Result<Memory::AccessConst> access() const override;
 
-  inline VkDeviceMemory get_device_memory() const {
-    return this->device_memory;
-  }
-  inline VkDeviceSize get_offset() const { return this->offset; }
-  inline VkDeviceSize get_size() const { return this->size; }
+  inline VmaAllocation get_allocation() const { return this->allocation; }
+  VmaAllocator get_allocator() const;
 
   virtual ~MemoryImpl() override;
 
 private:
-  VkDeviceMemory device_memory;
-  VkDeviceSize offset, size;
+  VmaAllocation allocation;
 
   void *data;
 
@@ -34,8 +29,8 @@ private:
 };
 
 struct MemoryAccessImpl : public Memory::AccessMut::Impl {
-  MemoryAccessImpl(void *data, VkDevice device, VkDeviceMemory memory,
-                   VkDeviceSize offset, VkDeviceSize size);
+  MemoryAccessImpl(void *data, VmaAllocator allocator,
+                   VmaAllocation allocation);
 
   virtual const std::byte *read() const override;
   virtual std::byte *write() override;
@@ -45,11 +40,14 @@ struct MemoryAccessImpl : public Memory::AccessMut::Impl {
 private:
   void *data;
 
-  VkDevice device;
-  VkMappedMemoryRange memory_range;
+  VmaAllocator allocator;
+  VmaAllocation allocation;
 
   mutable bool needs_invalidate = true;
   bool needs_flush = false;
 };
+
+VmaAllocationCreateInfo
+make_allocation_create_info(const Memory::Descriptor &desc);
 
 } // namespace fgla::backends::vulkan

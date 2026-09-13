@@ -34,15 +34,9 @@ public:
 
   virtual Result<Buffer> create_buffer(const Buffer::Descriptor &desc) override;
 
-  Result<Memory> allocate_memory(VkMemoryRequirements requirements,
-                                 Memory::CpuAccess cpu_access);
-  void free_memory(const MemoryImpl &memory);
-  inline void free_memory(Memory &&memory) {
-    return this->free_memory(memory.to_impl<MemoryImpl>());
-  }
-
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }
+  VmaAllocator get_allocator() const { return this->allocator; }
   std::vector<VkSemaphore> &get_semaphore_pool() {
     return this->semaphore_pool;
   }
@@ -57,6 +51,8 @@ private:
   VkPhysicalDevice physical_device;
   VkInstance instance;
   QueueAllocator::Queues queues;
+
+  std::vector<uint32_t> used_queue_family_indices;
 
   std::vector<VkSemaphore> semaphore_pool;
   std::unordered_map<uint32_t, VkCommandPool> command_pools;

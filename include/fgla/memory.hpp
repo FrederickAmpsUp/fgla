@@ -10,6 +10,8 @@ namespace fgla {
 
 #define FGLA_OBJ_NAME Memory
 
+// TODO: allow accessing specific regions of a Memory
+
 /**
  * Represents a contiguous chunk of memory associated with a
  * `Buffer`, `Texture`, or similar object.

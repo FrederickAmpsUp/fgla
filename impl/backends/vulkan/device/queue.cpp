@@ -1,15 +1,24 @@
 #include <fgla/backends/vulkan/device.hpp>
 #include <spdlog/spdlog.h>
+#include <unordered_set>
 
 namespace fgla::backends::vulkan {
 
 void DeviceImpl::init_queue() {
+  std::unordered_set<uint32_t> queue_family_indices = {};
+
   for (auto &[_, queue] : this->queues) {
     QueueImpl &qi = queue.to_impl<QueueImpl>();
 
     qi.init(this->device, &this->semaphore_pool,
             this->get_command_pool(qi.get_family_index()));
+
+    queue_family_indices.insert(qi.get_family_index());
   }
+
+  this->used_queue_family_indices.reserve(queue_family_indices.size());
+  this->used_queue_family_indices.assign(queue_family_indices.begin(),
+                                         queue_family_indices.end());
 }
 
 std::optional<std::reference_wrapper<Queue>>
