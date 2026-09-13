@@ -1,5 +1,3 @@
-#include "fgla/backends/vulkan/device.hpp"
-
 #include <cmath>
 #include <fgla/ext/windowing.hpp>
 #include <fgla/fgla.hpp>
@@ -208,9 +206,6 @@ int main(int argc, char **argv) {
                       (*fail).message.value_or(""));
         return 1;
       }
-
-      vkDeviceWaitIdle(
-          device.to_impl<fgla::backends::vulkan::DeviceImpl>().get_device());
     }
     ++frame;
   }
