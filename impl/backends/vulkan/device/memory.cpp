@@ -5,6 +5,17 @@
 
 namespace fgla::backends::vulkan {
 
+void DeviceImpl::init_memory() {
+  VmaAllocatorCreateInfo create_info = {};
+  create_info.flags = 0;
+  create_info.vulkanApiVersion = VK_API_VERSION_1_3;
+  create_info.device = this->device;
+  create_info.physicalDevice = this->physical_device;
+  create_info.instance = this->instance;
+
+  vmaCreateAllocator(&create_info, &this->allocator);
+}
+
 // TODO: implement an arena allocator
 // TODO: make HOST_CACHED / HOST_COHERENT non-required
 static uint32_t find_memory_type(VkPhysicalDevice phys_dev,

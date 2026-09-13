@@ -85,9 +85,9 @@ Result<Device> AdapterImpl::create_device(
 
   QueueAllocator::Queues queues = queue_allocator.get_queues(device);
 
-  return Device::from_impl(
-      std::make_unique<DeviceImpl>(device, this->physical_device,
-                                   std::move(queues), descriptor.shader_paths));
+  return Device::from_impl(std::make_unique<DeviceImpl>(
+      device, this->physical_device, this->instance, std::move(queues),
+      descriptor.shader_paths));
 }
 
 Adapter::Info AdapterImpl::get_info() const {

@@ -9,17 +9,19 @@
 #include <slang-com-ptr.h>
 #include <slang.h>
 #include <unordered_map>
+#include <vk_mem_alloc.h>
 
 namespace fgla::backends::vulkan {
 
 struct DeviceImpl : public Device::Impl {
 private:
   void init_queue();
+  void init_memory();
   void init_shader(const std::vector<std::filesystem::path> &shader_paths);
 
 public:
   DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
-             QueueAllocator::Queues queues,
+             VkInstance instance, QueueAllocator::Queues queues,
              const std::vector<std::filesystem::path> &shader_paths);
 
   virtual std::optional<std::reference_wrapper<Queue>>
@@ -53,10 +55,13 @@ public:
 private:
   VkDevice device;
   VkPhysicalDevice physical_device;
+  VkInstance instance;
   QueueAllocator::Queues queues;
 
   std::vector<VkSemaphore> semaphore_pool;
   std::unordered_map<uint32_t, VkCommandPool> command_pools;
+
+  VmaAllocator allocator;
 
   Slang::ComPtr<slang::IGlobalSession> slang_global_session;
   Slang::ComPtr<slang::ISession> slang_session;

@@ -15,8 +15,8 @@ struct QueueFamilyIndices {
 };
 
 struct AdapterImpl : public fgla::Adapter::Impl {
-  AdapterImpl(VkPhysicalDevice physical_device)
-      : physical_device(physical_device) {}
+  AdapterImpl(VkPhysicalDevice physical_device, VkInstance instance)
+      : physical_device(physical_device), instance(instance) {}
 
   inline VkPhysicalDevice get_physical_device() const {
     return this->physical_device;
@@ -30,6 +30,7 @@ struct AdapterImpl : public fgla::Adapter::Impl {
 
 private:
   VkPhysicalDevice physical_device;
+  VkInstance instance;
 };
 
 } // namespace fgla::backends::vulkan

@@ -155,7 +155,8 @@ std::vector<Adapter> InstanceImpl::enumerate_adapters() {
     logger->info(" - \"{}\", vendor \"{}\"", candidate_props.deviceName,
                  vendor_name);
 
-    auto adapter_impl = std::make_unique<AdapterImpl>(candidate);
+    auto adapter_impl =
+        std::make_unique<AdapterImpl>(candidate, this->instance);
     adapters.push_back(Adapter::from_impl(std::move(adapter_impl)));
   }
 
