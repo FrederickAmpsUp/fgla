@@ -48,6 +48,6 @@ private:
 };
 
 VmaAllocationCreateInfo
-make_allocation_create_info(const Memory::Descriptor &desc);
+make_allocation_create_info(const Memory::Properties &props);
 
 } // namespace fgla::backends::vulkan

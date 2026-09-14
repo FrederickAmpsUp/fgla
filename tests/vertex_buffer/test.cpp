@@ -119,8 +119,8 @@ int main(int argc, char **argv) {
   fgla::Buffer vertex_buffer =
       "Failed to create vertex buffer" *
       device.create_buffer(
-          {.memory = {.size = sizeof(vertices),
-                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .size = sizeof(vertices),
            .usage = fgla::Buffer::Usage::VERTEX});
 
   uint32_t frame = 0;

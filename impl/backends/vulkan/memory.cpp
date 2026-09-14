@@ -45,21 +45,22 @@ MemoryAccessImpl::~MemoryAccessImpl() {
 }
 
 VmaAllocationCreateInfo
-make_allocation_create_info(const Memory::Descriptor &desc) {
+make_allocation_create_info(const Memory::Properties &props) {
   VmaAllocationCreateInfo allocation_create_info = {};
   allocation_create_info.usage = VMA_MEMORY_USAGE_AUTO;
 
-  if (desc.cpu_access == Memory::CpuAccess::NONE) {
+  if (props.cpu_access == Memory::CpuAccess::NONE) {
     allocation_create_info.preferredFlags = VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT;
   } else {
     allocation_create_info.flags = VMA_ALLOCATION_CREATE_MAPPED_BIT |
                                    VMA_ALLOCATION_CREATE_HOST_ACCESS_RANDOM_BIT;
   }
 
-  if ((desc.cpu_access & Memory::CpuAccess::READ) != Memory::CpuAccess::NONE) {
+  if ((props.cpu_access & Memory::CpuAccess::READ) != Memory::CpuAccess::NONE) {
     allocation_create_info.preferredFlags |= VK_MEMORY_PROPERTY_HOST_CACHED_BIT;
   }
-  if ((desc.cpu_access & Memory::CpuAccess::WRITE) != Memory::CpuAccess::NONE) {
+  if ((props.cpu_access & Memory::CpuAccess::WRITE) !=
+      Memory::CpuAccess::NONE) {
     allocation_create_info.preferredFlags |=
         VK_MEMORY_PROPERTY_HOST_COHERENT_BIT;
   }

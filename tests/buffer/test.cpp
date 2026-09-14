@@ -76,8 +76,9 @@ int main(int argc, char **argv) {
   fgla::Buffer buffer =
       "Failed to create buffer!" *
       device.create_buffer(
-          {.memory = {.size = sizeof(data),
-                      .cpu_access = fgla::Memory::CpuAccess::READ_WRITE},
+          {.memory_properties = {.cpu_access =
+                                     fgla::Memory::CpuAccess::READ_WRITE},
+           .size = sizeof(data),
            .usage = fgla::Buffer::Usage::VERTEX});
 
   fgla::Memory &memory = buffer.get_memory();

@@ -21,7 +21,8 @@ enum class Usage : uint32_t {
 };
 
 struct Descriptor {
-  Memory::Descriptor memory;
+  Memory::Properties memory_properties;
+  size_t size;
   Usage usage;
 };
 

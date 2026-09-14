@@ -122,15 +122,15 @@ int main(int argc, char **argv) {
   fgla::Buffer vertex_buffer =
       "Failed to create vertex buffer" *
       device.create_buffer(
-          {.memory = {.size = sizeof(Vertex) * vertices.size(),
-                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .size = sizeof(Vertex) * vertices.size(),
            .usage = fgla::Buffer::Usage::VERTEX});
 
   fgla::Buffer index_buffer =
       "Failed to create index buffer" *
       device.create_buffer(
-          {.memory = {.size = sizeof(indices[0]) * indices.size(),
-                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .size = sizeof(indices[0]) * indices.size(),
            .usage = fgla::Buffer::Usage::INDEX});
 
   {

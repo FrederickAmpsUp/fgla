@@ -73,15 +73,15 @@ int main(int argc, char **argv) {
   fgla::Buffer buffer1 =
       "Failed to create buffer!" *
       device.create_buffer(
-          {.memory = {.size = sizeof(data),
-                      .cpu_access = fgla::Memory::CpuAccess::WRITE},
+          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::WRITE},
+           .size = sizeof(data),
            .usage = fgla::Buffer::Usage::TRANSFER_SRC});
 
   fgla::Buffer buffer2 =
       "Failed to create buffer!" *
       device.create_buffer(
-          {.memory = {.size = sizeof(data),
-                      .cpu_access = fgla::Memory::CpuAccess::READ},
+          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::READ},
+           .size = sizeof(data),
            .usage = fgla::Buffer::Usage::TRANSFER_DST});
 
   {

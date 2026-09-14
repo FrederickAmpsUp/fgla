@@ -25,8 +25,7 @@ enum class CpuAccess : uint8_t {
   READ_WRITE = READ | WRITE
 };
 
-struct Descriptor {
-  size_t size;
+struct Properties {
   CpuAccess cpu_access = CpuAccess::NONE;
 };
 

@@ -9,7 +9,7 @@ Result<Buffer> DeviceImpl::create_buffer(const Buffer::Descriptor &desc) {
   VkBufferCreateInfo create_info = {};
   create_info.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
 
-  create_info.size = desc.memory.size;
+  create_info.size = desc.size;
   create_info.usage = vulkanize(desc.usage);
   create_info.sharingMode = this->used_queue_family_indices.size() > 1
                                 ? VK_SHARING_MODE_CONCURRENT
@@ -18,7 +18,7 @@ Result<Buffer> DeviceImpl::create_buffer(const Buffer::Descriptor &desc) {
   create_info.pQueueFamilyIndices = this->used_queue_family_indices.data();
 
   VmaAllocationCreateInfo allocation_create_info =
-      make_allocation_create_info(desc.memory);
+      make_allocation_create_info(desc.memory_properties);
 
   VkBuffer buffer;
   VmaAllocation allocation;
