@@ -125,94 +125,95 @@ $(function(){initNavTree('memory_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">struct </span>Descriptor {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566">   29</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566">size</a>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structfgla_1_1Descriptor.html#ab8fbea6215e652123687058c1f80e457">   30</a></span>  <a class="code hl_enumeration" href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11">CpuAccess</a> <a class="code hl_variable" href="structfgla_1_1Descriptor.html#ab8fbea6215e652123687058c1f80e457">cpu_access</a> = <a class="code hl_enumvalue" href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">CpuAccess::NONE</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define FGLA_OBJ_NAME AccessMut</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="" data-end="">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="memory_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">   44</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  FN(</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structfgla_1_1Properties.html">   28</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structfgla_1_1Properties.html">Properties</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structfgla_1_1Properties.html#a1f25b58a77d2d48436c856f651e9363d">   29</a></span>  <a class="code hl_enumeration" href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11">CpuAccess</a> <a class="code hl_variable" href="structfgla_1_1Properties.html#a1f25b58a77d2d48436c856f651e9363d">cpu_access</a> = <a class="code hl_enumvalue" href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">CpuAccess::NONE</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacefgla.html#af18528d76114bbe70bf145d38f7cb118">   50</a></span>                                                                       \</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>     , const std::byte *, read, () const, ())                                  \</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  FN(</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define FGLA_OBJ_NAME AccessMut</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_define" href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="" data-end="">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="memory_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea">   43</a></span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">  FN(</span></div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                                                       \</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>     , std::byte *, write, (), ())</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">operator</span> <a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a>() &amp;&amp; {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a> access;</div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classfgla_1_1AccessConst.html">   62</a></span>  access.impl = std::move(this-&gt;impl);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> access;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespacefgla.html#af18528d76114bbe70bf145d38f7cb118">   49</a></span>                                                                       \</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>     , const std::byte *, read, () const, ())                                  \</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  FN(</div>
 </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a> : <span class="keyword">private</span> AccessMut {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">using </span>AccessMut::from_impl;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">using </span>AccessMut::read;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">using </span>AccessMut::to_impl;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">friend</span> <span class="keyword">class </span>AccessMut;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#define FGLA_OBJ_NAME Memory</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="namespacefgla.html#a4117edb55037fcc08b8d6aa62f3e6e02">   86</a></span><span class="preprocessor">  FN(</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                                                       \</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>     , std::byte *, write, (), ())</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">operator</span> <a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a>() &amp;&amp; {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a> access;</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classfgla_1_1AccessConst.html">   61</a></span>  access.impl = std::move(this-&gt;impl);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">return</span> access;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                                                                       \</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>     , Result&lt;AccessMut&gt;, access, (), ())                                      \</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  FN(</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                                                       \</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>     , Result&lt;AccessConst&gt;, access, () const, ())</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">constexpr</span> Memory::CpuAccess <a class="code hl_function" href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">operator|</a>(Memory::CpuAccess a,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                      Memory::CpuAccess b) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordflow">return</span> (Memory::CpuAccess)((uint8_t)a | (uint8_t)b);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">constexpr</span> Memory::CpuAccess <a class="code hl_function" href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">operator&amp;</a>(Memory::CpuAccess a,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                      Memory::CpuAccess b) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">return</span> (Memory::CpuAccess)((uint8_t)a &amp; (uint8_t)b);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>} <span class="comment">// namespace fgla</span></div>
-<div class="ttc" id="aclassfgla_1_1AccessConst_html"><div class="ttname"><a href="classfgla_1_1AccessConst.html">fgla::AccessConst</a></div><div class="ttdef"><b>Definition</b> <a href="#l00062">memory.hpp:62</a></div></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">class </span><a class="code hl_class" href="classfgla_1_1AccessConst.html">AccessConst</a> : <span class="keyword">private</span> AccessMut {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">using </span>AccessMut::from_impl;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">using </span>AccessMut::read;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">using </span>AccessMut::to_impl;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">friend</span> <span class="keyword">class </span>AccessMut;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#define FGLA_OBJ_NAME Memory</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#define FGLA_OBJ_FUNCTIONS(FN)                                                 \</span></div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacefgla.html#a4117edb55037fcc08b8d6aa62f3e6e02">   85</a></span><span class="preprocessor">  FN(</span></div>
+</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                                                       \</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>     , Result&lt;AccessMut&gt;, access, (), ())                                      \</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  FN(</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                                                       \</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>     , Result&lt;AccessConst&gt;, access, () const, ())</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><a class="code hl_define" href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#undef FGLA_OBJ_NAME</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#undef FGLA_OBJ_FUNCTIONS</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">constexpr</span> Memory::CpuAccess <a class="code hl_function" href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">operator|</a>(Memory::CpuAccess a,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                      Memory::CpuAccess b) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">return</span> (Memory::CpuAccess)((uint8_t)a | (uint8_t)b);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">constexpr</span> Memory::CpuAccess <a class="code hl_function" href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">operator&amp;</a>(Memory::CpuAccess a,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                      Memory::CpuAccess b) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">return</span> (Memory::CpuAccess)((uint8_t)a &amp; (uint8_t)b);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <span class="comment">// namespace fgla</span></div>
+<div class="ttc" id="aclassfgla_1_1AccessConst_html"><div class="ttname"><a href="classfgla_1_1AccessConst.html">fgla::AccessConst</a></div><div class="ttdef"><b>Definition</b> <a href="#l00061">memory.hpp:61</a></div></div>
 <div class="ttc" id="aerror_8hpp_html"><div class="ttname"><a href="error_8hpp.html">error.hpp</a></div></div>
 <div class="ttc" id="anamespacefgla_html"><div class="ttname"><a href="namespacefgla.html">fgla</a></div><div class="ttdef"><b>Definition</b> <a href="adapter_8hpp_source.html#l00007">adapter.hpp:7</a></div></div>
 <div class="ttc" id="anamespacefgla_html_a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacefgla.html#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693">fgla::Usage::NONE</a></div><div class="ttdeci">@ NONE</div></div>
-<div class="ttc" id="anamespacefgla_html_a456037a9b2dd742373ad66f6fb1d9182"><div class="ttname"><a href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">fgla::operator&amp;</a></div><div class="ttdeci">constexpr Buffer::Usage operator&amp;(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="buffer_8hpp_source.html#l00042">buffer.hpp:42</a></div></div>
+<div class="ttc" id="anamespacefgla_html_a456037a9b2dd742373ad66f6fb1d9182"><div class="ttname"><a href="namespacefgla.html#a456037a9b2dd742373ad66f6fb1d9182">fgla::operator&amp;</a></div><div class="ttdeci">constexpr Buffer::Usage operator&amp;(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="buffer_8hpp_source.html#l00043">buffer.hpp:43</a></div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11"><div class="ttname"><a href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11">fgla::CpuAccess</a></div><div class="ttdeci">CpuAccess</div><div class="ttdef"><b>Definition</b> <a href="#l00021">memory.hpp:21</a></div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4"><div class="ttname"><a href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11a3466fab4975481651940ed328aa990e4">fgla::CpuAccess::READ</a></div><div class="ttdeci">@ READ</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144"><div class="ttname"><a href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11aa7b843fb734e3b3fea8e5f902d3f4144">fgla::CpuAccess::READ_WRITE</a></div><div class="ttdeci">@ READ_WRITE</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693">fgla::CpuAccess::NONE</a></div><div class="ttdeci">@ NONE</div></div>
 <div class="ttc" id="anamespacefgla_html_a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e"><div class="ttname"><a href="namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ad4b9e47f65b6e79b010582f15785867e">fgla::CpuAccess::WRITE</a></div><div class="ttdeci">@ WRITE</div></div>
-<div class="ttc" id="anamespacefgla_html_aa97c7c4fe5e575a13c841a0581d3b089"><div class="ttname"><a href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">fgla::operator|</a></div><div class="ttdeci">FGLA_OBJ_END constexpr Buffer::Usage operator|(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="buffer_8hpp_source.html#l00039">buffer.hpp:39</a></div></div>
+<div class="ttc" id="anamespacefgla_html_aa97c7c4fe5e575a13c841a0581d3b089"><div class="ttname"><a href="namespacefgla.html#aa97c7c4fe5e575a13c841a0581d3b089">fgla::operator|</a></div><div class="ttdeci">FGLA_OBJ_END constexpr Buffer::Usage operator|(Buffer::Usage a, Buffer::Usage b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="buffer_8hpp_source.html#l00040">buffer.hpp:40</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html"><div class="ttname"><a href="object__gen_8hpp.html">object_gen.hpp</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_a1bad6750f59853c9314a4fb0512ffdd1"><div class="ttname"><a href="object__gen_8hpp.html#a1bad6750f59853c9314a4fb0512ffdd1">FGLA_OBJ_START</a></div><div class="ttdeci">#define FGLA_OBJ_START</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00016">object_gen.hpp:16</a></div></div>
 <div class="ttc" id="aobject__gen_8hpp_html_ac9963c604e17101253a1d4216ef4b7b8"><div class="ttname"><a href="object__gen_8hpp.html#ac9963c604e17101253a1d4216ef4b7b8">FGLA_OBJ_END</a></div><div class="ttdeci">#define FGLA_OBJ_END</div><div class="ttdef"><b>Definition</b> <a href="object__gen_8hpp_source.html#l00026">object_gen.hpp:26</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_aa0e5ce1183853ba29c2f886761ead566"><div class="ttname"><a href="structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566">fgla::Descriptor::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="#l00029">memory.hpp:29</a></div></div>
-<div class="ttc" id="astructfgla_1_1Descriptor_html_ab8fbea6215e652123687058c1f80e457"><div class="ttname"><a href="structfgla_1_1Descriptor.html#ab8fbea6215e652123687058c1f80e457">fgla::Descriptor::cpu_access</a></div><div class="ttdeci">CpuAccess cpu_access</div><div class="ttdef"><b>Definition</b> <a href="#l00030">memory.hpp:30</a></div></div>
+<div class="ttc" id="astructfgla_1_1Properties_html"><div class="ttname"><a href="structfgla_1_1Properties.html">fgla::Properties</a></div><div class="ttdef"><b>Definition</b> <a href="#l00028">memory.hpp:28</a></div></div>
+<div class="ttc" id="astructfgla_1_1Properties_html_a1f25b58a77d2d48436c856f651e9363d"><div class="ttname"><a href="structfgla_1_1Properties.html#a1f25b58a77d2d48436c856f651e9363d">fgla::Properties::cpu_access</a></div><div class="ttdeci">CpuAccess cpu_access</div><div class="ttdef"><b>Definition</b> <a href="#l00029">memory.hpp:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

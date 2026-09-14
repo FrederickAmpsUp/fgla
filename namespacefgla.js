@@ -24,6 +24,7 @@ var namespacefgla =
     [ "Format", "classfgla_1_1Format.html", "classfgla_1_1Format" ],
     [ "LoadOp", "structfgla_1_1LoadOp.html", "structfgla_1_1LoadOp" ],
     [ "PrimitiveState", "structfgla_1_1PrimitiveState.html", "structfgla_1_1PrimitiveState" ],
+    [ "Properties", "structfgla_1_1Properties.html", "structfgla_1_1Properties" ],
     [ "Request", "structfgla_1_1Request.html", "structfgla_1_1Request" ],
     [ "Result", "classfgla_1_1Result.html", "classfgla_1_1Result" ],
     [ "ShaderStage", "structfgla_1_1ShaderStage.html", "structfgla_1_1ShaderStage" ],

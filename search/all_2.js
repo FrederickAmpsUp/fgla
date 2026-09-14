@@ -14,7 +14,7 @@ var searchData=
   ['completion_2ehpp_11',['completion.hpp',['../completion_8hpp.html',1,'']]],
   ['configuration_12',['Configuration',['../structfgla_1_1ext_1_1windowing_1_1Configuration.html',1,'fgla::ext::windowing']]],
   ['count_13',['count',['../structfgla_1_1Request.html#a7f3e94ad8a4037df54dde97ef4c8b551',1,'fgla::Request']]],
-  ['cpu_5faccess_14',['cpu_access',['../structfgla_1_1Descriptor.html#ab8fbea6215e652123687058c1f80e457',1,'fgla::Descriptor']]],
+  ['cpu_5faccess_14',['cpu_access',['../structfgla_1_1Properties.html#a1f25b58a77d2d48436c856f651e9363d',1,'fgla::Properties']]],
   ['cpuaccess_15',['CpuAccess',['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11',1,'fgla']]],
   ['create_16',['create',['../namespacefgla.html#a677e18f92dec7bd22d55987e84f2b60e',1,'fgla']]],
   ['create_5fdevice_17',['create_device',['../classfgla_1_1Adapter.html#a025a6ce5730ef24d1796f5c6a4c7e234',1,'fgla::Adapter::create_device()'],['../structfgla_1_1Adapter_1_1Impl.html#a4ded7e6af10a68610809cfe96ccd6bde',1,'fgla::Adapter::Impl::create_device()']]],

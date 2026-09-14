@@ -13,5 +13,6 @@ var searchData=
   ['presentmode_10',['PresentMode',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614',1,'fgla::ext::windowing']]],
   ['presentqueueoptions_11',['PresentQueueOptions',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html',1,'fgla::ext::windowing']]],
   ['primitive_12',['primitive',['../structfgla_1_1Descriptor.html#a9148fce471ce69aa2af7569f6bbaaa4a',1,'fgla::Descriptor']]],
-  ['primitivestate_13',['PrimitiveState',['../structfgla_1_1PrimitiveState.html',1,'fgla']]]
+  ['primitivestate_13',['PrimitiveState',['../structfgla_1_1PrimitiveState.html',1,'fgla']]],
+  ['properties_14',['Properties',['../structfgla_1_1Properties.html',1,'fgla']]]
 ];

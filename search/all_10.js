@@ -5,7 +5,7 @@ var searchData=
   ['shader_5fmodule_2ehpp_2',['shader_module.hpp',['../shader__module_8hpp.html',1,'']]],
   ['shader_5fpaths_3',['shader_paths',['../structfgla_1_1Descriptor.html#a8942f65ad0e36538baaa2ce06efaef14',1,'fgla::Descriptor']]],
   ['shaderstage_4',['ShaderStage',['../structfgla_1_1ShaderStage.html',1,'fgla']]],
-  ['size_5',['size',['../structfgla_1_1BufferCopy.html#a8d2d7ca2459a4f9f739d075cd936d674',1,'fgla::BufferCopy::size'],['../structfgla_1_1ext_1_1windowing_1_1Configuration.html#af6e486e70e5fcf863386718d17c63d4c',1,'fgla::ext::windowing::Configuration::size'],['../structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566',1,'fgla::Descriptor::size']]],
+  ['size_5',['size',['../structfgla_1_1Descriptor.html#aa0e5ce1183853ba29c2f886761ead566',1,'fgla::Descriptor::size'],['../structfgla_1_1BufferCopy.html#a8d2d7ca2459a4f9f739d075cd936d674',1,'fgla::BufferCopy::size'],['../structfgla_1_1ext_1_1windowing_1_1Configuration.html#af6e486e70e5fcf863386718d17c63d4c',1,'fgla::ext::windowing::Configuration::size']]],
   ['src_5foffset_6',['src_offset',['../structfgla_1_1BufferCopy.html#a5e07f53dd5f4f8d6df3b9b141e7fa6d6',1,'fgla::BufferCopy']]],
   ['std_7',['std',['../namespacestd.html',1,'']]],
   ['stencil_8',['STENCIL',['../structfgla_1_1AspectBits.html#a26d308774a5f644e48f2b028bafc208baa8d5dcc96c6cd2e75e1d6f7ae41c613e',1,'fgla::AspectBits']]],

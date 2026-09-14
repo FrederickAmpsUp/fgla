@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"structfgla_1_1ext_1_1windowing_1_1Capabilities.html":[1,0,0,1,0,0],
+"structfgla_1_1ext_1_1windowing_1_1Capabilities.html#a013659ab45d2a94861de892cc598f140":[0,0,0,2,0,0,1],
 "structfgla_1_1ext_1_1windowing_1_1Capabilities.html#a013659ab45d2a94861de892cc598f140":[1,0,0,1,0,0,1],
 "structfgla_1_1ext_1_1windowing_1_1Capabilities.html#ad81d69175f7dd418061fb9ff64a74396":[0,0,0,2,0,0,0],
 "structfgla_1_1ext_1_1windowing_1_1Capabilities.html#ad81d69175f7dd418061fb9ff64a74396":[1,0,0,1,0,0,0],

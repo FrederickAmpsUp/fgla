@@ -2,8 +2,8 @@ var searchData=
 [
   ['mailbox_0',['MAILBOX',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a30e70859a464559e8e70bcf467f34028',1,'fgla::ext::windowing']]],
   ['major_1',['major',['../structfgla_1_1VersionTriple.html#a602ee67fe0844d3fe305e410922b2ce2',1,'fgla::VersionTriple']]],
-  ['memory_2',['memory',['../structfgla_1_1Descriptor.html#a9f40179d26687c29c1767fa8ae8b0592',1,'fgla::Descriptor']]],
-  ['memory_2ehpp_3',['memory.hpp',['../memory_8hpp.html',1,'']]],
+  ['memory_2ehpp_2',['memory.hpp',['../memory_8hpp.html',1,'']]],
+  ['memory_5fproperties_3',['memory_properties',['../structfgla_1_1Descriptor.html#a32daea2d7c82ce2a8b52376c479246df',1,'fgla::Descriptor']]],
   ['message_4',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
   ['minor_5',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
   ['mode_6',['Mode',['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3',1,'fgla']]],

@@ -62,7 +62,7 @@ var NAVTREEINDEX =
 "adapter_8hpp.html",
 "classfgla_1_1util_1_1FilterableList.html",
 "structfgla_1_1BufferCopy.html",
-"structfgla_1_1ext_1_1windowing_1_1Capabilities.html#a013659ab45d2a94861de892cc598f140"
+"structfgla_1_1ext_1_1windowing_1_1Capabilities.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

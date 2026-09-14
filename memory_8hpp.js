@@ -1,6 +1,6 @@
 var memory_8hpp =
 [
-    [ "fgla::Descriptor", "structfgla_1_1Descriptor.html", "structfgla_1_1Descriptor" ],
+    [ "fgla::Properties", "structfgla_1_1Properties.html", "structfgla_1_1Properties" ],
     [ "fgla::AccessConst", "classfgla_1_1AccessConst.html", "classfgla_1_1AccessConst" ],
     [ "FGLA_OBJ_FUNCTIONS", "memory_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],
     [ "FGLA_OBJ_FUNCTIONS", "memory_8hpp.html#a0bdb493e62ad18b6d0c947b92e2671ea", null ],

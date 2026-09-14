@@ -30,6 +30,7 @@ var hierarchy =
     [ "fgla::util::PairHash", "structfgla_1_1util_1_1PairHash.html", null ],
     [ "fgla::ext::windowing::PresentQueueOptions", "structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html", null ],
     [ "fgla::PrimitiveState", "structfgla_1_1PrimitiveState.html", null ],
+    [ "fgla::Properties", "structfgla_1_1Properties.html", null ],
     [ "fgla::ext::windowing::QueueTypeExt", "structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html", null ],
     [ "fgla::Request", "structfgla_1_1Request.html", null ],
     [ "fgla::Result< T, E >", "classfgla_1_1Result.html", null ],
