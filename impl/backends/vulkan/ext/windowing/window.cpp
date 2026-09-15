@@ -77,7 +77,71 @@ WindowImpl::WindowImpl(
                descriptor.height, descriptor.name);
 }
 
-void WindowImpl::poll_events() { glfwPollEvents(); }
+std::vector<fgla::ext::windowing::Event> WindowImpl::poll_events() {
+  glfwPollEvents();
+
+  using namespace fgla::ext::windowing;
+  std::vector<Event> events;
+
+  // mouse move event
+  {
+    double new_x_d, new_y_d;
+    glfwGetCursorPos(window, &new_x_d, &new_y_d);
+    float new_x = (float)new_x_d, new_y = (float)new_y_d;
+
+    if (last_cursor_x != new_x || last_cursor_y != new_y) {
+      if (last_cursor_x == -1e9f) last_cursor_x = new_x;
+      if (last_cursor_y == -1e9f) last_cursor_y = new_y;
+      events.push_back(MouseEvent{
+        .old_x = last_cursor_x,
+        .old_y = last_cursor_y,
+        .new_x = new_x,
+        .new_y = new_y,
+        .delta_x = new_x - last_cursor_x,
+        .delta_y = new_y - last_cursor_y
+      });
+    }
+    last_cursor_x = new_x;
+    last_cursor_y = new_y;
+  }
+
+  // key event
+  {
+    KeyEvent event{};
+    for (auto keycode : ALL_KEY_CODES)
+    {
+      int key_state;
+      switch (keycode)
+      {
+      case KeyCode::MouseLeftButton:
+        key_state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
+        break;
+      case KeyCode::MouseMiddleButton:
+        key_state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_MIDDLE);
+        break;
+      case KeyCode::MouseRightButton:
+        key_state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);
+        break;
+      default:
+        key_state = glfwGetKey(window, (int)keycode);
+      }
+
+      if (key_state == GLFW_PRESS && !pressed_keys.count(keycode)) {
+        event.pressed.push_back(keycode);
+        pressed_keys.insert(keycode);
+      } else if (key_state == GLFW_RELEASE && pressed_keys.count(keycode)) {
+        event.released.push_back(keycode);
+        pressed_keys.erase(keycode);
+      }
+    }
+
+    if (!event.pressed.empty() || !event.released.empty()) {
+      events.push_back(event);
+    }
+  }
+
+  return events;
+}
 
 bool WindowImpl::is_open() { return !glfwWindowShouldClose(this->window); }
 
