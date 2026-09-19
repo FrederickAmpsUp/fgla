@@ -1,9 +1,24 @@
 var searchData=
 [
-  ['line_5flist_0',['LINE_LIST',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2a195d93c98c5e94cad21509e910f65fae',1,'fgla::PrimitiveState']]],
-  ['line_5fstrip_1',['LINE_STRIP',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2ae64a4d2159ed46d077e21a505575c814',1,'fgla::PrimitiveState']]],
-  ['linear_5ffilter_2',['linear_filter',['../structfgla_1_1TextureFormatSupportDetails.html#a8a03881e2830a83c004ecbce3158cae9',1,'fgla::TextureFormatSupportDetails']]],
-  ['load_3',['LOAD',['../structfgla_1_1LoadOp.html#aed3cd129113df2ffb781c1c505166bdb',1,'fgla::LoadOp::LOAD'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a615d2885ef7576cedd9aafbb2578f028',1,'fgla::LoadOp::LOAD']]],
-  ['load_5fop_4',['load_op',['../structfgla_1_1ColorAttachmentDescriptor.html#a41cd98a9a1797a2ca02afb4f08d2ebae',1,'fgla::ColorAttachmentDescriptor']]],
-  ['loadop_5',['LoadOp',['../structfgla_1_1LoadOp.html',1,'fgla']]]
+  ['image_2ehpp_0',['image.hpp',['../image_8hpp.html',1,'']]],
+  ['image_5fextent_1',['image_extent',['../structfgla_1_1BufferImageCopy.html#a7b3116a1b1590267c4348f8397dd85e0',1,'fgla::BufferImageCopy']]],
+  ['image_5foffset_2',['image_offset',['../structfgla_1_1BufferImageCopy.html#a010fd0dcec1ee5b301cd7bccced2ec9b',1,'fgla::BufferImageCopy']]],
+  ['image_5fsubresource_3',['image_subresource',['../structfgla_1_1BufferImageCopy.html#a76dc523c48aa4215f3d239443d8b1dde',1,'fgla::BufferImageCopy']]],
+  ['image_5fsubresource_5frange_2ehpp_4',['image_subresource_range.hpp',['../image__subresource__range_8hpp.html',1,'']]],
+  ['image_5fview_2ehpp_5',['image_view.hpp',['../image__view_8hpp.html',1,'']]],
+  ['immediate_6',['IMMEDIATE',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614ae35884a2445bc4ae2df52f188763273c',1,'fgla::ext::windowing']]],
+  ['impl_7',['Impl',['../structfgla_1_1Adapter_1_1Impl.html',1,'fgla::Adapter']]],
+  ['index_8',['INDEX',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796dacb4ae3b37047fb4b2c0d16f8bf84f076',1,'fgla::INDEX'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3bacb4ae3b37047fb4b2c0d16f8bf84f076',1,'fgla::INDEX']]],
+  ['index_5fbuffer_9',['index_buffer',['../structfgla_1_1DrawDescriptor.html#abb702f12bf0aa51dd1b25fdee7c836af',1,'fgla::DrawDescriptor']]],
+  ['indexbuffer_10',['IndexBuffer',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html',1,'fgla::DrawDescriptor']]],
+  ['indirect_11',['INDIRECT',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da55e8f99cd4149c397fc50a5d1c86bd06',1,'fgla::INDIRECT'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3ba55e8f99cd4149c397fc50a5d1c86bd06',1,'fgla::INDIRECT']]],
+  ['info_12',['Info',['../structfgla_1_1Adapter_1_1Info.html',1,'fgla::Adapter']]],
+  ['input_5frate_13',['input_rate',['../structfgla_1_1VertexBufferBinding.html#a29f3a10760819568908f14f9045fa437',1,'fgla::VertexBufferBinding']]],
+  ['inputrate_14',['InputRate',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7d',1,'fgla::VertexBufferBinding']]],
+  ['instance_15',['INSTANCE',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7da76425f17a58d9249cadacc9a27771a80',1,'fgla::VertexBufferBinding']]],
+  ['instance_2ehpp_16',['instance.hpp',['../instance_8hpp.html',1,'']]],
+  ['instance_5fcount_17',['instance_count',['../structfgla_1_1DrawDescriptor.html#a69a32de869cee97f2d3da88f479dae00',1,'fgla::DrawDescriptor']]],
+  ['is_5favailable_18',['is_available',['../structfgla_1_1backend_1_1Backend.html#a09218c21f713de2736ba05ea011bbf25',1,'fgla::backend::Backend::is_available'],['../namespacefgla_1_1backend.html#a38d0f7725e22aa5adb8daaca6393abae',1,'fgla::backend::is_available()']]],
+  ['is_5fok_19',['is_ok',['../classfgla_1_1Result.html#a6c4897fe63f4f8927d3faa8792ca927b',1,'fgla::Result']]],
+  ['is_5fsrgb_20',['is_srgb',['../classfgla_1_1Format.html#a10e33c3cfaf2ba7197eb45541d081d5d',1,'fgla::Format']]]
 ];

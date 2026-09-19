@@ -1,13 +1,15 @@
 var hierarchy =
 [
+    [ "fgla::_ImageSubresourceRange", "structfgla_1_1__ImageSubresourceRange.html", null ],
     [ "AccessMut", null, [
       [ "fgla::AccessConst", "classfgla_1_1AccessConst.html", null ]
     ] ],
     [ "fgla::Adapter", "classfgla_1_1Adapter.html", null ],
-    [ "fgla::AspectBits", "structfgla_1_1AspectBits.html", null ],
+    [ "fgla::_ImageSubresourceRange::AspectBits", "structfgla_1_1__ImageSubresourceRange_1_1AspectBits.html", null ],
     [ "fgla::backend::Backend", "structfgla_1_1backend_1_1Backend.html", null ],
     [ "fgla::backend::BackendRegistrar", "structfgla_1_1backend_1_1BackendRegistrar.html", null ],
     [ "fgla::BufferCopy", "structfgla_1_1BufferCopy.html", null ],
+    [ "fgla::BufferImageCopy", "structfgla_1_1BufferImageCopy.html", null ],
     [ "fgla::ext::windowing::Capabilities", "structfgla_1_1ext_1_1windowing_1_1Capabilities.html", null ],
     [ "fgla::Color", "structfgla_1_1Color.html", null ],
     [ "fgla::ColorAttachment", "structfgla_1_1ColorAttachment.html", null ],
@@ -19,6 +21,7 @@ var hierarchy =
     [ "fgla::DrawDescriptor", "structfgla_1_1DrawDescriptor.html", null ],
     [ "fgla::Error", "structfgla_1_1Error.html", null ],
     [ "fgla::Extent2d", "structfgla_1_1Extent2d.html", null ],
+    [ "fgla::Extent3d", "structfgla_1_1Extent3d.html", null ],
     [ "fgla::util::FilterableList< T >", "classfgla_1_1util_1_1FilterableList.html", null ],
     [ "fgla::Format", "classfgla_1_1Format.html", null ],
     [ "fgla::util::UUID< size >::Hash", "structfgla_1_1util_1_1UUID_1_1Hash.html", null ],
@@ -27,6 +30,7 @@ var hierarchy =
     [ "fgla::DrawDescriptor::IndexBuffer", "structfgla_1_1DrawDescriptor_1_1IndexBuffer.html", null ],
     [ "fgla::Adapter::Info", "structfgla_1_1Adapter_1_1Info.html", null ],
     [ "fgla::LoadOp", "structfgla_1_1LoadOp.html", null ],
+    [ "fgla::Offset3d", "structfgla_1_1Offset3d.html", null ],
     [ "fgla::util::PairHash", "structfgla_1_1util_1_1PairHash.html", null ],
     [ "fgla::ext::windowing::PresentQueueOptions", "structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html", null ],
     [ "fgla::PrimitiveState", "structfgla_1_1PrimitiveState.html", null ],

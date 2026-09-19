@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['shaderstage_0',['ShaderStage',['../structfgla_1_1ShaderStage.html',1,'fgla']]],
-  ['storeop_1',['StoreOp',['../structfgla_1_1StoreOp.html',1,'fgla']]]
+  ['queuetypeext_0',['QueueTypeExt',['../structfgla_1_1ext_1_1windowing_1_1QueueTypeExt.html',1,'fgla::ext::windowing']]]
 ];

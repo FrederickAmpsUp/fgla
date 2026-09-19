@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['impl_0',['Impl',['../structfgla_1_1Adapter_1_1Impl.html',1,'fgla::Adapter']]],
-  ['indexbuffer_1',['IndexBuffer',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html',1,'fgla::DrawDescriptor']]],
-  ['info_2',['Info',['../structfgla_1_1Adapter_1_1Info.html',1,'fgla::Adapter']]]
+  ['hash_0',['Hash',['../structfgla_1_1util_1_1UUID_1_1Hash.html',1,'fgla::util::UUID']]],
+  ['hash_3c_20fgla_3a_3aformat_20_3e_1',['hash&lt; fgla::Format &gt;',['../structstd_1_1hash_3_01fgla_1_1Format_01_4.html',1,'std']]]
 ];

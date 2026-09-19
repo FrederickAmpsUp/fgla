@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['mailbox_0',['MAILBOX',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a30e70859a464559e8e70bcf467f34028',1,'fgla::ext::windowing']]],
-  ['major_1',['major',['../structfgla_1_1VersionTriple.html#a602ee67fe0844d3fe305e410922b2ce2',1,'fgla::VersionTriple']]],
-  ['memory_2ehpp_2',['memory.hpp',['../memory_8hpp.html',1,'']]],
-  ['memory_5fproperties_3',['memory_properties',['../structfgla_1_1Descriptor.html#a32daea2d7c82ce2a8b52376c479246df',1,'fgla::Descriptor']]],
-  ['message_4',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
-  ['minor_5',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
-  ['mode_6',['Mode',['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3',1,'fgla']]],
-  ['mode_7',['mode',['../structfgla_1_1Descriptor.html#a09461468486d11abfc99379c3b1bb27c',1,'fgla::Descriptor']]],
-  ['module_8',['module',['../structfgla_1_1ShaderStage.html#a5e5cac0aa27c2fc462141479adf94790',1,'fgla::ShaderStage']]],
-  ['module_5fname_9',['module_name',['../structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc',1,'fgla::Descriptor']]]
+  ['line_5flist_0',['LINE_LIST',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2a195d93c98c5e94cad21509e910f65fae',1,'fgla::PrimitiveState']]],
+  ['line_5fstrip_1',['LINE_STRIP',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2ae64a4d2159ed46d077e21a505575c814',1,'fgla::PrimitiveState']]],
+  ['linear_5ffilter_2',['linear_filter',['../structfgla_1_1TextureFormatSupportDetails.html#a8a03881e2830a83c004ecbce3158cae9',1,'fgla::TextureFormatSupportDetails']]],
+  ['load_3',['LOAD',['../structfgla_1_1LoadOp.html#aed3cd129113df2ffb781c1c505166bdb',1,'fgla::LoadOp::LOAD'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a615d2885ef7576cedd9aafbb2578f028',1,'fgla::LoadOp::LOAD']]],
+  ['load_5fop_4',['load_op',['../structfgla_1_1ColorAttachmentDescriptor.html#a41cd98a9a1797a2ca02afb4f08d2ebae',1,'fgla::ColorAttachmentDescriptor']]],
+  ['loadop_5',['LoadOp',['../structfgla_1_1LoadOp.html',1,'fgla']]]
 ];

@@ -8,5 +8,6 @@ var searchData=
   ['store_5',['STORE',['../structfgla_1_1StoreOp.html#a6971b4759165c5b6d2309645f65f9fde',1,'fgla::StoreOp']]],
   ['store_5fop_6',['store_op',['../structfgla_1_1ColorAttachmentDescriptor.html#a595e7f6ea0145269d415841387499a32',1,'fgla::ColorAttachmentDescriptor']]],
   ['stride_7',['stride',['../structfgla_1_1VertexBufferBinding.html#ac92626f83791277a77faefcb25b997ef',1,'fgla::VertexBufferBinding']]],
-  ['surface_8',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]]
+  ['subresource_5frange_8',['subresource_range',['../structfgla_1_1Descriptor.html#a461af3357fb32f375da5107dbc6422ed',1,'fgla::Descriptor']]],
+  ['surface_9',['surface',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html#af9290dba219c33dd9e41bca97f28e92d',1,'fgla::ext::windowing::PresentQueueOptions']]]
 ];

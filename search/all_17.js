@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_7eimpl_0',['~Impl',['../structfgla_1_1Adapter_1_1Impl.html#a71098cd9098472c8dd446278247dffe5',1,'fgla::Adapter::Impl']]],
-  ['_7eresult_1',['~Result',['../classfgla_1_1Result.html#a7d4c320dcd8a6adc1ddd4dbffee5711f',1,'fgla::Result']]],
-  ['_7ewindowingextension_2',['~WindowingExtension',['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#a70a58a9cce4c6c26253ff6bc4c59c8bb',1,'fgla::ext::windowing::WindowingExtension']]]
+  ['y_0',['y',['../structfgla_1_1Extent2d.html#a2a04d23c895550aa660c6a3677a52fab',1,'fgla::Extent2d::y'],['../structfgla_1_1Extent3d.html#a6346426991373d12524c74488cd01b62',1,'fgla::Extent3d::y'],['../structfgla_1_1Offset3d.html#a9cc7e696ce52f6c8ba42b6edcd41c1bf',1,'fgla::Offset3d::y']]]
 ];

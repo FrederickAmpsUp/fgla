@@ -1,7 +1,14 @@
 var searchData=
 [
-  ['name_0',['name',['../structfgla_1_1backend_1_1Backend.html#a7e43b3d17e40bd3b30b644fefb9bb616',1,'fgla::backend::Backend::name'],['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html#ae7c95deb18a2515970c85ff26bcc7af2',1,'fgla::ext::windowing::Descriptor::name']]],
-  ['none_1',['NONE',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796dab50339a10e1de285ac99d4c3990b8693',1,'fgla::NONE'],['../namespacefgla.html#a4c23d071e722c0eba28fdad291535d11ab50339a10e1de285ac99d4c3990b8693',1,'fgla::NONE']]],
-  ['num_5farray_5flayers_2',['num_array_layers',['../structfgla_1_1Descriptor.html#aaa7f90046caa40659aa509b4ab379123',1,'fgla::Descriptor']]],
-  ['num_5fmip_5flevels_3',['num_mip_levels',['../structfgla_1_1Descriptor.html#a0973ad21b08b0b9d84cbf9c3eeeec882',1,'fgla::Descriptor']]]
+  ['mailbox_0',['MAILBOX',['../namespacefgla_1_1ext_1_1windowing.html#a645ab464f197d5b578cd12e30dd87614a30e70859a464559e8e70bcf467f34028',1,'fgla::ext::windowing']]],
+  ['major_1',['major',['../structfgla_1_1VersionTriple.html#a602ee67fe0844d3fe305e410922b2ce2',1,'fgla::VersionTriple']]],
+  ['memory_2ehpp_2',['memory.hpp',['../memory_8hpp.html',1,'']]],
+  ['memory_5fproperties_3',['memory_properties',['../structfgla_1_1Descriptor.html#a32daea2d7c82ce2a8b52376c479246df',1,'fgla::Descriptor']]],
+  ['message_4',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
+  ['minor_5',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
+  ['mip_5flevels_6',['mip_levels',['../structfgla_1_1Descriptor.html#a85cba70676d17fb3292196594d9400c5',1,'fgla::Descriptor']]],
+  ['mode_7',['Mode',['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3',1,'fgla']]],
+  ['mode_8',['mode',['../structfgla_1_1Descriptor.html#a09461468486d11abfc99379c3b1bb27c',1,'fgla::Descriptor']]],
+  ['module_9',['module',['../structfgla_1_1ShaderStage.html#a5e5cac0aa27c2fc462141479adf94790',1,'fgla::ShaderStage']]],
+  ['module_5fname_10',['module_name',['../structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc',1,'fgla::Descriptor']]]
 ];

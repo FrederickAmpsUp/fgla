@@ -1,11 +1,24 @@
 var searchData=
 [
-  ['e_0',['e',['../classfgla_1_1Result.html#acd898ee727730aff2e8c8ab1d7707e92',1,'fgla::Result']]],
-  ['entry_5fpoint_1',['entry_point',['../structfgla_1_1ShaderStage.html#afa7d9dd35b2efeccf21437d6a3c13659',1,'fgla::ShaderStage']]],
-  ['error_2',['Error',['../structfgla_1_1Error.html',1,'fgla::Error'],['../structfgla_1_1Error.html#a3824fef47c9768c96587c135a2b772da',1,'fgla::Error::Error()']]],
-  ['error_3',['error',['../classfgla_1_1Result.html#a54136770feeff015dea308075052507f',1,'fgla::Result::error() &amp;'],['../classfgla_1_1Result.html#a47f8a8a8eed4dd7b0dde363434c550b9',1,'fgla::Result::error() const &amp;'],['../classfgla_1_1Result.html#a22e201962f3525ba9409bddbc6ef9ba4',1,'fgla::Result::error() &amp;&amp;'],['../classfgla_1_1Result.html#a975d5b0bfb0452da5e8e4045cb44f84a',1,'fgla::Result::error() const &amp;&amp;']]],
-  ['error_2ehpp_4',['error.hpp',['../error_8hpp.html',1,'']]],
-  ['extension_2ehpp_5',['extension.hpp',['../ext_2windowing_2extension_8hpp.html',1,'(Global Namespace)'],['../extension_8hpp.html',1,'(Global Namespace)']]],
-  ['extensionuuid_6',['ExtensionUUID',['../namespacefgla_1_1extension.html#a01a1696c95d2c9d408cfbb68a4a79959',1,'fgla::extension']]],
-  ['extent2d_7',['Extent2d',['../structfgla_1_1Extent2d.html',1,'fgla']]]
+  ['d1_0',['D1',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2a4a4079e06eb2f7ba7a12821c7c58a3f6',1,'fgla::D1'],['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3a4a4079e06eb2f7ba7a12821c7c58a3f6',1,'fgla::D1']]],
+  ['d16_5funorm_1',['D16_UNORM',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429aceaed0ea6c98949f898c6fc9734d83efe98',1,'fgla::Format']]],
+  ['d1_5farray_2',['D1_ARRAY',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2a39092de8619175055dd4fbfe61aba92a',1,'fgla::D1_ARRAY'],['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3a39092de8619175055dd4fbfe61aba92a',1,'fgla::D1_ARRAY']]],
+  ['d2_3',['D2',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2ac4d62b6dcca08e5caf06c01889282859',1,'fgla::D2'],['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3ac4d62b6dcca08e5caf06c01889282859',1,'fgla::D2']]],
+  ['d24_5funorm_5fs8_5fuint_4',['D24_UNORM_S8_UINT',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acea88fdd92b0a3e6dfe15ba785022a0b133',1,'fgla::Format']]],
+  ['d2_5farray_5',['D2_ARRAY',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2a6537000b9d1cc11645dee348d8187c80',1,'fgla::D2_ARRAY'],['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3a6537000b9d1cc11645dee348d8187c80',1,'fgla::D2_ARRAY']]],
+  ['d3_6',['D3',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2aa3deb6e481689f1d3303caecb8a6c401',1,'fgla::D3'],['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3aa3deb6e481689f1d3303caecb8a6c401',1,'fgla::D3']]],
+  ['d32_5ffloat_7',['D32_FLOAT',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429aceac169740d92c0425d37b057a18c3665f1',1,'fgla::Format']]],
+  ['d32_5ffloat_5fs8_5fuint_8',['D32_FLOAT_S8_UINT',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429aceab255082ae7d3207f2b78e5ce3ccf3d3d',1,'fgla::Format']]],
+  ['data_9',['data',['../classfgla_1_1util_1_1FilterableList.html#a3bcdb6503800d7e17b3f82dc0c6cde14',1,'fgla::util::FilterableList']]],
+  ['depth_10',['DEPTH',['../structfgla_1_1__ImageSubresourceRange_1_1AspectBits.html#a38b7d7e3e9d01b030baaf66168fcfddda1e42621bb3fb7a38bfc83866057f6142',1,'fgla::_ImageSubresourceRange::AspectBits']]],
+  ['depth_11',['depth',['../structfgla_1_1Extent3d.html#a7c318f83bf99ac114475caac7ed049bc',1,'fgla::Extent3d']]],
+  ['depth_5fstencil_5fattachment_12',['DEPTH_STENCIL_ATTACHMENT',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da612a819a415d54887da7afa81abde733',1,'fgla::DEPTH_STENCIL_ATTACHMENT'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3ba612a819a415d54887da7afa81abde733',1,'fgla::DEPTH_STENCIL_ATTACHMENT']]],
+  ['descriptor_13',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Descriptor.html',1,'fgla::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html',1,'fgla::ext::windowing::Descriptor']]],
+  ['device_2ehpp_14',['device.hpp',['../device_8hpp.html',1,'']]],
+  ['device_5fname_15',['device_name',['../structfgla_1_1Adapter_1_1Info.html#a154b5481d343d3841682ab4b60cba4d2',1,'fgla::Adapter::Info']]],
+  ['dimension_16',['Dimension',['../namespacefgla.html#ad6b1ec62d573fbfbf87ed3f1c020cad2',1,'fgla']]],
+  ['dimension_17',['dimension',['../structfgla_1_1Descriptor.html#a4585ab715d671bb45492a4bfbbc8e57b',1,'fgla::Descriptor']]],
+  ['dont_5fcare_18',['DONT_CARE',['../structfgla_1_1LoadOp.html#acf4ed29c9b39882a7819d444d6910d1e',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a7b237e0f345d4e1ee4e8c3ecddd26795',1,'fgla::StoreOp::DONT_CARE'],['../structfgla_1_1LoadOp.html#aec2ffb0c291ca1f9666959e5e1947074a3d241dc381afd54422199a5e6864275a',1,'fgla::LoadOp::DONT_CARE'],['../structfgla_1_1StoreOp.html#a5e90f8339a44cb7c6ebc222b61c2ca8fa3d241dc381afd54422199a5e6864275a',1,'fgla::StoreOp::DONT_CARE']]],
+  ['drawdescriptor_19',['DrawDescriptor',['../structfgla_1_1DrawDescriptor.html',1,'fgla']]],
+  ['dst_5foffset_20',['dst_offset',['../structfgla_1_1BufferCopy.html#ab68f0c71b2d754b8bb7b4824d35ef493',1,'fgla::BufferCopy']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['error_0',['Error',['../structfgla_1_1Error.html',1,'fgla']]],
-  ['extent2d_1',['Extent2d',['../structfgla_1_1Extent2d.html',1,'fgla']]]
+  ['descriptor_0',['Descriptor',['../structfgla_1_1Adapter_1_1Descriptor.html',1,'fgla::Adapter::Descriptor'],['../structfgla_1_1Descriptor.html',1,'fgla::Descriptor'],['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html',1,'fgla::ext::windowing::Descriptor']]],
+  ['drawdescriptor_1',['DrawDescriptor',['../structfgla_1_1DrawDescriptor.html',1,'fgla']]]
 ];

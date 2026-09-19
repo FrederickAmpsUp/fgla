@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['Mode',['../namespacefgla.html#a9b4692efd4ce9aa144d86e7b5f3929e3',1,'fgla']]]
+  ['inputrate_0',['InputRate',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7d',1,'fgla::VertexBufferBinding']]]
 ];

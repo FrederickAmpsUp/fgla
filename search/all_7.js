@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['has_5ferror_0',['has_error',['../classfgla_1_1Result.html#a30e53ffd476117355b9f77221721671e',1,'fgla::Result']]],
-  ['has_5fvalue_1',['has_value',['../classfgla_1_1Result.html#aa5becf642be2cbb7faa56021c731af35',1,'fgla::Result']]],
-  ['hash_2',['Hash',['../structfgla_1_1util_1_1UUID_1_1Hash.html',1,'fgla::util::UUID']]],
-  ['hash_3c_20fgla_3a_3aformat_20_3e_3',['hash&lt; fgla::Format &gt;',['../structstd_1_1hash_3_01fgla_1_1Format_01_4.html',1,'std']]],
-  ['height_4',['height',['../structfgla_1_1ext_1_1windowing_1_1Descriptor.html#a965dcdce1337da81d9af429ac29c5e9d',1,'fgla::ext::windowing::Descriptor::height'],['../structfgla_1_1Extent2d.html#a91615cf714b052806a98624b3b52aa40',1,'fgla::Extent2d::height']]]
+  ['g_0',['g',['../structfgla_1_1Color.html#a5e2d5dfbb39b7a5124ab9daeab17ade4',1,'fgla::Color']]],
+  ['get_5fadapter_1',['get_adapter',['../namespacefgla.html#a52f9589da098900c73f438c4de6b5887',1,'fgla']]],
+  ['get_5fextension_2',['get_extension',['../namespacefgla.html#a9405a9a97bd7e21454de00e1593fcfd4',1,'fgla']]],
+  ['get_5finfo_3',['get_info',['../classfgla_1_1Adapter.html#aed97c4b9905b2e688dbc03dc3f0657c4',1,'fgla::Adapter::get_info()'],['../structfgla_1_1Adapter_1_1Impl.html#ab315d6524bfbab62cd4c3c3c7a6432a8',1,'fgla::Adapter::Impl::get_info()']]],
+  ['get_5fregistry_4',['get_registry',['../namespacefgla_1_1backend.html#a8401251fdb4337ba781f1071f20e6d81',1,'fgla::backend']]],
+  ['graphics_5',['Graphics',['../namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83ad334dfcea59127bedfcdbe0a3ee7f494',1,'fgla']]]
 ];

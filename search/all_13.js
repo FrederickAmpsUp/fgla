@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['value_0',['Value',['../structfgla_1_1AspectBits.html#a26d308774a5f644e48f2b028bafc208b',1,'fgla::AspectBits::Value'],['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429ace',1,'fgla::Format::Value']]],
-  ['value_1',['value',['../classfgla_1_1Result.html#aa95d199c7ae365280d64597dc40ca13e',1,'fgla::Result::value() &amp;'],['../classfgla_1_1Result.html#ad28ad62e7b01bd2817a2d238975312ac',1,'fgla::Result::value() const &amp;'],['../classfgla_1_1Result.html#a989c41a5f8e817fc52a1d5197996e4b5',1,'fgla::Result::value() &amp;&amp;'],['../classfgla_1_1Result.html#aa77624ecc76464e649a27a6038e66c20',1,'fgla::Result::value() const &amp;&amp;']]],
-  ['versiontriple_2',['VersionTriple',['../structfgla_1_1VersionTriple.html',1,'fgla']]],
-  ['vertex_3',['VERTEX',['../structfgla_1_1VertexBufferBinding.html#a5a27c2b7533dd2c1b5154ad89411ef7da0c3e47aef93a7f244f41ab309a33634b',1,'fgla::VertexBufferBinding::VERTEX'],['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da0c3e47aef93a7f244f41ab309a33634b',1,'fgla::VERTEX']]],
-  ['vertex_4',['vertex',['../structfgla_1_1Descriptor.html#aaab3d7c75ae33a95c2642f1f8ce6005e',1,'fgla::Descriptor']]],
-  ['vertex_5fbuffer_5fbindings_5',['vertex_buffer_bindings',['../structfgla_1_1Descriptor.html#a1c9a186855b0ab595843f791c2daf101',1,'fgla::Descriptor']]],
-  ['vertex_5fbuffers_6',['vertex_buffers',['../structfgla_1_1DrawDescriptor.html#a1a3e08cc14a9b8824afb1e052384f5b7',1,'fgla::DrawDescriptor']]],
-  ['vertex_5fcount_7',['vertex_count',['../structfgla_1_1DrawDescriptor.html#a83f5b143331bb93d34e6d435d554e8d4',1,'fgla::DrawDescriptor']]],
-  ['vertexattribute_8',['VertexAttribute',['../structfgla_1_1VertexAttribute.html',1,'fgla']]],
-  ['vertexbuffer_9',['VertexBuffer',['../structfgla_1_1DrawDescriptor_1_1VertexBuffer.html',1,'fgla::DrawDescriptor']]],
-  ['vertexbufferbinding_10',['VertexBufferBinding',['../structfgla_1_1VertexBufferBinding.html',1,'fgla']]],
-  ['view_11',['view',['../structfgla_1_1ColorAttachmentDescriptor.html#ac4e88ee5013a1a25b77a9d35bcf37775',1,'fgla::ColorAttachmentDescriptor']]]
+  ['uint16_0',['UINT16',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#aab8986d5baa778dcd76c6267f68f1503a48d8f1a723d44ff4a87db1bb6c551c62',1,'fgla::DrawDescriptor::IndexBuffer']]],
+  ['uint32_1',['UINT32',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#aab8986d5baa778dcd76c6267f68f1503a17266551181f69a1b4a3ad5c9e270afc',1,'fgla::DrawDescriptor::IndexBuffer']]],
+  ['undefined_2',['UNDEFINED',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acea48b14314b0fddc52ff08817c66e989d8',1,'fgla::Format']]],
+  ['uniform_3',['UNIFORM',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2',1,'fgla::UNIFORM'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3ba891f35a29c3d51d02ffd42dd6dcc69b2',1,'fgla::UNIFORM']]],
+  ['unwrap_4',['unwrap',['../namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e',1,'fgla::unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#ab3de5c388e0fe48b41df28473fa3972d',1,'fgla::unwrap(Result&lt; T, Error &gt; res, const char *message=&quot;Fatal Error&quot;)'],['../namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815',1,'fgla::unwrap(std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)']]],
+  ['usage_5',['Usage',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796d',1,'fgla::Usage'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3b',1,'fgla::Usage']]],
+  ['usage_6',['usage',['../structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da',1,'fgla::Descriptor']]],
+  ['user_5fdata_7',['user_data',['../structfgla_1_1Request.html#ab6a2736362c1d5baacbbc3c7d9d7235f',1,'fgla::Request']]],
+  ['util_2ehpp_8',['util.hpp',['../util_8hpp.html',1,'']]],
+  ['uuid_9',['UUID',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util::UUID&lt; size &gt;'],['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#a53df718d89a5618c337df537643f63e5',1,'fgla::ext::windowing::WindowingExtension::UUID']]],
+  ['uuid_10',['uuid',['../structfgla_1_1backend_1_1Backend.html#ae53b1ea0146599735ed1b0aa725a00f0',1,'fgla::backend::Backend']]],
+  ['uuid_3c_2016_20_3e_11',['UUID&lt; 16 &gt;',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util']]]
 ];

@@ -12,6 +12,7 @@ var dir_d64ea27deaedb1dd3cb29e801020255b =
     [ "extension.hpp", "extension_8hpp.html", "extension_8hpp" ],
     [ "fgla.hpp", "fgla_8hpp.html", null ],
     [ "image.hpp", "image_8hpp.html", "image_8hpp" ],
+    [ "image_subresource_range.hpp", "image__subresource__range_8hpp.html", "image__subresource__range_8hpp" ],
     [ "image_view.hpp", "image__view_8hpp.html", "image__view_8hpp" ],
     [ "instance.hpp", "instance_8hpp.html", "instance_8hpp" ],
     [ "memory.hpp", "memory_8hpp.html", "memory_8hpp" ],

@@ -4,7 +4,8 @@ var searchData=
   ['memory_5fproperties_1',['memory_properties',['../structfgla_1_1Descriptor.html#a32daea2d7c82ce2a8b52376c479246df',1,'fgla::Descriptor']]],
   ['message_2',['message',['../structfgla_1_1Error.html#af4abaf34620d3a76776921aeb614486a',1,'fgla::Error']]],
   ['minor_3',['minor',['../structfgla_1_1VersionTriple.html#ad292d280e1124cecadf19e68dcc984f9',1,'fgla::VersionTriple']]],
-  ['mode_4',['mode',['../structfgla_1_1Descriptor.html#a09461468486d11abfc99379c3b1bb27c',1,'fgla::Descriptor']]],
-  ['module_5',['module',['../structfgla_1_1ShaderStage.html#a5e5cac0aa27c2fc462141479adf94790',1,'fgla::ShaderStage']]],
-  ['module_5fname_6',['module_name',['../structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc',1,'fgla::Descriptor']]]
+  ['mip_5flevels_4',['mip_levels',['../structfgla_1_1Descriptor.html#a85cba70676d17fb3292196594d9400c5',1,'fgla::Descriptor']]],
+  ['mode_5',['mode',['../structfgla_1_1Descriptor.html#a09461468486d11abfc99379c3b1bb27c',1,'fgla::Descriptor']]],
+  ['module_6',['module',['../structfgla_1_1ShaderStage.html#a5e5cac0aa27c2fc462141479adf94790',1,'fgla::ShaderStage']]],
+  ['module_5fname_7',['module_name',['../structfgla_1_1Descriptor.html#aa2e81550356df4f311164e11dd12b3bc',1,'fgla::Descriptor']]]
 ];

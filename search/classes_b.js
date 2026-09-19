@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['request_0',['Request',['../structfgla_1_1Request.html',1,'fgla']]],
-  ['result_1',['Result',['../classfgla_1_1Result.html',1,'fgla']]]
+  ['pairhash_0',['PairHash',['../structfgla_1_1util_1_1PairHash.html',1,'fgla::util']]],
+  ['presentqueueoptions_1',['PresentQueueOptions',['../structfgla_1_1ext_1_1windowing_1_1PresentQueueOptions.html',1,'fgla::ext::windowing']]],
+  ['primitivestate_2',['PrimitiveState',['../structfgla_1_1PrimitiveState.html',1,'fgla']]],
+  ['properties_3',['Properties',['../structfgla_1_1Properties.html',1,'fgla']]]
 ];

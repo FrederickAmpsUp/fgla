@@ -1,15 +1,17 @@
 var searchData=
 [
-  ['uint16_0',['UINT16',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#aab8986d5baa778dcd76c6267f68f1503a48d8f1a723d44ff4a87db1bb6c551c62',1,'fgla::DrawDescriptor::IndexBuffer']]],
-  ['uint32_1',['UINT32',['../structfgla_1_1DrawDescriptor_1_1IndexBuffer.html#aab8986d5baa778dcd76c6267f68f1503a17266551181f69a1b4a3ad5c9e270afc',1,'fgla::DrawDescriptor::IndexBuffer']]],
-  ['undefined_2',['UNDEFINED',['../classfgla_1_1Format.html#a5c0ab02f188bea20ed8d7c5beb429acea48b14314b0fddc52ff08817c66e989d8',1,'fgla::Format']]],
-  ['uniform_3',['UNIFORM',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da891f35a29c3d51d02ffd42dd6dcc69b2',1,'fgla']]],
-  ['unwrap_4',['unwrap',['../namespacefgla.html#a203732d926f64e0ba6afe8de0f8c001e',1,'fgla::unwrap(Result&lt; T, E &gt; res, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)'],['../namespacefgla.html#ab3de5c388e0fe48b41df28473fa3972d',1,'fgla::unwrap(Result&lt; T, Error &gt; res, const char *message=&quot;Fatal Error&quot;)'],['../namespacefgla.html#aa0102ab7ca6cf9e2fb280594e5ba1815',1,'fgla::unwrap(std::optional&lt; T &gt; opt, const char *message=&quot;Fatal Error&quot;, int exit_code=-1)']]],
-  ['usage_5',['Usage',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796d',1,'fgla']]],
-  ['usage_6',['usage',['../structfgla_1_1Descriptor.html#a59db2c1ccf18aaeb7095628c959761da',1,'fgla::Descriptor']]],
-  ['user_5fdata_7',['user_data',['../structfgla_1_1Request.html#ab6a2736362c1d5baacbbc3c7d9d7235f',1,'fgla::Request']]],
-  ['util_2ehpp_8',['util.hpp',['../util_8hpp.html',1,'']]],
-  ['uuid_9',['UUID',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util::UUID&lt; size &gt;'],['../classfgla_1_1ext_1_1windowing_1_1WindowingExtension.html#a53df718d89a5618c337df537643f63e5',1,'fgla::ext::windowing::WindowingExtension::UUID']]],
-  ['uuid_10',['uuid',['../structfgla_1_1backend_1_1Backend.html#ae53b1ea0146599735ed1b0aa725a00f0',1,'fgla::backend::Backend']]],
-  ['uuid_3c_2016_20_3e_11',['UUID&lt; 16 &gt;',['../structfgla_1_1util_1_1UUID.html',1,'fgla::util']]]
+  ['t_0',['t',['../classfgla_1_1Result.html#a0cba5eb73880d30199d75766e77ad2e4',1,'fgla::Result']]],
+  ['textureformatsupportdetails_1',['TextureFormatSupportDetails',['../structfgla_1_1TextureFormatSupportDetails.html',1,'fgla']]],
+  ['to_5fimpl_2',['to_impl',['../classfgla_1_1Adapter.html#a201e163f01f7a40d364b585bcad6d17a',1,'fgla::Adapter::to_impl()'],['../classfgla_1_1Adapter.html#a524ca72ed70d6323130d5596459dd5da',1,'fgla::Adapter::to_impl() const']]],
+  ['to_5fstring_3',['to_string',['../classfgla_1_1Format.html#a719591150c6cbc87673c03b35ba3df94',1,'fgla::Format']]],
+  ['topology_4',['Topology',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2',1,'fgla::PrimitiveState']]],
+  ['topology_5',['topology',['../structfgla_1_1PrimitiveState.html#a219b5a9690071e5efde14282a5faa6eb',1,'fgla::PrimitiveState']]],
+  ['transfer_6',['Transfer',['../namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83a6950810f0d2bba97a6f710c7b965b84e',1,'fgla']]],
+  ['transfer_5fdst_7',['TRANSFER_DST',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf',1,'fgla::TRANSFER_DST'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3baa2cee11490659fde799da7092ac289cf',1,'fgla::TRANSFER_DST'],['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796daa2cee11490659fde799da7092ac289cf',1,'fgla::TRANSFER_DST'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3baa2cee11490659fde799da7092ac289cf',1,'fgla::TRANSFER_DST']]],
+  ['transfer_5fsrc_8',['TRANSFER_SRC',['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de',1,'fgla::TRANSFER_SRC'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3ba816eb338929983b8742f9395bea0a1de',1,'fgla::TRANSFER_SRC'],['../namespacefgla.html#a4262f291163f1d649834bc2efbd3796da816eb338929983b8742f9395bea0a1de',1,'fgla::TRANSFER_SRC'],['../namespacefgla.html#a7aee16e71e9eb96a82ac7dc8069a6e3ba816eb338929983b8742f9395bea0a1de',1,'fgla::TRANSFER_SRC']]],
+  ['triangle_5flist_9',['TRIANGLE_LIST',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2a14d20da17f6d27fc43c5f311c17eb912',1,'fgla::PrimitiveState']]],
+  ['triangle_5fstrip_10',['TRIANGLE_STRIP',['../structfgla_1_1PrimitiveState.html#ae88266d4f6074f8d3f973b50f760adc2a708de017e3b83ccba21dfc9f6367d46f',1,'fgla::PrimitiveState']]],
+  ['type_11',['Type',['../namespacefgla.html#aa9df1a80b3e8f79eef8d84efc789bc83',1,'fgla']]],
+  ['type_12',['type',['../structfgla_1_1Request.html#a3dee9924edd261f43d5766378b1f4ce1',1,'fgla::Request']]],
+  ['types_2ehpp_13',['types.hpp',['../types_8hpp.html',1,'']]]
 ];
