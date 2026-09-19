@@ -1,10 +1,8 @@
-#include <cstring>
+#include "fgla/memory.hpp"
 #include <fgla/backend.hpp>
-#include <fgla/buffer.hpp>
 #include <fgla/instance.hpp>
 #include <iomanip>
 #include <iostream>
-#include <spdlog/spdlog.h>
 
 void print_uuid(const fgla::backend::BackendUUID &uuid) {
   for (int i = 0; i < 16; ++i) {
@@ -66,51 +64,17 @@ int main(int argc, char **argv) {
 
   fgla::Device device = std::move(*device_res);
 
-  fgla::Queue &transfer = *device.get_queue(fgla::Queue::Type::Transfer, 0);
+  fgla::Queue &t1 = *device.get_queue(fgla::Queue::Type::Transfer, 0);
 
-  const char data[] = "This data was transferred through the GPU!\n";
-
-  fgla::Buffer buffer1 =
-      "Failed to create buffer!" *
-      device.create_buffer(
-          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::WRITE},
-           .size = sizeof(data),
-           .usage = fgla::Buffer::Usage::TRANSFER_SRC});
-
-  fgla::Buffer buffer2 =
-      "Failed to create buffer!" *
-      device.create_buffer(
-          {.memory_properties = {.cpu_access = fgla::Memory::CpuAccess::READ},
-           .size = sizeof(data),
-           .usage = fgla::Buffer::Usage::TRANSFER_DST});
-
-  {
-    fgla::Memory::AccessMut access =
-        "Failed to access buffer memory!" * buffer1.get_memory().access();
-
-    std::byte *ptr = access.write();
-    memcpy(ptr, data, sizeof(data));
-  }
-
-  auto command_buf = "Failed to begin recording" * transfer.begin_recording();
-
-  command_buf.copy(buffer1, buffer2, {{0, 0, sizeof(data)}});
-
-  auto copy_completion =
-      "Failed to submit" * transfer.submit(std::move(command_buf));
-
-  copy_completion.wait();
-
-  {
-    fgla::Memory::AccessConst access =
-        "Failed to access buffer memory!" * buffer2.get_memory().access();
-
-    if (memcmp(access.read(), data, sizeof(data))) {
-      spdlog::warn("Readback data does not match!");
-    }
-
-    printf("%s", (const char *)access.read());
-  }
+  fgla::Image image = "Failed to create image!" * device.create_image({
+    .memory_properties = {
+      .cpu_access = fgla::Memory::CpuAccess::NONE,
+    },
+    .usage = fgla::Image::Usage::TRANSFER_DST,
+    .dimension = fgla::Image::Dimension::D2,
+    .format = fgla::Format::R8G8B8A8_UNORM,
+    .extent = fgla::Extent3d { 8, 8, 1 },
+  });
 
   return 0;
 }

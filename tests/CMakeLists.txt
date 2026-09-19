@@ -17,6 +17,8 @@ set(TEST_DIRS
     vertex_buffer
     index_buffer
     buffer_copy
+    image
+    render_pipeline_headless
 )
 
 foreach(test_name IN LISTS TEST_DIRS)

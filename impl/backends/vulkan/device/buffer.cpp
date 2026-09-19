@@ -11,9 +11,7 @@ Result<Buffer> DeviceImpl::create_buffer(const Buffer::Descriptor &desc) {
 
   create_info.size = desc.size;
   create_info.usage = vulkanize(desc.usage);
-  create_info.sharingMode = this->used_queue_family_indices.size() > 1
-                                ? VK_SHARING_MODE_CONCURRENT
-                                : VK_SHARING_MODE_EXCLUSIVE;
+  create_info.sharingMode = this->get_resource_sharing_mode();
   create_info.queueFamilyIndexCount = this->used_queue_family_indices.size();
   create_info.pQueueFamilyIndices = this->used_queue_family_indices.data();
 

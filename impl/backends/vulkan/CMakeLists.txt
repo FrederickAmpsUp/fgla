@@ -20,17 +20,21 @@ add_library(fgla_backend_vulkan STATIC
     instance.cpp
     adapter.cpp
     queue.cpp
+    command_buffer/command_buffer.cpp
+    command_buffer/buffer_image_copy.cpp
+    command_buffer/image.cpp
+    command_buffer/render_pass.cpp
     device/device.cpp
     device/queue.cpp
     device/shader.cpp
     device/pipeline.cpp
     device/buffer.cpp
     device/memory.cpp
+    device/image.cpp
     render_pipeline.cpp
     shader_module.cpp
     backend.cpp
     image.cpp
-    command_buffer.cpp
     util.cpp
     render_pass.cpp
     memory.cpp

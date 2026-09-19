@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/backends/vulkan/memory.hpp>
 #include <fgla/image.hpp>
 #include <vulkan/vulkan.h>
 
@@ -16,12 +17,14 @@ struct BaseImageImpl : public Image::Impl {
   }
 
   inline VkImageLayout &get_layout() { return this->layout; }
-
+  inline const VkImageLayout &get_layout() const { return this->layout; }
+  inline VkImageAspectFlags get_aspects() const { return this->aspect; }
+  
   virtual ~BaseImageImpl() = 0;
 
 protected:
-  BaseImageImpl(VkImage image, VkDevice device)
-      : image(image), device(device) {}
+  BaseImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect, VkDevice device)
+      : image(image), device(device), extent(extent), aspect(aspect) {}
 
   Completion completion;
 
@@ -29,18 +32,21 @@ protected:
   VkDevice device;
 
   VkExtent3D extent = {0, 0, 0};
+  VkImageAspectFlags aspect;
 
   VkImageLayout layout = VK_IMAGE_LAYOUT_UNDEFINED;
 };
 
 inline BaseImageImpl::~BaseImageImpl() = default;
 
-// not really sure why this is here
-struct InternalImageImpl : public BaseImageImpl {
-  InternalImageImpl(VkImage image, VkDevice device)
-      : BaseImageImpl(image, device) {}
+struct OwnedImageImpl : public BaseImageImpl {
+  OwnedImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect, Memory &&memory, VkDevice device)
+      : memory(std::move(memory)), BaseImageImpl(image, extent, aspect, device) {}
 
-  virtual ~InternalImageImpl() override;
+  virtual ~OwnedImageImpl() override;
+
+private:
+  Memory memory;
 };
 
 } // namespace fgla::backends::vulkan

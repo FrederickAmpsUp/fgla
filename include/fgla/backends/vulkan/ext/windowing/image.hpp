@@ -5,10 +5,9 @@
 namespace fgla::backends::vulkan::ext::windowing {
 
 struct SwapchainImageImpl : public BaseImageImpl {
-  SwapchainImageImpl(VkImage image, VkDevice device, VkExtent3D extent)
-      : BaseImageImpl(image, device) {
+  SwapchainImageImpl(VkImage image, VkExtent3D extent, VkDevice device)
+      : BaseImageImpl(image, extent, VK_IMAGE_ASPECT_COLOR_BIT, device) {
     this->layout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
-    this->extent = extent;
   }
 
   virtual ~SwapchainImageImpl() override = default;

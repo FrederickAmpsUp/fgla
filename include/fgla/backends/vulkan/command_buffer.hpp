@@ -15,9 +15,16 @@ struct CommandBufferImpl : public fgla::CommandBuffer::Impl {
   virtual Result<fgla::RenderPass>
   begin_render_pass(const fgla::RenderPass::Descriptor &desc) override;
 
-  virtual void copy_buffer(
-      const Buffer &src, const Buffer &dst,
-      std::initializer_list<CommandBuffer::BufferCopy> regions) override;
+  virtual void
+  copy(const Buffer &src, const Buffer &dst,
+       std::initializer_list<CommandBuffer::BufferCopy> regions) override;
+
+  virtual void
+  copy(const Buffer &src, const Image &dst,
+       std::initializer_list<CommandBuffer::BufferImageCopy> regions) override;
+  virtual void
+  copy(const Image &src, const Buffer &dst,
+       std::initializer_list<CommandBuffer::BufferImageCopy> regions) override;
 
   inline VkCommandBuffer get_command_buffer() const {
     return this->command_buffer;
@@ -30,6 +37,8 @@ struct CommandBufferImpl : public fgla::CommandBuffer::Impl {
   virtual ~CommandBufferImpl() override;
 
 private:
+  void transition(Image &img, VkImageLayout target);
+
   VkCommandBuffer command_buffer;
   VkFence fence;
   bool is_recording = true;

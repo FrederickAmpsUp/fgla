@@ -2,6 +2,7 @@
 
 #include <fgla/buffer.hpp>
 #include <fgla/error.hpp>
+#include <fgla/image.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/render_pass.hpp>
 #include <initializer_list>
@@ -21,6 +22,15 @@ struct BufferCopy {
   size_t size;
 };
 
+struct BufferImageCopy {
+  size_t buffer_offset;
+
+  Image::SubresourceRange image_subresource;
+
+  Offset3d image_offset;
+  Extent3d image_extent;
+};
+
 #define FGLA_OBJ_FUNCTIONS(FN)                                                 \
   FN(/**                                                                       \
       * Begins a `RenderPass` using the specified descriptor                   \
@@ -32,11 +42,22 @@ struct BufferCopy {
      (const RenderPass::Descriptor &desc), (desc))                             \
   FN(/**                                                                       \
       */                                                                       \
-     , void, copy_buffer,                                                      \
+     , void, copy,                                                             \
      (const Buffer &src, const Buffer &dst,                                    \
       std::initializer_list<BufferCopy> regions),                              \
+     (src, dst, regions))                                                      \
+  FN(/**                                                                       \
+      */                                                                       \
+     , void, copy,                                                             \
+     (const Buffer &src, const Image &dst,                                     \
+      std::initializer_list<BufferImageCopy> regions),                         \
+     (src, dst, regions))                                                      \
+  FN(/**                                                                       \
+      */                                                                       \
+     , void, copy,                                                             \
+     (const Image &src, const Buffer &dst,                                     \
+      std::initializer_list<BufferImageCopy> regions),                         \
      (src, dst, regions))
-
 FGLA_OBJ_END
 
 #undef FGLA_OBJ_NAME

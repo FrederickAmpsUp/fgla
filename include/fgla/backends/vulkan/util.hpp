@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fgla/buffer.hpp>
+#include <fgla/image.hpp>
 #include <fgla/image_view.hpp>
 #include <fgla/render_pass.hpp>
 #include <fgla/types.hpp>
@@ -188,6 +189,48 @@ constexpr VkBufferUsageFlags vulkanize(fgla::Buffer::Usage usage) noexcept {
     flags |= VK_BUFFER_USAGE_TRANSFER_DST_BIT;
 
   return flags;
+}
+
+constexpr VkImageUsageFlags vulkanize(fgla::Image::Usage usage) noexcept {
+  VkImageUsageFlags flags = 0;
+
+  if ((usage & fgla::Image::Usage::SAMPLED) != fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_SAMPLED_BIT;
+
+  if ((usage & fgla::Image::Usage::STORAGE) != fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_STORAGE_BIT;
+
+  if ((usage & fgla::Image::Usage::COLOR_ATTACHMENT) !=
+      fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
+
+  if ((usage & fgla::Image::Usage::DEPTH_STENCIL_ATTACHMENT) !=
+      fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
+
+  if ((usage & fgla::Image::Usage::TRANSFER_SRC) != fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_TRANSFER_SRC_BIT;
+
+  if ((usage & fgla::Image::Usage::TRANSFER_DST) != fgla::Image::Usage::NONE)
+    flags |= VK_IMAGE_USAGE_TRANSFER_DST_BIT;
+
+  return flags;
+}
+
+constexpr VkImageType vulkanize(fgla::Image::Dimension dimension) noexcept {
+  switch (dimension) {
+  case fgla::Image::Dimension::D1:
+  case fgla::Image::Dimension::D1_ARRAY:
+    return VK_IMAGE_TYPE_1D;
+
+  case fgla::Image::Dimension::D2:
+  case fgla::Image::Dimension::D2_ARRAY:
+  default:
+    return VK_IMAGE_TYPE_2D;
+
+  case fgla::Image::Dimension::D3:
+    return VK_IMAGE_TYPE_3D;
+  }
 }
 
 void signal_timeline_from_binary(VkDevice device, VkQueue queue,

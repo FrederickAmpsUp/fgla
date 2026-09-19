@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fgla/image_subresource_range.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
 
@@ -19,14 +20,6 @@ FGLA_OBJ_START
 enum class Mode { D1, D2, D3, D1_ARRAY, D2_ARRAY, CUBE, CUBE_ARRAY };
 
 /**
- * Specifies which aspect(s) of an `Image` an `ImageView` accesses.
- */
-struct AspectBits {
-  enum Value : uint8_t { COLOR = 1 << 0, DEPTH = 1 << 1, STENCIL = 1 << 2 };
-};
-using AspectFlags = uint8_t;
-
-/**
  * Stores the settings used to create an `ImageView`
  */
 struct Descriptor {
@@ -38,13 +31,8 @@ struct Descriptor {
    * The shape to interpret the `Image` as
    */
   Mode mode;
-  /**
-   * The aspect of the `Image` to access
-   */
-  AspectFlags aspect_flags;
 
-  uint32_t base_mip_level, num_mip_levels;
-  uint32_t base_array_layer, num_array_layers;
+  _ImageSubresourceRange subresource_range;
 };
 
 #define FGLA_OBJ_FUNCTIONS(FN)

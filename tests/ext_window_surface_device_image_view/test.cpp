@@ -81,15 +81,16 @@ int main(int argc, char **argv) {
     auto &image = ("Failed to retrieve swapchain image" *
                    surface.get_current_image(present))
                       .get();
-    auto image_view = image.create_view({
-        .format = surface_format,
-        .mode = fgla::ImageView::Mode::D2,
-        .aspect_flags = fgla::ImageView::AspectBits::COLOR,
-        .base_mip_level = 0,
-        .num_mip_levels = 1,
-        .base_array_layer = 0,
-        .num_array_layers = 1,
-    });
+    auto image_view =
+        image.create_view({.format = surface_format,
+                           .mode = fgla::ImageView::Mode::D2,
+                           .subresource_range = {
+                               .aspect_flags = fgla::Image::AspectBits::COLOR,
+                               .base_mip_level = 0,
+                               .num_mip_levels = 1,
+                               .base_array_layer = 0,
+                               .num_array_layers = 1,
+                           }});
 
     surface.present(present, std::move(image),
                     {image.get_completion().clone()});

@@ -33,6 +33,7 @@ public:
   create_render_pipeline(const RenderPipeline::Descriptor &desc) override;
 
   virtual Result<Buffer> create_buffer(const Buffer::Descriptor &desc) override;
+  virtual Result<Image> create_image(const Image::Descriptor &desc) override;
 
   VkDevice get_device() const { return this->device; }
   VkPhysicalDevice get_physical_device() const { return this->physical_device; }
@@ -53,6 +54,7 @@ private:
   QueueAllocator::Queues queues;
 
   std::vector<uint32_t> used_queue_family_indices;
+  VkSharingMode get_resource_sharing_mode() const;
 
   std::vector<VkSemaphore> semaphore_pool;
   std::unordered_map<uint32_t, VkCommandPool> command_pools;

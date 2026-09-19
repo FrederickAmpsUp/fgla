@@ -2,6 +2,7 @@
 
 #include <fgla/buffer.hpp>
 #include <fgla/error.hpp>
+#include <fgla/image.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/queue.hpp>
 #include <fgla/render_pipeline.hpp>
@@ -66,7 +67,9 @@ public:
       * @returns The created `Buffer`, or an `Error` with failure information  \
       */                                                                       \
      , Result<Buffer>, create_buffer, (const Buffer::Descriptor &desc),        \
-     (desc))
+     (desc))                                                                   \
+  FN(/** */                                                                    \
+     , Result<Image>, create_image, (const Image::Descriptor &desc), (desc))
 
 FGLA_OBJ_END
 

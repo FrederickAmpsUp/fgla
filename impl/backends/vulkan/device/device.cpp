@@ -13,6 +13,11 @@ DeviceImpl::DeviceImpl(VkDevice device, VkPhysicalDevice physical_device,
   init_shader(shader_paths);
 }
 
+VkSharingMode DeviceImpl::get_resource_sharing_mode() const {
+  return this->used_queue_family_indices.size() > 1 ? VK_SHARING_MODE_CONCURRENT
+                                                    : VK_SHARING_MODE_EXCLUSIVE;
+}
+
 DeviceImpl::~DeviceImpl() {
   vkDeviceWaitIdle(this->device);
   this->queues.clear();

@@ -23,13 +23,17 @@ BaseImageImpl::create_view(const ImageView::Descriptor &desc) {
                                      // being supported in other APIs
 
   create_info.subresourceRange.aspectMask =
-      (VkImageAspectFlags)desc.aspect_flags;
+      (VkImageAspectFlags)desc.subresource_range.aspect_flags;
   // this is ok because the fgla flags share the same
   // values as the vulkan ones
-  create_info.subresourceRange.baseMipLevel = desc.base_mip_level;
-  create_info.subresourceRange.levelCount = desc.num_mip_levels;
-  create_info.subresourceRange.baseArrayLayer = desc.base_array_layer;
-  create_info.subresourceRange.layerCount = desc.num_array_layers;
+  create_info.subresourceRange.baseMipLevel =
+      desc.subresource_range.base_mip_level;
+  create_info.subresourceRange.levelCount =
+      desc.subresource_range.num_mip_levels;
+  create_info.subresourceRange.baseArrayLayer =
+      desc.subresource_range.base_array_layer;
+  create_info.subresourceRange.layerCount =
+      desc.subresource_range.num_array_layers;
 
   VkImageView view;
   VkResult res = vkCreateImageView(this->device, &create_info, nullptr, &view);
@@ -41,11 +45,19 @@ BaseImageImpl::create_view(const ImageView::Descriptor &desc) {
   logger->info("Vulkan image view created.");
 
   VkExtent3D view_extent = {
-      std::max(1u, this->extent.width >> desc.base_mip_level),
-      std::max(1u, this->extent.height >> desc.base_mip_level),
-      std::max(1u, this->extent.depth >> desc.base_mip_level)};
+      std::max(1u, this->extent.width >> desc.subresource_range.base_mip_level),
+      std::max(1u,
+               this->extent.height >> desc.subresource_range.base_mip_level),
+      std::max(1u,
+               this->extent.depth >> desc.subresource_range.base_mip_level)};
 
   return ImageView::from_impl(
       std::make_unique<ImageViewImpl>(*this, view, view_extent, this->device));
+}
+
+OwnedImageImpl::~OwnedImageImpl() {
+  const MemoryImpl &mem = this->memory.to_impl<MemoryImpl>();
+
+  vmaDestroyImage(mem.get_allocator(), this->image, mem.get_allocation());
 }
 } // namespace fgla::backends::vulkan
