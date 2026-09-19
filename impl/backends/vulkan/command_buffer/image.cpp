@@ -10,10 +10,8 @@ VkAccessFlags2 layout_access_mask(VkImageLayout layout) {
     return 0;
 
   case VK_IMAGE_LAYOUT_GENERAL:
-    return VK_ACCESS_2_SHADER_READ_BIT |
-           VK_ACCESS_2_SHADER_WRITE_BIT |
-           VK_ACCESS_2_TRANSFER_READ_BIT |
-           VK_ACCESS_2_TRANSFER_WRITE_BIT |
+    return VK_ACCESS_2_SHADER_READ_BIT | VK_ACCESS_2_SHADER_WRITE_BIT |
+           VK_ACCESS_2_TRANSFER_READ_BIT | VK_ACCESS_2_TRANSFER_WRITE_BIT |
            VK_ACCESS_2_COLOR_ATTACHMENT_READ_BIT |
            VK_ACCESS_2_COLOR_ATTACHMENT_WRITE_BIT |
            VK_ACCESS_2_DEPTH_STENCIL_ATTACHMENT_READ_BIT |
@@ -60,8 +58,7 @@ VkAccessFlags2 layout_access_mask(VkImageLayout layout) {
     return VK_ACCESS_2_NONE;
 
   default:
-    return VK_ACCESS_2_MEMORY_READ_BIT |
-           VK_ACCESS_2_MEMORY_WRITE_BIT;
+    return VK_ACCESS_2_MEMORY_READ_BIT | VK_ACCESS_2_MEMORY_WRITE_BIT;
   }
 }
 

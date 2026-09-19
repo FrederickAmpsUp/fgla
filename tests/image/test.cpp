@@ -1,4 +1,5 @@
 #include "fgla/memory.hpp"
+
 #include <fgla/backend.hpp>
 #include <fgla/instance.hpp>
 #include <iomanip>
@@ -66,15 +67,17 @@ int main(int argc, char **argv) {
 
   fgla::Queue &t1 = *device.get_queue(fgla::Queue::Type::Transfer, 0);
 
-  fgla::Image image = "Failed to create image!" * device.create_image({
-    .memory_properties = {
-      .cpu_access = fgla::Memory::CpuAccess::NONE,
-    },
-    .usage = fgla::Image::Usage::TRANSFER_DST,
-    .dimension = fgla::Image::Dimension::D2,
-    .format = fgla::Format::R8G8B8A8_UNORM,
-    .extent = fgla::Extent3d { 8, 8, 1 },
-  });
+  fgla::Image image = "Failed to create image!" *
+                      device.create_image({
+                          .memory_properties =
+                              {
+                                  .cpu_access = fgla::Memory::CpuAccess::NONE,
+                              },
+                          .usage = fgla::Image::Usage::TRANSFER_DST,
+                          .dimension = fgla::Image::Dimension::D2,
+                          .format = fgla::Format::R8G8B8A8_UNORM,
+                          .extent = fgla::Extent3d{8, 8, 1},
+                      });
 
   return 0;
 }

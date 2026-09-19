@@ -12,40 +12,44 @@ static constexpr int WIDTH = 1920;
 static constexpr int HEIGHT = 1080;
 
 int main(int argc, char **argv) {
-  auto instance = "Failed to create instance" *
-                  fgla::Instance::create({
+  auto instance =
+      "Failed to create instance" * fgla::Instance::create({
 
-                      .app_version = {0, 0, 1},
-                      .app_name = "Windowing test",
-                  });
+                                        .app_version = {0, 0, 1},
+                                        .app_name = "Windowing test",
+                                    });
 
   auto adapters = fgla::util::FilterableList(instance.enumerate_adapters());
 
   auto adapter =
       "Failed to create adapter" *
       instance.select_adapter(instance.get_adapter_scorer({}), adapters.data());
-  auto device =
-      "Failed to create device" *
-      adapter.create_device(
-          {{std::filesystem::path(__FILE__).parent_path()}},
-          {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1}});
+  auto device = "Failed to create device" *
+                adapter.create_device(
+                    {{std::filesystem::path(__FILE__).parent_path()}},
+                    {fgla::Queue::Request{fgla::Queue::Type::Graphics, 1}});
 
   fgla::Queue &graphics = *device.get_queue(fgla::Queue::Type::Graphics, 0);
 
   fgla::Format image_format = fgla::Format::R8G8B8A8_UNORM;
-  fgla::Image image = "Failed to create image!" * device.create_image({
-    .memory_properties = {fgla::Memory::CpuAccess::NONE}, // remove memory_properties
-    .usage = fgla::Image::Usage::COLOR_ATTACHMENT | fgla::Image::Usage::TRANSFER_SRC,
-    .dimension = fgla::Image::Dimension::D2,
-    .format = image_format,
-    .extent = fgla::Extent3d { WIDTH, HEIGHT, 1}
-  });
+  fgla::Image image =
+      "Failed to create image!" *
+      device.create_image(
+          {.memory_properties =
+               {fgla::Memory::CpuAccess::NONE}, // remove memory_properties
+           .usage = fgla::Image::Usage::COLOR_ATTACHMENT |
+                    fgla::Image::Usage::TRANSFER_SRC,
+           .dimension = fgla::Image::Dimension::D2,
+           .format = image_format,
+           .extent = fgla::Extent3d{WIDTH, HEIGHT, 1}});
 
-  fgla::Buffer staging_buffer = "Failed to create buffer!" * device.create_buffer({
-    .memory_properties = { fgla::Memory::CpuAccess::READ },
-    .size = 4 * WIDTH * HEIGHT,
-    .usage = fgla::Buffer::Usage::TRANSFER_DST,
-  });
+  fgla::Buffer staging_buffer =
+      "Failed to create buffer!" *
+      device.create_buffer({
+          .memory_properties = {fgla::Memory::CpuAccess::READ},
+          .size = 4 * WIDTH * HEIGHT,
+          .usage = fgla::Buffer::Usage::TRANSFER_DST,
+      });
 
   auto shader =
       "Failed to load shader module" * device.load_shader_module({"test"});
@@ -80,23 +84,24 @@ int main(int argc, char **argv) {
         cb.begin_render_pass(
             {.color_attachments = {
                  {.view = image_view,
-                  .load_op = fgla::RenderPass::LoadOp::CLEAR(
-                      {0.2f, 0.3f, 0.9f, 1.0f}),
+                  .load_op =
+                      fgla::RenderPass::LoadOp::CLEAR({0.2f, 0.3f, 0.9f, 1.0f}),
                   .store_op = fgla::RenderPass::StoreOp::STORE}}});
 
     pass.draw({.pipeline = pipeline, .vertex_count = 3});
   }
 
-  cb.copy(image, staging_buffer, {
-    fgla::CommandBuffer::BufferImageCopy {
-      .buffer_offset = 0,
-      .image_subresource = {
-        .aspect_flags = fgla::Image::SubresourceRange::AspectBits::COLOR,
-      },
-      .image_offset = { 0, 0, 0 },
-      .image_extent = { WIDTH, HEIGHT, 1 },
-    }
-  });
+  cb.copy(image, staging_buffer,
+          {fgla::CommandBuffer::BufferImageCopy{
+              .buffer_offset = 0,
+              .image_subresource =
+                  {
+                      .aspect_flags =
+                          fgla::Image::SubresourceRange::AspectBits::COLOR,
+                  },
+              .image_offset = {0, 0, 0},
+              .image_extent = {WIDTH, HEIGHT, 1},
+          }});
 
   image.get_completion() =
       "Failed to submit command buffer!" *
@@ -107,17 +112,16 @@ int main(int argc, char **argv) {
   uint8_t image_data[WIDTH * HEIGHT * 4];
 
   {
-    fgla::Memory::AccessConst access = "Failed to access staging buffer memory!" * staging_buffer.get_memory().access();
+    fgla::Memory::AccessConst access =
+        "Failed to access staging buffer memory!" *
+        staging_buffer.get_memory().access();
 
     memcpy(image_data, access.read(), sizeof(image_data));
   }
 
-  stbi_write_png(
-      "rainbow_dorito.png",
-      WIDTH,
-      HEIGHT,
-      4,                 // channels: RGBA
-      image_data,
-      WIDTH * 4          // stride: bytes per row
+  stbi_write_png("rainbow_dorito.png", WIDTH, HEIGHT,
+                 4, // channels: RGBA
+                 image_data,
+                 WIDTH * 4 // stride: bytes per row
   );
 }

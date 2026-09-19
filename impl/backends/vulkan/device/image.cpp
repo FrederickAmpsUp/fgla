@@ -7,21 +7,21 @@ namespace fgla::backends::vulkan {
 
 VkImageAspectFlags format_aspect(VkFormat format) {
   switch (format) {
-    case VK_FORMAT_D16_UNORM:
-    case VK_FORMAT_X8_D24_UNORM_PACK32:
-    case VK_FORMAT_D32_SFLOAT:
-      return VK_IMAGE_ASPECT_DEPTH_BIT;
+  case VK_FORMAT_D16_UNORM:
+  case VK_FORMAT_X8_D24_UNORM_PACK32:
+  case VK_FORMAT_D32_SFLOAT:
+    return VK_IMAGE_ASPECT_DEPTH_BIT;
 
-    case VK_FORMAT_S8_UINT:
-      return VK_IMAGE_ASPECT_STENCIL_BIT;
+  case VK_FORMAT_S8_UINT:
+    return VK_IMAGE_ASPECT_STENCIL_BIT;
 
-    case VK_FORMAT_D16_UNORM_S8_UINT:
-    case VK_FORMAT_D24_UNORM_S8_UINT:
-    case VK_FORMAT_D32_SFLOAT_S8_UINT:
-      return VK_IMAGE_ASPECT_DEPTH_BIT | VK_IMAGE_ASPECT_STENCIL_BIT;
+  case VK_FORMAT_D16_UNORM_S8_UINT:
+  case VK_FORMAT_D24_UNORM_S8_UINT:
+  case VK_FORMAT_D32_SFLOAT_S8_UINT:
+    return VK_IMAGE_ASPECT_DEPTH_BIT | VK_IMAGE_ASPECT_STENCIL_BIT;
 
-    default:
-      return VK_IMAGE_ASPECT_COLOR_BIT;
+  default:
+    return VK_IMAGE_ASPECT_COLOR_BIT;
   }
 }
 
@@ -66,8 +66,9 @@ Result<Image> DeviceImpl::create_image(const Image::Descriptor &desc) {
   Memory memory = Memory::from_impl(std::make_unique<MemoryImpl>(
       allocation, allocation_info.pMappedData, *this));
 
-  return Image::from_impl(
-      std::make_unique<OwnedImageImpl>(image, create_info.extent, format_aspect(create_info.format), std::move(memory), this->device));
+  return Image::from_impl(std::make_unique<OwnedImageImpl>(
+      image, create_info.extent, format_aspect(create_info.format),
+      std::move(memory), this->device));
 }
 
 } // namespace fgla::backends::vulkan

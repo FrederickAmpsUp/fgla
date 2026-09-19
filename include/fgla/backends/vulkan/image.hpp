@@ -19,11 +19,12 @@ struct BaseImageImpl : public Image::Impl {
   inline VkImageLayout &get_layout() { return this->layout; }
   inline const VkImageLayout &get_layout() const { return this->layout; }
   inline VkImageAspectFlags get_aspects() const { return this->aspect; }
-  
+
   virtual ~BaseImageImpl() = 0;
 
 protected:
-  BaseImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect, VkDevice device)
+  BaseImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect,
+                VkDevice device)
       : image(image), device(device), extent(extent), aspect(aspect) {}
 
   Completion completion;
@@ -40,8 +41,10 @@ protected:
 inline BaseImageImpl::~BaseImageImpl() = default;
 
 struct OwnedImageImpl : public BaseImageImpl {
-  OwnedImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect, Memory &&memory, VkDevice device)
-      : memory(std::move(memory)), BaseImageImpl(image, extent, aspect, device) {}
+  OwnedImageImpl(VkImage image, VkExtent3D extent, VkImageAspectFlags aspect,
+                 Memory &&memory, VkDevice device)
+      : memory(std::move(memory)),
+        BaseImageImpl(image, extent, aspect, device) {}
 
   virtual ~OwnedImageImpl() override;
 

@@ -1,4 +1,5 @@
 #include "fgla/backends/vulkan/image.hpp"
+
 #include <fgla/backends/vulkan/buffer.hpp>
 #include <fgla/backends/vulkan/command_buffer.hpp>
 
@@ -62,8 +63,9 @@ vulkanize(std::initializer_list<CommandBuffer::BufferImageCopy> regions) {
 void CommandBufferImpl::copy(
     const Buffer &src, const Image &dst,
     std::initializer_list<CommandBuffer::BufferImageCopy> regions) {
-  
-  this->transition(const_cast<Image &>(dst), VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL);
+
+  this->transition(const_cast<Image &>(dst),
+                   VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL);
 
   std::vector<VkBufferImageCopy> buffer_image_copies = vulkanize(regions);
 
@@ -71,14 +73,17 @@ void CommandBufferImpl::copy(
   VkImage img_dst = dst.to_impl<BaseImageImpl>().get_image();
   VkImageLayout layout_dst = dst.to_impl<BaseImageImpl>().get_layout();
 
-  vkCmdCopyBufferToImage(this->command_buffer, buf_src, img_dst, layout_dst, buffer_image_copies.size(), buffer_image_copies.data());
+  vkCmdCopyBufferToImage(this->command_buffer, buf_src, img_dst, layout_dst,
+                         buffer_image_copies.size(),
+                         buffer_image_copies.data());
 }
 
 void CommandBufferImpl::copy(
     const Image &src, const Buffer &dst,
     std::initializer_list<CommandBuffer::BufferImageCopy> regions) {
 
-  this->transition(const_cast<Image &>(src), VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL);
+  this->transition(const_cast<Image &>(src),
+                   VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL);
 
   std::vector<VkBufferImageCopy> buffer_image_copies = vulkanize(regions);
 
@@ -86,6 +91,8 @@ void CommandBufferImpl::copy(
   VkImageLayout layout_src = src.to_impl<BaseImageImpl>().get_layout();
   VkBuffer buf_dst = dst.to_impl<BufferImpl>().get_buffer();
 
-  vkCmdCopyImageToBuffer(this->command_buffer, img_src, layout_src, buf_dst, buffer_image_copies.size(), buffer_image_copies.data());
+  vkCmdCopyImageToBuffer(this->command_buffer, img_src, layout_src, buf_dst,
+                         buffer_image_copies.size(),
+                         buffer_image_copies.data());
 }
 } // namespace fgla::backends::vulkan
