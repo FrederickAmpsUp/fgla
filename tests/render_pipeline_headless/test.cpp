@@ -12,12 +12,10 @@ static constexpr int WIDTH = 1920;
 static constexpr int HEIGHT = 1080;
 
 int main(int argc, char **argv) {
-  auto instance =
-      "Failed to create instance" * fgla::Instance::create({
-
-                                        .app_version = {0, 0, 1},
-                                        .app_name = "Windowing test",
-                                    });
+  auto instance = "Failed to create instance" * fgla::Instance::create({
+                                                    .app_version = {0, 0, 1},
+                                                    .app_name = "Headless test",
+                                                });
 
   auto adapters = fgla::util::FilterableList(instance.enumerate_adapters());
 
@@ -31,7 +29,7 @@ int main(int argc, char **argv) {
 
   fgla::Queue &graphics = *device.get_queue(fgla::Queue::Type::Graphics, 0);
 
-  fgla::Format image_format = fgla::Format::R8G8B8A8_UNORM;
+  fgla::Format image_format = fgla::Format::R8G8B8A8_SRGB;
   fgla::Image image =
       "Failed to create image!" *
       device.create_image(
@@ -104,19 +102,18 @@ int main(int argc, char **argv) {
           }});
 
   image.get_completion() =
-      "Failed to submit command buffer!" *
-      graphics.submit(std::move(cb), {image.get_completion().clone()});
+      "Failed to submit command buffer!" * graphics.submit(std::move(cb), {});
 
   image.get_completion().wait();
 
-  uint8_t image_data[WIDTH * HEIGHT * 4];
+  uint8_t *image_data = new uint8_t[WIDTH * HEIGHT * 4];
 
   {
     fgla::Memory::AccessConst access =
         "Failed to access staging buffer memory!" *
         staging_buffer.get_memory().access();
 
-    memcpy(image_data, access.read(), sizeof(image_data));
+    memcpy(image_data, access.read(), WIDTH * HEIGHT * 4);
   }
 
   stbi_write_png("rainbow_dorito.png", WIDTH, HEIGHT,
@@ -124,4 +121,6 @@ int main(int argc, char **argv) {
                  image_data,
                  WIDTH * 4 // stride: bytes per row
   );
+
+  delete[] image_data;
 }
