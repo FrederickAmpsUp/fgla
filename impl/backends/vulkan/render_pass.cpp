@@ -15,16 +15,18 @@ void RenderPassImpl::draw(const RenderPass::DrawDescriptor &descriptor) {
     this->current_pipeline = vk_pipeline;
   }
 
-  std::vector<VkBuffer> buffers;
-  std::vector<VkDeviceSize> offsets;
+  if (descriptor.vertex_buffers.size() > 0) {
+    std::vector<VkBuffer> buffers;
+    std::vector<VkDeviceSize> offsets;
 
-  for (const auto &buffer : descriptor.vertex_buffers) {
-    buffers.push_back(buffer.buffer.to_impl<BufferImpl>().get_buffer());
-    offsets.push_back(buffer.offset);
+    for (const auto &buffer : descriptor.vertex_buffers) {
+      buffers.push_back(buffer.buffer.to_impl<BufferImpl>().get_buffer());
+      offsets.push_back(buffer.offset);
+    }
+
+    vkCmdBindVertexBuffers(this->command_buffer, 0, buffers.size(),
+                           buffers.data(), offsets.data());
   }
-
-  vkCmdBindVertexBuffers(this->command_buffer, 0, buffers.size(),
-                         buffers.data(), offsets.data());
 
   if (descriptor.index_buffer) {
     VkIndexType index_type = VK_INDEX_TYPE_UINT16;
