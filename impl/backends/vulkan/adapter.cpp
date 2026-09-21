@@ -53,6 +53,12 @@ Result<Device> AdapterImpl::create_device(
   device_features_12.timelineSemaphore = VK_TRUE;
   device_features_12.pNext = &device_features_13;
 
+  VkPhysicalDeviceVulkan11Features device_features_11 = {};
+  device_features_11.sType =
+      VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES;
+  device_features_11.shaderDrawParameters = VK_TRUE;
+  device_features_11.pNext = &device_features_12;
+
   VkDeviceCreateInfo create_info = {};
   create_info.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
 
@@ -61,7 +67,7 @@ Result<Device> AdapterImpl::create_device(
   create_info.queueCreateInfoCount = queue_create_infos.size();
   create_info.pQueueCreateInfos = queue_create_infos.data();
 
-  create_info.pNext = &device_features_12;
+  create_info.pNext = &device_features_11;
 
   std::vector<const char *> extensions;
 
