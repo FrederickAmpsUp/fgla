@@ -3,6 +3,7 @@
 #include <fgla/adapter.hpp>
 #include <fgla/error.hpp>
 #include <fgla/ext/windowing/surface.hpp>
+#include <fgla/ext/windowing/event.hpp>
 #include <fgla/ext/windowing/window.hpp>
 #include <fgla/extension.hpp>
 

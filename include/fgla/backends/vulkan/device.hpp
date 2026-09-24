@@ -6,8 +6,17 @@
 #include <fgla/backends/vulkan/queue.hpp>
 #include <fgla/device.hpp>
 #include <fgla/memory.hpp>
-#include <slang-com-ptr.h>
-#include <slang.h>
+
+#if __has_include(<shader-slang/slang-com-ptr.h>)
+  #include <shader-slang/slang-com-ptr.h>
+  #include <shader-slang/slang.h>
+#elif __has_include(<slang-com-ptr.h>)
+  #include <slang-com-ptr.h>
+  #include <slang.h>
+#else
+  #error "failed to include slang shader language"
+#endif
+
 #include <unordered_map>
 #include <vk_mem_alloc.h>
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <unordered_set>
+
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 #include <fgla/ext/windowing/extension.hpp>
@@ -9,7 +11,7 @@ namespace fgla::backends::vulkan::ext::windowing {
 struct WindowImpl : public fgla::ext::windowing::Window::Impl {
   WindowImpl(const fgla::ext::windowing::Window::Descriptor &);
 
-  virtual void poll_events() override;
+  virtual std::vector<fgla::ext::windowing::Event> poll_events() override;
   virtual bool is_open() override;
 
   virtual Result<fgla::ext::windowing::Surface>
@@ -25,6 +27,10 @@ struct WindowImpl : public fgla::ext::windowing::Window::Impl {
 
 private:
   GLFWwindow *window;
+
+  float last_cursor_x = -1e9f;
+  float last_cursor_y = -1e9f;
+  std::unordered_set<fgla::ext::windowing::KeyCode> pressed_keys;
 };
 
 bool init_windowing();

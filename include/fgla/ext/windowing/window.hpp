@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <fgla/ext/windowing/surface.hpp>
+#include <fgla/ext/windowing/event.hpp>
 #include <fgla/object_gen.hpp>
 #include <fgla/types.hpp>
 
@@ -39,10 +40,14 @@ struct Descriptor {
 
 #define FGLA_OBJ_FUNCTIONS(FN)                                                 \
   FN(/**                                                                       \
-      * Internally runs the window's event loop                                \
-      * This must be called once per frame                                     \
+      * Internally runs the window's event loop and returns a vector containing\
+      * new events since the last poll, if any. This must be called once per   \
+      * frame. There may be at most one instance of every event type (e.g.     \
+      * KeyEvent, MouseEvent, and so on) in the returned vector. The first call\
+      * to this function must return a list with at least a MouseEvent         \
+      * containing the current mouse position (with a delta of 0).             \
       */                                                                       \
-     , void, poll_events, (), ())                                              \
+     , std::vector<Event>, poll_events, (), ())                                \
   FN(/**                                                                       \
       * Checks if the window has **not** been closed by the user               \
       * @returns `false` if the user has closed the window, else `true`        \
