@@ -1,9 +1,9 @@
 find_package(slang CONFIG QUIET)
 
-option(BUILD_SLANG "Always build Slang from source" OFF)
+option(FGLA_BUILD_SLANG "Always build Slang from source" OFF)
 
-if (NOT slang_FOUND OR BUILD_SLANG)
-    if (NOT BUILD_SLANG)
+if (NOT slang_FOUND OR FGLA_BUILD_SLANG)
+    if (NOT FGLA_BUILD_SLANG)
         message(WARNING "Slang not found, building from source!")
         message("It is highly recommended to install the Slang toolchain.")
     endif()
